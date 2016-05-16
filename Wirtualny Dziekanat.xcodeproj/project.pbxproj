@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C2AC7A17AD732989D34AED2 /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2B9F1CEA594200AA8439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9E1CEA594200AA8439 /* ViewController.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DD2B9E1CEA594200AA8439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		C3DD2BA31CEA594200AA8439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DD2BA61CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DD2BA81CEA594200AA8439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9A693F510C04F1CA422BD1 /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C2AC7A17AD732989D34AED2 /* Pods_Wirtualny_Dziekanat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A1A995F87FD8D3EA2AB2535 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */,
+				EB9A693F510C04F1CA422BD1 /* Pods-Wirtualny Dziekanat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		81F88BE084A969A3F81623EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C3DD2B901CEA594200AA8439 = {
 			isa = PBXGroup;
 			children = (
 				C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */,
 				C3DD2B9A1CEA594200AA8439 /* Products */,
+				6A1A995F87FD8D3EA2AB2535 /* Pods */,
+				81F88BE084A969A3F81623EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3DD2BAB1CEA594200AA8439 /* Build configuration list for PBXNativeTarget "Wirtualny Dziekanat" */;
 			buildPhases = (
+				FC57DACEE8170D9F820C37E7 /* 📦 Check Pods Manifest.lock */,
 				C3DD2B951CEA594200AA8439 /* Sources */,
 				C3DD2B961CEA594200AA8439 /* Frameworks */,
 				C3DD2B971CEA594200AA8439 /* Resources */,
+				B6A74533BF971EC7D67B30DC /* 📦 Embed Pods Frameworks */,
+				7108E0AD39356F530473D99A /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7108E0AD39356F530473D99A /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6A74533BF971EC7D67B30DC /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC57DACEE8170D9F820C37E7 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C3DD2B951CEA594200AA8439 /* Sources */ = {
@@ -250,6 +325,7 @@
 		};
 		C3DD2BAC1CEA594200AA8439 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
@@ -261,6 +337,7 @@
 		};
 		C3DD2BAD1CEA594200AA8439 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EB9A693F510C04F1CA422BD1 /* Pods-Wirtualny Dziekanat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
@@ -289,6 +366,7 @@
 				C3DD2BAD1CEA594200AA8439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
