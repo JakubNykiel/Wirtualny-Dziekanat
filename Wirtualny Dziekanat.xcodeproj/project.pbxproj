@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C2AC7A17AD732989D34AED2 /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */; };
+		C38BC1111CEBD1BB0070CF28 /* agh_t.png in Resources */ = {isa = PBXBuildFile; fileRef = C38BC1101CEBD1BB0070CF28 /* agh_t.png */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2B9F1CEA594200AA8439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9E1CEA594200AA8439 /* ViewController.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
+		C38BC1101CEBD1BB0070CF28 /* agh_t.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agh_t.png; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DD2B9E1CEA594200AA8439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,25 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C3B9787D1CEBBFEB0060BBCC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3DD2BA01CEA594200AA8439 /* Main.storyboard */,
+				C3DD2BA51CEA594200AA8439 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C3B9787E1CEBC0290060BBCC /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				C38BC1101CEBD1BB0070CF28 /* agh_t.png */,
+				C3DD2BA81CEA594200AA8439 /* Info.plist */,
+				C3DD2BA31CEA594200AA8439 /* Assets.xcassets */,
+			);
+			name = "Supported Files";
+			sourceTree = "<group>";
+		};
 		C3DD2B901CEA594200AA8439 = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +100,9 @@
 			isa = PBXGroup;
 			children = (
 				C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */,
+				C3B9787D1CEBBFEB0060BBCC /* Views */,
 				C3DD2B9E1CEA594200AA8439 /* ViewController.swift */,
-				C3DD2BA01CEA594200AA8439 /* Main.storyboard */,
-				C3DD2BA31CEA594200AA8439 /* Assets.xcassets */,
-				C3DD2BA51CEA594200AA8439 /* LaunchScreen.storyboard */,
-				C3DD2BA81CEA594200AA8439 /* Info.plist */,
+				C3B9787E1CEBC0290060BBCC /* Supported Files */,
 			);
 			path = "Wirtualny Dziekanat";
 			sourceTree = "<group>";
@@ -150,6 +169,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C38BC1111CEBD1BB0070CF28 /* agh_t.png in Resources */,
 				C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */,
 				C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
