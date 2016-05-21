@@ -105,7 +105,7 @@
                                     <constraint firstAttribute="height" constant="30" id="U9c-4b-bfa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="41t-xv-c8Y"/>
@@ -125,7 +125,7 @@
                                     <constraint firstAttribute="height" constant="30" id="jgA-EV-fJT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="jgA-EV-fJT"/>
