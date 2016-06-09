@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		9C2AC7A17AD732989D34AED2 /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */; };
+		C35981BD1D0A0DD50021172A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35981BC1D0A0DD50021172A /* Functions.swift */; };
 		C36A15351CF06153005EC3CC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A15341CF06153005EC3CC /* LoginController.swift */; };
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
+		C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */; };
+		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
@@ -19,8 +22,11 @@
 
 /* Begin PBXFileReference section */
 		21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
+		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C36A15341CF06153005EC3CC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
+		C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
+		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +71,8 @@
 			isa = PBXGroup;
 			children = (
 				C36A15341CF06153005EC3CC /* LoginController.swift */,
+				C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */,
+				C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */,
+				C35981BC1D0A0DD50021172A /* Functions.swift */,
 				C36A15361CF06163005EC3CC /* Controllers */,
 				C3B9787D1CEBBFEB0060BBCC /* Views */,
 				C3B9787E1CEBC0290060BBCC /* Supported Files */,
@@ -244,6 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
+				C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */,
+				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
+				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
