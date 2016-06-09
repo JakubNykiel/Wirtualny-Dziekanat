@@ -6,6 +6,7 @@ target 'Wirtualny Dziekanat' do
   use_frameworks!
 
   # Pods for Wirtualny Dziekanat
-pod 'Firebase', '>= 2.5.1'
+  pod 'Firebase/Core'
+  pod 'Firebase/Database'
 
 end
