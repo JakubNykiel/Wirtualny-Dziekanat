@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,19 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agh_t.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Ur-0f-SBx">
-                                <rect key="frame" x="249" y="228" width="102" height="144"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="se7-bF-KmW">
+                                <rect key="frame" x="144" y="105" width="313" height="365"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="NaC-6H-IyY"/>
+                                    <constraint firstAttribute="width" constant="313" id="KgC-OL-sFG"/>
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="1Ur-0f-SBx" firstAttribute="top" secondItem="M53-jn-rA2" secondAttribute="bottom" constant="208" id="Ndi-hi-Z8N"/>
-                            <constraint firstItem="1Ur-0f-SBx" firstAttribute="centerX" secondItem="dvu-rF-56b" secondAttribute="centerX" id="kCv-Cc-KT5"/>
-                            <constraint firstItem="1Ur-0f-SBx" firstAttribute="centerY" secondItem="dvu-rF-56b" secondAttribute="centerY" id="zpa-23-Uen"/>
+                            <constraint firstItem="se7-bF-KmW" firstAttribute="top" secondItem="M53-jn-rA2" secondAttribute="bottom" constant="85" id="ctQ-10-GJt"/>
+                            <constraint firstItem="se7-bF-KmW" firstAttribute="centerX" secondItem="dvu-rF-56b" secondAttribute="centerX" id="rvQ-Vj-pAe"/>
+                            <constraint firstItem="KB3-ZU-at9" firstAttribute="top" secondItem="se7-bF-KmW" secondAttribute="bottom" constant="130" id="w8T-wU-EbT"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="agh_t.png" width="76" height="111"/>
+        <image name="agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg" width="616" height="781"/>
     </resources>
 </document>
