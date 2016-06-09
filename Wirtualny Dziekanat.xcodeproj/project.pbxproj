@@ -12,7 +12,6 @@
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
-		C3DD2B9F1CEA594200AA8439 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9E1CEA594200AA8439 /* RegisterController.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
 		C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA31CEA594200AA8439 /* Assets.xcassets */; };
 		C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA51CEA594200AA8439 /* LaunchScreen.storyboard */; };
@@ -25,7 +24,6 @@
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C3DD2B9E1CEA594200AA8439 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		C3DD2BA11CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3DD2BA31CEA594200AA8439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3DD2BA61CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				C36A15341CF06153005EC3CC /* LoginController.swift */,
-				C3DD2B9E1CEA594200AA8439 /* RegisterController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -113,8 +110,8 @@
 		C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */ = {
 			isa = PBXGroup;
 			children = (
-				C36A15361CF06163005EC3CC /* Controllers */,
 				C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */,
+				C36A15361CF06163005EC3CC /* Controllers */,
 				C3B9787D1CEBBFEB0060BBCC /* Views */,
 				C3B9787E1CEBC0290060BBCC /* Supported Files */,
 			);
@@ -246,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3DD2B9F1CEA594200AA8439 /* RegisterController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,
 			);

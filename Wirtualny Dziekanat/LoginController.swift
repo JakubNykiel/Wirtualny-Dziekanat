@@ -10,10 +10,16 @@ import UIKit
 
 class LoginController: UIViewController {
 
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        emailTextField.borderStyle = UITextBorderStyle.RoundedRect
+        passwordTextField.borderStyle = UITextBorderStyle.RoundedRect
     }
 
     override func didReceiveMemoryWarning() {
