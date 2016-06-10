@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		9C2AC7A17AD732989D34AED2 /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */; };
 		C35981BD1D0A0DD50021172A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35981BC1D0A0DD50021172A /* Functions.swift */; };
+		C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */; };
+		C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC91D0B5CD00022DC1F /* Exit-50.png */; };
+		C35BCCCF1D0B5CD00022DC1F /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCA1D0B5CD00022DC1F /* Home-50.png */; };
+		C35BCCD01D0B5CD00022DC1F /* Bulleted List-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */; };
+		C35BCCD11D0B5CD00022DC1F /* Speech Bubble-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */; };
+		C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */; };
 		C36A15351CF06153005EC3CC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A15341CF06153005EC3CC /* LoginController.swift */; };
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
 		C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */; };
@@ -23,6 +29,12 @@
 /* Begin PBXFileReference section */
 		21A4459EC18816C31D522D6F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
 		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Rule-50.png"; sourceTree = "<group>"; };
+		C35BCCC91D0B5CD00022DC1F /* Exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-50.png"; sourceTree = "<group>"; };
+		C35BCCCA1D0B5CD00022DC1F /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
+		C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bulleted List-50.png"; sourceTree = "<group>"; };
+		C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble-50.png"; sourceTree = "<group>"; };
+		C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add User Male-50.png"; sourceTree = "<group>"; };
 		C36A15341CF06153005EC3CC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
 		C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
@@ -67,6 +79,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C35BCCC61D0B5B880022DC1F /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
+				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
+				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
+				C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */,
+				C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */,
+				C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */,
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
 		C36A15361CF06163005EC3CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +114,7 @@
 		C3B9787E1CEBC0290060BBCC /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
+				C35BCCC61D0B5B880022DC1F /* Icons */,
 				C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */,
 				C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */,
 				C3DD2BA81CEA594200AA8439 /* Info.plist */,
@@ -190,10 +216,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */,
+				C35BCCCF1D0B5CD00022DC1F /* Home-50.png in Resources */,
 				C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */,
 				C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */,
+				C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
+				C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */,
+				C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */,
+				C35BCCD11D0B5CD00022DC1F /* Speech Bubble-50.png in Resources */,
 				C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */,
+				C35BCCD01D0B5CD00022DC1F /* Bulleted List-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
