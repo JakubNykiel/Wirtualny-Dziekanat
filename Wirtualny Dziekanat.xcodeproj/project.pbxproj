@@ -26,6 +26,8 @@
 		C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA51CEA594200AA8439 /* LaunchScreen.storyboard */; };
 		C3E7798A1D29343000CE5CFF /* Student Male-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E779891D29343000CE5CFF /* Student Male-50.png */; };
 		C3E7798C1D29357F00CE5CFF /* Logout Rounded-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E7798B1D29357F00CE5CFF /* Logout Rounded-50.png */; };
+		C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */; };
+		C3E779901D29657300CE5CFF /* University-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E7798F1D29657300CE5CFF /* University-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		C3DD2BA81CEA594200AA8439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3E779891D29343000CE5CFF /* Student Male-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Student Male-50.png"; sourceTree = "<group>"; };
 		C3E7798B1D29357F00CE5CFF /* Logout Rounded-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logout Rounded-50.png"; sourceTree = "<group>"; };
+		C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfesorMenuController.swift; sourceTree = "<group>"; };
+		C3E7798F1D29657300CE5CFF /* University-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "University-50.png"; sourceTree = "<group>"; };
 		C830EC55ABEB9507E3E63EAA /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB9A693F510C04F1CA422BD1 /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +90,7 @@
 		C35BCCC61D0B5B880022DC1F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				C3E7798F1D29657300CE5CFF /* University-50.png */,
 				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
 				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
 				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
@@ -104,6 +109,7 @@
 				C36A15341CF06153005EC3CC /* LoginController.swift */,
 				C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */,
 				C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */,
+				C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +233,7 @@
 				C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */,
 				C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
+				C3E779901D29657300CE5CFF /* University-50.png in Resources */,
 				C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */,
 				C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */,
 				C3E7798C1D29357F00CE5CFF /* Logout Rounded-50.png in Resources */,
@@ -292,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
 				C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */,
 				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
