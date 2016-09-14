@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0BA986536326BCC266A0157A8C204CF8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */; };
-		0E4A9CFDC8A87BA336CB32A38C20239D /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */; };
+		0BA986536326BCC266A0157A8C204CF8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A35A8FD8FB953B4A8BA321BC2E5BE /* DropDown+Appearance.swift */; };
+		0E4A9CFDC8A87BA336CB32A38C20239D /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C399C5B7E5EC84395D237954404049 /* DropDownCell.xib */; };
 		2BBAC1789D5FEE5D9B3F5B3C048F14E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		311D5A4AFB0F3AEEFCABAA80BE1073D6 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */; };
+		311D5A4AFB0F3AEEFCABAA80BE1073D6 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 574F7677BE1A9A5DCD6C45C550284EE0 /* DropDown-dummy.m */; };
 		47922590021367A59FF199FBEE7C0D17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		567F0E2EA3DD673DA28562ADFC489BE4 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */; };
-		6FAD7D08B301985BF129AC5A2B3D5CF4 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */; };
-		77E3F47B9B5BFF547C55AC7573340572 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		81A9042F668B62EA4E40C57566BEE0A2 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */; };
-		9811132B36B59EEB8D144F8BCC0B443E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */; };
+		567F0E2EA3DD673DA28562ADFC489BE4 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747BF1B70573F9B0696A035609690214 /* DPDKeyboardListener.swift */; };
+		6FAD7D08B301985BF129AC5A2B3D5CF4 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9FE26E5EC2CDFB72B51B2E9DF83D67 /* DPDConstants.swift */; };
+		77E3F47B9B5BFF547C55AC7573340572 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C75276F37032D3948F2E7D7DD433D22 /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81A9042F668B62EA4E40C57566BEE0A2 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22425601A8D64F2C90338A8A68D43DD3 /* DPDUIView+Extension.swift */; };
+		9811132B36B59EEB8D144F8BCC0B443E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8BAEAB5AEF78EA0F22653B721E33C3 /* DropDown.swift */; };
 		B07BC3D19816F490B5D5A52E2AE5597E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		C3460550847D02262FD7DDF8A7CBD722 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */; };
+		C3460550847D02262FD7DDF8A7CBD722 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9C5F91F901CB3A4EE5FACDBC6986E9 /* SwiftyJSON.swift */; };
 		C766389BABAAC0EF587F37B6BC3A8274 /* Pods-Wirtualny Dziekanat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3224A618A67F56C1997B850F01C02010 /* Pods-Wirtualny Dziekanat-dummy.m */; };
 		CEFE2EA7EEF9A2FA1AA353A1E9333C9D /* Pods-Wirtualny Dziekanat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 793F93BEDA16FDEC3B58586C2C83B60B /* Pods-Wirtualny Dziekanat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D2B2C73D23209F8B5571D5172C800ED8 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */; };
-		E259384AFF9C07CA3AF3E4E252311E01 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */; };
-		ECF20A0B80241D3B1D4521C30AB10FA8 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2B2C73D23209F8B5571D5172C800ED8 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F4ACC38F366247145B9D65C75854E46 /* DropDownCell.swift */; };
+		E259384AFF9C07CA3AF3E4E252311E01 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD3C19A69A3354F55AC7A9EEF2B67AA /* SwiftyJSON-dummy.m */; };
+		ECF20A0B80241D3B1D4521C30AB10FA8 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D2C0EF9C186C461F4775D51CA327B1DA /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,51 +44,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06EBE4CBA6D11A614B1DC3D5A64F5B5B /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		0806C7272179C1AE977F30911B3B3986 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A53969F927BEA6B01D0807F84AD9B5A /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		0AC6C518ACFA31686D47F15E5DF24773 /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
-		11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
-		1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
+		164E74CF6642AA4A7982680B7CCEE0CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B2A5F0F0C0D57D27ACF68C9EE956672 /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
 		1CD4EEB45339999D2702485D67FB6A96 /* Pods-Wirtualny Dziekanat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wirtualny Dziekanat-frameworks.sh"; sourceTree = "<group>"; };
-		1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
-		2499B1A424506A796542AAE21E554D7A /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		2535FC0C26DE3B3225E4B97B290DF81B /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		1F9FE26E5EC2CDFB72B51B2E9DF83D67 /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		22425601A8D64F2C90338A8A68D43DD3 /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		273A35A8FD8FB953B4A8BA321BC2E5BE /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		2AD3C19A69A3354F55AC7A9EEF2B67AA /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		2F4ACC38F366247145B9D65C75854E46 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
 		3224A618A67F56C1997B850F01C02010 /* Pods-Wirtualny Dziekanat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wirtualny Dziekanat-dummy.m"; sourceTree = "<group>"; };
-		378556FDF1998602BC1C157C8E7D7A3F /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DropDown.modulemap; sourceTree = "<group>"; };
-		40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
-		444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
-		45E7F113E9427327CFF935F16BCFC934 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
-		56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		3C75276F37032D3948F2E7D7DD433D22 /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		3F3E5ACA4EA062F3B16F7134405E7B0C /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		4F6991044E032752025093ABFBF6F865 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		52D8822637C954036A4D8F302CF1D537 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		574F7677BE1A9A5DCD6C45C550284EE0 /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
 		631F1E4F543F4416698EADDD0D79B3BE /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
-		67763FB12886D928BB6D85461691A934 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
 		6C4BD5D030B5FF02FE4ECD6895026D2F /* Pods-Wirtualny Dziekanat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wirtualny Dziekanat-acknowledgements.markdown"; sourceTree = "<group>"; };
+		747BF1B70573F9B0696A035609690214 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
 		74B1B7202FC6910D8773876667F58F00 /* Pods-Wirtualny Dziekanat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wirtualny Dziekanat-resources.sh"; sourceTree = "<group>"; };
-		76B6E7D543F758DDE06FE282AF7203D5 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
+		77118A0693A7AC3CD182403969640ADD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		793F93BEDA16FDEC3B58586C2C83B60B /* Pods-Wirtualny Dziekanat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wirtualny Dziekanat-umbrella.h"; sourceTree = "<group>"; };
-		7A9B3AA39D8A60B3C7629AA53533D307 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
-		7FAA8D4D62B8057F8AAC171FBCCFE985 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
-		82775241BFB5EA9D61EB8052B2AB6CB9 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+		83B6A833AB87B09927627202D076E9C8 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		849EC545DCBD903EE8BE0D491ED4FA8C /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
-		84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
+		8BFA4D7BF93D738FAF5FC7AC550A3AB2 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Analytics/Sources/Firebase.h; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		99F9C03576FAE7B758756F0DC0AE3E0B /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		9B7747C2A79B3E6B5C37BD88CED29053 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9CCF398DF1EA501A43522DBE012DB2EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D88C620341BD408EB15CA0CB5204BC0 /* Pods-Wirtualny Dziekanat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Wirtualny Dziekanat.modulemap"; sourceTree = "<group>"; };
-		A8072B50A604474A1A734E0463E8AF79 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
+		A75CDAEA490F3FF79A41DB40F391DA05 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
 		B2CD004C70AD4843C9C1FFA6394A85B2 /* Pods-Wirtualny Dziekanat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wirtualny Dziekanat-acknowledgements.plist"; sourceTree = "<group>"; };
-		BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
-		C2A0E495499484175678A58685104554 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		C524CC484DB87B776E52D2B864F31D33 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		BC09DE9B42C0E4F87D5D7F65482C7D58 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		BE429C4CCB6D91840658B69D0F0C6029 /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DropDown.modulemap; sourceTree = "<group>"; };
 		C7A51B2937E75849EB07B696A4FD36D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
-		D6FD76DBF7427C0FF719C76EFA4D4D85 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		E43E6C14DAD2D47659C42E4E66B6F32C /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
-		EEB0EB0C1E391067A52BFF61C2F988EE /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		D2C0EF9C186C461F4775D51CA327B1DA /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		D3C399C5B7E5EC84395D237954404049 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		DB9C5F91F901CB3A4EE5FACDBC6986E9 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		DF95FC83F12B5B0AE0CFC2C7A0AA12AB /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
+		E2131CDE5408BC3C7B822852CCD9E5EA /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		E2DFADFB1B15A3A26EF0DC4FB0AF6F80 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		EB43959A5897AC485C267B9156D5EDF7 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		F20811EEF1EE5D187BBFB5BFEB39EF35 /* GoogleParsingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleParsingUtilities.framework; path = Frameworks/GoogleParsingUtilities.framework; sourceTree = "<group>"; };
+		FD8BAEAB5AEF78EA0F22653B721E33C3 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,94 +138,75 @@
 			path = "Target Support Files/Pods-Wirtualny Dziekanat";
 			sourceTree = "<group>";
 		};
-		0B956B63A7E46760D79F7764AE2DC984 /* Pods */ = {
+		0B535EB745FEB724DB6C679AB2EE2651 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				18EAEE1A28B739365CD533C83FF4A4E5 /* DropDown */,
-				DEB26DAE67E880E24E8B59D912834E75 /* Firebase */,
-				58A56668ED8E948B33288DA63F0771E9 /* FirebaseAnalytics */,
-				3CEAE276B339560CCD04894BFE207107 /* FirebaseAuth */,
-				688AAB119A2E838A43C2E6BB289F56FE /* FirebaseDatabase */,
-				D02A9F56188B7782E428267C93FC482F /* FirebaseInstanceID */,
-				14A7A14D866B388F0A96CCE80E086BAA /* GoogleInterchangeUtilities */,
-				39793BDD67C5BC6272254FDB1B410380 /* GoogleNetworkingUtilities */,
-				41E586A4D183AEDCAE99BA66FDF94CDF /* GoogleSymbolUtilities */,
-				1A9E970CA57C39B61A9333B60B8672A9 /* GoogleUtilities */,
-				3DB3D168707928B6ADCC69DC12A99AB1 /* SwiftyJSON */,
+				BC09DE9B42C0E4F87D5D7F65482C7D58 /* GoogleInterchangeUtilities.framework */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		14A7A14D866B388F0A96CCE80E086BAA /* GoogleInterchangeUtilities */ = {
+		10D9C3AA38E69C11210C9F5F55C9DB94 /* GoogleUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				5D675199C637867DFE6A68E766CAF217 /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		18EAEE1A28B739365CD533C83FF4A4E5 /* DropDown */ = {
-			isa = PBXGroup;
-			children = (
-				444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */,
-				94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */,
-				645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */,
-				AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */,
-				84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */,
-				1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */,
-				F21E9BD556D41C7487B27B4DA80942C1 /* Resources */,
-				B6E4DDD84A55E48151D13C9E84C119CC /* Support Files */,
-			);
-			path = DropDown;
-			sourceTree = "<group>";
-		};
-		1A9E970CA57C39B61A9333B60B8672A9 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				35AE5FDDA96BAB3DCB57CDBDB8CB4189 /* Frameworks */,
+				2C8C849B5236839DBDA1E56660CD6873 /* Frameworks */,
 			);
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
-		1BBCDECBAC0397990269D66E2BC4D1AF /* Frameworks */ = {
+		183CE7D30A351D700B59B5DACF98C17E /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				E43E6C14DAD2D47659C42E4E66B6F32C /* FirebaseDatabase.framework */,
+				0B535EB745FEB724DB6C679AB2EE2651 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		1BCEDBEF6DBE67C10E55D6CFAF4F9B0B /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				77118A0693A7AC3CD182403969640ADD /* Info.plist */,
+				A75CDAEA490F3FF79A41DB40F391DA05 /* SwiftyJSON.modulemap */,
+				06EBE4CBA6D11A614B1DC3D5A64F5B5B /* SwiftyJSON.xcconfig */,
+				2AD3C19A69A3354F55AC7A9EEF2B67AA /* SwiftyJSON-dummy.m */,
+				99F9C03576FAE7B758756F0DC0AE3E0B /* SwiftyJSON-prefix.pch */,
+				D2C0EF9C186C461F4775D51CA327B1DA /* SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		2741CBFE9D114A85FE7893606E73D1FF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D3C399C5B7E5EC84395D237954404049 /* DropDownCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		27551CE4F0F54FC69565CACB2A36955F /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				8BFA4D7BF93D738FAF5FC7AC550A3AB2 /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		2C8C849B5236839DBDA1E56660CD6873 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F3E5ACA4EA062F3B16F7134405E7B0C /* GoogleUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		35AE5FDDA96BAB3DCB57CDBDB8CB4189 /* Frameworks */ = {
+		326FA039AC1A6F3D6AC2A1FF65C55260 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				EEB0EB0C1E391067A52BFF61C2F988EE /* GoogleUtilities.framework */,
+				52D8822637C954036A4D8F302CF1D537 /* FIRInstanceID.h */,
+				E8685E6046B75FD05C70716D63365A41 /* Frameworks */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		39793BDD67C5BC6272254FDB1B410380 /* GoogleNetworkingUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				94032111CE520BBB4C121FEB836C8CE4 /* Frameworks */,
-			);
-			path = GoogleNetworkingUtilities;
-			sourceTree = "<group>";
-		};
-		3CEAE276B339560CCD04894BFE207107 /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-				53C7EC3C8AB6886AC3BCCD06344DFF61 /* Frameworks */,
-			);
-			path = FirebaseAuth;
-			sourceTree = "<group>";
-		};
-		3DB3D168707928B6ADCC69DC12A99AB1 /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */,
-				84A47B6566993ADCBD0965B602E0FB0F /* Support Files */,
-			);
-			path = SwiftyJSON;
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -235,12 +217,20 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		41E586A4D183AEDCAE99BA66FDF94CDF /* GoogleSymbolUtilities */ = {
+		3E6A6167488F915DFD94147249E4A4F7 /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				EDED60B52A2BCD0ED59083BA12A9A36E /* Frameworks */,
+				27551CE4F0F54FC69565CACB2A36955F /* Analytics */,
 			);
-			path = GoogleSymbolUtilities;
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		48A55E8A8886B5DA4E6847DED365EFE6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0A53969F927BEA6B01D0807F84AD9B5A /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		517EB1D6DCE5906BE96866745C5E0AC2 /* Products */ = {
@@ -253,44 +243,61 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53C7EC3C8AB6886AC3BCCD06344DFF61 /* Frameworks */ = {
+		5A2B56620965DBE60855F00BA2DE34BD /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				C524CC484DB87B776E52D2B864F31D33 /* FirebaseAuth.framework */,
+				617CBA990163BB1DEEDF8B44F47E64B6 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		5D071ABA707807ED1793B50175507A7F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E2131CDE5408BC3C7B822852CCD9E5EA /* GoogleNetworkingUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		58A56668ED8E948B33288DA63F0771E9 /* FirebaseAnalytics */ = {
+		617CBA990163BB1DEEDF8B44F47E64B6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CE8651B7D9FDB50CB587D7DE97B6F629 /* Frameworks */,
+				83B6A833AB87B09927627202D076E9C8 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6330C3F96701DD10FCEF1EB06844324E /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				DB9C5F91F901CB3A4EE5FACDBC6986E9 /* SwiftyJSON.swift */,
+				1BCEDBEF6DBE67C10E55D6CFAF4F9B0B /* Support Files */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		6BE40B1ABB1A6504BD5219F027ADDCA8 /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				883380E012D8A65E9DF8AE2D077E079C /* Frameworks */,
 			);
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		5D675199C637867DFE6A68E766CAF217 /* Frameworks */ = {
+		752545102837DB58608CBE9025BB7262 /* FirebaseDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				2499B1A424506A796542AAE21E554D7A /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		688AAB119A2E838A43C2E6BB289F56FE /* FirebaseDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				1BBCDECBAC0397990269D66E2BC4D1AF /* Frameworks */,
+				48A55E8A8886B5DA4E6847DED365EFE6 /* Frameworks */,
 			);
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
-		6BB76F1972E292B7761424C1D7A076B2 /* Analytics */ = {
+		7A05ACE6FED41483660522E7E5870191 /* GoogleParsingUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				67763FB12886D928BB6D85461691A934 /* Firebase.h */,
+				8800C6FDB4F77B57D4D10E6949AEBE21 /* Frameworks */,
 			);
-			name = Analytics;
+			path = GoogleParsingUtilities;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -298,54 +305,55 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0B956B63A7E46760D79F7764AE2DC984 /* Pods */,
+				E3C60B991DE28B7282082E0A7007A489 /* Pods */,
 				517EB1D6DCE5906BE96866745C5E0AC2 /* Products */,
 				DCC2B8BABA4BB722E2CAEC42E97F8F15 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		84A47B6566993ADCBD0965B602E0FB0F /* Support Files */ = {
+		8800C6FDB4F77B57D4D10E6949AEBE21 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				45E7F113E9427327CFF935F16BCFC934 /* Info.plist */,
-				7FAA8D4D62B8057F8AAC171FBCCFE985 /* SwiftyJSON.modulemap */,
-				C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */,
-				4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */,
-				2535FC0C26DE3B3225E4B97B290DF81B /* SwiftyJSON-prefix.pch */,
-				56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftyJSON";
-			sourceTree = "<group>";
-		};
-		94032111CE520BBB4C121FEB836C8CE4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C2A0E495499484175678A58685104554 /* GoogleNetworkingUtilities.framework */,
+				F20811EEF1EE5D187BBFB5BFEB39EF35 /* GoogleParsingUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B6E4DDD84A55E48151D13C9E84C119CC /* Support Files */ = {
+		883380E012D8A65E9DF8AE2D077E079C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				378556FDF1998602BC1C157C8E7D7A3F /* DropDown.modulemap */,
-				1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */,
-				11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */,
-				76B6E7D543F758DDE06FE282AF7203D5 /* DropDown-prefix.pch */,
-				40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */,
-				9CCF398DF1EA501A43522DBE012DB2EA /* Info.plist */,
+				4F6991044E032752025093ABFBF6F865 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A8E1B5F71BFB1D3F02ADBBC71E755251 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BE429C4CCB6D91840658B69D0F0C6029 /* DropDown.modulemap */,
+				1B2A5F0F0C0D57D27ACF68C9EE956672 /* DropDown.xcconfig */,
+				574F7677BE1A9A5DCD6C45C550284EE0 /* DropDown-dummy.m */,
+				DF95FC83F12B5B0AE0CFC2C7A0AA12AB /* DropDown-prefix.pch */,
+				3C75276F37032D3948F2E7D7DD433D22 /* DropDown-umbrella.h */,
+				164E74CF6642AA4A7982680B7CCEE0CE /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DropDown";
 			sourceTree = "<group>";
 		};
-		BB06C0A7B917FD4A57DD7911E6D8FC56 /* Frameworks */ = {
+		B7EF4D41DB07D47DE096BB1F287718B3 /* DropDown */ = {
 			isa = PBXGroup;
 			children = (
-				A8072B50A604474A1A734E0463E8AF79 /* FirebaseInstanceID.framework */,
+				1F9FE26E5EC2CDFB72B51B2E9DF83D67 /* DPDConstants.swift */,
+				747BF1B70573F9B0696A035609690214 /* DPDKeyboardListener.swift */,
+				22425601A8D64F2C90338A8A68D43DD3 /* DPDUIView+Extension.swift */,
+				FD8BAEAB5AEF78EA0F22653B721E33C3 /* DropDown.swift */,
+				273A35A8FD8FB953B4A8BA321BC2E5BE /* DropDown+Appearance.swift */,
+				2F4ACC38F366247145B9D65C75854E46 /* DropDownCell.swift */,
+				2741CBFE9D114A85FE7893606E73D1FF /* Resources */,
+				A8E1B5F71BFB1D3F02ADBBC71E755251 /* Support Files */,
 			);
-			name = Frameworks;
+			path = DropDown;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -356,21 +364,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CE8651B7D9FDB50CB587D7DE97B6F629 /* Frameworks */ = {
+		C6A1EF51D7967FBD7F184A9C02395A55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D6FD76DBF7427C0FF719C76EFA4D4D85 /* FirebaseAnalytics.framework */,
+				E2DFADFB1B15A3A26EF0DC4FB0AF6F80 /* FirebaseAuth.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D02A9F56188B7782E428267C93FC482F /* FirebaseInstanceID */ = {
-			isa = PBXGroup;
-			children = (
-				7A9B3AA39D8A60B3C7629AA53533D307 /* FIRInstanceID.h */,
-				BB06C0A7B917FD4A57DD7911E6D8FC56 /* Frameworks */,
-			);
-			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		DCC2B8BABA4BB722E2CAEC42E97F8F15 /* Targets Support Files */ = {
@@ -381,28 +380,47 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		DEB26DAE67E880E24E8B59D912834E75 /* Firebase */ = {
+		E3C60B991DE28B7282082E0A7007A489 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6BB76F1972E292B7761424C1D7A076B2 /* Analytics */,
+				B7EF4D41DB07D47DE096BB1F287718B3 /* DropDown */,
+				3E6A6167488F915DFD94147249E4A4F7 /* Firebase */,
+				6BE40B1ABB1A6504BD5219F027ADDCA8 /* FirebaseAnalytics */,
+				F8304DA129AAE1AC804F69920B5B63E5 /* FirebaseAuth */,
+				752545102837DB58608CBE9025BB7262 /* FirebaseDatabase */,
+				326FA039AC1A6F3D6AC2A1FF65C55260 /* FirebaseInstanceID */,
+				183CE7D30A351D700B59B5DACF98C17E /* GoogleInterchangeUtilities */,
+				F1F415F686FB52F2CA6F97984F47FAF4 /* GoogleNetworkingUtilities */,
+				7A05ACE6FED41483660522E7E5870191 /* GoogleParsingUtilities */,
+				5A2B56620965DBE60855F00BA2DE34BD /* GoogleSymbolUtilities */,
+				10D9C3AA38E69C11210C9F5F55C9DB94 /* GoogleUtilities */,
+				6330C3F96701DD10FCEF1EB06844324E /* SwiftyJSON */,
 			);
-			path = Firebase;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		EDED60B52A2BCD0ED59083BA12A9A36E /* Frameworks */ = {
+		E8685E6046B75FD05C70716D63365A41 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82775241BFB5EA9D61EB8052B2AB6CB9 /* GoogleSymbolUtilities.framework */,
+				EB43959A5897AC485C267B9156D5EDF7 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F21E9BD556D41C7487B27B4DA80942C1 /* Resources */ = {
+		F1F415F686FB52F2CA6F97984F47FAF4 /* GoogleNetworkingUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */,
+				5D071ABA707807ED1793B50175507A7F /* Frameworks */,
 			);
-			name = Resources;
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		F8304DA129AAE1AC804F69920B5B63E5 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				C6A1EF51D7967FBD7F184A9C02395A55 /* Frameworks */,
+			);
+			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -497,6 +515,17 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					4FA88D7625DCA49D83FA4835BF27151D = {
+						LastSwiftMigration = 0800;
+					};
+					9AB804B32E3B0888239DC5571A132DBD = {
+						LastSwiftMigration = 0800;
+					};
+					9F766ADB76A46AB732825D44C4BAAABF = {
+						LastSwiftMigration = 0800;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -605,6 +634,7 @@
 				PRODUCT_NAME = Pods_Wirtualny_Dziekanat;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -651,7 +681,7 @@
 		};
 		58B406C35B83BC5DDB6474C47E002EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 06EBE4CBA6D11A614B1DC3D5A64F5B5B /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -673,6 +703,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -723,7 +754,7 @@
 		};
 		851FA0A6C47918064DD98A76A64E3442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */;
+			baseConfigurationReference = 06EBE4CBA6D11A614B1DC3D5A64F5B5B /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -744,6 +775,7 @@
 				PRODUCT_NAME = SwiftyJSON;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -752,7 +784,7 @@
 		};
 		D5711154D4D2CFD32F1C712C9E661EF4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */;
+			baseConfigurationReference = 1B2A5F0F0C0D57D27ACF68C9EE956672 /* DropDown.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -774,6 +806,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -782,7 +815,7 @@
 		};
 		D7DB46BBFB5AD10BAD66231E4BF76647 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */;
+			baseConfigurationReference = 1B2A5F0F0C0D57D27ACF68C9EE956672 /* DropDown.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -803,6 +836,7 @@
 				PRODUCT_NAME = DropDown;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -837,6 +871,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
