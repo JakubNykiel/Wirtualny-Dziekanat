@@ -11,14 +11,14 @@ import UIKit
 
 struct Functions
 {
-    func validateEmail(value: String) -> Bool {
+    func validateEmail(_ value: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluateWithObject(value)
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: value)
     }
     /**
      * Called when 'return' key pressed. return NO to ignore.
      */
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
