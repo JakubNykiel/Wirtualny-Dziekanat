@@ -15,9 +15,10 @@
 		C35BCCD01D0B5CD00022DC1F /* Bulleted List-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */; };
 		C35BCCD11D0B5CD00022DC1F /* Speech Bubble-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */; };
 		C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */; };
+		C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */; };
 		C36A15351CF06153005EC3CC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A15341CF06153005EC3CC /* LoginController.swift */; };
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
-		C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */; };
+		C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */; };
 		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
@@ -41,9 +42,10 @@
 		C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Bulleted List-50.png"; sourceTree = "<group>"; };
 		C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Speech Bubble-50.png"; sourceTree = "<group>"; };
 		C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add User Male-50.png"; sourceTree = "<group>"; };
+		C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
 		C36A15341CF06153005EC3CC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
-		C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
+		C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddUserController.swift; sourceTree = "<group>"; };
 		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,9 +101,10 @@
 			isa = PBXGroup;
 			children = (
 				C36A15341CF06153005EC3CC /* LoginController.swift */,
-				C37D512D1D0A0816001DBF03 /* DziekanatMenuController.swift */,
+				C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */,
 				C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */,
 				C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */,
+				C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -302,7 +305,8 @@
 			files = (
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
-				C37D512E1D0A0816001DBF03 /* DziekanatMenuController.swift in Sources */,
+				C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */,
+				C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */,
 				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,

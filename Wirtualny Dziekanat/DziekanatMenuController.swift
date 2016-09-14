@@ -2,7 +2,7 @@
 //  DziekanatMenuController.swift
 //  Wirtualny Dziekanat
 //
-//  Created by Jakub Nykiel on 09.06.2016.
+//  Created by Jakub Nykiel on 14.09.2016.
 //  Copyright © 2016 Jakub Nykiel. All rights reserved.
 //
 
@@ -19,10 +19,6 @@ class DziekanatMenuController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
     }
 
 }

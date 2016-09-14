@@ -15,12 +15,16 @@ struct Functions
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: value)
     }
-    /**
-     * Called when 'return' key pressed. return NO to ignore.
-     */
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func setAnimationView(view: UIView, hidden: Bool) {
+        UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {() -> Void in
+            view.isHidden = hidden
+            }, completion: { _ in })
     }
     
 }
