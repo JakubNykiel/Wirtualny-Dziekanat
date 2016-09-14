@@ -9,5 +9,7 @@ target 'Wirtualny Dziekanat' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'DropDown'
+  pod 'SwiftyJSON'
 
 end

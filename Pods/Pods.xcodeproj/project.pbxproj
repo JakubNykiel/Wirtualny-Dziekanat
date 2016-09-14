@@ -7,43 +7,112 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1200A5F4E8B01BA26F45B6D9E4E5F182 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		696D449BEFA3E21B3DF4496C5FA8263F /* Pods-Wirtualny Dziekanat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3224A618A67F56C1997B850F01C02010 /* Pods-Wirtualny Dziekanat-dummy.m */; };
-		911D55884E63426282103E93B833AD54 /* Pods-Wirtualny Dziekanat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 793F93BEDA16FDEC3B58586C2C83B60B /* Pods-Wirtualny Dziekanat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BA986536326BCC266A0157A8C204CF8 /* DropDown+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */; };
+		0E4A9CFDC8A87BA336CB32A38C20239D /* DropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */; };
+		2BBAC1789D5FEE5D9B3F5B3C048F14E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		311D5A4AFB0F3AEEFCABAA80BE1073D6 /* DropDown-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */; };
+		47922590021367A59FF199FBEE7C0D17 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		567F0E2EA3DD673DA28562ADFC489BE4 /* DPDKeyboardListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */; };
+		6FAD7D08B301985BF129AC5A2B3D5CF4 /* DPDConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */; };
+		77E3F47B9B5BFF547C55AC7573340572 /* DropDown-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		81A9042F668B62EA4E40C57566BEE0A2 /* DPDUIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */; };
+		9811132B36B59EEB8D144F8BCC0B443E /* DropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */; };
+		B07BC3D19816F490B5D5A52E2AE5597E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		C3460550847D02262FD7DDF8A7CBD722 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */; };
+		C766389BABAAC0EF587F37B6BC3A8274 /* Pods-Wirtualny Dziekanat-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3224A618A67F56C1997B850F01C02010 /* Pods-Wirtualny Dziekanat-dummy.m */; };
+		CEFE2EA7EEF9A2FA1AA353A1E9333C9D /* Pods-Wirtualny Dziekanat-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 793F93BEDA16FDEC3B58586C2C83B60B /* Pods-Wirtualny Dziekanat-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2B2C73D23209F8B5571D5172C800ED8 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */; };
+		E259384AFF9C07CA3AF3E4E252311E01 /* SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */; };
+		ECF20A0B80241D3B1D4521C30AB10FA8 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		20F77B7D625495ABD44A555BCD8E0682 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4FA88D7625DCA49D83FA4835BF27151D;
+			remoteInfo = SwiftyJSON;
+		};
+		B94781B02EB781E44C83084B66F146BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F766ADB76A46AB732825D44C4BAAABF;
+			remoteInfo = DropDown;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		03E0106265A217ACC218EA2235104FBF /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
-		03EC420565ADFC15EC8F59D5F0EA151A /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0806C7272179C1AE977F30911B3B3986 /* DropDown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AC6C518ACFA31686D47F15E5DF24773 /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
+		11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropDown-dummy.m"; sourceTree = "<group>"; };
+		1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropDown.xcconfig; sourceTree = "<group>"; };
 		1CD4EEB45339999D2702485D67FB6A96 /* Pods-Wirtualny Dziekanat-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wirtualny Dziekanat-frameworks.sh"; sourceTree = "<group>"; };
+		1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDownCell.swift; path = DropDown/src/DropDownCell.swift; sourceTree = "<group>"; };
+		2499B1A424506A796542AAE21E554D7A /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		2535FC0C26DE3B3225E4B97B290DF81B /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 		3224A618A67F56C1997B850F01C02010 /* Pods-Wirtualny Dziekanat-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Wirtualny Dziekanat-dummy.m"; sourceTree = "<group>"; };
-		452405C82F8A0076FA037F9AC0719782 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		4761F87CFBF739E2A4D75031E7F2BDB7 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		488DE80D15C6E1716EB07B210B2CA8A6 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		55D3EB9CC2466094DD973029676A2472 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
-		67BAE9A776C3F88B932EF65D29360537 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		378556FDF1998602BC1C157C8E7D7A3F /* DropDown.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DropDown.modulemap; sourceTree = "<group>"; };
+		40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-umbrella.h"; sourceTree = "<group>"; };
+		444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDConstants.swift; path = DropDown/helpers/DPDConstants.swift; sourceTree = "<group>"; };
+		45E7F113E9427327CFF935F16BCFC934 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		631F1E4F543F4416698EADDD0D79B3BE /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DPDUIView+Extension.swift"; path = "DropDown/helpers/DPDUIView+Extension.swift"; sourceTree = "<group>"; };
+		67763FB12886D928BB6D85461691A934 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
 		6C4BD5D030B5FF02FE4ECD6895026D2F /* Pods-Wirtualny Dziekanat-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Wirtualny Dziekanat-acknowledgements.markdown"; sourceTree = "<group>"; };
 		74B1B7202FC6910D8773876667F58F00 /* Pods-Wirtualny Dziekanat-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Wirtualny Dziekanat-resources.sh"; sourceTree = "<group>"; };
-		789CC823EA9D4F0478B6B312D7874F20 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		76B6E7D543F758DDE06FE282AF7203D5 /* DropDown-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropDown-prefix.pch"; sourceTree = "<group>"; };
 		793F93BEDA16FDEC3B58586C2C83B60B /* Pods-Wirtualny Dziekanat-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Wirtualny Dziekanat-umbrella.h"; sourceTree = "<group>"; };
+		7A9B3AA39D8A60B3C7629AA53533D307 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		7FAA8D4D62B8057F8AAC171FBCCFE985 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
+		82775241BFB5EA9D61EB8052B2AB6CB9 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		849EC545DCBD903EE8BE0D491ED4FA8C /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
+		84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DropDown+Appearance.swift"; path = "DropDown/src/DropDown+Appearance.swift"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DPDKeyboardListener.swift; path = DropDown/helpers/DPDKeyboardListener.swift; sourceTree = "<group>"; };
+		9B7747C2A79B3E6B5C37BD88CED29053 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CCF398DF1EA501A43522DBE012DB2EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D88C620341BD408EB15CA0CB5204BC0 /* Pods-Wirtualny Dziekanat.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Wirtualny Dziekanat.modulemap"; sourceTree = "<group>"; };
+		A8072B50A604474A1A734E0463E8AF79 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DropDown.swift; path = DropDown/src/DropDown.swift; sourceTree = "<group>"; };
 		B2CD004C70AD4843C9C1FFA6394A85B2 /* Pods-Wirtualny Dziekanat-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Wirtualny Dziekanat-acknowledgements.plist"; sourceTree = "<group>"; };
+		BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		C2A0E495499484175678A58685104554 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		C524CC484DB87B776E52D2B864F31D33 /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
+		C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
 		C7A51B2937E75849EB07B696A4FD36D4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E3E116E374CFF4017AEEFE6E8EBC3026 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
-		EB7A564D36A7D9E62CD7CDA67B579F51 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		F847ABE6512B2018E8ED69364605DE26 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
+		D6FD76DBF7427C0FF719C76EFA4D4D85 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		E43E6C14DAD2D47659C42E4E66B6F32C /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		EEB0EB0C1E391067A52BFF61C2F988EE /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7DCE756181317DC17571AA8E78C3403D /* Frameworks */ = {
+		2322C4F1B74F0AFB3B70D8A795EB5717 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1200A5F4E8B01BA26F45B6D9E4E5F182 /* Foundation.framework in Frameworks */,
+				2BBAC1789D5FEE5D9B3F5B3C048F14E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A741F8008B99E7B48585CCF17D734B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47922590021367A59FF199FBEE7C0D17 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4CBA1DAE437CBC21301B0DA420F064A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B07BC3D19816F490B5D5A52E2AE5597E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,20 +137,94 @@
 			path = "Target Support Files/Pods-Wirtualny Dziekanat";
 			sourceTree = "<group>";
 		};
-		2C31E0233017FB1BFBCB33F7354A2D22 /* GoogleUtilities */ = {
+		0B956B63A7E46760D79F7764AE2DC984 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D281E91283F793E8CA75412349F48963 /* Frameworks */,
+				18EAEE1A28B739365CD533C83FF4A4E5 /* DropDown */,
+				DEB26DAE67E880E24E8B59D912834E75 /* Firebase */,
+				58A56668ED8E948B33288DA63F0771E9 /* FirebaseAnalytics */,
+				3CEAE276B339560CCD04894BFE207107 /* FirebaseAuth */,
+				688AAB119A2E838A43C2E6BB289F56FE /* FirebaseDatabase */,
+				D02A9F56188B7782E428267C93FC482F /* FirebaseInstanceID */,
+				14A7A14D866B388F0A96CCE80E086BAA /* GoogleInterchangeUtilities */,
+				39793BDD67C5BC6272254FDB1B410380 /* GoogleNetworkingUtilities */,
+				41E586A4D183AEDCAE99BA66FDF94CDF /* GoogleSymbolUtilities */,
+				1A9E970CA57C39B61A9333B60B8672A9 /* GoogleUtilities */,
+				3DB3D168707928B6ADCC69DC12A99AB1 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		14A7A14D866B388F0A96CCE80E086BAA /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				5D675199C637867DFE6A68E766CAF217 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		18EAEE1A28B739365CD533C83FF4A4E5 /* DropDown */ = {
+			isa = PBXGroup;
+			children = (
+				444F083750A2240DACA3A5512EDE7EBB /* DPDConstants.swift */,
+				94BE3316A17458D97D36DBA23A676D12 /* DPDKeyboardListener.swift */,
+				645A7FC1968430821E78CF5DF2CCFA5D /* DPDUIView+Extension.swift */,
+				AD204968BB7B27A0F0CD31D9B5BAF952 /* DropDown.swift */,
+				84EE4D12514C4BECD75A6E50EB53A8D7 /* DropDown+Appearance.swift */,
+				1F76679161517ADEBECC12EDEA6F4A13 /* DropDownCell.swift */,
+				F21E9BD556D41C7487B27B4DA80942C1 /* Resources */,
+				B6E4DDD84A55E48151D13C9E84C119CC /* Support Files */,
+			);
+			path = DropDown;
+			sourceTree = "<group>";
+		};
+		1A9E970CA57C39B61A9333B60B8672A9 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				35AE5FDDA96BAB3DCB57CDBDB8CB4189 /* Frameworks */,
 			);
 			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
-		3CD7E1E23ECF34FDF931C0381F479D8C /* GoogleSymbolUtilities */ = {
+		1BBCDECBAC0397990269D66E2BC4D1AF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				46A8763392E22D8E8B274B0E2D7D1550 /* Frameworks */,
+				E43E6C14DAD2D47659C42E4E66B6F32C /* FirebaseDatabase.framework */,
 			);
-			path = GoogleSymbolUtilities;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		35AE5FDDA96BAB3DCB57CDBDB8CB4189 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEB0EB0C1E391067A52BFF61C2F988EE /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		39793BDD67C5BC6272254FDB1B410380 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				94032111CE520BBB4C121FEB836C8CE4 /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
+			sourceTree = "<group>";
+		};
+		3CEAE276B339560CCD04894BFE207107 /* FirebaseAuth */ = {
+			isa = PBXGroup;
+			children = (
+				53C7EC3C8AB6886AC3BCCD06344DFF61 /* Frameworks */,
+			);
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		3DB3D168707928B6ADCC69DC12A99AB1 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BA9144F9AF9CF7B0FA9A6446BF18E0CC /* SwiftyJSON.swift */,
+				84A47B6566993ADCBD0965B602E0FB0F /* Support Files */,
+			);
+			path = SwiftyJSON;
 			sourceTree = "<group>";
 		};
 		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
@@ -92,77 +235,62 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		46A8763392E22D8E8B274B0E2D7D1550 /* Frameworks */ = {
+		41E586A4D183AEDCAE99BA66FDF94CDF /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				4761F87CFBF739E2A4D75031E7F2BDB7 /* GoogleSymbolUtilities.framework */,
+				EDED60B52A2BCD0ED59083BA12A9A36E /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		517EB1D6DCE5906BE96866745C5E0AC2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0806C7272179C1AE977F30911B3B3986 /* DropDown.framework */,
+				631F1E4F543F4416698EADDD0D79B3BE /* Pods_Wirtualny_Dziekanat.framework */,
+				9B7747C2A79B3E6B5C37BD88CED29053 /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53C7EC3C8AB6886AC3BCCD06344DFF61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C524CC484DB87B776E52D2B864F31D33 /* FirebaseAuth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		5C70F7225A55D654CC45856840D1C7EA /* Firebase */ = {
+		58A56668ED8E948B33288DA63F0771E9 /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				CF52A66801ACB66144CBA1E6EBEE70D9 /* Analytics */,
-			);
-			path = Firebase;
-			sourceTree = "<group>";
-		};
-		6926ECF7C779A470DCBC96D030CC6A83 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				B003E44AF39A073FF0DCBF62A6DB2BF0 /* Frameworks */,
+				CE8651B7D9FDB50CB587D7DE97B6F629 /* Frameworks */,
 			);
 			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
-		6A7093A972E338FDCB1503327A5A108F /* Frameworks */ = {
+		5D675199C637867DFE6A68E766CAF217 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				67BAE9A776C3F88B932EF65D29360537 /* FirebaseDatabase.framework */,
+				2499B1A424506A796542AAE21E554D7A /* GoogleInterchangeUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6DDD0181EC31EBBDC09435AF0A624F8D /* FirebaseInstanceID */ = {
+		688AAB119A2E838A43C2E6BB289F56FE /* FirebaseDatabase */ = {
 			isa = PBXGroup;
 			children = (
-				03E0106265A217ACC218EA2235104FBF /* FIRInstanceID.h */,
-				7928D8E4AF7DDB04EA7796A15D1A1F95 /* Frameworks */,
-			);
-			path = FirebaseInstanceID;
-			sourceTree = "<group>";
-		};
-		6E9F397AE79C26FBE9C8767EB7C6BF89 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5C70F7225A55D654CC45856840D1C7EA /* Firebase */,
-				6926ECF7C779A470DCBC96D030CC6A83 /* FirebaseAnalytics */,
-				B975A4AA5B5C2F4A8E3D75B69E5E97DB /* FirebaseAuth */,
-				72FF4AA34B51053F6345C9700A854DCB /* FirebaseDatabase */,
-				6DDD0181EC31EBBDC09435AF0A624F8D /* FirebaseInstanceID */,
-				DBFFACE7C9ED8EC5C7CC42F190190BC4 /* GoogleInterchangeUtilities */,
-				A14C6E4BB4CB955E28A2A2AA42AF62F7 /* GoogleNetworkingUtilities */,
-				3CD7E1E23ECF34FDF931C0381F479D8C /* GoogleSymbolUtilities */,
-				2C31E0233017FB1BFBCB33F7354A2D22 /* GoogleUtilities */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		72FF4AA34B51053F6345C9700A854DCB /* FirebaseDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				6A7093A972E338FDCB1503327A5A108F /* Frameworks */,
+				1BBCDECBAC0397990269D66E2BC4D1AF /* Frameworks */,
 			);
 			path = FirebaseDatabase;
 			sourceTree = "<group>";
 		};
-		7928D8E4AF7DDB04EA7796A15D1A1F95 /* Frameworks */ = {
+		6BB76F1972E292B7761424C1D7A076B2 /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
-				452405C82F8A0076FA037F9AC0719782 /* FirebaseInstanceID.framework */,
+				67763FB12886D928BB6D85461691A934 /* Firebase.h */,
 			);
-			name = Frameworks;
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -170,58 +298,54 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6E9F397AE79C26FBE9C8767EB7C6BF89 /* Pods */,
-				C325995C04ABE806FBE1EBAAA33521DB /* Products */,
+				0B956B63A7E46760D79F7764AE2DC984 /* Pods */,
+				517EB1D6DCE5906BE96866745C5E0AC2 /* Products */,
 				DCC2B8BABA4BB722E2CAEC42E97F8F15 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A14C6E4BB4CB955E28A2A2AA42AF62F7 /* GoogleNetworkingUtilities */ = {
+		84A47B6566993ADCBD0965B602E0FB0F /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A81D21B5302AB8375EEFBF24421919DF /* Frameworks */,
+				45E7F113E9427327CFF935F16BCFC934 /* Info.plist */,
+				7FAA8D4D62B8057F8AAC171FBCCFE985 /* SwiftyJSON.modulemap */,
+				C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */,
+				4C3243AAEBA361CF79E79DC90AA6B1D8 /* SwiftyJSON-dummy.m */,
+				2535FC0C26DE3B3225E4B97B290DF81B /* SwiftyJSON-prefix.pch */,
+				56915082AE9AA27EF861FD9CFA13ADC2 /* SwiftyJSON-umbrella.h */,
 			);
-			path = GoogleNetworkingUtilities;
+			name = "Support Files";
+			path = "../Target Support Files/SwiftyJSON";
 			sourceTree = "<group>";
 		};
-		A6E49B499546589686E163EECC8085DF /* Frameworks */ = {
+		94032111CE520BBB4C121FEB836C8CE4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB7A564D36A7D9E62CD7CDA67B579F51 /* GoogleInterchangeUtilities.framework */,
+				C2A0E495499484175678A58685104554 /* GoogleNetworkingUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		A81D21B5302AB8375EEFBF24421919DF /* Frameworks */ = {
+		B6E4DDD84A55E48151D13C9E84C119CC /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				55D3EB9CC2466094DD973029676A2472 /* GoogleNetworkingUtilities.framework */,
+				378556FDF1998602BC1C157C8E7D7A3F /* DropDown.modulemap */,
+				1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */,
+				11E2618364E74FF70C37707D3BC4C40F /* DropDown-dummy.m */,
+				76B6E7D543F758DDE06FE282AF7203D5 /* DropDown-prefix.pch */,
+				40472EC301AF8F7E291C7A0ABEBA74BE /* DropDown-umbrella.h */,
+				9CCF398DF1EA501A43522DBE012DB2EA /* Info.plist */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/DropDown";
 			sourceTree = "<group>";
 		};
-		B003E44AF39A073FF0DCBF62A6DB2BF0 /* Frameworks */ = {
+		BB06C0A7B917FD4A57DD7911E6D8FC56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				789CC823EA9D4F0478B6B312D7874F20 /* FirebaseAnalytics.framework */,
+				A8072B50A604474A1A734E0463E8AF79 /* FirebaseInstanceID.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B54925C679C8221ED7BC98F242741EE4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				488DE80D15C6E1716EB07B210B2CA8A6 /* FirebaseAuth.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B975A4AA5B5C2F4A8E3D75B69E5E97DB /* FirebaseAuth */ = {
-			isa = PBXGroup;
-			children = (
-				B54925C679C8221ED7BC98F242741EE4 /* Frameworks */,
-			);
-			path = FirebaseAuth;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -232,36 +356,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C325995C04ABE806FBE1EBAAA33521DB /* Products */ = {
+		CE8651B7D9FDB50CB587D7DE97B6F629 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				03EC420565ADFC15EC8F59D5F0EA151A /* Pods_Wirtualny_Dziekanat.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		CF52A66801ACB66144CBA1E6EBEE70D9 /* Analytics */ = {
-			isa = PBXGroup;
-			children = (
-				E3E116E374CFF4017AEEFE6E8EBC3026 /* Firebase.h */,
-			);
-			name = Analytics;
-			sourceTree = "<group>";
-		};
-		D281E91283F793E8CA75412349F48963 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F847ABE6512B2018E8ED69364605DE26 /* GoogleUtilities.framework */,
+				D6FD76DBF7427C0FF719C76EFA4D4D85 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DBFFACE7C9ED8EC5C7CC42F190190BC4 /* GoogleInterchangeUtilities */ = {
+		D02A9F56188B7782E428267C93FC482F /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				A6E49B499546589686E163EECC8085DF /* Frameworks */,
+				7A9B3AA39D8A60B3C7629AA53533D307 /* FIRInstanceID.h */,
+				BB06C0A7B917FD4A57DD7911E6D8FC56 /* Frameworks */,
 			);
-			path = GoogleInterchangeUtilities;
+			path = FirebaseInstanceID;
 			sourceTree = "<group>";
 		};
 		DCC2B8BABA4BB722E2CAEC42E97F8F15 /* Targets Support Files */ = {
@@ -272,35 +381,112 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		DEB26DAE67E880E24E8B59D912834E75 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				6BB76F1972E292B7761424C1D7A076B2 /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		EDED60B52A2BCD0ED59083BA12A9A36E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82775241BFB5EA9D61EB8052B2AB6CB9 /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F21E9BD556D41C7487B27B4DA80942C1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFEC4F50EA121E5F62277C2C5819A698 /* DropDownCell.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FB2EC0AD760598756467CF9E0DBE71BF /* Headers */ = {
+		2EAFCD29747B3B99A30FA91571CBE297 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				911D55884E63426282103E93B833AD54 /* Pods-Wirtualny Dziekanat-umbrella.h in Headers */,
+				ECF20A0B80241D3B1D4521C30AB10FA8 /* SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B0A1C83F7A1632C4F56EA70EBF0AB9E1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E3F47B9B5BFF547C55AC7573340572 /* DropDown-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8C482C5DE1CCF2EBDF8F2B49BF26CF3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEFE2EA7EEF9A2FA1AA353A1E9333C9D /* Pods-Wirtualny Dziekanat-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		37F7118979EB3957858622DE2D6B660A /* Pods-Wirtualny Dziekanat */ = {
+		4FA88D7625DCA49D83FA4835BF27151D /* SwiftyJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F30A5D27251B77DB916F2456A7251644 /* Build configuration list for PBXNativeTarget "Pods-Wirtualny Dziekanat" */;
+			buildConfigurationList = 6FF10AE3FE8B2471BD003A5C2988A81D /* Build configuration list for PBXNativeTarget "SwiftyJSON" */;
 			buildPhases = (
-				9ABA22058B851012E1D0A88FAF3FAD15 /* Sources */,
-				7DCE756181317DC17571AA8E78C3403D /* Frameworks */,
-				FB2EC0AD760598756467CF9E0DBE71BF /* Headers */,
+				F76FB7EB355D5C2650528F9DD6726C54 /* Sources */,
+				2A741F8008B99E7B48585CCF17D734B8 /* Frameworks */,
+				2EAFCD29747B3B99A30FA91571CBE297 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = SwiftyJSON;
+			productName = SwiftyJSON;
+			productReference = 9B7747C2A79B3E6B5C37BD88CED29053 /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9AB804B32E3B0888239DC5571A132DBD /* Pods-Wirtualny Dziekanat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BE8ECDF414F3F0B637A93EAEC0BF580 /* Build configuration list for PBXNativeTarget "Pods-Wirtualny Dziekanat" */;
+			buildPhases = (
+				3969BC768981CFB9FFC918D4EADEC469 /* Sources */,
+				4CBA1DAE437CBC21301B0DA420F064A5 /* Frameworks */,
+				F8C482C5DE1CCF2EBDF8F2B49BF26CF3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6597EF50D1CC9DDF37AC39D5E406E29F /* PBXTargetDependency */,
+				6FB2C6CE0B93A9070AAF5FC658D324BF /* PBXTargetDependency */,
+			);
 			name = "Pods-Wirtualny Dziekanat";
 			productName = "Pods-Wirtualny Dziekanat";
-			productReference = 03EC420565ADFC15EC8F59D5F0EA151A /* Pods_Wirtualny_Dziekanat.framework */;
+			productReference = 631F1E4F543F4416698EADDD0D79B3BE /* Pods_Wirtualny_Dziekanat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		9F766ADB76A46AB732825D44C4BAAABF /* DropDown */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEBA9E088F9F2D1C4E4D758CD3F35F4A /* Build configuration list for PBXNativeTarget "DropDown" */;
+			buildPhases = (
+				2C0B57F66C794301ABC64C8C58FA49E1 /* Sources */,
+				2322C4F1B74F0AFB3B70D8A795EB5717 /* Frameworks */,
+				D1EE6F4CCC213A2F33B327428BD4C413 /* Resources */,
+				B0A1C83F7A1632C4F56EA70EBF0AB9E1 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DropDown;
+			productName = DropDown;
+			productReference = 0806C7272179C1AE977F30911B3B3986 /* DropDown.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -320,34 +506,85 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = C325995C04ABE806FBE1EBAAA33521DB /* Products */;
+			productRefGroup = 517EB1D6DCE5906BE96866745C5E0AC2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				37F7118979EB3957858622DE2D6B660A /* Pods-Wirtualny Dziekanat */,
+				9F766ADB76A46AB732825D44C4BAAABF /* DropDown */,
+				9AB804B32E3B0888239DC5571A132DBD /* Pods-Wirtualny Dziekanat */,
+				4FA88D7625DCA49D83FA4835BF27151D /* SwiftyJSON */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		D1EE6F4CCC213A2F33B327428BD4C413 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4A9CFDC8A87BA336CB32A38C20239D /* DropDownCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		9ABA22058B851012E1D0A88FAF3FAD15 /* Sources */ = {
+		2C0B57F66C794301ABC64C8C58FA49E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				696D449BEFA3E21B3DF4496C5FA8263F /* Pods-Wirtualny Dziekanat-dummy.m in Sources */,
+				6FAD7D08B301985BF129AC5A2B3D5CF4 /* DPDConstants.swift in Sources */,
+				567F0E2EA3DD673DA28562ADFC489BE4 /* DPDKeyboardListener.swift in Sources */,
+				81A9042F668B62EA4E40C57566BEE0A2 /* DPDUIView+Extension.swift in Sources */,
+				0BA986536326BCC266A0157A8C204CF8 /* DropDown+Appearance.swift in Sources */,
+				311D5A4AFB0F3AEEFCABAA80BE1073D6 /* DropDown-dummy.m in Sources */,
+				9811132B36B59EEB8D144F8BCC0B443E /* DropDown.swift in Sources */,
+				D2B2C73D23209F8B5571D5172C800ED8 /* DropDownCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3969BC768981CFB9FFC918D4EADEC469 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C766389BABAAC0EF587F37B6BC3A8274 /* Pods-Wirtualny Dziekanat-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76FB7EB355D5C2650528F9DD6726C54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E259384AFF9C07CA3AF3E4E252311E01 /* SwiftyJSON-dummy.m in Sources */,
+				C3460550847D02262FD7DDF8A7CBD722 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6597EF50D1CC9DDF37AC39D5E406E29F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DropDown;
+			target = 9F766ADB76A46AB732825D44C4BAAABF /* DropDown */;
+			targetProxy = B94781B02EB781E44C83084B66F146BF /* PBXContainerItemProxy */;
+		};
+		6FB2C6CE0B93A9070AAF5FC658D324BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftyJSON;
+			target = 4FA88D7625DCA49D83FA4835BF27151D /* SwiftyJSON */;
+			targetProxy = 20F77B7D625495ABD44A555BCD8E0682 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		10B59F1D692A0690C52850BD635C8FC9 /* Debug */ = {
+		20B7391CEB1C3FE798F1102ABA4B6F39 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AC6C518ACFA31686D47F15E5DF24773 /* Pods-Wirtualny Dziekanat.debug.xcconfig */;
+			baseConfigurationReference = 849EC545DCBD903EE8BE0D491ED4FA8C /* Pods-Wirtualny Dziekanat.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -360,7 +597,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -372,7 +609,7 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -411,6 +648,36 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		58B406C35B83BC5DDB6474C47E002EEF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -454,13 +721,101 @@
 			};
 			name = Debug;
 		};
-		B589EDBBF88CED26CC7C8A2246536AFC /* Release */ = {
+		851FA0A6C47918064DD98A76A64E3442 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 849EC545DCBD903EE8BE0D491ED4FA8C /* Pods-Wirtualny Dziekanat.release.xcconfig */;
+			baseConfigurationReference = C61DB9C9625C754B23911E9DF1B3580C /* SwiftyJSON.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftyJSON/SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D5711154D4D2CFD32F1C712C9E661EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D7DB46BBFB5AD10BAD66231E4BF76647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1960FD3CD4228FE7FCB41D0F5A4C45E6 /* DropDown.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DropDown/DropDown-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DropDown/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DropDown/DropDown.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DropDown;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F46F127C7CC7EED98C5DFB0BBAEDA54D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AC6C518ACFA31686D47F15E5DF24773 /* Pods-Wirtualny Dziekanat.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -473,7 +828,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -481,11 +836,12 @@
 				PRODUCT_NAME = Pods_Wirtualny_Dziekanat;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -499,11 +855,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F30A5D27251B77DB916F2456A7251644 /* Build configuration list for PBXNativeTarget "Pods-Wirtualny Dziekanat" */ = {
+		3BE8ECDF414F3F0B637A93EAEC0BF580 /* Build configuration list for PBXNativeTarget "Pods-Wirtualny Dziekanat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				10B59F1D692A0690C52850BD635C8FC9 /* Debug */,
-				B589EDBBF88CED26CC7C8A2246536AFC /* Release */,
+				F46F127C7CC7EED98C5DFB0BBAEDA54D /* Debug */,
+				20B7391CEB1C3FE798F1102ABA4B6F39 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FF10AE3FE8B2471BD003A5C2988A81D /* Build configuration list for PBXNativeTarget "SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B406C35B83BC5DDB6474C47E002EEF /* Debug */,
+				851FA0A6C47918064DD98A76A64E3442 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEBA9E088F9F2D1C4E4D758CD3F35F4A /* Build configuration list for PBXNativeTarget "DropDown" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5711154D4D2CFD32F1C712C9E661EF4 /* Debug */,
+				D7DB46BBFB5AD10BAD66231E4BF76647 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

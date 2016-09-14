@@ -1776,6 +1776,33 @@
             </objects>
             <point key="canvasLocation" x="-1965" y="-1264.5"/>
         </scene>
+        <!--AddUser-->
+        <scene sceneID="bmu-5B-o2Z">
+            <objects>
+                <viewController title="AddUser" id="Dn3-Vp-DA3" customClass="DziekanatMenuController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0db-sV-oGj"/>
+                        <viewControllerLayoutGuide type="bottom" id="DXo-hw-4bV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kdl-WX-cxr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DODAJ UŻYTKOWNIKA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PEN-Nf-3X5">
+                                <frame key="frameInset" minX="16" minY="51" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="caA-cc-ece" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1327" y="-1265"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add Rule-50.png" width="50" height="50"/>

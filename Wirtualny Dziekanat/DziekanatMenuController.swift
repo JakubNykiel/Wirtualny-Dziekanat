@@ -21,7 +21,7 @@ class DziekanatMenuController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
 

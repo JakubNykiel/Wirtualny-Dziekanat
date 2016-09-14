@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9AB804B32E3B0888239DC5571A132DBD'
-               BlueprintName = 'Pods-Wirtualny Dziekanat'
+               BlueprintIdentifier = '4FA88D7625DCA49D83FA4835BF27151D'
+               BlueprintName = 'SwiftyJSON'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Wirtualny Dziekanat.framework'>
+               BuildableName = 'SwiftyJSON.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

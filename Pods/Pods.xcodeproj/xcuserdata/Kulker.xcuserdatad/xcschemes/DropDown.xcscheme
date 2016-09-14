@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9AB804B32E3B0888239DC5571A132DBD'
-               BlueprintName = 'Pods-Wirtualny Dziekanat'
+               BlueprintIdentifier = '9F766ADB76A46AB732825D44C4BAAABF'
+               BlueprintName = 'DropDown'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods-Wirtualny Dziekanat.framework'>
+               BuildableName = 'DropDown.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
