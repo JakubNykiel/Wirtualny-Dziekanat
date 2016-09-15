@@ -20,10 +20,10 @@ class DziekanatAddUserController: UIViewController {
     @IBOutlet weak var studentContainer: UIView!
     @IBOutlet weak var profContainer: UIView!
     @IBOutlet weak var dziekanatContainer: UIView!
-    
+
     @IBOutlet weak var facultyView: UIView!
-    @IBOutlet weak var fieldView: UIView!
     @IBOutlet weak var semesterView: UIView!
+    @IBOutlet weak var fieldView: UIView!
     
     @IBOutlet weak var resultFaculty: UILabel!
     @IBOutlet weak var resultField: UILabel!
@@ -101,6 +101,7 @@ class DziekanatAddUserController: UIViewController {
         dropDownType.show()
         
         dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.resultFaculty.adjustsFontSizeToFitWidth = true
             self.resultFaculty.text = item
         }
     }

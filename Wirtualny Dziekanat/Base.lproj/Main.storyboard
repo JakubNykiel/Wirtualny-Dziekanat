@@ -2028,11 +2028,11 @@
                     </view>
                     <connections>
                         <outlet property="facultyView" destination="xIR-H3-Rax" id="gVy-oV-9Qq"/>
-                        <outlet property="fieldView" destination="nC8-FU-deG" id="w9F-cu-xta"/>
+                        <outlet property="fieldView" destination="AFP-LS-428" id="aRn-Bb-JaD"/>
                         <outlet property="resultFaculty" destination="ZOI-UP-Mrq" id="q4f-jG-0y8"/>
                         <outlet property="resultField" destination="uDb-Nq-vdr" id="9rv-XS-s17"/>
                         <outlet property="resultSemester" destination="5LF-tZ-nwf" id="ZhB-Lb-qva"/>
-                        <outlet property="semesterView" destination="AFP-LS-428" id="ah8-tD-9RT"/>
+                        <outlet property="semesterView" destination="nC8-FU-deG" id="oJ2-4I-DAO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVw-x3-BAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
