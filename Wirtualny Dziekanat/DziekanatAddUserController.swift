@@ -8,23 +8,44 @@
 
 import UIKit
 import DropDown
+import Firebase
 
 class DziekanatAddUserController: UIViewController {
     
     let myFunctions = Functions()
-
     let dropDownType = DropDown()
+
     @IBOutlet weak var dropDownTypeView: UIView!
     
     @IBOutlet weak var studentContainer: UIView!
     @IBOutlet weak var profContainer: UIView!
     @IBOutlet weak var dziekanatContainer: UIView!
     
-
-    @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var facultyView: UIView!
+    @IBOutlet weak var fieldView: UIView!
+    @IBOutlet weak var semesterView: UIView!
+    
+    @IBOutlet weak var resultFaculty: UILabel!
+    @IBOutlet weak var resultField: UILabel!
+    @IBOutlet weak var resultSemester: UILabel!
+    
+    var ref: FIRDatabaseReference!
+    var refHandle: UInt!
+    var faculty = [String]()
+    var semester = [String]()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = FIRDatabase.database().reference()
+        
+        ref.child("faculty").child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.faculty = snapshot.value as! [String]
+        })
+        ref.child("semester").child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+            self.semester = snapshot.value as! [String]
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,7 +72,7 @@ class DziekanatAddUserController: UIViewController {
         dropDownType.show()
         
         dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.resultLabel.text = item
+            sender.setTitle(item, for: .normal)
             if(index == 0)
             {
                 self.myFunctions.setAnimationView(view: self.studentContainer, hidden: false)
@@ -72,5 +93,33 @@ class DziekanatAddUserController: UIViewController {
             }
         }
     }
+    
+    @IBAction func selectFaculty(_ sender: AnyObject) {
+        dropDownType.anchorView = facultyView
+        dropDownType.direction = .bottom
+        dropDownType.dataSource = faculty
+        dropDownType.show()
+        
+        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.resultFaculty.text = item
+        }
+    }
+    
+    @IBAction func selectField(_ sender: AnyObject) {
+        
+    }
+    
+    @IBAction func selectSemester(_ sender: AnyObject) {
+        dropDownType.anchorView = semesterView
+        dropDownType.direction = .bottom
+        dropDownType.dataSource = semester
+        dropDownType.show()
+        
+        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.resultSemester.text = item
+        }
+    }
+    
 
 }
+
