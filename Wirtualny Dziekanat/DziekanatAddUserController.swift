@@ -29,6 +29,12 @@ class DziekanatAddUserController: UIViewController {
     @IBOutlet weak var resultField: UILabel!
     @IBOutlet weak var resultSemester: UILabel!
     
+    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var surnameText: UITextField!
+    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var numbersText: UITextField!
+    @IBOutlet weak var titlesText: UITextField!
+    
     var ref: FIRDatabaseReference!
     var refHandle: UInt!
     var faculty = [String]()
