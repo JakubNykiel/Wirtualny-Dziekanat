@@ -429,6 +429,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C014B5B00048DD145639317F /* Pods-Wirtualny Dziekanat.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -442,6 +443,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65BB3456C77D22ABFF094C97 /* Pods-Wirtualny Dziekanat.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

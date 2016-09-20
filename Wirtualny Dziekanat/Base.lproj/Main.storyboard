@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qdG-y0-W9f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="scX-my-7xU">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfJ-92-B9h">
@@ -305,7 +305,7 @@
                         <viewControllerLayoutGuide type="bottom" id="43G-Xt-slR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gQm-zs-ZNR">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwd-jm-57d">
@@ -729,7 +729,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hdt-3t-XbP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rGM-ov-mDF">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-qc-XTK">
@@ -1157,7 +1157,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yT9-iP-8Fv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Zb-Sg-YOu">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-po-z1Q">
@@ -1926,7 +1926,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DXo-hw-4bV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kdl-WX-cxr">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUx-a5-vN2" userLabel="dropdownViewType">
@@ -2026,7 +2026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="caA-cc-ece" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-343.19999999999999" y="-2275.4122938530736"/>
+            <point key="canvasLocation" x="-330" y="-3724"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7TH-jO-eE1">
@@ -2055,7 +2055,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EpT-3D-EzE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="buL-Sl-vuh">
-                        <rect key="frame" x="0.0" y="0.0" width="627" height="216"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="508"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZb-Vp-n8K">
@@ -2377,7 +2377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVw-x3-BAr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="444.82758620689657" y="-2779.1999999999998"/>
+            <point key="canvasLocation" x="457" y="-4227"/>
         </scene>
         <!--Dziekanat Add User Controller-->
         <scene sceneID="nTB-TD-m2r">
@@ -2388,7 +2388,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WHu-oX-kcb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Acn-Y9-0Fk">
-                        <rect key="frame" x="0.0" y="0.0" width="627" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wydział:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-08-ENR">
@@ -2547,7 +2547,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qCf-lk-HLc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443.92803598200902" y="-2259.1999999999998"/>
+            <point key="canvasLocation" x="457" y="-3707"/>
         </scene>
         <!--Dziekanat Add User Controller-->
         <scene sceneID="3H4-3B-VJF">
@@ -2558,7 +2558,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ac9-qh-cHc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QWV-b0-Q4y">
-                        <rect key="frame" x="0.0" y="0.0" width="627" height="228"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tE5-An-IUM">
@@ -2886,7 +2886,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcO-Ev-uRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443.92803598200902" y="-1731.2"/>
+            <point key="canvasLocation" x="457" y="-3179"/>
         </scene>
     </scenes>
     <resources>

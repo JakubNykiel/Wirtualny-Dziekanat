@@ -36,5 +36,7 @@
 	<string>1:564974478236:ios:05fb1023fbdd42f5</string>
 	<key>DATABASE_URL</key>
 	<string>https://wirtualny-dziekanat.firebaseio.com</string>
+	<key>FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED</key>
+	<true/>
 </dict>
 </plist>

@@ -39,6 +39,7 @@ class DziekanatAddUserController: UIViewController {
     var refHandle: UInt!
     var faculty = [String]()
     var semester = [String]()
+    var student = [String:String]()
    
     
     override func viewDidLoad() {
@@ -46,11 +47,14 @@ class DziekanatAddUserController: UIViewController {
         
         ref = FIRDatabase.database().reference()
         
-        ref.child("faculty").child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             self.faculty = snapshot.value as! [String]
         })
         ref.child("semester").child("name").observeSingleEvent(of: .value, with: { (snapshot) in
             self.semester = snapshot.value as! [String]
+        })
+        ref.child("student").child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+           print(snapshot.value)
         })
     }
     
@@ -81,21 +85,21 @@ class DziekanatAddUserController: UIViewController {
             sender.setTitle(item, for: .normal)
             if(index == 0)
             {
-                self.myFunctions.setAnimationView(view: self.studentContainer, hidden: false)
-                self.myFunctions.setAnimationView(view: self.profContainer, hidden: true)
-                self.myFunctions.setAnimationView(view: self.dziekanatContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.studentContainer, hidden: false)
+                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
             }
             if(index == 1)
             {
-                self.myFunctions.setAnimationView(view: self.studentContainer, hidden: true)
-                self.myFunctions.setAnimationView(view: self.profContainer, hidden: false)
-                self.myFunctions.setAnimationView(view: self.dziekanatContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.profContainer, hidden: false)
+                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
             }
             if(index == 2)
             {
-                self.myFunctions.setAnimationView(view: self.studentContainer, hidden: true)
-                self.myFunctions.setAnimationView(view: self.profContainer, hidden: true)
-                self.myFunctions.setAnimationView(view: self.dziekanatContainer, hidden: false)
+                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
+                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: false)
             }
         }
     }

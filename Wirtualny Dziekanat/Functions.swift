@@ -21,7 +21,7 @@ struct Functions
         return true
     }
     
-    func setAnimationView(view: UIView, hidden: Bool) {
+    func setAnimationView(_ view: UIView, hidden: Bool) {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {() -> Void in
             view.isHidden = hidden
             }, completion: { _ in })
