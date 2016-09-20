@@ -35,6 +35,7 @@
 		59B7E6C1AF4AB8A77E2B1E71 /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB3456C77D22ABFF094C97 /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
 		C014B5B00048DD145639317F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
+		C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wirtualny Dziekanat.entitlements"; sourceTree = "<group>"; };
 		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Rule-50.png"; sourceTree = "<group>"; };
 		C35BCCC91D0B5CD00022DC1F /* Exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-50.png"; sourceTree = "<group>"; };
@@ -151,6 +152,7 @@
 		C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */ = {
 			isa = PBXGroup;
 			children = (
+				C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */,
 				C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */,
 				C35981BC1D0A0DD50021172A /* Functions.swift */,
 				C36A15361CF06163005EC3CC /* Controllers */,
@@ -205,6 +207,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 6454359TU3;
 						LastSwiftMigration = 0800;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -431,6 +438,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Wirtualny Dziekanat/Wirtualny Dziekanat.entitlements";
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nykiel.Wirtualny-Dziekanat";
@@ -445,6 +453,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Wirtualny Dziekanat/Wirtualny Dziekanat.entitlements";
 				INFOPLIST_FILE = "Wirtualny Dziekanat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Nykiel.Wirtualny-Dziekanat";

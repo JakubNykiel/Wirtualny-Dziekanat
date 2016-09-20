@@ -39,7 +39,7 @@ class DziekanatAddUserController: UIViewController {
     var refHandle: UInt!
     var faculty = [String]()
     var semester = [String]()
-    var student = [String:String]()
+    var student = [String:AnyObject]()
    
     
     override func viewDidLoad() {
@@ -54,7 +54,13 @@ class DziekanatAddUserController: UIViewController {
             self.semester = snapshot.value as! [String]
         })
         ref.child("student").child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-           print(snapshot.value)
+            self.student = [:]
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots {
+                   let key = snap.key
+                   print(key)
+                }
+            }
         })
     }
     
