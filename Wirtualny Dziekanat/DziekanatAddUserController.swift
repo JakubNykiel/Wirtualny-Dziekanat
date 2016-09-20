@@ -41,6 +41,7 @@ class DziekanatAddUserController: UIViewController {
     var semester = [String]()
     var student = [String:AnyObject]()
    
+    @IBOutlet weak var dziekanatButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,6 +70,7 @@ class DziekanatAddUserController: UIViewController {
         self.studentContainer?.isHidden = true
         self.profContainer?.isHidden = true
         self.dziekanatContainer?.isHidden = true
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,6 +96,8 @@ class DziekanatAddUserController: UIViewController {
                 self.myFunctions.setAnimationView(self.studentContainer, hidden: false)
                 self.myFunctions.setAnimationView(self.profContainer, hidden: true)
                 self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
+                
+                
             }
             if(index == 1)
             {
@@ -137,6 +141,9 @@ class DziekanatAddUserController: UIViewController {
         }
     }
     
+    @IBAction func test(_ sender: AnyObject) {
+        print("Elo. Jednak bede działał jak coś")
+    }
 
 }
 
