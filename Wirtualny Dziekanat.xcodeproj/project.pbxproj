@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5EA9A408ABD18E53229E9B4F /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B7E6C1AF4AB8A77E2B1E71 /* Pods_Wirtualny_Dziekanat.framework */; };
+		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
+		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C35981BD1D0A0DD50021172A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35981BC1D0A0DD50021172A /* Functions.swift */; };
 		C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */; };
 		C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC91D0B5CD00022DC1F /* Exit-50.png */; };
@@ -21,6 +23,8 @@
 		C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */; };
 		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
 		C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */; };
+		C3C255931D981DC000E88741 /* Graduation Cap-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255921D981DC000E88741 /* Graduation Cap-50.png */; };
+		C3C255951D9826A900E88741 /* Plus-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255941D9826A900E88741 /* Plus-50.png */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
@@ -37,6 +41,8 @@
 		65BB3456C77D22ABFF094C97 /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
 		C014B5B00048DD145639317F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
 		C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wirtualny Dziekanat.entitlements"; sourceTree = "<group>"; };
+		C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddFieldController.swift; sourceTree = "<group>"; };
+		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
 		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Rule-50.png"; sourceTree = "<group>"; };
 		C35BCCC91D0B5CD00022DC1F /* Exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-50.png"; sourceTree = "<group>"; };
@@ -50,6 +56,8 @@
 		C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddUserController.swift; sourceTree = "<group>"; };
 		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
 		C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddSubjectController.swift; sourceTree = "<group>"; };
+		C3C255921D981DC000E88741 /* Graduation Cap-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graduation Cap-50.png"; sourceTree = "<group>"; };
+		C3C255941D9826A900E88741 /* Plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus-50.png"; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,10 +95,12 @@
 		C35BCCC61D0B5B880022DC1F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				C3C255921D981DC000E88741 /* Graduation Cap-50.png */,
 				C3E7798F1D29657300CE5CFF /* University-50.png */,
 				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
 				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
 				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
+				C3C255941D9826A900E88741 /* Plus-50.png */,
 				C3E779891D29343000CE5CFF /* Student Male-50.png */,
 				C3E7798B1D29357F00CE5CFF /* Logout Rounded-50.png */,
 				C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */,
@@ -109,6 +119,8 @@
 				C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */,
 				C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */,
 				C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */,
+				C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */,
+				C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -245,10 +257,12 @@
 				C35BCCCF1D0B5CD00022DC1F /* Home-50.png in Resources */,
 				C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */,
 				C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */,
+				C3C255951D9826A900E88741 /* Plus-50.png in Resources */,
 				C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
 				C3E779901D29657300CE5CFF /* University-50.png in Resources */,
 				C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */,
+				C3C255931D981DC000E88741 /* Graduation Cap-50.png in Resources */,
 				C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */,
 				C3E7798C1D29357F00CE5CFF /* Logout Rounded-50.png in Resources */,
 				C35BCCD11D0B5CD00022DC1F /* Speech Bubble-50.png in Resources */,
@@ -318,8 +332,10 @@
 				C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */,
 				C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */,
 				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
+				C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */,
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */,
+				C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

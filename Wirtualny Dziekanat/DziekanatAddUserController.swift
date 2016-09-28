@@ -7,13 +7,12 @@
 //
 
 import UIKit
-import DropDown
 import Firebase
 
 class DziekanatAddUserController: UIViewController {
     
     let myFunctions = Functions()
-    let dropDownType = DropDown()
+//    let dropDownType = DropDown()
 
     @IBOutlet weak var dropDownTypeView: UIView!
     
@@ -40,14 +39,13 @@ class DziekanatAddUserController: UIViewController {
     var faculty = [String]()
     var semester = [String]()
     var student = [String:AnyObject]()
+    var account_type = ""
    
     @IBOutlet weak var dziekanatButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        ref = FIRDatabase.database().reference()
-        
+
         ref.child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             self.faculty = snapshot.value as! [String]
         })
@@ -59,7 +57,6 @@ class DziekanatAddUserController: UIViewController {
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots {
                    let key = snap.key
-                   print(key)
                 }
             }
         })
@@ -72,7 +69,7 @@ class DziekanatAddUserController: UIViewController {
         self.dziekanatContainer?.isHidden = true
     
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -80,70 +77,92 @@ class DziekanatAddUserController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-        dropDownType.hide()
+//        dropDownType.hide()
     }
     
-    @IBAction func selectType(_ sender: AnyObject) {
-        
-        dropDownType.anchorView = dropDownTypeView
-        dropDownType.dataSource = ["Student", "Prowadzący", "Dziekanat"]
-        dropDownType.show()
-        
-        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
-            sender.setTitle(item, for: .normal)
-            if(index == 0)
-            {
-                self.myFunctions.setAnimationView(self.studentContainer, hidden: false)
-                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
-                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
-                
-                
-            }
-            if(index == 1)
-            {
-                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
-                self.myFunctions.setAnimationView(self.profContainer, hidden: false)
-                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
-            }
-            if(index == 2)
-            {
-                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
-                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
-                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: false)
-            }
-        }
-    }
-    
-    @IBAction func selectFaculty(_ sender: AnyObject) {
-        dropDownType.anchorView = facultyView
-        dropDownType.direction = .bottom
-        dropDownType.dataSource = faculty
-        dropDownType.show()
-        
-        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.resultFaculty.adjustsFontSizeToFitWidth = true
-            self.resultFaculty.text = item
-        }
-    }
-    
-    @IBAction func selectField(_ sender: AnyObject) {
-        
-    }
-    
-    @IBAction func selectSemester(_ sender: AnyObject) {
-        dropDownType.anchorView = semesterView
-        dropDownType.direction = .bottom
-        dropDownType.dataSource = semester
-        dropDownType.show()
-        
-        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.resultSemester.text = item
-        }
-    }
-    
-    @IBAction func test(_ sender: AnyObject) {
-        print("Elo. Jednak bede działał jak coś")
-    }
-
+//    @IBAction func selectType(_ sender: AnyObject){
+//        
+//        dropDownType.anchorView = dropDownTypeView
+//        dropDownType.dataSource = ["Student", "Prowadzący", "Dziekanat"]
+//        dropDownType.show()
+//        
+//        dropDownType.selectionAction = { (index: Int, item: String) in
+//            sender.setTitle(item, for: .normal)
+//            self.account_type = item
+//            if(index == 0)
+//            {
+//                self.myFunctions.setAnimationView(self.studentContainer, hidden: false)
+//                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
+//                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
+//                
+//            }
+//            if(index == 1)
+//            {
+//                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
+//                self.myFunctions.setAnimationView(self.profContainer, hidden: false)
+//                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: true)
+//            }
+//            if(index == 2)
+//            {
+//                self.myFunctions.setAnimationView(self.studentContainer, hidden: true)
+//                self.myFunctions.setAnimationView(self.profContainer, hidden: true)
+//                self.myFunctions.setAnimationView(self.dziekanatContainer, hidden: false)
+//            }
+//        }
+//
+//    }
+//    
+//    @IBAction func selectFaculty(_ sender: AnyObject) {
+//        dropDownType.anchorView = facultyView
+//        dropDownType.direction = .bottom
+//        dropDownType.dataSource = faculty
+//        dropDownType.show()
+//        
+//        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
+//            self.resultFaculty.adjustsFontSizeToFitWidth = true
+//            self.resultFaculty.text = item
+//        }
+//    }
+//    
+//    @IBAction func selectField(_ sender: AnyObject) {
+//        
+//    }
+//    
+//    @IBAction func selectSemester(_ sender: AnyObject) {
+//        dropDownType.anchorView = semesterView
+//        dropDownType.direction = .bottom
+//        dropDownType.dataSource = semester
+//        dropDownType.show()
+//        
+//        dropDownType.selectionAction = { [unowned self] (index: Int, item: String) in
+//            self.resultSemester.text = item
+//        }
+//    }
+//    @IBAction func addDziekanatUserButton(_ sender: AnyObject) {
+//        
+////        let password = "s" + numbersText.text!
+//        
+//
+//        FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Test123456") { (user, error) in
+//            
+//            if error != nil {
+//                print("Mamy błąd")
+//                print(error)
+//            } else {
+//                
+//                print(user?.uid)
+//                
+//                
+//                let newUser = [
+//                    "account_type": "Dziekanat"
+//                ]
+//               
+//                self.ref.child("users")
+//                    .child((user?.uid)!).childByAutoId().setValue(newUser)
+//            }
+//
+//        }
+//        
+//    }
 }
 
