@@ -59,7 +59,7 @@
 		C3C255921D981DC000E88741 /* Graduation Cap-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graduation Cap-50.png"; sourceTree = "<group>"; };
 		C3C255941D9826A900E88741 /* Plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus-50.png"; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Wirtualny Dziekanat.app"; path = "/Users/Kulker/Desktop/wirtualny-dziekanat/build/Debug-iphoneos/Wirtualny Dziekanat.app"; sourceTree = "<absolute>"; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DD2BA11CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3DD2BA31CEA594200AA8439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -150,18 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */,
-				C3DD2B9A1CEA594200AA8439 /* Products */,
 				038753CE86933CCE7A9DA99C /* Pods */,
 				E93E8CC39F3986FA564B20B5 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		C3DD2B9A1CEA594200AA8439 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C3DD2B991CEA594200AA8439 /* Wirtualny Dziekanat.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */ = {
@@ -239,7 +230,7 @@
 				Base,
 			);
 			mainGroup = C3DD2B901CEA594200AA8439;
-			productRefGroup = C3DD2B9A1CEA594200AA8439 /* Products */;
+			productRefGroup = C3DD2B901CEA594200AA8439;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

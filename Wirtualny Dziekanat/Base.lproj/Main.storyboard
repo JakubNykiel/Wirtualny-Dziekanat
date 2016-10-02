@@ -2045,7 +2045,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" backgroundImage="Graduation Cap-50.png"/>
                                 <connections>
-                                    <segue destination="k9P-Mw-qiE" kind="show" id="K88-bS-ch8"/>
+                                    <segue destination="EXh-gQ-A9D" kind="show" id="ZlP-ob-IZY"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj kierunek" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-Kh-tQK">
@@ -3245,6 +3245,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erR-In-sFh">
                                 <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Y9h-F1-sHI"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Dalej">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -3263,18 +3266,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wydział:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTd-H8-D4i">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-Ij-no6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="wyl-O8-hqv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSJ-MN-hyQ">
-                                <state key="normal" title="Wybierz"/>
-                                <connections>
-                                    <segue destination="EXh-gQ-A9D" kind="show" identifier="addFieldFaculty" id="xDt-RU-TKU"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qw4-Ij-no6">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wydział:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FTd-H8-D4i">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="5Vh-hs-8UV"/>
+                                    <constraint firstAttribute="width" constant="106" id="l60-Ij-DAr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -3282,21 +3286,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FTd-H8-D4i" firstAttribute="leading" secondItem="Mge-3L-nOA" secondAttribute="leading" id="17D-CV-lRz"/>
-                            <constraint firstItem="sSJ-MN-hyQ" firstAttribute="leading" secondItem="FTd-H8-D4i" secondAttribute="trailing" constant="8" symbolic="YES" id="1L8-lc-PFl"/>
-                            <constraint firstItem="qw4-Ij-no6" firstAttribute="top" secondItem="Mge-3L-nOA" secondAttribute="bottom" constant="83" id="9cV-0K-pWR"/>
-                            <constraint firstItem="sSJ-MN-hyQ" firstAttribute="trailing" secondItem="qw4-Ij-no6" secondAttribute="trailing" constant="-60" id="BWr-9f-6TV"/>
-                            <constraint firstItem="qw4-Ij-no6" firstAttribute="bottom" secondItem="sSJ-MN-hyQ" secondAttribute="bottom" constant="41" id="ENh-Xo-Cry"/>
-                            <constraint firstItem="Mge-3L-nOA" firstAttribute="leading" secondItem="r42-yk-IzM" secondAttribute="leadingMargin" constant="60" id="HNd-yL-WL2"/>
-                            <constraint firstItem="Mge-3L-nOA" firstAttribute="trailing" secondItem="erR-In-sFh" secondAttribute="trailing" id="Hrd-i3-TOc"/>
-                            <constraint firstItem="Mge-3L-nOA" firstAttribute="leading" secondItem="erR-In-sFh" secondAttribute="leading" id="JXv-BW-pXa"/>
-                            <constraint firstItem="Mge-3L-nOA" firstAttribute="centerX" secondItem="r42-yk-IzM" secondAttribute="centerX" id="KSS-W3-RRS"/>
-                            <constraint firstItem="sSJ-MN-hyQ" firstAttribute="trailing" secondItem="Mge-3L-nOA" secondAttribute="trailing" id="Vxl-CU-JPY"/>
-                            <constraint firstItem="Mge-3L-nOA" firstAttribute="top" secondItem="GKw-FP-f3v" secondAttribute="bottom" constant="37" id="ed3-Pq-MUc"/>
-                            <constraint firstItem="FTd-H8-D4i" firstAttribute="baseline" secondItem="sSJ-MN-hyQ" secondAttribute="baseline" id="elk-je-Lng"/>
-                            <constraint firstItem="FTd-H8-D4i" firstAttribute="leading" secondItem="qw4-Ij-no6" secondAttribute="leading" constant="60" id="mdX-aH-kdJ"/>
-                            <constraint firstItem="sSJ-MN-hyQ" firstAttribute="top" secondItem="Mge-3L-nOA" secondAttribute="bottom" constant="33" id="meE-Vu-oco"/>
-                            <constraint firstItem="erR-In-sFh" firstAttribute="centerY" secondItem="r42-yk-IzM" secondAttribute="centerY" constant="41.5" id="tuA-F7-bBT"/>
+                            <constraint firstItem="qw4-Ij-no6" firstAttribute="top" secondItem="FTd-H8-D4i" secondAttribute="bottom" constant="-61" id="2CR-F9-7Jz"/>
+                            <constraint firstItem="FTd-H8-D4i" firstAttribute="leading" secondItem="r42-yk-IzM" secondAttribute="leadingMargin" id="4ZT-KX-O92"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Mge-3L-nOA" secondAttribute="trailing" constant="42" id="6ar-Qf-EUK"/>
+                            <constraint firstItem="Mge-3L-nOA" firstAttribute="leading" secondItem="r42-yk-IzM" secondAttribute="leadingMargin" constant="41" id="GnC-uE-ub2"/>
+                            <constraint firstItem="qw4-Ij-no6" firstAttribute="trailing" secondItem="r42-yk-IzM" secondAttribute="trailingMargin" id="QpM-Qg-FY3"/>
+                            <constraint firstItem="qw4-Ij-no6" firstAttribute="leading" secondItem="r42-yk-IzM" secondAttribute="leadingMargin" constant="114" id="XcR-QV-ZKo"/>
+                            <constraint firstItem="FTd-H8-D4i" firstAttribute="top" secondItem="Mge-3L-nOA" secondAttribute="bottom" constant="52" id="aeX-Tw-dUj"/>
+                            <constraint firstItem="Mge-3L-nOA" firstAttribute="top" secondItem="GKw-FP-f3v" secondAttribute="bottom" constant="37" id="ao2-8l-0BI"/>
+                            <constraint firstItem="erR-In-sFh" firstAttribute="leading" secondItem="r42-yk-IzM" secondAttribute="leadingMargin" constant="60" id="dbA-kM-Fno"/>
+                            <constraint firstItem="erR-In-sFh" firstAttribute="top" secondItem="qw4-Ij-no6" secondAttribute="bottom" constant="8" id="gAP-dY-hcE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="erR-In-sFh" secondAttribute="trailing" constant="60" id="i5O-cK-xGR"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
@@ -3324,7 +3324,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpm-Ng-nrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1471" y="-2275"/>
+            <point key="canvasLocation" x="2277.5999999999999" y="-2257.4212893553226"/>
         </scene>
         <!--Dziekanat Add User Controller-->
         <scene sceneID="3H4-3B-VJF">
@@ -3679,14 +3679,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="facultyCell" id="E2X-yH-2Wv">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E2X-yH-2Wv" id="enF-N9-y5L">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="k9P-Mw-qiE" kind="show" identifier="BackToAddField" id="6ZM-8H-6uu"/>
+                                    <segue destination="k9P-Mw-qiE" kind="show" identifier="BackToAddField" id="1xq-jU-cr3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3701,7 +3701,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxv-q5-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2714" y="-2275"/>
+            <point key="canvasLocation" x="1463" y="-2256"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="81D-jd-OWu">
@@ -3734,7 +3734,4 @@
         <image name="Student Male-50.png" width="50" height="50"/>
         <image name="University-50.png" width="50" height="50"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="6ZM-8H-6uu"/>
-    </inferredMetricsTieBreakers>
 </document>

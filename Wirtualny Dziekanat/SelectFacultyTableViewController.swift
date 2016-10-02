@@ -14,6 +14,8 @@ class SelectFacultyTableViewController: UITableViewController {
     var faculty = [FIRDataSnapshot]()
     let cellReuseIdentifier = "facultyCell"
     var selectedCell = ""
+    var selectedKey = ""
+    var keys = [String]()
 
     @IBOutlet var facultyView: UITableView!
     
@@ -26,14 +28,18 @@ class SelectFacultyTableViewController: UITableViewController {
         self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
         
+        
         ref.child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            var newItems = [FIRDataSnapshot]()
- 
-            for item in snapshot.children {
-                newItems.append(item as! FIRDataSnapshot)
+        
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    self.keys.append(snap.key)
+                    let sn = snap.childSnapshot(forPath: "name")
+                    self.faculty.append(sn)
+                }
             }
-            self.faculty = newItems
-            
+            print("Wczytano wydziały!")
             self.tableView.reloadData()
         })
     
@@ -59,6 +65,7 @@ class SelectFacultyTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCell = (tableView.cellForRow(at: indexPath)?.textLabel?.text)!
+        selectedKey = keys[indexPath.row] 
         performSegue(withIdentifier: "BackToAddField", sender: self)
     }
 
@@ -103,6 +110,7 @@ class SelectFacultyTableViewController: UITableViewController {
             let destinationVC:DziekanatAddFieldController = segue.destination as! DziekanatAddFieldController
             
             destinationVC.tableResult = selectedCell
+            destinationVC.keyResult = selectedKey
             
         }
     }
