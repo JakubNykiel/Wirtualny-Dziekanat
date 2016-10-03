@@ -54,9 +54,11 @@ class DziekanatAddFieldController: UIViewController {
             
             let alertController = UIAlertController(title: "Dodano kierunek", message:
                 "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default,handler: nil))
+            alertController.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: { (action: UIAlertAction!) in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
+            alertController.addAction(UIAlertAction(title: "Dodaj kolejny", style: .default, handler: nil))
             self.present(alertController, animated: true, completion: nil)
-//            self.navigationController?.popToRootViewController(animated: true)
         }
     }
 }

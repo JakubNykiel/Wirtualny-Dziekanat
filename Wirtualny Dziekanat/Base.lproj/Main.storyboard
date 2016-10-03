@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qdG-y0-W9f"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="scX-my-7xU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RfJ-92-B9h">
@@ -305,7 +305,7 @@
                         <viewControllerLayoutGuide type="bottom" id="43G-Xt-slR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gQm-zs-ZNR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hwd-jm-57d">
@@ -729,7 +729,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Hdt-3t-XbP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rGM-ov-mDF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ck7-qc-XTK">
@@ -1157,50 +1157,9 @@
                         <viewControllerLayoutGuide type="bottom" id="yT9-iP-8Fv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Zb-Sg-YOu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-po-z1Q">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Ecv-2h-mZs"/>
-                                    <constraint firstAttribute="width" constant="50" id="KIa-cv-SdO"/>
-                                    <constraint firstAttribute="height" constant="50" id="RxV-tS-1Xs"/>
-                                    <constraint firstAttribute="height" constant="50" id="aIU-eL-cvf"/>
-                                    <constraint firstAttribute="width" constant="50" id="c42-Kc-Be3"/>
-                                    <constraint firstAttribute="height" constant="50" id="eyp-Ee-IzE"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Bulleted List-50.png"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="KIa-cv-SdO"/>
-                                        <exclude reference="RxV-tS-1Xs"/>
-                                        <exclude reference="c42-Kc-Be3"/>
-                                        <exclude reference="eyp-Ee-IzE"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="KIa-cv-SdO"/>
-                                        <include reference="eyp-Ee-IzE"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Ecv-2h-mZs"/>
-                                        <exclude reference="KIa-cv-SdO"/>
-                                        <exclude reference="aIU-eL-cvf"/>
-                                        <exclude reference="eyp-Ee-IzE"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Ecv-2h-mZs"/>
-                                        <include reference="RxV-tS-1Xs"/>
-                                        <exclude reference="aIU-eL-cvf"/>
-                                        <include reference="c42-Kc-Be3"/>
-                                    </mask>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r2R-pt-R0v">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="6iZ-Z7-utP"/>
@@ -1387,7 +1346,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="JFR-ol-f3d" kind="show" id="Yy3-SZ-jIa"/>
+                                    <segue destination="E5g-8F-EFE" kind="show" id="WC2-7c-udo"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wu7-f9-ne8">
@@ -1538,6 +1497,47 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfN-po-z1Q">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ecv-2h-mZs"/>
+                                    <constraint firstAttribute="width" constant="50" id="KIa-cv-SdO"/>
+                                    <constraint firstAttribute="height" constant="50" id="RxV-tS-1Xs"/>
+                                    <constraint firstAttribute="height" constant="50" id="aIU-eL-cvf"/>
+                                    <constraint firstAttribute="width" constant="50" id="c42-Kc-Be3"/>
+                                    <constraint firstAttribute="height" constant="50" id="eyp-Ee-IzE"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Bulleted List-50.png"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KIa-cv-SdO"/>
+                                        <exclude reference="RxV-tS-1Xs"/>
+                                        <exclude reference="c42-Kc-Be3"/>
+                                        <exclude reference="eyp-Ee-IzE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KIa-cv-SdO"/>
+                                        <include reference="eyp-Ee-IzE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Ecv-2h-mZs"/>
+                                        <exclude reference="KIa-cv-SdO"/>
+                                        <exclude reference="aIU-eL-cvf"/>
+                                        <exclude reference="eyp-Ee-IzE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Ecv-2h-mZs"/>
+                                        <include reference="RxV-tS-1Xs"/>
+                                        <exclude reference="aIU-eL-cvf"/>
+                                        <include reference="c42-Kc-Be3"/>
+                                    </mask>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1613,7 +1613,9 @@
                             <constraint firstItem="MfN-po-z1Q" firstAttribute="top" secondItem="P4z-0O-QVd" secondAttribute="bottom" constant="53" id="Yr2-hD-PGN"/>
                             <constraint firstItem="ldB-8m-vEq" firstAttribute="trailing" secondItem="3Zb-Sg-YOu" secondAttribute="trailingMargin" id="ZCl-ry-0cF"/>
                             <constraint firstItem="hCE-Sq-5Sk" firstAttribute="top" secondItem="r2R-pt-R0v" secondAttribute="bottom" constant="10" id="ZRe-SL-gFg"/>
-                            <constraint firstItem="MfN-po-z1Q" firstAttribute="top" secondItem="P4z-0O-QVd" secondAttribute="bottom" constant="67" id="Zce-tI-QHP"/>
+                            <constraint firstItem="MfN-po-z1Q" firstAttribute="top" secondItem="P4z-0O-QVd" secondAttribute="bottom" constant="67" id="Zce-tI-QHP">
+                                <variation key="heightClass=compact-widthClass=compact" constant="57"/>
+                            </constraint>
                             <constraint firstItem="YVm-Ma-YVX" firstAttribute="baseline" secondItem="0sL-Ea-80i" secondAttribute="baseline" id="cQZ-yq-PKa"/>
                             <constraint firstItem="ldB-8m-vEq" firstAttribute="top" secondItem="MfN-po-z1Q" secondAttribute="bottom" constant="8" symbolic="YES" id="cvN-ia-KX2"/>
                             <constraint firstItem="0sL-Ea-80i" firstAttribute="firstBaseline" secondItem="r2R-pt-R0v" secondAttribute="firstBaseline" id="dYx-vN-dsd">
@@ -1675,7 +1677,6 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="MfN-po-z1Q"/>
                                 <exclude reference="r2R-pt-R0v"/>
                                 <exclude reference="ldB-8m-vEq"/>
                                 <exclude reference="oQQ-pz-meL"/>
@@ -1683,6 +1684,7 @@
                                 <exclude reference="YVm-Ma-YVX"/>
                                 <exclude reference="4qH-SR-kwG"/>
                                 <exclude reference="hCE-Sq-5Sk"/>
+                                <exclude reference="MfN-po-z1Q"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="BXi-O4-9dw"/>
@@ -1752,7 +1754,6 @@
                         </variation>
                         <variation key="heightClass=compact">
                             <mask key="subviews">
-                                <include reference="MfN-po-z1Q"/>
                                 <include reference="r2R-pt-R0v"/>
                                 <include reference="ldB-8m-vEq"/>
                                 <include reference="oQQ-pz-meL"/>
@@ -1760,6 +1761,7 @@
                                 <include reference="YVm-Ma-YVX"/>
                                 <include reference="4qH-SR-kwG"/>
                                 <include reference="hCE-Sq-5Sk"/>
+                                <include reference="MfN-po-z1Q"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="f6I-32-TFj"/>
@@ -1843,7 +1845,6 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="MfN-po-z1Q"/>
                                 <include reference="r2R-pt-R0v"/>
                                 <include reference="ldB-8m-vEq"/>
                                 <include reference="oQQ-pz-meL"/>
@@ -1851,6 +1852,7 @@
                                 <include reference="YVm-Ma-YVX"/>
                                 <include reference="4qH-SR-kwG"/>
                                 <include reference="hCE-Sq-5Sk"/>
+                                <include reference="MfN-po-z1Q"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="PeT-3V-7P9"/>
@@ -1919,7 +1921,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DRf-O5-oyY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Z8-7W-JHz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="txA-u4-yy3">
@@ -2092,7 +2094,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Dodaj" id="kfb-lY-sLy">
-                        <barButtonItem key="backBarButtonItem" title="Cofka" id="Bq6-Ba-Swr"/>
+                        <barButtonItem key="backBarButtonItem" title="Wstecz" id="Bq6-Ba-Swr"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhI-5u-g9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2108,7 +2110,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Stm-JB-NNq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jOh-wh-XBn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K2J-80-DrY">
@@ -2602,7 +2604,7 @@
                         <viewControllerLayoutGuide type="bottom" id="DXo-hw-4bV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Kdl-WX-cxr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUx-a5-vN2" userLabel="dropdownViewType">
@@ -2731,7 +2733,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EpT-3D-EzE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="buL-Sl-vuh">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="508"/>
+                        <rect key="frame" x="0.0" y="0.0" width="627" height="216"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aZb-Vp-n8K">
@@ -3070,7 +3072,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WHu-oX-kcb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Acn-Y9-0Fk">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="520"/>
+                        <rect key="frame" x="0.0" y="0.0" width="627" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wydział:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhU-08-ENR">
@@ -3240,7 +3242,7 @@
                         <viewControllerLayoutGuide type="bottom" id="7y8-TH-wkd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="r42-yk-IzM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="erR-In-sFh">
@@ -3249,7 +3251,7 @@
                                     <constraint firstAttribute="height" constant="30" id="Y9h-F1-sHI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="Dalej">
+                                <state key="normal" title="Dodaj">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -3335,7 +3337,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ac9-qh-cHc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QWV-b0-Q4y">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="520"/>
+                        <rect key="frame" x="0.0" y="0.0" width="627" height="228"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tE5-An-IUM">
@@ -3674,15 +3676,15 @@
             <objects>
                 <tableViewController title="Wydziały" id="EXh-gQ-A9D" customClass="SelectFacultyTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ynP-lI-y94">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="facultyCell" id="E2X-yH-2Wv">
-                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="667" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E2X-yH-2Wv" id="enF-N9-y5L">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="667" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -3702,24 +3704,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxv-q5-pmG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1463" y="-2256"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="81D-jd-OWu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JFR-ol-f3d" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1ql-Gy-IAu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="E5g-8F-EFE" kind="relationship" relationship="rootViewController" id="Yzd-4N-BWE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QOF-Rd-p3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-383.19999999999999" y="-2275.4122938530736"/>
         </scene>
     </scenes>
     <resources>
