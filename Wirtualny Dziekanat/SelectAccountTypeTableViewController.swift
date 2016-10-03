@@ -13,7 +13,7 @@ class SelectAccountTypeTableViewController: UITableViewController {
     @IBOutlet var selectType: UITableView!
 
     var account_types = ["Student","Dziekanat","Profesor"]
-    var type = ""
+    var type : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,8 +69,6 @@ class SelectAccountTypeTableViewController: UITableViewController {
             destinationVC.account_type = type
             
         }
-
-        
     }
     
 

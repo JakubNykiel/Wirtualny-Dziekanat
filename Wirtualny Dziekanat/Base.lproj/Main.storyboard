@@ -2653,6 +2653,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addUserButton:" destination="RN9-0q-KcN" eventType="touchUpInside" id="RtH-6Z-Pqs"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wnc-sB-Hsr">
                                 <constraints>
@@ -2697,11 +2700,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="Bds-qq-A27" id="8me-3j-zLF"/>
+                        <outlet property="emailText" destination="Bds-qq-A27" id="Iem-53-qix"/>
                         <outlet property="facultyResult" destination="Wnc-sB-Hsr" id="eso-7q-BAd"/>
-                        <outlet property="nameText" destination="ToN-tE-l2R" id="dN9-Me-hVX"/>
-                        <outlet property="surnameText" destination="i4Q-Fu-xoH" id="FIU-I7-auH"/>
-                        <outlet property="titlesText" destination="gIK-6G-ZIR" id="dKy-iw-uu8"/>
+                        <outlet property="nameText" destination="ToN-tE-l2R" id="QAh-xm-zPR"/>
+                        <outlet property="surnameText" destination="i4Q-Fu-xoH" id="FrJ-uA-QB1"/>
+                        <outlet property="titlesText" destination="gIK-6G-ZIR" id="bc5-6t-oNk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFA-0N-6Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2929,6 +2932,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addUserButton:" destination="XjW-9M-trU" eventType="touchUpInside" id="tyh-pl-ZWg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-g0-VR9">
                                 <constraints>
@@ -2969,10 +2975,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="WwU-I6-bpZ" id="nad-9A-N49"/>
+                        <outlet property="emailText" destination="WwU-I6-bpZ" id="PuX-ld-4C6"/>
                         <outlet property="facultyResult" destination="HMK-g0-VR9" id="xrv-CF-zY2"/>
-                        <outlet property="nameText" destination="DFu-Ee-NdD" id="rQA-Yd-cIR"/>
-                        <outlet property="surnameText" destination="hK8-0R-5Am" id="z2Z-h4-q06"/>
+                        <outlet property="nameText" destination="DFu-Ee-NdD" id="mdH-5B-bDK"/>
+                        <outlet property="surnameText" destination="hK8-0R-5Am" id="ghn-ch-1K1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-Uy-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3105,6 +3111,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addUserButton:" destination="HYi-u7-ObO" eventType="touchUpInside" id="fTk-J2-ArP"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-6R-qLN">
                                 <constraints>
@@ -3145,10 +3154,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="y6t-aO-b7g" id="DmQ-u4-boL"/>
+                        <outlet property="emailText" destination="y6t-aO-b7g" id="i67-uS-gwH"/>
                         <outlet property="facultyResult" destination="TxC-6R-qLN" id="xNU-jd-6X4"/>
-                        <outlet property="nameText" destination="09S-Sw-dFC" id="jSU-JW-tb1"/>
-                        <outlet property="surnameText" destination="IP3-YV-f98" id="Qqa-8j-Gns"/>
+                        <outlet property="nameText" destination="09S-Sw-dFC" id="iGh-Xd-BtR"/>
+                        <outlet property="surnameText" destination="IP3-YV-f98" id="b2n-eM-Ncv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDo-fh-O2h" userLabel="First Responder" sceneMemberID="firstResponder"/>

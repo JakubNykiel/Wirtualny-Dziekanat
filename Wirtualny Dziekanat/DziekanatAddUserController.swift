@@ -13,10 +13,9 @@ class DziekanatAddUserController: UIViewController {
     
     let myFunctions = Functions()
     
+    @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var surnameText: UITextField!
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var numbersText: UITextField!
     @IBOutlet weak var titlesText: UITextField!
     
     @IBOutlet weak var facultyResult: UILabel!
@@ -26,9 +25,7 @@ class DziekanatAddUserController: UIViewController {
     var faculty = [String]()
     var semester = [String]()
     var student = [String:AnyObject]()
-    var account_type = ""
-   
-    @IBOutlet weak var dziekanatButton: UIButton!
+    var account_type : String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +45,7 @@ class DziekanatAddUserController: UIViewController {
 //            }
 //        })
         print(account_type)
+        ref = FIRDatabase.database().reference()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,31 +61,82 @@ class DziekanatAddUserController: UIViewController {
         self.view.endEditing(true)
     }
     
-//    @IBAction func addDziekanatUserButton(_ sender: AnyObject) {
-//        
-////        let password = "s" + numbersText.text!
-//        
-//
-//        FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Test123456") { (user, error) in
-//            
-//            if error != nil {
-//                print("Mamy błąd")
-//                print(error)
-//            } else {
-//                
-//                print(user?.uid)
-//                
-//                
-//                let newUser = [
-//                    "account_type": "Dziekanat"
-//                ]
-//               
-//                self.ref.child("users")
-//                    .child((user?.uid)!).childByAutoId().setValue(newUser)
-//            }
-//
-//        }
-//        
-//    }
+    
+    @IBAction func addUserButton(_ sender: AnyObject) {
+        
+        let name = nameText.text! as String
+        let surname = surnameText.text! as String
+        let email = emailText.text! as String
+        
+        if (self.account_type == "Student")
+        {
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Student123456") { (user, error) in
+                
+                if error != nil
+                {
+                    print("Mamy błąd")
+                    print(error)
+                }
+                else
+                {
+                    //                    let newUser = [
+                    //                        "name" : name,
+                    //                        "surname" : surname,
+                    //                        "email" : email,
+                    //                        "account_type": self.account_type
+                    //                    ]
+                    
+                    //                    self.ref.child("users").child((user?.uid)!).setValue(newUser)
+                }
+            } //end FIR
+        } //end if
+        
+        if (self.account_type == "Dziekanat")
+        {
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Dziekanat123456") { (user, error) in
+                
+                if error != nil
+                {
+                    print("Mamy błąd")
+                    print(error)
+                }
+                else
+                {
+                    
+                    let data = ["name": name,
+                                "surname": surname,
+                                "email": email,
+                                "account_type": self.account_type as String]
+                    print(data)
+                    self.ref.child("users").child(user!.uid).setValue(data)
+                }
+            } //end FIR
+        } //end if
+        
+        if (self.account_type == "Profesor")
+        {
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Profesor123456") { (user, error) in
+                
+                if error != nil
+                {
+                    print("Mamy błąd")
+                    print(error)
+                }
+                else
+                {
+                    //                    let newUser = [
+                    //                        "name" : name,
+                    //                        "surname" : surname,
+                    //                        "email" : email,
+                    //                        "account_type": self.account_type
+                    //                    ]
+                    
+                    //                    self.ref.child("users").child((user?.uid)!).setValue(newUser)
+                }
+            } //end FIR
+        } //end if
+
+    }
+    
 }
 

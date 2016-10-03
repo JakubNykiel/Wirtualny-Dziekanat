@@ -50,6 +50,7 @@ class DziekanatAddFieldController: UIViewController {
             let id_faculty = keyResult as String
             let data = ["name": name,
                         "id_faculty": id_faculty]
+            print(data)
             self.ref.child("fields").childByAutoId().setValue(data)
             
             let alertController = UIAlertController(title: "Dodano kierunek", message:
