@@ -2613,7 +2613,7 @@
         <!--Dodaj Uczącego-->
         <scene sceneID="HZU-C1-Pnz">
             <objects>
-                <viewController title="Dodaj Uczącego" id="RN9-0q-KcN" customClass="DziekanatAddUserController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dodaj Uczącego" id="RN9-0q-KcN" customClass="AddLecturerController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f4Q-ox-Vz8"/>
                         <viewControllerLayoutGuide type="bottom" id="kkj-lG-jHu"/>
@@ -2654,6 +2654,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="addLecturer:" destination="RN9-0q-KcN" eventType="touchUpInside" id="Nn6-Gp-bA2"/>
                                     <action selector="addUserButton:" destination="RN9-0q-KcN" eventType="touchUpInside" id="RtH-6Z-Pqs"/>
                                 </connections>
                             </button>
@@ -2700,16 +2701,18 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="Bds-qq-A27" id="Iem-53-qix"/>
+                        <outlet property="emailText" destination="Bds-qq-A27" id="rAc-JU-TQN"/>
+                        <outlet property="factoryResult" destination="Wnc-sB-Hsr" id="bpr-CY-SRW"/>
                         <outlet property="facultyResult" destination="Wnc-sB-Hsr" id="eso-7q-BAd"/>
-                        <outlet property="nameText" destination="ToN-tE-l2R" id="QAh-xm-zPR"/>
-                        <outlet property="surnameText" destination="i4Q-Fu-xoH" id="FrJ-uA-QB1"/>
+                        <outlet property="nameText" destination="ToN-tE-l2R" id="1uF-pc-3h7"/>
+                        <outlet property="surnameText" destination="i4Q-Fu-xoH" id="e2R-Fr-3JY"/>
+                        <outlet property="titleText" destination="gIK-6G-ZIR" id="osy-U3-kLf"/>
                         <outlet property="titlesText" destination="gIK-6G-ZIR" id="bc5-6t-oNk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFA-0N-6Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-3326"/>
+            <point key="canvasLocation" x="4470" y="-2831"/>
         </scene>
         <!--Dodaj kierunek-->
         <scene sceneID="cyL-pN-zdq">
@@ -2819,7 +2822,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ1-Rx-TsE" id="w37-Ip-qPJ">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2831,19 +2834,52 @@
                     </tableView>
                     <connections>
                         <outlet property="selectType" destination="pWE-Sb-Nfb" id="54H-Ob-5x7"/>
-                        <segue destination="RN9-0q-KcN" kind="show" identifier="showProf" id="VyV-AW-fvh"/>
-                        <segue destination="XjW-9M-trU" kind="show" identifier="showFaculty" id="psX-e3-DCn"/>
-                        <segue destination="HYi-u7-ObO" kind="show" identifier="showStudent" id="4Kp-M9-kmH"/>
+                        <segue destination="Mir-jj-hCl" kind="show" identifier="selectFaculty" id="hVZ-1R-arT"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbW-B2-HFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1289" y="-3370"/>
         </scene>
+        <!--Wydziały-->
+        <scene sceneID="gyt-Jz-Nn2">
+            <objects>
+                <tableViewController title="Wydziały" id="Mir-jj-hCl" customClass="SelectFacultyTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="YJI-uL-NWX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="nai-T0-HXm">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nai-T0-HXm" id="Q8E-5Y-bKh">
+                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="XjW-9M-trU" kind="show" identifier="sendDataToDeanery" id="Cv4-PN-LuH"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mir-jj-hCl" id="87T-oP-QT4"/>
+                            <outlet property="delegate" destination="Mir-jj-hCl" id="a9T-yi-vNp"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="HYi-u7-ObO" kind="show" identifier="sendDataToStudent" id="k9J-5W-vvp"/>
+                        <segue destination="RN9-0q-KcN" kind="show" identifier="sendDataToProf" id="cl4-V7-UiD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gbb-Ga-hE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3226" y="-3546"/>
+        </scene>
         <!--Dodaj Konto Dziekanatu-->
         <scene sceneID="flt-MS-KaU">
             <objects>
-                <viewController title="Dodaj Konto Dziekanatu" id="XjW-9M-trU" customClass="DziekanatAddUserController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dodaj Konto Dziekanatu" id="XjW-9M-trU" customClass="AddDeaneryController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lYX-35-nqc"/>
                         <viewControllerLayoutGuide type="bottom" id="axL-YU-5Ja"/>
@@ -2883,14 +2919,14 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="r3K-ck-JKW"/>
                                         <exclude reference="R0F-lQ-naJ"/>
+                                        <exclude reference="r3K-ck-JKW"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="r3K-ck-JKW"/>
                                         <include reference="R0F-lQ-naJ"/>
+                                        <include reference="r3K-ck-JKW"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2904,14 +2940,14 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="qUr-7l-pNI"/>
                                         <exclude reference="NOd-Gs-3hs"/>
+                                        <exclude reference="qUr-7l-pNI"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="qUr-7l-pNI"/>
                                         <include reference="NOd-Gs-3hs"/>
+                                        <include reference="qUr-7l-pNI"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -2933,7 +2969,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addUserButton:" destination="XjW-9M-trU" eventType="touchUpInside" id="tyh-pl-ZWg"/>
+                                    <action selector="addDeanery:" destination="XjW-9M-trU" eventType="touchUpInside" id="glr-MI-qur"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMK-g0-VR9">
@@ -2975,15 +3011,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="WwU-I6-bpZ" id="PuX-ld-4C6"/>
+                        <outlet property="emailText" destination="WwU-I6-bpZ" id="s3s-g8-1an"/>
+                        <outlet property="factoryResult" destination="HMK-g0-VR9" id="LCt-Hv-XpF"/>
                         <outlet property="facultyResult" destination="HMK-g0-VR9" id="xrv-CF-zY2"/>
-                        <outlet property="nameText" destination="DFu-Ee-NdD" id="mdH-5B-bDK"/>
-                        <outlet property="surnameText" destination="hK8-0R-5Am" id="ghn-ch-1K1"/>
+                        <outlet property="nameText" destination="DFu-Ee-NdD" id="Nyo-sW-Qyz"/>
+                        <outlet property="surnameText" destination="hK8-0R-5Am" id="VSG-gG-9ua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-Uy-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-3994"/>
+            <point key="canvasLocation" x="4470" y="-3545"/>
         </scene>
         <!--Wydziały-->
         <scene sceneID="w3h-11-39W">
@@ -2998,11 +3035,11 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E2X-yH-2Wv" id="enF-N9-y5L">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="k9P-Mw-qiE" kind="show" identifier="BackToAddField" id="1xq-jU-cr3"/>
+                                    <segue destination="k9P-Mw-qiE" kind="show" identifier="facultySelected" id="1xq-jU-cr3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -3022,7 +3059,7 @@
         <!--Dodaj Studenta-->
         <scene sceneID="19x-4l-Nqq">
             <objects>
-                <viewController title="Dodaj Studenta" id="HYi-u7-ObO" customClass="DziekanatAddUserController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Dodaj Studenta" id="HYi-u7-ObO" customClass="AddStudentController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qK3-zB-ucH"/>
                         <viewControllerLayoutGuide type="bottom" id="hYJ-sD-PfV"/>
@@ -3041,14 +3078,14 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="f7R-Te-ftK"/>
                                         <exclude reference="HUc-5h-AcD"/>
+                                        <exclude reference="f7R-Te-ftK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="f7R-Te-ftK"/>
                                         <include reference="HUc-5h-AcD"/>
+                                        <include reference="f7R-Te-ftK"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -3062,14 +3099,14 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="aaz-3g-XVD"/>
                                         <exclude reference="RPl-LV-HOp"/>
+                                        <exclude reference="aaz-3g-XVD"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="aaz-3g-XVD"/>
                                         <include reference="RPl-LV-HOp"/>
+                                        <include reference="aaz-3g-XVD"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -3083,14 +3120,14 @@
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="vPH-Dg-bCK"/>
                                         <exclude reference="Gfe-Wu-g1f"/>
+                                        <exclude reference="vPH-Dg-bCK"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=compact-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="vPH-Dg-bCK"/>
                                         <include reference="Gfe-Wu-g1f"/>
+                                        <include reference="vPH-Dg-bCK"/>
                                     </mask>
                                 </variation>
                             </textField>
@@ -3112,7 +3149,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="addUserButton:" destination="HYi-u7-ObO" eventType="touchUpInside" id="fTk-J2-ArP"/>
+                                    <action selector="addStudent:" destination="HYi-u7-ObO" eventType="touchUpInside" id="cax-Pk-rHa"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TxC-6R-qLN">
@@ -3154,15 +3191,15 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailText" destination="y6t-aO-b7g" id="i67-uS-gwH"/>
-                        <outlet property="facultyResult" destination="TxC-6R-qLN" id="xNU-jd-6X4"/>
-                        <outlet property="nameText" destination="09S-Sw-dFC" id="iGh-Xd-BtR"/>
-                        <outlet property="surnameText" destination="IP3-YV-f98" id="b2n-eM-Ncv"/>
+                        <outlet property="emailText" destination="y6t-aO-b7g" id="uYc-x2-bOd"/>
+                        <outlet property="facultyResult" destination="TxC-6R-qLN" id="SOR-WK-Ag4"/>
+                        <outlet property="nameText" destination="09S-Sw-dFC" id="6zq-x4-nHy"/>
+                        <outlet property="surnameText" destination="IP3-YV-f98" id="RlY-nJ-EbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDo-fh-O2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="-4668"/>
+            <point key="canvasLocation" x="4470" y="-4240"/>
         </scene>
     </scenes>
     <resources>

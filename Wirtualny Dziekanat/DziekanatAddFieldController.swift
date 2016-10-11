@@ -10,20 +10,22 @@ import UIKit
 import Firebase
 
 class DziekanatAddFieldController: UIViewController {
-
+    
     var ref: FIRDatabaseReference!
-
-    var tableResult = ""
-    var keyResult = ""
+    
+    var tableResult:String!
+    var keyResult:String!
     
     @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var facultyResult: UILabel!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         facultyResult.text = tableResult
+        
     }
 
     override func didReceiveMemoryWarning() {

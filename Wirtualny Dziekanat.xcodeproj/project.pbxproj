@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5EA9A408ABD18E53229E9B4F /* Pods_Wirtualny_Dziekanat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B7E6C1AF4AB8A77E2B1E71 /* Pods_Wirtualny_Dziekanat.framework */; };
+		C302DEA01DA6FDA300B98B7A /* AddStudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DE9F1DA6FDA300B98B7A /* AddStudentController.swift */; };
+		C302DEA21DA6FFDB00B98B7A /* AddDeaneryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */; };
+		C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */; };
 		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
 		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */; };
@@ -41,6 +44,9 @@
 		59B7E6C1AF4AB8A77E2B1E71 /* Pods_Wirtualny_Dziekanat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wirtualny_Dziekanat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BB3456C77D22ABFF094C97 /* Pods-Wirtualny Dziekanat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.release.xcconfig"; sourceTree = "<group>"; };
 		C014B5B00048DD145639317F /* Pods-Wirtualny Dziekanat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wirtualny Dziekanat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wirtualny Dziekanat/Pods-Wirtualny Dziekanat.debug.xcconfig"; sourceTree = "<group>"; };
+		C302DE9F1DA6FDA300B98B7A /* AddStudentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddStudentController.swift; sourceTree = "<group>"; };
+		C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeaneryController.swift; sourceTree = "<group>"; };
+		C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLecturerController.swift; sourceTree = "<group>"; };
 		C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wirtualny Dziekanat.entitlements"; sourceTree = "<group>"; };
 		C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddFieldController.swift; sourceTree = "<group>"; };
 		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 				C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */,
 				C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */,
 				C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */,
+				C302DE9F1DA6FDA300B98B7A /* AddStudentController.swift */,
+				C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */,
+				C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -323,14 +332,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
+				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
 				C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */,
 				C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */,
 				C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */,
+				C302DEA01DA6FDA300B98B7A /* AddStudentController.swift in Sources */,
 				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
 				C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */,
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */,
+				C302DEA21DA6FFDB00B98B7A /* AddDeaneryController.swift in Sources */,
 				C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,
 			);

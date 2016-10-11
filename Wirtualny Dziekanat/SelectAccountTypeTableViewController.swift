@@ -46,30 +46,6 @@ class SelectAccountTypeTableViewController: UITableViewController {
         
         type = account_types[indexPath.row]
         
-        if (indexPath.row == 0)
-        {
-            performSegue(withIdentifier: "showStudent", sender: self)
-        }
-        else if (indexPath.row == 1)
-        {
-            performSegue(withIdentifier: "showFaculty", sender: self)
-        }
-        else
-        {
-            performSegue(withIdentifier: "showProf", sender: self)
-        }
+        performSegue(withIdentifier: "selectFacuty", sender: self)
     }
-
-   
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "showStudent" || segue.identifier == "showFaculty" || segue.identifier == "showProf")
-        {
-            let destinationVC:DziekanatAddUserController = segue.destination as! DziekanatAddUserController
-            
-            destinationVC.account_type = type
-            
-        }
-    }
-    
-
 }

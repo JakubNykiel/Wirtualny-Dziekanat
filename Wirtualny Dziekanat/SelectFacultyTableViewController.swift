@@ -9,16 +9,20 @@
 import UIKit
 import Firebase
 
-class SelectFacultyTableViewController: UITableViewController {
+
+class SelectFacultyTableViewController: UITableViewController  {
+    
     var ref: FIRDatabaseReference!
     var faculty = [FIRDataSnapshot]()
     let cellReuseIdentifier = "facultyCell"
     var selectedCell = ""
     var selectedKey = ""
     var keys = [String]()
+    
+    var fieldFaculty: DziekanatAddFieldController!
 
     @IBOutlet var facultyView: UITableView!
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -42,7 +46,7 @@ class SelectFacultyTableViewController: UITableViewController {
             print("Wczytano wydziały!")
             self.tableView.reloadData()
         })
-    
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,8 +69,12 @@ class SelectFacultyTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCell = (tableView.cellForRow(at: indexPath)?.textLabel?.text)!
-        selectedKey = keys[indexPath.row] 
-        performSegue(withIdentifier: "BackToAddField", sender: self)
+        selectedKey = keys[indexPath.row]
+        performSegue(withIdentifier: "facultySelected", sender: self)
+    }
+    func sendSelectedCell(value: String)
+    {
+        
     }
 
     /*
@@ -105,9 +113,34 @@ class SelectFacultyTableViewController: UITableViewController {
     */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "BackToAddField")
+        if (segue.identifier == "facultySelected")
         {
-            let destinationVC:DziekanatAddFieldController = segue.destination as! DziekanatAddFieldController
+            let destinationVC = segue.destination as! DziekanatAddFieldController
+            
+            destinationVC.tableResult = selectedCell
+            print(destinationVC.tableResult)
+            destinationVC.keyResult = selectedKey
+            
+        }
+        if (segue.identifier == "sendDataToStudent")
+        {
+            let destinationVC = segue.destination as! AddStudentController
+            
+            destinationVC.tableResult = selectedCell
+            destinationVC.keyResult = selectedKey
+            
+        }
+        if (segue.identifier == "sendDataToDeanery")
+        {
+            let destinationVC = segue.destination as! AddDeaneryController
+            
+            destinationVC.tableResult = selectedCell
+            destinationVC.keyResult = selectedKey
+            
+        }
+        if (segue.identifier == "sendDataToProf")
+        {
+            let destinationVC = segue.destination as! AddLecturerController
             
             destinationVC.tableResult = selectedCell
             destinationVC.keyResult = selectedKey

@@ -67,6 +67,7 @@ class DziekanatAddUserController: UIViewController {
         let name = nameText.text! as String
         let surname = surnameText.text! as String
         let email = emailText.text! as String
+        let prof_title = titlesText.text! as String
         
         if (self.account_type == "Student")
         {
@@ -79,14 +80,14 @@ class DziekanatAddUserController: UIViewController {
                 }
                 else
                 {
-                    //                    let newUser = [
-                    //                        "name" : name,
-                    //                        "surname" : surname,
-                    //                        "email" : email,
-                    //                        "account_type": self.account_type
-                    //                    ]
+                    let data = [
+                                    "name" : name,
+                                    "surname" : surname,
+                                    "email" : email,
+                                    "account_type": self.account_type as String
+                                  ]
                     
-                    //                    self.ref.child("users").child((user?.uid)!).setValue(newUser)
+                    self.ref.child("users").child(user!.uid).setValue(data)
                 }
             } //end FIR
         } //end if
@@ -124,14 +125,15 @@ class DziekanatAddUserController: UIViewController {
                 }
                 else
                 {
-                    //                    let newUser = [
-                    //                        "name" : name,
-                    //                        "surname" : surname,
-                    //                        "email" : email,
-                    //                        "account_type": self.account_type
-                    //                    ]
+                    let data = [
+                        "title": prof_title,
+                        "name" : name,
+                        "surname" : surname,
+                        "email" : email,
+                        "account_type": self.account_type as String
+                    ]
                     
-                    //                    self.ref.child("users").child((user?.uid)!).setValue(newUser)
+                    self.ref.child("users").child(user!.uid).setValue(data)
                 }
             } //end FIR
         } //end if

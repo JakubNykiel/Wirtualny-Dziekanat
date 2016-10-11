@@ -26,5 +26,4 @@ struct Functions
             view.isHidden = hidden
             }, completion: { _ in })
     }
-    
 }
