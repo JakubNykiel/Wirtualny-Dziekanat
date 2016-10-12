@@ -1929,7 +1929,7 @@
         <!--Dodaj-->
         <scene sceneID="DYa-HN-AK2">
             <objects>
-                <viewController title="Dodaj" id="E5g-8F-EFE" customClass="DziekanatMenuController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="whatAdd" title="Dodaj" id="E5g-8F-EFE" customClass="DziekanatMenuController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TRZ-0J-6Uu"/>
                         <viewControllerLayoutGuide type="bottom" id="DRf-O5-oyY"/>
@@ -3226,6 +3226,6 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hVZ-1R-arT"/>
+        <segue reference="pin-Q2-rP6"/>
     </inferredMetricsTieBreakers>
 </document>

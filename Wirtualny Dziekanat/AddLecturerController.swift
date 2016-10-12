@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class AddLecturerController: UIViewController {
-
+    
+    let functions = Functions()
     var tableResult:String!
     var keyResult:String!
     var type = "Prowadzący"
@@ -24,12 +25,12 @@ class AddLecturerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         facultyResult.text = tableResult
         ref = FIRDatabase.database().reference()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,37 +47,67 @@ class AddLecturerController: UIViewController {
         let email = emailText.text! as String
         let prof_title = titleText.text! as String
         
-        FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Profesor123456") { (user, error) in
+        
+        if (email.isEmpty || surname.isEmpty || name.isEmpty)
+        {
+            let alertController = UIAlertController(title: "Błąd", message:
+                "Niektóre pola są puste!", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
-            let userID:String! = user!.uid
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else if (functions.validateEmail(email) == false)
+        {
+            let alertController = UIAlertController(title: "Błąd", message:
+                "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
-            if error != nil
-            {
-                print("Mamy błąd")
-                print(error)
-            }
-            else
-            {
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else
+        {
+            FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Profesor123456") { (user, error) in
                 
-                let userData = ["title": prof_title,
-                                "name": name,
-                                "surname": surname,
-                                "email": email,
-                                "account_type": self.type]
+                let userID:String! = user!.uid
                 
-                let tableData = [
-                    "id_faculty" : self.keyResult,
-                    "id_user" : userID
-                ] as [String:String]
+                if error != nil
+                {
+                    print("Mamy błąd")
+                    print(error)
+                }
+                else
+                {
+                    
+                    let userData = ["title": prof_title,
+                                    "name": name,
+                                    "surname": surname,
+                                    "email": email,
+                                    "account_type": self.type]
+                    
+                    let tableData = [
+                        "id_faculty" : self.keyResult,
+                        "id_user" : userID
+                        ] as [String:String]
+                    
+                    self.ref.child("users").child(user!.uid).setValue(userData)
+                    self.ref.child("user-faculty").childByAutoId().setValue(tableData)
+                    
+                }
+            } //end FIR
+            
+            let alertController = UIAlertController(title: "Dodano użytkownika", message:
+                "Dodawanie uzytkownika zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
                 
-                self.ref.child("users").child(user!.uid).setValue(userData)
-                self.ref.child("user-faculty").childByAutoId().setValue(tableData)
-                
-            }
-        } //end FIR
-
+                // And go to that Controller
+                self.navigationController?.popToViewController(targetController, animated: true)
+            }))
+            
+            self.present(alertController, animated: true, completion: nil)
+        } // end else
     }
     
     
-
+    
 }

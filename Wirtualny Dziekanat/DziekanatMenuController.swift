@@ -38,7 +38,7 @@ class DziekanatMenuController: UIViewController {
         try! FIRAuth.auth()!.signOut()
         if let storyboard = self.storyboard {
             let vc = storyboard.instantiateViewController(withIdentifier: "LoginScene")
-            self.present(vc, animated: false, completion: nil)
+            self.present(vc, animated: true, completion: nil)
         }
     }
     

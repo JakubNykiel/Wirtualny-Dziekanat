@@ -54,7 +54,7 @@ class LoginController: UIViewController {
         else if functions.validateEmail(email!) == false
         {
             let alertController = UIAlertController(title: "Błąd", message:
-                "Musisz wpisać email!", preferredStyle: UIAlertControllerStyle.alert)
+                "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
