@@ -15,11 +15,33 @@ class LoginController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     let functions = Functions()
+    var ref: FIRDatabaseReference!
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        emailTextField.borderStyle = UITextBorderStyle.roundedRect
+        passwordTextField.borderStyle = UITextBorderStyle.roundedRect
+        ref = FIRDatabase.database().reference()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
     @IBAction func loginButton(_ sender: AnyObject) {
-        let email = emailTextField.text
         
+        let email = emailTextField.text
         let password = passwordTextField.text
+        
         
         if email!.isEmpty || password!.isEmpty
         {
@@ -37,9 +59,14 @@ class LoginController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
         }
-        else
+        else //właściwe logowanie
         {
             FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
+                
+                let currentUser = FIRAuth.auth()?.currentUser
+                let userID = currentUser!.uid
+
+                
                 if error != nil {
                     // an error occured while attempting login
                     let alertController = UIAlertController(title: "Wystąpił Błąd", message:
@@ -48,41 +75,33 @@ class LoginController: UIViewController {
                     
                     self.present(alertController, animated: true, completion: nil)
                     
-                } else {
-                    // user is logged in, check authData for data
-                    //tu oczywiscie nalezy zmienic !!!!!!!!
-                    self.performSegue(withIdentifier: "DziekanatMenu", sender: nil)
+                }
+                else
+                {
+                    self.ref.child("users").child(userID).child("account_type").observeSingleEvent(of: .value, with: { (snapshot) in
+                        let type = snapshot.value as! String
+                        
+                        if(type == "Dziekanat")
+                        {
+                            self.performSegue(withIdentifier: "DziekanatMenu", sender: nil)
+                        }
+                        if(type == "Student")
+                        {
+                            self.performSegue(withIdentifier: "StudentMenu", sender: nil)
+                        }
+                        if(type == "Prowadzący")
+                        {
+                            self.performSegue(withIdentifier: "ProfesorMenu", sender: nil)
+                        }
+                    })
+                    
                 }
             }
             
         }
-
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        emailTextField.borderStyle = UITextBorderStyle.roundedRect
-        passwordTextField.borderStyle = UITextBorderStyle.roundedRect
-        
-        FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            // ...
-        }
-        
-        
-        
         
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
 
 }

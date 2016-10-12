@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bn3-Ch-jWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HpV-PK-1aT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -289,14 +289,15 @@
                         <outlet property="emailTextField" destination="fYB-IO-b1L" id="VFX-zC-B19"/>
                         <outlet property="passwordTextField" destination="Wsl-vx-6c2" id="oVH-BX-7xS"/>
                         <segue destination="Bn3-Ch-jWf" kind="show" identifier="DziekanatMenu" id="oUj-8W-eKl"/>
-                        <segue destination="VlI-Qc-E3o" kind="show" identifier="StudentMenu" id="xaQ-8V-8IZ"/>
+                        <segue destination="cn4-f4-dfJ" kind="show" identifier="StudentMenu" id="xaQ-8V-8IZ"/>
+                        <segue destination="46n-xS-TYC" kind="show" identifier="ProfesorMenu" id="Lvy-8O-dTb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QM1-fx-ZWy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2745" y="-583.5"/>
         </scene>
-        <!--Student Menu Controller-->
+        <!--STUDENT-->
         <scene sceneID="edd-Ll-9r6">
             <objects>
                 <viewController id="VlI-Qc-E3o" customClass="StudentMenuController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
@@ -715,10 +716,13 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="STUDENT" id="8nF-c2-5Jw">
+                        <barButtonItem key="backBarButtonItem" title="Wstecz" id="rpe-ng-uMx"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aa2-lt-GZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1965" y="-594"/>
+            <point key="canvasLocation" x="-183.19999999999999" y="-584.25787106446785"/>
         </scene>
         <!--Profesor Menu Controller-->
         <scene sceneID="hS6-Ob-hL6">
@@ -1143,10 +1147,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="aTI-I9-hgH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RpE-JU-9A9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1967" y="216"/>
+            <point key="canvasLocation" x="-183" y="181"/>
         </scene>
         <!--DZIEKANAT-->
         <scene sceneID="Ucg-Mh-avn">
@@ -3161,6 +3166,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GDo-fh-O2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4470" y="-4240"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="g37-h7-z1Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cn4-f4-dfJ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="b5A-z7-Axl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VlI-Qc-E3o" kind="relationship" relationship="rootViewController" id="CQb-I2-Zbm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77y-3O-Uex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1122.4000000000001" y="-584.25787106446785"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GfE-io-EMg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="46n-xS-TYC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C04-Nx-ckQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="VJU-n1-LNY" kind="relationship" relationship="rootViewController" id="LJM-uz-lvd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u68-QI-mOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1122" y="181"/>
         </scene>
     </scenes>
     <resources>
