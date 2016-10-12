@@ -76,5 +76,7 @@ class AddLecturerController: UIViewController {
         } //end FIR
 
     }
+    
+    
 
 }

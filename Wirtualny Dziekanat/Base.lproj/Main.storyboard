@@ -327,6 +327,9 @@
                                         <include reference="uLY-Gm-LIL"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signOutButton:" destination="VlI-Qc-E3o" eventType="touchUpInside" id="YoH-jt-AqP"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d91-gA-tU3">
                                 <constraints>
@@ -846,6 +849,9 @@
                                         <include reference="kIS-yR-cXo"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signOutButton:" destination="VJU-n1-LNY" eventType="touchUpInside" id="DFO-mD-miG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Moje przedmioty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ic2-rG-aml">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1424,6 +1430,9 @@
                                         <include reference="p5c-aS-Tqn"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="signOutButton:" destination="Hwh-k0-wV4" eventType="touchUpInside" id="pBu-9f-AFo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wyloguj" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4qH-SR-kwG">
                                 <constraints>
