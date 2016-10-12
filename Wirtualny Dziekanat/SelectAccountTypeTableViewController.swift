@@ -46,6 +46,16 @@ class SelectAccountTypeTableViewController: UITableViewController {
         
         type = account_types[indexPath.row]
         
-        performSegue(withIdentifier: "selectFacuty", sender: self)
+        performSegue(withIdentifier: "sendTypeSegue", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "sendTypeSegue")
+        {
+            let destinationVC = segue.destination as! SelectFacultyTableViewController
+            
+            destinationVC.type = type
+        }
+    }
+
 }

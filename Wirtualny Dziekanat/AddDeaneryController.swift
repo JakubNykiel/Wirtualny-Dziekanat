@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Firebase
 
 class AddDeaneryController: UIViewController {
 
     var tableResult:String!
     var keyResult:String!
     var type = "Dziekanat"
+    var ref: FIRDatabaseReference!
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
@@ -24,6 +26,7 @@ class AddDeaneryController: UIViewController {
 
         // Do any additional setup after loading the view.
         facultyResult.text = tableResult
+        ref = FIRDatabase.database().reference()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +34,44 @@ class AddDeaneryController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func addDeanery(_ sender: AnyObject) {
+        
+        let name = nameText.text! as String
+        let surname = surnameText.text! as String
+        let email = emailText.text! as String
+        
+        FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Dziekanat123456") { (user, error) in
+            
+            let userID:String! = user!.uid 
+            
+            if error != nil
+            {
+                print("Mamy błąd")
+                print(error)
+            }
+            else
+            {
+                
+                let userData = ["name": name,
+                                "surname": surname,
+                                "email": email,
+                                "account_type": self.type]
+                
+                let tableData = [
+                    "id_faculty" : self.keyResult,
+                    "id_user" : userID
+                ] as [String:String]
+                
+                self.ref.child("users").child(userID).setValue(userData)
+                self.ref.child("user-faculty").childByAutoId().setValue(tableData)
+
+            }
+        } //end FIR
+
         
     }
 

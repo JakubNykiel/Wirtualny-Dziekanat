@@ -9,6 +9,8 @@
 import UIKit
 
 class DziekanatMenuController: UIViewController {
+    
+    var field:Bool!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,15 @@ class DziekanatMenuController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "whatAddSegue")
+        {
+            let destinationVC = segue.destination as! SelectFacultyTableViewController
+            
+            destinationVC.field = true
+        }
     }
 
 }

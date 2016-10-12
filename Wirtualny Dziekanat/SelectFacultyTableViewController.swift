@@ -18,6 +18,9 @@ class SelectFacultyTableViewController: UITableViewController  {
     var selectedCell = ""
     var selectedKey = ""
     var keys = [String]()
+    var field:Bool = false
+    var type = ""
+    
     
     var fieldFaculty: DziekanatAddFieldController!
 
@@ -70,11 +73,26 @@ class SelectFacultyTableViewController: UITableViewController  {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedCell = (tableView.cellForRow(at: indexPath)?.textLabel?.text)!
         selectedKey = keys[indexPath.row]
-        performSegue(withIdentifier: "facultySelected", sender: self)
-    }
-    func sendSelectedCell(value: String)
-    {
         
+        
+        if(field == true)
+        {
+            field = false
+            performSegue(withIdentifier: "addFieldSegue", sender: self)
+        }
+        else if(type == "Dziekanat")
+        {
+            performSegue(withIdentifier: "sendDataToDeanery", sender: self)
+        }
+        else if(type == "Student")
+        {
+            performSegue(withIdentifier: "sendDataToStudent", sender: self)
+        }
+        else if(type == "Profesor")
+        {
+            performSegue(withIdentifier: "sendDataToProf", sender: self)
+        }
+       
     }
 
     /*
@@ -113,7 +131,7 @@ class SelectFacultyTableViewController: UITableViewController  {
     */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "facultySelected")
+        if (segue.identifier == "addFieldSegue")
         {
             let destinationVC = segue.destination as! DziekanatAddFieldController
             
