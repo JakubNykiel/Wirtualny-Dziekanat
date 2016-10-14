@@ -68,6 +68,8 @@ class SelectFacultyTableViewController: UITableViewController  {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier, for: indexPath)
     
         cell.textLabel?.text = self.faculty[indexPath.row].value as? String
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,6 +95,10 @@ class SelectFacultyTableViewController: UITableViewController  {
             performSegue(withIdentifier: "sendDataToProf", sender: self)
         }
        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
     /*

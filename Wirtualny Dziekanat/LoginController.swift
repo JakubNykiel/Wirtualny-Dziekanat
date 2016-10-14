@@ -23,6 +23,7 @@ class LoginController: UIViewController {
 
         // Do any additional setup after loading the view.
         emailTextField.borderStyle = UITextBorderStyle.roundedRect
+        emailTextField.adjustsFontSizeToFitWidth = true
         passwordTextField.borderStyle = UITextBorderStyle.roundedRect
         ref = FIRDatabase.database().reference()
         

@@ -97,8 +97,7 @@ class AddDeaneryController: UIViewController {
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
                 let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
                 
-                // And go to that Controller
-                self.navigationController?.popToViewController(targetController, animated: true)
+                _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
             
             self.present(alertController, animated: true, completion: nil)

@@ -101,7 +101,7 @@ class AddLecturerController: UIViewController {
                 let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
                 
                 // And go to that Controller
-                self.navigationController?.popToViewController(targetController, animated: true)
+                _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
             
             self.present(alertController, animated: true, completion: nil)
