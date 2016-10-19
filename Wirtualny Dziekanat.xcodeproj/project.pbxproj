@@ -11,6 +11,8 @@
 		C302DEA01DA6FDA300B98B7A /* AddStudentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DE9F1DA6FDA300B98B7A /* AddStudentController.swift */; };
 		C302DEA21DA6FFDB00B98B7A /* AddDeaneryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */; };
 		C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */; };
+		C30F471C1DB6C54200E9C807 /* SelectFieldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F471B1DB6C54200E9C807 /* SelectFieldTableViewController.swift */; };
+		C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F471D1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift */; };
 		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
 		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */; };
@@ -48,6 +50,8 @@
 		C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDeaneryController.swift; sourceTree = "<group>"; };
 		C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddLecturerController.swift; sourceTree = "<group>"; };
 		C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wirtualny Dziekanat.entitlements"; sourceTree = "<group>"; };
+		C30F471B1DB6C54200E9C807 /* SelectFieldTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFieldTableViewController.swift; sourceTree = "<group>"; };
+		C30F471D1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSemesterTableViewController.swift; sourceTree = "<group>"; };
 		C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddFieldController.swift; sourceTree = "<group>"; };
 		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
 		C324D3031DA263F7006C552F /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,8 @@
 				C302DE9F1DA6FDA300B98B7A /* AddStudentController.swift */,
 				C302DEA11DA6FFDB00B98B7A /* AddDeaneryController.swift */,
 				C302DEA31DA7002A00B98B7A /* AddLecturerController.swift */,
+				C30F471B1DB6C54200E9C807 /* SelectFieldTableViewController.swift */,
+				C30F471D1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
+				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
 				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
 				C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */,
@@ -339,6 +346,7 @@
 				C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */,
 				C302DEA01DA6FDA300B98B7A /* AddStudentController.swift in Sources */,
 				C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */,
+				C30F471C1DB6C54200E9C807 /* SelectFieldTableViewController.swift in Sources */,
 				C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */,
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */,

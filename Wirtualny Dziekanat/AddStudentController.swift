@@ -12,8 +12,8 @@ import Firebase
 class AddStudentController: UIViewController {
     
     let functions = Functions()
-    var tableResult:String!
-    var keyResult:String!
+    var tableResult:[String]!
+    var keyResult:[String]!
     var type = "Student"
     var ref: FIRDatabaseReference!
     
@@ -21,13 +21,17 @@ class AddStudentController: UIViewController {
     @IBOutlet weak var nameText: UITextField!
     @IBOutlet weak var surnameText: UITextField!
     @IBOutlet weak var facultyResult: UILabel!
+    @IBOutlet weak var fieldResult: UILabel!
+    @IBOutlet weak var semesterResult: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        facultyResult.text = tableResult
+        facultyResult.text = tableResult[0]
+        fieldResult.text = tableResult[1]
+        semesterResult.text = tableResult[2]
         ref = FIRDatabase.database().reference()
     }
     
@@ -83,7 +87,7 @@ class AddStudentController: UIViewController {
                     ]
                     
                     let tableData = [
-                        "id_faculty" : self.keyResult,
+                        "id_faculty" : self.keyResult[0],
                         "id_user" : userID
                         ] as [String:String]
                     
@@ -92,18 +96,18 @@ class AddStudentController: UIViewController {
                 }
             } //end FIR
             
+            //zakonczenie dodawania uzytkownika:
             let alertController = UIAlertController(title: "Dodano użytkownika", message:
                 "Dodawanie uzytkownika zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
                 let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
                 
-                // And go to that Controller
                 _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
-            
             self.present(alertController, animated: true, completion: nil)
             
         }
+        //na koniec usuwamy dane
     }
     
     
