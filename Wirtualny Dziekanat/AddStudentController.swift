@@ -50,6 +50,7 @@ class AddStudentController: UIViewController {
         let surname = surnameText.text! as String
         let email = emailText.text! as String
         
+        
         if (email.isEmpty || surname.isEmpty || name.isEmpty)
         {
             let alertController = UIAlertController(title: "Błąd", message:
@@ -83,7 +84,8 @@ class AddStudentController: UIViewController {
                         "name" : name,
                         "surname" : surname,
                         "email" : email,
-                        "account_type": self.type
+                        "account_type": self.type,
+                        "semester": self.keyResult[2]
                     ]
                     
                     let tableData = [
@@ -91,8 +93,14 @@ class AddStudentController: UIViewController {
                         "id_user" : userID
                         ] as [String:String]
                     
+                    let userField = [
+                        "id_field" : self.keyResult[1],
+                        "id_user" : userID
+                    ] as [String:String]
+                    
                     self.ref.child("users").child(user!.uid).setValue(userData)
                     self.ref.child("user-faculty").childByAutoId().setValue(tableData)
+                    self.ref.child("user-field").childByAutoId().setValue(userField)
                 }
             } //end FIR
             
@@ -100,7 +108,7 @@ class AddStudentController: UIViewController {
             let alertController = UIAlertController(title: "Dodano użytkownika", message:
                 "Dodawanie uzytkownika zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
-                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
+                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 6]
                 
                 _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))

@@ -19,6 +19,7 @@ class SelectFacultyTableViewController: UITableViewController  {
     var selectedKey = ""
     var keys = [String]()
     var field:Bool = false
+    var chooseField = false
     var type = ""
     
     
@@ -46,7 +47,7 @@ class SelectFacultyTableViewController: UITableViewController  {
                     self.faculty.append(sn)
                 }
             }
-            print("Wczytano wydziały!")
+
             self.tableView.reloadData()
         })
         
@@ -86,13 +87,13 @@ class SelectFacultyTableViewController: UITableViewController  {
         {
             performSegue(withIdentifier: "sendDataToDeanery", sender: self)
         }
-        else if(type == "Student")
-        {
-            performSegue(withIdentifier: "sendDataToStudent", sender: self)
-        }
         else if(type == "Profesor")
         {
             performSegue(withIdentifier: "sendDataToProf", sender: self)
+        }
+        else
+        {
+            performSegue(withIdentifier: "sendDataFurther", sender: self)
         }
        
     }
@@ -107,16 +108,16 @@ class SelectFacultyTableViewController: UITableViewController  {
             let destinationVC = segue.destination as! DziekanatAddFieldController
             
             destinationVC.tableResult = selectedCell
-            print(destinationVC.tableResult)
             destinationVC.keyResult = selectedKey
             
         }
-        if (segue.identifier == "sendDataToStudent")
+        if (segue.identifier == "sendDataFurther")
         {
             let destinationVC = segue.destination as! SelectFieldTableViewController
             
             destinationVC.tableResult[0] = selectedCell
             destinationVC.keyResult[0] = selectedKey
+            destinationVC.chooseField = chooseField
             
             
         }

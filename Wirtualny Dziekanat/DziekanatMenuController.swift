@@ -31,6 +31,13 @@ class DziekanatMenuController: UIViewController {
             
             destinationVC.field = true
         }
+        if (segue.identifier == "chooseSubject")
+        {
+            let destinationVC = segue.destination as! SelectFacultyTableViewController
+            
+            destinationVC.chooseField = true
+            
+        }
     }
     
     @IBAction func signOutButton(_ sender: AnyObject) {
