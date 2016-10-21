@@ -11,7 +11,6 @@ import Firebase
 
 class AddStudentController: UIViewController {
     
-    let functions = Functions()
     var tableResult:[String]!
     var keyResult:[String]!
     var type = "Student"
@@ -69,7 +68,7 @@ class AddStudentController: UIViewController {
             
             self.present(alertController, animated: true, completion: nil)
         }
-        else if functions.validateEmail(email) == false
+        else if myFunc.validateEmail(email) == false
         {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
@@ -125,7 +124,6 @@ class AddStudentController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
             
         }
-        //na koniec usuwamy dane
     }
     
     

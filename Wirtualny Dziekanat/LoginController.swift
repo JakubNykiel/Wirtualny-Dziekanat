@@ -11,7 +11,7 @@ import FirebaseAuth
 import Firebase
 
 class LoginController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     let functions = Functions()
@@ -20,7 +20,7 @@ class LoginController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         emailTextField.borderStyle = UITextBorderStyle.roundedRect
         emailTextField.adjustsFontSizeToFitWidth = true
@@ -31,7 +31,7 @@ class LoginController: UIViewController {
         passwordTextField.text = "Dziekanat123456"
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,9 +43,9 @@ class LoginController: UIViewController {
     
     @IBAction func loginButton(_ sender: AnyObject) {
         
+        Functions.show("Ładowanie")
         let email = emailTextField.text
         let password = passwordTextField.text
-        
         
         if email!.isEmpty || password!.isEmpty
         {
@@ -54,6 +54,7 @@ class LoginController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
+            Functions.hide()
         }
         else if functions.validateEmail(email!) == false
         {
@@ -62,14 +63,11 @@ class LoginController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
+            Functions.hide()
         }
         else //właściwe logowanie
         {
             FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-                
-                let currentUser = FIRAuth.auth()?.currentUser
-                let userID = currentUser!.uid
-
                 
                 if error != nil {
                     // an error occured while attempting login
@@ -78,10 +76,13 @@ class LoginController: UIViewController {
                     alertController.addAction(UIAlertAction(title: "Spróbuj ponownie", style: UIAlertActionStyle.default,handler: nil))
                     
                     self.present(alertController, animated: true, completion: nil)
-                    
+                    Functions.hide()
                 }
                 else
                 {
+                    Functions.hide()
+                    let currentUser = FIRAuth.auth()?.currentUser
+                    let userID = currentUser!.uid
                     self.ref.child("users").child(userID).child("account_type").observeSingleEvent(of: .value, with: { (snapshot) in
                         let type = snapshot.value as! String
                         
@@ -103,9 +104,8 @@ class LoginController: UIViewController {
             }
             
         }
-        
     }
-
-
-
+    
+    
+    
 }

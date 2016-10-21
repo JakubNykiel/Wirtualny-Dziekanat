@@ -150,7 +150,7 @@
                             <constraint firstItem="fYB-IO-b1L" firstAttribute="centerX" secondItem="scX-my-7xU" secondAttribute="centerX" id="724-Lo-e8m"/>
                             <constraint firstItem="RfJ-92-B9h" firstAttribute="centerX" secondItem="scX-my-7xU" secondAttribute="centerX" id="76e-dQ-Vtl"/>
                             <constraint firstItem="39h-bd-aPf" firstAttribute="top" secondItem="uzi-U2-xEM" secondAttribute="bottom" constant="70" id="9fp-I1-0L1">
-                                <variation key="heightClass=regular-widthClass=compact" constant="98"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="73"/>
                             </constraint>
                             <constraint firstItem="Wsl-vx-6c2" firstAttribute="centerX" secondItem="scX-my-7xU" secondAttribute="centerX" id="AAM-W7-GEQ"/>
                             <constraint firstItem="39h-bd-aPf" firstAttribute="trailing" secondItem="scX-my-7xU" secondAttribute="trailingMargin" id="BI4-yR-OBj"/>
