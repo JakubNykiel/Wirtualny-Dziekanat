@@ -16,36 +16,27 @@ class SelectFieldTableViewController: UITableViewController {
     var selectedCell = ""
     var selectedKey = ""
     var ref: FIRDatabaseReference!
-    var field = [FIRDataSnapshot]()
+    var field = [String]()
     var keys = [String]()
     var chooseField = false
+    let myFunc = Functions()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.allowsSelection = true
+        
         ref = FIRDatabase.database().reference()
         
-        ref.child("fields").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    
-                    let fn = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    let sn = snap.childSnapshot(forPath: "name")
-                    
-                    if(fn == self.keyResult[0])
-                    {
-                        self.keys.append(snap.key)
-                        self.field.append(sn)
-                    }
-                    
-                }
+        myFunc.displayFields{ (name) -> () in
+            for item in name
+            {
+                self.keys.append(item.key)
+                self.field.append(item.value)
             }
             self.tableView.reloadData()
-        })
+        }
         
     }
     
@@ -65,7 +56,7 @@ class SelectFieldTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fieldCell", for: indexPath)
         
-        cell.textLabel?.text = self.field[indexPath.row].value as? String
+        cell.textLabel?.text = self.field[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         
@@ -92,9 +83,6 @@ class SelectFieldTableViewController: UITableViewController {
             destinationVC.tableResult = tableResult
             destinationVC.keyResult = keyResult
             destinationVC.chooseField = chooseField
-            
         }
     }
-    
-    
 }

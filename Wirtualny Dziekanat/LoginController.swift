@@ -27,6 +27,9 @@ class LoginController: UIViewController {
         passwordTextField.borderStyle = UITextBorderStyle.roundedRect
         ref = FIRDatabase.database().reference()
         
+        emailTextField.text = "wggios@dziekanat.agh"
+        passwordTextField.text = "Dziekanat123456"
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -15,17 +15,24 @@ class DziekanatAddFieldController: UIViewController {
     
     var tableResult:String!
     var keyResult:String!
+    let myFunc = Functions()
     
     @IBOutlet weak var nameTextField: UITextField!
-    
     @IBOutlet weak var facultyResult: UILabel!
     
-
     override func viewDidLoad() {
-        super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        facultyResult.text = tableResult
+
+        myFunc.displayFaculty{ (name) -> () in
+            if name.characters.count > 0 {
+                self.facultyResult.text = name
+            }
+            else {
+                print("Not found")
+            }
+        }
         
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {

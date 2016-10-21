@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bn3-Ch-jWf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HpV-PK-1aT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -1963,7 +1963,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="Mir-jj-hCl" kind="show" identifier="chooseSubject" id="suz-e5-YZs"/>
+                                    <segue destination="P2k-Zl-YSg" kind="show" id="lQg-Qo-I37"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj przedmiot" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9E-eb-qtQ">
@@ -2061,7 +2061,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" backgroundImage="Graduation Cap-50.png"/>
                                 <connections>
-                                    <segue destination="Mir-jj-hCl" kind="show" identifier="whatAddSegue" id="pin-Q2-rP6"/>
+                                    <segue destination="k9P-Mw-qiE" kind="show" id="fEH-Id-vFv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dodaj kierunek" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIL-Kh-tQK">
@@ -2114,6 +2114,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IhI-5u-g9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="308" y="-4424"/>
+        </scene>
+        <!--Dodaj-->
+        <scene sceneID="z8R-ZO-N56">
+            <objects>
+                <viewController title="Dodaj" id="P2k-Zl-YSg" customClass="DziekanatMenuController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fXU-SC-q6Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="4y2-Gg-WJX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lbf-uB-YfM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js8-eq-RSR">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="pK3-7V-gNW"/>
+                                    <constraint firstAttribute="height" constant="70" id="u67-Lj-hkg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Przedmiot">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="z9S-qa-hZW" kind="show" identifier="chooseSubject" id="SVq-1a-e7o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uRO-1w-CAV">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="Y9N-y7-8ov"/>
+                                    <constraint firstAttribute="width" constant="250" id="qLy-qg-KmF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <state key="normal" title="Typ zajęć z przedmiotu">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="js8-eq-RSR" firstAttribute="top" secondItem="fXU-SC-q6Z" secondAttribute="bottom" constant="101" id="AaN-aF-PlI"/>
+                            <constraint firstItem="js8-eq-RSR" firstAttribute="trailing" secondItem="uRO-1w-CAV" secondAttribute="trailing" id="Jv2-77-MoR"/>
+                            <constraint firstItem="js8-eq-RSR" firstAttribute="leading" secondItem="uRO-1w-CAV" secondAttribute="leading" id="QXS-us-VlJ"/>
+                            <constraint firstItem="js8-eq-RSR" firstAttribute="centerX" secondItem="lbf-uB-YfM" secondAttribute="centerX" id="drw-Dv-Luz"/>
+                            <constraint firstItem="4y2-Gg-WJX" firstAttribute="top" secondItem="uRO-1w-CAV" secondAttribute="bottom" constant="152" id="jUK-DB-NzO"/>
+                            <constraint firstItem="js8-eq-RSR" firstAttribute="leading" secondItem="lbf-uB-YfM" secondAttribute="leadingMargin" constant="46" id="qke-b7-vJq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aboutSubjectButton" destination="uRO-1w-CAV" id="uEY-D1-vp8"/>
+                        <outlet property="subjectButton" destination="js8-eq-RSR" id="Mm8-P9-epY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jpH-tN-z96" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="96.799999999999997" y="-6392.6536731634187"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7TH-jO-eE1">
@@ -2232,7 +2287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LFA-0N-6Zt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4145" y="-4743"/>
+            <point key="canvasLocation" x="2977" y="-4669"/>
         </scene>
         <!--Dodaj kierunek-->
         <scene sceneID="cyL-pN-zdq">
@@ -2327,7 +2382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpm-Ng-nrV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2977" y="-4628"/>
+            <point key="canvasLocation" x="1450" y="-4424"/>
         </scene>
         <!--Typy kont-->
         <scene sceneID="Z7O-hl-uCP">
@@ -2355,6 +2410,8 @@
                     <connections>
                         <outlet property="selectType" destination="pWE-Sb-Nfb" id="54H-Ob-5x7"/>
                         <segue destination="Mir-jj-hCl" kind="show" identifier="sendTypeSegue" id="hVZ-1R-arT"/>
+                        <segue destination="RN9-0q-KcN" kind="show" identifier="goToProf" id="adJ-cN-Tuf"/>
+                        <segue destination="z9S-qa-hZW" kind="show" identifier="goToStudent" id="8O0-VN-08h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gbW-B2-HFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2385,10 +2442,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="RN9-0q-KcN" kind="show" identifier="sendDataToProf" id="cl4-V7-UiD"/>
-                        <segue destination="k9P-Mw-qiE" kind="show" identifier="addFieldSegue" id="js2-0Z-q7P"/>
                         <segue destination="XjW-9M-trU" kind="show" identifier="sendDataToDeanery" id="GR6-0L-ITF"/>
-                        <segue destination="z9S-qa-hZW" kind="show" identifier="sendDataFurther" id="JQt-kS-eud"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gbb-Ga-hE3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2406,12 +2460,95 @@
                     <view key="view" contentMode="scaleToFill" id="Fj8-l3-I3L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="216-ZL-cnj">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wydział:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Y9-dh-gm4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="V79-NU-TJf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ij9-yZ-6eZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kierunek:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXC-PG-PQU">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epH-qL-dOb">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semestr:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rJM-yv-wYm">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psv-FP-lcP">
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Dodaj">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addStudent:" destination="HYi-u7-ObO" eventType="touchUpInside" id="BVD-nq-LSh"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-Fa-A0s">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rJM-yv-wYm" firstAttribute="centerY" secondItem="epH-qL-dOb" secondAttribute="centerY" id="19j-6o-jc5"/>
+                            <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="leading" secondItem="epH-qL-dOb" secondAttribute="leading" id="1jF-wq-tsK"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="trailing" secondItem="psv-FP-lcP" secondAttribute="trailing" id="4AH-zU-cQg"/>
+                            <constraint firstItem="rJM-yv-wYm" firstAttribute="top" secondItem="Ij9-yZ-6eZ" secondAttribute="bottom" constant="40" id="4Dy-O5-ep8"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="top" secondItem="xA1-Fa-A0s" secondAttribute="bottom" constant="8" symbolic="YES" id="5DP-kS-RSb"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="leading" secondItem="Fj8-l3-I3L" secondAttribute="leadingMargin" constant="44" id="5ZN-b1-xMg"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="trailing" secondItem="Ij9-yZ-6eZ" secondAttribute="trailing" id="62z-KO-4T6"/>
+                            <constraint firstItem="epH-qL-dOb" firstAttribute="top" secondItem="WXC-PG-PQU" secondAttribute="bottom" constant="39" id="68d-kV-ucn"/>
+                            <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="trailing" secondItem="epH-qL-dOb" secondAttribute="trailing" id="8Y7-BT-WLD"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="leading" secondItem="Fj8-l3-I3L" secondAttribute="leadingMargin" constant="98" id="9aL-fk-xRw"/>
+                            <constraint firstItem="WXC-PG-PQU" firstAttribute="leading" secondItem="rJM-yv-wYm" secondAttribute="leading" id="BOf-GD-gLg"/>
+                            <constraint firstItem="WXC-PG-PQU" firstAttribute="centerY" secondItem="Ij9-yZ-6eZ" secondAttribute="centerY" id="D7d-um-aE8"/>
+                            <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="top" secondItem="216-ZL-cnj" secondAttribute="bottom" constant="8" symbolic="YES" id="F5S-zt-LNZ"/>
+                            <constraint firstItem="6Y9-dh-gm4" firstAttribute="leading" secondItem="WXC-PG-PQU" secondAttribute="leading" id="GVb-Rf-rt2"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="leading" secondItem="psv-FP-lcP" secondAttribute="leading" id="Kz0-58-SNG"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="leading" secondItem="Ij9-yZ-6eZ" secondAttribute="leading" id="L9o-We-wCv"/>
+                            <constraint firstItem="6Y9-dh-gm4" firstAttribute="centerY" secondItem="216-ZL-cnj" secondAttribute="centerY" id="OBc-Ns-iEL"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="top" secondItem="ETQ-Wd-eMa" secondAttribute="bottom" constant="84" id="Sa7-xD-PhG"/>
+                            <constraint firstItem="6Y9-dh-gm4" firstAttribute="leading" secondItem="Fj8-l3-I3L" secondAttribute="leadingMargin" id="TJZ-vz-1SC"/>
+                            <constraint firstItem="WXC-PG-PQU" firstAttribute="trailing" secondItem="rJM-yv-wYm" secondAttribute="trailing" id="Vfz-7r-oHb"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="centerX" secondItem="Fj8-l3-I3L" secondAttribute="centerX" id="igU-Jk-i9t"/>
+                            <constraint firstItem="6Y9-dh-gm4" firstAttribute="trailing" secondItem="WXC-PG-PQU" secondAttribute="trailing" id="j6G-0x-RIS"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="trailing" secondItem="Fj8-l3-I3L" secondAttribute="trailingMargin" id="l1r-1D-K7V"/>
+                            <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="top" secondItem="6Y9-dh-gm4" secondAttribute="bottom" constant="39" id="n1Z-4b-vSr"/>
+                            <constraint firstItem="epH-qL-dOb" firstAttribute="top" secondItem="Ij9-yZ-6eZ" secondAttribute="bottom" constant="8" symbolic="YES" id="pAF-OB-Eda"/>
+                            <constraint firstItem="psv-FP-lcP" firstAttribute="top" secondItem="epH-qL-dOb" secondAttribute="bottom" constant="31" id="tsi-R2-SO3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3P-wh-Giv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4107" y="-7324"/>
+            <point key="canvasLocation" x="308" y="-8050"/>
         </scene>
         <!--Kierunki-->
         <scene sceneID="SE0-Pk-Qzo">
@@ -2619,7 +2756,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tbu-Uy-EUp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4222" y="-5608"/>
+            <point key="canvasLocation" x="4241" y="-5696"/>
         </scene>
         <!--Dodaj Studenta-->
         <scene sceneID="19x-4l-Nqq">
@@ -2811,6 +2948,6 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="suz-e5-YZs"/>
+        <segue reference="8O0-VN-08h"/>
     </inferredMetricsTieBreakers>
 </document>

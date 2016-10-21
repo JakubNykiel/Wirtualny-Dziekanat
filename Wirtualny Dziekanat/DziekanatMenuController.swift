@@ -13,10 +13,21 @@ class DziekanatMenuController: UIViewController {
     
     var field:Bool!
 
+    @IBOutlet weak var aboutSubjectButton: UIButton!
+    @IBOutlet weak var subjectButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if(subjectButton != nil)
+        {
+            subjectButton.layer.borderWidth = 3
+            subjectButton.layer.borderColor = UIColor.black.cgColor
+            
+            aboutSubjectButton.layer.borderWidth = 3
+            aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +44,7 @@ class DziekanatMenuController: UIViewController {
         }
         if (segue.identifier == "chooseSubject")
         {
-            let destinationVC = segue.destination as! SelectFacultyTableViewController
+            let destinationVC = segue.destination as! SelectFieldTableViewController
             
             destinationVC.chooseField = true
             

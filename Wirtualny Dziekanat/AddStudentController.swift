@@ -16,6 +16,7 @@ class AddStudentController: UIViewController {
     var keyResult:[String]!
     var type = "Student"
     var ref: FIRDatabaseReference!
+    let myFunc = Functions()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
@@ -28,11 +29,20 @@ class AddStudentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        facultyResult.text = tableResult[0]
+        ref = FIRDatabase.database().reference()
+        
+        myFunc.displayFaculty{ (name) -> () in
+            if name.characters.count > 0 {
+                self.facultyResult.text = name
+            }
+            else {
+                print("Not found")
+            }
+        }
+
         fieldResult.text = tableResult[1]
         semesterResult.text = tableResult[2]
-        ref = FIRDatabase.database().reference()
+        
     }
     
     override func didReceiveMemoryWarning() {

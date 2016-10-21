@@ -27,8 +27,37 @@ class AddLecturerController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        facultyResult.text = tableResult
         ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        
+        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let fn = snap.childSnapshot(forPath: "id_faculty").value as! String
+                    let sn = snap.childSnapshot(forPath: "id_user").value as! String
+                    
+                    if(sn == userID)
+                    {
+                        self.keyResult = fn
+                    }
+                }
+            }
+        })
+        ref.child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let fn = snap.childSnapshot(forPath: "id").value as! String
+                    let sn = snap.childSnapshot(forPath: "name").value as! String
+                    
+                    if(fn == self.keyResult)
+                    {
+                        self.facultyResult.text = sn
+                    }
+                }
+            }
+        })
     }
     
     override func didReceiveMemoryWarning() {
