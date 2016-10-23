@@ -43,7 +43,7 @@ class LoginController: UIViewController {
     
     @IBAction func loginButton(_ sender: AnyObject) {
         
-        Functions.show("Ładowanie")
+        functions.show("Logowanie")
         let email = emailTextField.text
         let password = passwordTextField.text
         
@@ -54,7 +54,7 @@ class LoginController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
-            Functions.hide()
+            functions.hide()
         }
         else if functions.validateEmail(email!) == false
         {
@@ -63,7 +63,7 @@ class LoginController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
-            Functions.hide()
+            functions.hide()
         }
         else //właściwe logowanie
         {
@@ -76,11 +76,10 @@ class LoginController: UIViewController {
                     alertController.addAction(UIAlertAction(title: "Spróbuj ponownie", style: UIAlertActionStyle.default,handler: nil))
                     
                     self.present(alertController, animated: true, completion: nil)
-                    Functions.hide()
+                    self.functions.hide()
                 }
                 else
                 {
-                    Functions.hide()
                     let currentUser = FIRAuth.auth()?.currentUser
                     let userID = currentUser!.uid
                     self.ref.child("users").child(userID).child("account_type").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -99,7 +98,7 @@ class LoginController: UIViewController {
                             self.performSegue(withIdentifier: "ProfesorMenu", sender: nil)
                         }
                     })
-                    
+                    self.functions.hide()
                 }
             }
             

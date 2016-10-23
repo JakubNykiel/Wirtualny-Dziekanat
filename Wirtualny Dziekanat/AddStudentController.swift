@@ -28,6 +28,7 @@ class AddStudentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        myFunc.show()
         ref = FIRDatabase.database().reference()
         
         myFunc.displayFaculty{ (name) -> () in
@@ -44,6 +45,12 @@ class AddStudentController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFunc.hide()
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,6 +62,7 @@ class AddStudentController: UIViewController {
     
     @IBAction func addStudent(_ sender: AnyObject) {
         
+        myFunc.show()
         let name = nameText.text! as String
         let surname = surnameText.text! as String
         let email = emailText.text! as String
@@ -66,6 +74,7 @@ class AddStudentController: UIViewController {
                 "Niektóre pola są puste!", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
             
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else if myFunc.validateEmail(email) == false
@@ -73,7 +82,7 @@ class AddStudentController: UIViewController {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else
@@ -121,6 +130,7 @@ class AddStudentController: UIViewController {
                 
                 _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
             
         }

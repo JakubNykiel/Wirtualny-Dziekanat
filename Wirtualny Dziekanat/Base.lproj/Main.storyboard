@@ -2397,7 +2397,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ1-Rx-TsE" id="w37-Ip-qPJ">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2431,7 +2431,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nai-T0-HXm" id="Q8E-5Y-bKh">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2452,7 +2452,7 @@
         <!--Przedmiot-->
         <scene sceneID="PzT-G2-edr">
             <objects>
-                <viewController title="Przedmiot" id="vna-8L-QjI" sceneMemberID="viewController">
+                <viewController title="Przedmiot" id="vna-8L-QjI" customClass="DziekanatAddSubjectController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ETQ-Wd-eMa"/>
                         <viewControllerLayoutGuide type="bottom" id="ZLs-a3-2NG"/>
@@ -2507,6 +2507,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="addStudent:" destination="HYi-u7-ObO" eventType="touchUpInside" id="BVD-nq-LSh"/>
+                                    <action selector="addSubjectButton:" destination="vna-8L-QjI" eventType="touchUpInside" id="HBx-3y-Viw"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xA1-Fa-A0s">
@@ -2545,6 +2546,12 @@
                             <constraint firstItem="psv-FP-lcP" firstAttribute="top" secondItem="epH-qL-dOb" secondAttribute="bottom" constant="31" id="tsi-R2-SO3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="facultyResult" destination="216-ZL-cnj" id="8S9-hU-GFw"/>
+                        <outlet property="fieldResult" destination="Ij9-yZ-6eZ" id="Rv5-Pl-lJQ"/>
+                        <outlet property="semesterResult" destination="epH-qL-dOb" id="A3s-Ys-crX"/>
+                        <outlet property="subjectText" destination="xA1-Fa-A0s" id="D3S-Zf-emi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3P-wh-Giv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2563,7 +2570,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M1j-J0-dY4" id="A75-QU-sug">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2594,7 +2601,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YFO-Wx-kqS" id="HqI-bI-rh9">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2606,7 +2613,7 @@
                     </tableView>
                     <connections>
                         <segue destination="HYi-u7-ObO" kind="show" identifier="semesterToResult" id="92h-tp-io5"/>
-                        <segue destination="vna-8L-QjI" kind="show" identifier="subject" id="sLs-Ig-8td"/>
+                        <segue destination="vna-8L-QjI" kind="show" identifier="semesterToSubject" id="sLs-Ig-8td"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQv-g4-6mc" userLabel="First Responder" sceneMemberID="firstResponder"/>

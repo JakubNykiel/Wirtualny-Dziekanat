@@ -117,9 +117,9 @@ class Functions
     }
     
     //animacja ladowania
-    static var currentOverlay : UIView?
+    var currentOverlay : UIView?
     
-    static func show() {
+    func show() {
         guard let currentMainWindow = UIApplication.shared.keyWindow else {
             print("No main window.")
             return
@@ -127,7 +127,7 @@ class Functions
         show(currentMainWindow)
     }
     
-    static func show(_ loadingText: String) {
+    func show(_ loadingText: String) {
         guard let currentMainWindow = UIApplication.shared.keyWindow else {
             print("No main window.")
             return
@@ -135,11 +135,11 @@ class Functions
         show(currentMainWindow, loadingText: loadingText)
     }
     
-    static func show(_ overlayTarget : UIView) {
+    func show(_ overlayTarget : UIView) {
         show(overlayTarget, loadingText: nil)
     }
     
-    static func show(_ overlayTarget : UIView, loadingText: String?) {
+    func show(_ overlayTarget : UIView, loadingText: String?) {
         
         hide()
         
@@ -176,9 +176,17 @@ class Functions
         currentOverlay = overlay
     }
     
-    static func hide() {
+    func hide() {
         if currentOverlay != nil {
-            currentOverlay?.removeFromSuperview()
+//            UIView.animate(withDuration: 0.5, animations: {
+//                self.currentOverlay?.alpha = 0
+//            }) { _ in
+//                self.currentOverlay?.removeFromSuperview()
+//            }
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration(0.75)
+            self.currentOverlay?.alpha = 0
+            UIView.commitAnimations()
             currentOverlay =  nil
         }
     }

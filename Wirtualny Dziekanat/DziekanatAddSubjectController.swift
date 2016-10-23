@@ -7,34 +7,81 @@
 //
 
 import UIKit
+import Firebase
 
 class DziekanatAddSubjectController: UIViewController {
 
     @IBOutlet weak var subjectText: UITextField!
-    @IBOutlet weak var facultyView: UIView!
-    @IBOutlet weak var semesterView: UIView!
-    @IBOutlet weak var fieldView: UIView!
     @IBOutlet weak var facultyResult: UILabel!
     @IBOutlet weak var fieldResult: UILabel!
     @IBOutlet weak var semesterResult: UILabel!
     
+    var myFunc = Functions()
+    var ref: FIRDatabaseReference!
+    var tableResult:[String]!
+    var keyResult:[String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        myFunc.show()
+        ref = FIRDatabase.database().reference()
+        
+        myFunc.displayFaculty{ (name) -> () in
+            if name.characters.count > 0 {
+                self.facultyResult.text = name
+            }
+            else {
+                print("Not found")
+            }
+        }
+        
+        fieldResult.text = tableResult[1]
+        semesterResult.text = tableResult[2]
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFunc.hide()
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func selectFaculty(_ sender: AnyObject) {
-    }
-    @IBAction func selectField(_ sender: AnyObject) {
-    }
-    @IBAction func selectSemester(_ sender: AnyObject) {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
-
+    @IBAction func addSubjectButton(_ sender: AnyObject) {
+        myFunc.show()
+        if (subjectText.text?.isEmpty)!
+        {
+            let alertController = UIAlertController(title: "Nie można dodać kierunku", message:
+                "Nie uzupełniono wszystkich pól", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+        else
+        {
+            let name = subjectText.text! as String
+            let id_field = keyResult[1] as String
+            let data = ["name": name,
+                        "id_field": id_field]
+            print(data)
+            self.ref.child("subjects").childByAutoId().setValue(data)
+            
+            let alertController = UIAlertController(title: "Dodano kierunek", message:
+                "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+            alertController.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: { (action: UIAlertAction!) in
+                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
+                
+                _ = self.navigationController?.popToViewController(targetController, animated: true)
+                
+            }))
+            myFunc.hide()
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

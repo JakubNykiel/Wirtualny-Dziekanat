@@ -16,6 +16,7 @@ class AddLecturerController: UIViewController {
     var keyResult:String!
     var type = "Prowadzący"
     var ref: FIRDatabaseReference!
+    var myFunc = Functions()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var titleText: UITextField!
@@ -28,38 +29,25 @@ class AddLecturerController: UIViewController {
         
         // Do any additional setup after loading the view.
         ref = FIRDatabase.database().reference()
-        let userID = FIRAuth.auth()!.currentUser!.uid
         
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    let fn = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    let sn = snap.childSnapshot(forPath: "id_user").value as! String
-                    
-                    if(sn == userID)
-                    {
-                        self.keyResult = fn
-                    }
-                }
+        myFunc.show()
+        ref = FIRDatabase.database().reference()
+        
+        myFunc.displayFaculty{ (name) -> () in
+            if name.characters.count > 0 {
+                self.facultyResult.text = name
             }
-        })
-        ref.child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    let fn = snap.childSnapshot(forPath: "id").value as! String
-                    let sn = snap.childSnapshot(forPath: "name").value as! String
-                    
-                    if(fn == self.keyResult)
-                    {
-                        self.facultyResult.text = sn
-                    }
-                }
+            else {
+                print("Not found")
             }
-        })
+        }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFunc.hide()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -71,6 +59,7 @@ class AddLecturerController: UIViewController {
     
     @IBAction func addLecturer(_ sender: AnyObject) {
         
+        myFunc.show()
         let name = nameText.text! as String
         let surname = surnameText.text! as String
         let email = emailText.text! as String
@@ -82,7 +71,7 @@ class AddLecturerController: UIViewController {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Niektóre pola są puste!", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else if (functions.validateEmail(email) == false)
@@ -90,7 +79,7 @@ class AddLecturerController: UIViewController {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else
@@ -132,7 +121,7 @@ class AddLecturerController: UIViewController {
                 // And go to that Controller
                 _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         } // end else
     }

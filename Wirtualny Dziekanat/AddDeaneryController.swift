@@ -16,6 +16,7 @@ class AddDeaneryController: UIViewController {
     var keyResult:String!
     var type = "Dziekanat"
     var ref: FIRDatabaseReference!
+    var myFunc = Functions()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
@@ -24,10 +25,15 @@ class AddDeaneryController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        myFunc.show()
         // Do any additional setup after loading the view.
         facultyResult.text = tableResult
         ref = FIRDatabase.database().reference()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFunc.hide()
     }
     
     override func didReceiveMemoryWarning() {
@@ -41,6 +47,7 @@ class AddDeaneryController: UIViewController {
     
     @IBAction func addDeanery(_ sender: AnyObject) {
         
+        myFunc.show()
         let name = nameText.text! as String
         let surname = surnameText.text! as String
         let email = emailText.text! as String
@@ -51,7 +58,7 @@ class AddDeaneryController: UIViewController {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Niektóre pola są puste!", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else if (functions.validateEmail(email) == false)
@@ -59,7 +66,7 @@ class AddDeaneryController: UIViewController {
             let alertController = UIAlertController(title: "Błąd", message:
                 "Wpisz poprawny email.", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default,handler: nil))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
         else
@@ -99,7 +106,7 @@ class AddDeaneryController: UIViewController {
                 
                 _ = self.navigationController?.popToViewController(targetController, animated: true)
             }))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
             
         }

@@ -74,7 +74,7 @@ class SelectSemesterTableViewController: UITableViewController {
         keyResult.insert(selectedKey, at: 2)
         if(chooseField == true)
         {
-            performSegue(withIdentifier: "subject", sender: self)
+            performSegue(withIdentifier: "semesterToSubject", sender: self)
         }
         else
         {
@@ -92,6 +92,14 @@ class SelectSemesterTableViewController: UITableViewController {
             destinationVC.tableResult = tableResult
             destinationVC.keyResult = keyResult
             
+        }
+        
+        if(segue.identifier == "semesterToSubject")
+        {
+            let destinationVC = segue.destination as! DziekanatAddSubjectController
+            
+            destinationVC.tableResult = tableResult
+            destinationVC.keyResult = keyResult
         }
     }
 

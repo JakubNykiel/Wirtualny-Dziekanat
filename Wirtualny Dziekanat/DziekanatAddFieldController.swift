@@ -21,8 +21,10 @@ class DziekanatAddFieldController: UIViewController {
     @IBOutlet weak var facultyResult: UILabel!
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-
+        
+        myFunc.show("Ładowanie")
         myFunc.displayFaculty{ (name) -> () in
             if name.characters.count > 0 {
                 self.facultyResult.text = name
@@ -31,8 +33,11 @@ class DziekanatAddFieldController: UIViewController {
                 print("Not found")
             }
         }
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        myFunc.hide()
         
-        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +51,7 @@ class DziekanatAddFieldController: UIViewController {
    
     @IBAction func addFieldOfStudy(_ sender: AnyObject) {
         
+        myFunc.show()
         if (nameTextField.text?.isEmpty)! 
         {
             let alertController = UIAlertController(title: "Nie można dodać kierunku", message:
@@ -70,7 +76,7 @@ class DziekanatAddFieldController: UIViewController {
                _ = self.navigationController?.popToViewController(targetController, animated: true)
 
             }))
-            
+            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
         }
     }
