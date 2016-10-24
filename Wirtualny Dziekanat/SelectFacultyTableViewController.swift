@@ -21,9 +21,6 @@ class SelectFacultyTableViewController: UITableViewController  {
     var field:Bool = false
     var chooseField = false
     var type = ""
-    
-    
-    var fieldFaculty: DziekanatAddFieldController!
 
     @IBOutlet var facultyView: UITableView!
         

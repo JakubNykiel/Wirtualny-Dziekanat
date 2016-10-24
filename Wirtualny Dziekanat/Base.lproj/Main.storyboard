@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A320" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HpV-PK-1aT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HpV-PK-1aT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -2115,6 +2115,86 @@
             </objects>
             <point key="canvasLocation" x="308" y="-4424"/>
         </scene>
+        <!--Select Subject Type Table View Controller-->
+        <scene sceneID="aaY-gj-D3x">
+            <objects>
+                <tableViewController id="U2q-Gc-J5y" customClass="SelectSubjectTypeTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OQd-JS-iiO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectTypeCell" id="fct-zz-KfX">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fct-zz-KfX" id="foJ-l1-nNE">
+                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U2q-Gc-J5y" id="SSD-Lx-5Cz"/>
+                            <outlet property="delegate" destination="U2q-Gc-J5y" id="Ztk-7J-Qzf"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="sZ4-bl-eQd" kind="show" identifier="showListWithLecturer" id="G83-Sq-Wdn"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rHm-BT-F2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="-8087"/>
+        </scene>
+        <!--Prowadzący-->
+        <scene sceneID="vPu-yF-3Uk">
+            <objects>
+                <tableViewController title="Prowadzący" id="sZ4-bl-eQd" customClass="SelectLecturerTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zgp-4e-GQL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lecturerCell" id="m8s-NL-zCp">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8s-NL-zCp" id="FvA-hM-jFl">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sZ4-bl-eQd" id="4cW-AV-9Hm"/>
+                            <outlet property="delegate" destination="sZ4-bl-eQd" id="NEV-ge-cXV"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="ZPC-RT-Sig" kind="show" id="zhl-uA-0OR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hu-0P-D0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="-8087"/>
+        </scene>
+        <!--Add Classes Type Controller-->
+        <scene sceneID="cco-RA-yEv">
+            <objects>
+                <viewController id="ZPC-RT-Sig" customClass="AddClassesTypeController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="go0-uK-afr"/>
+                        <viewControllerLayoutGuide type="bottom" id="VLo-fT-Q7i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a3g-MZ-5yp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vuA-cc-cto" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1534" y="-8087"/>
+        </scene>
         <!--Dodaj-->
         <scene sceneID="z8R-ZO-N56">
             <objects>
@@ -2149,6 +2229,9 @@
                                 <state key="normal" title="Typ zajęć z przedmiotu">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="U2q-Gc-J5y" kind="show" id="BKN-vJ-ygB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2397,7 +2480,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lJ1-Rx-TsE" id="w37-Ip-qPJ">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2431,7 +2514,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nai-T0-HXm" id="Q8E-5Y-bKh">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2515,6 +2598,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Liczba ECTS:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hAq-WW-VBT">
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -2522,7 +2610,8 @@
                             <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="leading" secondItem="epH-qL-dOb" secondAttribute="leading" id="1jF-wq-tsK"/>
                             <constraint firstItem="xA1-Fa-A0s" firstAttribute="trailing" secondItem="psv-FP-lcP" secondAttribute="trailing" id="4AH-zU-cQg"/>
                             <constraint firstItem="rJM-yv-wYm" firstAttribute="top" secondItem="Ij9-yZ-6eZ" secondAttribute="bottom" constant="40" id="4Dy-O5-ep8"/>
-                            <constraint firstItem="216-ZL-cnj" firstAttribute="top" secondItem="xA1-Fa-A0s" secondAttribute="bottom" constant="8" symbolic="YES" id="5DP-kS-RSb"/>
+                            <constraint firstItem="hAq-WW-VBT" firstAttribute="trailing" secondItem="xA1-Fa-A0s" secondAttribute="trailing" id="4dI-uC-ddY"/>
+                            <constraint firstItem="216-ZL-cnj" firstAttribute="top" secondItem="xA1-Fa-A0s" secondAttribute="bottom" constant="35" id="5DP-kS-RSb"/>
                             <constraint firstItem="xA1-Fa-A0s" firstAttribute="leading" secondItem="Fj8-l3-I3L" secondAttribute="leadingMargin" constant="44" id="5ZN-b1-xMg"/>
                             <constraint firstItem="216-ZL-cnj" firstAttribute="trailing" secondItem="Ij9-yZ-6eZ" secondAttribute="trailing" id="62z-KO-4T6"/>
                             <constraint firstItem="epH-qL-dOb" firstAttribute="top" secondItem="WXC-PG-PQU" secondAttribute="bottom" constant="39" id="68d-kV-ucn"/>
@@ -2535,18 +2624,21 @@
                             <constraint firstItem="xA1-Fa-A0s" firstAttribute="leading" secondItem="psv-FP-lcP" secondAttribute="leading" id="Kz0-58-SNG"/>
                             <constraint firstItem="216-ZL-cnj" firstAttribute="leading" secondItem="Ij9-yZ-6eZ" secondAttribute="leading" id="L9o-We-wCv"/>
                             <constraint firstItem="6Y9-dh-gm4" firstAttribute="centerY" secondItem="216-ZL-cnj" secondAttribute="centerY" id="OBc-Ns-iEL"/>
-                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="top" secondItem="ETQ-Wd-eMa" secondAttribute="bottom" constant="84" id="Sa7-xD-PhG"/>
+                            <constraint firstItem="xA1-Fa-A0s" firstAttribute="top" secondItem="ETQ-Wd-eMa" secondAttribute="bottom" constant="57" id="Sa7-xD-PhG"/>
                             <constraint firstItem="6Y9-dh-gm4" firstAttribute="leading" secondItem="Fj8-l3-I3L" secondAttribute="leadingMargin" id="TJZ-vz-1SC"/>
                             <constraint firstItem="WXC-PG-PQU" firstAttribute="trailing" secondItem="rJM-yv-wYm" secondAttribute="trailing" id="Vfz-7r-oHb"/>
+                            <constraint firstItem="hAq-WW-VBT" firstAttribute="leading" secondItem="xA1-Fa-A0s" secondAttribute="leading" id="Yh1-co-gq5"/>
                             <constraint firstItem="xA1-Fa-A0s" firstAttribute="centerX" secondItem="Fj8-l3-I3L" secondAttribute="centerX" id="igU-Jk-i9t"/>
                             <constraint firstItem="6Y9-dh-gm4" firstAttribute="trailing" secondItem="WXC-PG-PQU" secondAttribute="trailing" id="j6G-0x-RIS"/>
                             <constraint firstItem="216-ZL-cnj" firstAttribute="trailing" secondItem="Fj8-l3-I3L" secondAttribute="trailingMargin" id="l1r-1D-K7V"/>
                             <constraint firstItem="Ij9-yZ-6eZ" firstAttribute="top" secondItem="6Y9-dh-gm4" secondAttribute="bottom" constant="39" id="n1Z-4b-vSr"/>
                             <constraint firstItem="epH-qL-dOb" firstAttribute="top" secondItem="Ij9-yZ-6eZ" secondAttribute="bottom" constant="8" symbolic="YES" id="pAF-OB-Eda"/>
                             <constraint firstItem="psv-FP-lcP" firstAttribute="top" secondItem="epH-qL-dOb" secondAttribute="bottom" constant="31" id="tsi-R2-SO3"/>
+                            <constraint firstItem="hAq-WW-VBT" firstAttribute="top" secondItem="xA1-Fa-A0s" secondAttribute="bottom" constant="8" symbolic="YES" id="zVB-CH-x1j"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ectsText" destination="hAq-WW-VBT" id="dAg-F6-J1A"/>
                         <outlet property="facultyResult" destination="216-ZL-cnj" id="8S9-hU-GFw"/>
                         <outlet property="fieldResult" destination="Ij9-yZ-6eZ" id="Rv5-Pl-lJQ"/>
                         <outlet property="semesterResult" destination="epH-qL-dOb" id="A3s-Ys-crX"/>
@@ -2555,7 +2647,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3P-wh-Giv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="308" y="-8050"/>
+            <point key="canvasLocation" x="2540" y="-8087"/>
         </scene>
         <!--Kierunki-->
         <scene sceneID="SE0-Pk-Qzo">
@@ -2570,7 +2662,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="M1j-J0-dY4" id="A75-QU-sug">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2601,7 +2693,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YFO-Wx-kqS" id="HqI-bI-rh9">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2955,6 +3047,6 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8O0-VN-08h"/>
+        <segue reference="SVq-1a-e7o"/>
     </inferredMetricsTieBreakers>
 </document>

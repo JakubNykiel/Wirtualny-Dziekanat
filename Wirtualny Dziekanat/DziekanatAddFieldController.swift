@@ -23,21 +23,21 @@ class DziekanatAddFieldController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        
         myFunc.show("Ładowanie")
         myFunc.displayFaculty{ (name) -> () in
-            if name.characters.count > 0 {
-                self.facultyResult.text = name
+            for item in name
+            {
+                self.keyResult = item.key
+                self.tableResult = item.value
+                self.facultyResult.text = item.value
             }
-            else {
-                print("Not found")
-            }
+
         }
+        print(facultyResult.text)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         myFunc.hide()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,13 +65,12 @@ class DziekanatAddFieldController: UIViewController {
             let id_faculty = keyResult as String
             let data = ["name": name,
                         "id_faculty": id_faculty]
-            print(data)
             self.ref.child("fields").childByAutoId().setValue(data)
             
             let alertController = UIAlertController(title: "Dodano kierunek", message:
                 "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: { (action: UIAlertAction!) in
-                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
+                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 3]
                 
                _ = self.navigationController?.popToViewController(targetController, animated: true)
 

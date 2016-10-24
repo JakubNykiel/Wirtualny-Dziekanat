@@ -31,17 +31,16 @@ class Functions
     }
     
     //wyswietlanie wydzialow
-    func displayFaculty(completion: @escaping (String)->()){
+    func displayFaculty(completion: @escaping ([String:String])->()){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-
         let userID = FIRAuth.auth()!.currentUser!.uid
-
+        var dict = [String:String]()
         var value = ""
         
         ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-        
+                
                 for snap in snapshots
                 {
                     
@@ -64,7 +63,9 @@ class Functions
                     
                     if(fn == value)
                     {
-                        completion(sn)
+                        dict[fn] = sn
+                        completion(dict)
+                        dict.removeAll()
                     }
                     
                 }
@@ -116,7 +117,79 @@ class Functions
         })
     }
     
-    //animacja ladowania
+    /*
+     * wyswietlanie prowadzacych z danego wydziału
+     */
+    
+    func displayLecturer(completion: @escaping ([String:[String]])->()){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var dict = [String:[String]]()
+        var userKeys :[String] = [""]
+        var currentFaculty = ""
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        var arrayLecturer = [String]()
+        
+        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                //sprawdzenie wydzialu konta
+                for snap in snapshots
+                {
+                    let fn = snap.childSnapshot(forPath: "id_faculty").value as! String
+                    let sn = snap.childSnapshot(forPath: "id_user").value as! String
+                    
+                    if(sn == userID)
+                    {
+                        currentFaculty = fn
+                        break
+                    }
+                }
+                
+                //pobranie kluczy userow z wydzialem
+                for snap in snapshots
+                {
+                    let fn = snap.childSnapshot(forPath: "id_faculty").value as! String
+                    let sn = snap.childSnapshot(forPath: "id_user").value as! String
+                    
+                    if(fn == currentFaculty)
+                    {
+                        userKeys.append(sn)
+                    }
+                }
+            }
+        })
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    let account_type = snap.childSnapshot(forPath: "account_type").value as! String
+                    let name = snap.childSnapshot(forPath: "name").value as! String
+                    let surname = snap.childSnapshot(forPath: "surname").value as! String
+                    let key = snap.key
+                    
+                    if( account_type == "Prowadzący")
+                    {
+                        let title = snap.childSnapshot(forPath: "title").value as! String
+                        
+                        arrayLecturer.append(title)
+                        arrayLecturer.append(name)
+                        arrayLecturer.append(surname)
+                        
+                        dict[key] = arrayLecturer
+                        completion(dict)
+                    }
+                }
+            }
+        })
+        dict.removeAll()
+    }
+    
+    
+    /*
+     * animacja ladowania
+     */
     var currentOverlay : UIView?
     
     func show() {
@@ -178,11 +251,11 @@ class Functions
     
     func hide() {
         if currentOverlay != nil {
-//            UIView.animate(withDuration: 0.5, animations: {
-//                self.currentOverlay?.alpha = 0
-//            }) { _ in
-//                self.currentOverlay?.removeFromSuperview()
-//            }
+            //            UIView.animate(withDuration: 0.5, animations: {
+            //                self.currentOverlay?.alpha = 0
+            //            }) { _ in
+            //                self.currentOverlay?.removeFromSuperview()
+            //            }
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(0.75)
             self.currentOverlay?.alpha = 0

@@ -32,12 +32,13 @@ class AddStudentController: UIViewController {
         ref = FIRDatabase.database().reference()
         
         myFunc.displayFaculty{ (name) -> () in
-            if name.characters.count > 0 {
-                self.facultyResult.text = name
+            for item in name
+            {
+                self.keyResult[0] = item.key
+                self.tableResult[0] = item.value
+                self.facultyResult.text = item.value
             }
-            else {
-                print("Not found")
-            }
+
         }
 
         fieldResult.text = tableResult[1]

@@ -11,6 +11,7 @@ import Firebase
 
 class DziekanatAddSubjectController: UIViewController {
 
+    @IBOutlet weak var ectsText: UITextField!
     @IBOutlet weak var subjectText: UITextField!
     @IBOutlet weak var facultyResult: UILabel!
     @IBOutlet weak var fieldResult: UILabel!
@@ -27,12 +28,13 @@ class DziekanatAddSubjectController: UIViewController {
         ref = FIRDatabase.database().reference()
         
         myFunc.displayFaculty{ (name) -> () in
-            if name.characters.count > 0 {
-                self.facultyResult.text = name
+            for item in name
+            {
+                self.keyResult[0] = item.key
+                self.tableResult[0] = item.value
+                self.facultyResult.text = item.value
             }
-            else {
-                print("Not found")
-            }
+
         }
         
         fieldResult.text = tableResult[1]
@@ -56,7 +58,7 @@ class DziekanatAddSubjectController: UIViewController {
     
     @IBAction func addSubjectButton(_ sender: AnyObject) {
         myFunc.show()
-        if (subjectText.text?.isEmpty)!
+        if( (subjectText.text?.isEmpty)! || (ectsText.text?.isEmpty)! )
         {
             let alertController = UIAlertController(title: "Nie można dodać kierunku", message:
                 "Nie uzupełniono wszystkich pól", preferredStyle: UIAlertControllerStyle.alert)
@@ -67,7 +69,9 @@ class DziekanatAddSubjectController: UIViewController {
         {
             let name = subjectText.text! as String
             let id_field = keyResult[1] as String
+            let ects = ectsText.text! as String
             let data = ["name": name,
+                        "ECTS": ects,
                         "id_field": id_field]
             print(data)
             self.ref.child("subjects").childByAutoId().setValue(data)

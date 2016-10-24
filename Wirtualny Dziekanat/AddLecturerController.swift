@@ -34,12 +34,13 @@ class AddLecturerController: UIViewController {
         ref = FIRDatabase.database().reference()
         
         myFunc.displayFaculty{ (name) -> () in
-            if name.characters.count > 0 {
-                self.facultyResult.text = name
+            for item in name
+            {
+                self.keyResult = item.key
+                self.tableResult = item.value
+                self.facultyResult.text = item.value
             }
-            else {
-                print("Not found")
-            }
+
         }
     }
     
@@ -109,7 +110,6 @@ class AddLecturerController: UIViewController {
                     
                     self.ref.child("users").child(user!.uid).setValue(userData)
                     self.ref.child("user-faculty").childByAutoId().setValue(tableData)
-                    
                 }
             } //end FIR
             
