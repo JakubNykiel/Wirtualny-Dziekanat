@@ -2115,10 +2115,41 @@
             </objects>
             <point key="canvasLocation" x="308" y="-4424"/>
         </scene>
-        <!--Select Subject Type Table View Controller-->
+        <!--Przedmioty-->
+        <scene sceneID="87K-Tr-qNf">
+            <objects>
+                <tableViewController title="Przedmioty" id="tx8-In-N4f" customClass="SelectSubjectsTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yb5-qH-sCP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjects" id="G8M-1E-E2Z">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G8M-1E-E2Z" id="OdX-ZX-YbB">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tx8-In-N4f" id="Dld-vX-PGc"/>
+                            <outlet property="delegate" destination="tx8-In-N4f" id="QTY-CG-xTp"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="U2q-Gc-J5y" kind="show" identifier="toClasses" id="ztI-bh-Ije"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fql-Le-ut1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4561" y="-8087"/>
+        </scene>
+        <!--Typy zajęć-->
         <scene sceneID="aaY-gj-D3x">
             <objects>
-                <tableViewController id="U2q-Gc-J5y" customClass="SelectSubjectTypeTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Typy zajęć" id="U2q-Gc-J5y" customClass="SelectSubjectTypeTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OQd-JS-iiO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2144,7 +2175,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rHm-BT-F2t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="97" y="-8087"/>
+            <point key="canvasLocation" x="5322" y="-8087"/>
         </scene>
         <!--Prowadzący-->
         <scene sceneID="vPu-yF-3Uk">
@@ -2159,7 +2190,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="m8s-NL-zCp" id="FvA-hM-jFl">
-                                    <frame key="frameInset" width="375" height="43"/>
+                                    <frame key="frameInset" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -2175,7 +2206,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9hu-0P-D0b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="841" y="-8087"/>
+            <point key="canvasLocation" x="6066" y="-8087"/>
         </scene>
         <!--Add Classes Type Controller-->
         <scene sceneID="cco-RA-yEv">
@@ -2193,7 +2224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vuA-cc-cto" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-8087"/>
+            <point key="canvasLocation" x="6759" y="-8087"/>
         </scene>
         <!--Dodaj-->
         <scene sceneID="z8R-ZO-N56">
@@ -2230,7 +2261,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="U2q-Gc-J5y" kind="show" id="BKN-vJ-ygB"/>
+                                    <segue destination="z9S-qa-hZW" kind="show" identifier="chooseClasses" id="oeg-AR-tTm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2706,6 +2737,7 @@
                     <connections>
                         <segue destination="HYi-u7-ObO" kind="show" identifier="semesterToResult" id="92h-tp-io5"/>
                         <segue destination="vna-8L-QjI" kind="show" identifier="semesterToSubject" id="sLs-Ig-8td"/>
+                        <segue destination="tx8-In-N4f" kind="show" identifier="showSubjects" id="4nu-Co-0bj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nQv-g4-6mc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3047,6 +3079,6 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SVq-1a-e7o"/>
+        <segue reference="oeg-AR-tTm"/>
     </inferredMetricsTieBreakers>
 </document>

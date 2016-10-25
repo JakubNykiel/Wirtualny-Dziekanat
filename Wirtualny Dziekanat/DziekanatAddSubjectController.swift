@@ -70,9 +70,11 @@ class DziekanatAddSubjectController: UIViewController {
             let name = subjectText.text! as String
             let id_field = keyResult[1] as String
             let ects = ectsText.text! as String
+            let semester = semesterResult.text! as String
             let data = ["name": name,
                         "ECTS": ects,
-                        "id_field": id_field]
+                        "id_field": id_field,
+                        "semester": semester]
             print(data)
             self.ref.child("subjects").childByAutoId().setValue(data)
             

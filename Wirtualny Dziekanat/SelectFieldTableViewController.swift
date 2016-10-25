@@ -19,6 +19,7 @@ class SelectFieldTableViewController: UITableViewController {
     var field = [String]()
     var keys = [String]()
     var chooseField = false
+    var chooseClasses = false
     let myFunc = Functions()
     
     override func viewDidLoad() {
@@ -83,6 +84,7 @@ class SelectFieldTableViewController: UITableViewController {
             destinationVC.tableResult = tableResult
             destinationVC.keyResult = keyResult
             destinationVC.chooseField = chooseField
+            destinationVC.chooseClasses = chooseClasses
         }
     }
 }

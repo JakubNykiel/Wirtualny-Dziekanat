@@ -19,6 +19,7 @@ class SelectSemesterTableViewController: UITableViewController {
     var semester = [FIRDataSnapshot]()
     var keys = [String]()
     var chooseField = false
+    var chooseClasses = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,10 @@ class SelectSemesterTableViewController: UITableViewController {
         {
             performSegue(withIdentifier: "semesterToSubject", sender: self)
         }
+        else if(chooseClasses == true)
+        {
+            performSegue(withIdentifier: "showSubjects", sender: self)
+        }
         else
         {
             performSegue(withIdentifier: "semesterToResult", sender: self)
@@ -97,6 +102,13 @@ class SelectSemesterTableViewController: UITableViewController {
         if(segue.identifier == "semesterToSubject")
         {
             let destinationVC = segue.destination as! DziekanatAddSubjectController
+            
+            destinationVC.tableResult = tableResult
+            destinationVC.keyResult = keyResult
+        }
+        if(segue.identifier == "showSubjects")
+        {
+            let destinationVC = segue.destination as! SelectSubjectsTableViewController
             
             destinationVC.tableResult = tableResult
             destinationVC.keyResult = keyResult

@@ -17,6 +17,7 @@ class SelectSubjectTypeTableViewController: UITableViewController {
     var selectedCell = ""
     var selectedKey = ""
     var keys = [String]()
+    var classesData = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
