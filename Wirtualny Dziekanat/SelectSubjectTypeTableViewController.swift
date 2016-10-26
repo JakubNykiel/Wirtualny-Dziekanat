@@ -18,6 +18,9 @@ class SelectSubjectTypeTableViewController: UITableViewController {
     var selectedKey = ""
     var keys = [String]()
     var classesData = [String]()
+    var classesDataDisplay = [String]()
+    var selectedType = ""
+    var selectedTypeToDisplay = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +68,24 @@ class SelectSubjectTypeTableViewController: UITableViewController {
 
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            performSegue(withIdentifier: "showListWithLecturer", sender: self)
+        selectedType = keys[indexPath.row]
+        selectedTypeToDisplay = self.subjectType[indexPath.row].value as! String
+        classesData.insert(selectedType, at: 1)
+        classesDataDisplay.insert(selectedTypeToDisplay, at: 1)
+        performSegue(withIdentifier: "showListWithLecturer", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "showListWithLecturer")
+        {
+            let destinationVC = segue.destination as! SelectLecturerTableViewController
+            
+            destinationVC.classesData = classesData
+            destinationVC.classesDataDisplay = classesDataDisplay
+        }
+        
     }
     
 

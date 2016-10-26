@@ -13,12 +13,13 @@ class SelectSubjectsTableViewController: UITableViewController {
     var tableResult = [String]()
     var keyResult = [String]()
     var classesData = [String]()
+    var classesDataDisplay = [String]()
     var ref: FIRDatabaseReference!
     var key:String!
     var subjects = [String]()
     var subjectsKeys = [String]()
     var selectedKey = ""
-    
+    var selectedDisplayName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,7 +87,9 @@ class SelectSubjectsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedKey = subjectsKeys[indexPath.row]
+        selectedDisplayName = subjects[indexPath.row]
         classesData.insert(selectedKey, at: 0)
+        classesDataDisplay.insert(selectedDisplayName, at: 0)
         performSegue(withIdentifier: "toClasses", sender: self)
         
     }
@@ -97,6 +100,7 @@ class SelectSubjectsTableViewController: UITableViewController {
             let destinationVC = segue.destination as! SelectSubjectTypeTableViewController
             
             destinationVC.classesData = classesData
+            destinationVC.classesDataDisplay = classesDataDisplay
         }
 
     }

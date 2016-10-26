@@ -14,9 +14,11 @@ class SelectLecturerTableViewController: UITableViewController {
     var field = [String]()
     var keys = [String]()
     var lecturer = [String]()
-    var lecturer_title = [String]()
-    var lecturer_name = [String]()
-    var lecturer_surname = [String]()
+    var lecturerDisplay = ""
+    var classesData = [String]()
+    var classesDataDisplay = [String]()
+    var selectedKey = ""
+    var selectedLecturer = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,8 @@ class SelectLecturerTableViewController: UITableViewController {
             for item in name
             {
                 self.keys.append(item.key)
-                let v1 = item.value[0]
-                self.lecturer_title.append(v1)
-                self.lecturer_name.append(item.value[1])
-                self.lecturer_surname.append(item.value[2])
+                self.lecturerDisplay = item.value[0] + " " + item.value[1] + " " + item.value[2]
+                self.lecturer.append(self.lecturerDisplay)
                 
             }
             self.tableView.reloadData()
@@ -55,18 +55,29 @@ class SelectLecturerTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lecturerCell", for: indexPath)
 
-        cell.textLabel?.text = self.lecturer_title[indexPath.row] + " " + self.lecturer_name[indexPath.row] + " " + self.lecturer_surname[indexPath.row]
+        cell.textLabel?.text = lecturer[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
 
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedKey = keys[indexPath.row]
+        selectedLecturer = lecturer[indexPath.row]
+        classesData.insert(selectedKey, at: 2)
+        classesDataDisplay.insert(selectedLecturer, at: 2)
+        performSegue(withIdentifier: "addClasses", sender: self)
+        
+    }
+
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "fieldToSemester")
+        if (segue.identifier == "addClasses")
         {
-            let destinationVC = segue.destination as! SelectSemesterTableViewController
+            let destinationVC = segue.destination as! AddClassesTypeController
             
+            destinationVC.classesData = classesData
+            destinationVC.classesDataDisplay = classesDataDisplay
 
         }
 
