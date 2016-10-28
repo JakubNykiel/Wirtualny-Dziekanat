@@ -95,7 +95,6 @@ class AddStudentController: UIViewController {
                 if error != nil
                 {
                     print("Mamy błąd")
-                    print(error)
                 }
                 else
                 {

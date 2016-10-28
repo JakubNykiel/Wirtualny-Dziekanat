@@ -76,7 +76,6 @@ class DziekanatAddUserController: UIViewController {
                 if error != nil
                 {
                     print("Mamy błąd")
-                    print(error)
                 }
                 else
                 {
@@ -99,7 +98,6 @@ class DziekanatAddUserController: UIViewController {
                 if error != nil
                 {
                     print("Mamy błąd")
-                    print(error)
                 }
                 else
                 {
@@ -121,7 +119,6 @@ class DziekanatAddUserController: UIViewController {
                 if error != nil
                 {
                     print("Mamy błąd")
-                    print(error)
                 }
                 else
                 {

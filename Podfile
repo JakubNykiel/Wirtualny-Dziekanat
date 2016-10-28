@@ -9,8 +9,5 @@ target 'Wirtualny Dziekanat' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-  pod 'DropDown'
-  pod 'SwiftyJSON', :git => 'https://github.com/acegreen/SwiftyJSON.git', :branch => 'swift3'
-  
-
+  pod 'Firebase'
 end

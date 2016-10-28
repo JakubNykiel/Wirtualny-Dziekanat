@@ -33,7 +33,6 @@ class DziekanatAddFieldController: UIViewController {
             }
 
         }
-        print(facultyResult.text)
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

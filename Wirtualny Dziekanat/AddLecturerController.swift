@@ -92,7 +92,6 @@ class AddLecturerController: UIViewController {
                 if error != nil
                 {
                     print("Mamy błąd")
-                    print(error)
                 }
                 else
                 {
