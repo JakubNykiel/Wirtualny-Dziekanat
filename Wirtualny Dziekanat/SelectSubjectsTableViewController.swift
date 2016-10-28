@@ -15,7 +15,7 @@ class SelectSubjectsTableViewController: UITableViewController {
     var classesData = [String]()
     var classesDataDisplay = [String]()
     var ref: FIRDatabaseReference!
-    var key:String!
+    var key = ""
     var subjects = [String]()
     var subjectsKeys = [String]()
     var selectedKey = ""
@@ -35,9 +35,8 @@ class SelectSubjectsTableViewController: UITableViewController {
                 for snap in snapshots
                 {
                     let name = snap.childSnapshot(forPath: "name").value as! String
-                    let semester = snap.childSnapshot(forPath: "id_faculty").value as! String
                     
-                    if( (name == self.tableResult[1]) && (semester == self.tableResult[2]) )
+                    if( (name == self.tableResult[1]))
                     {
                         self.key = snap.key
                     }
@@ -51,8 +50,9 @@ class SelectSubjectsTableViewController: UITableViewController {
                 {
                     let field = snap.childSnapshot(forPath: "id_field").value as! String
                     let name = snap.childSnapshot(forPath: "name").value as! String
+                    let semester = snap.childSnapshot(forPath: "semester").value as! String
                     
-                    if( field == self.key )
+                    if( semester == self.tableResult[2] && self.key == field)
                     {
                         self.subjects.append(name)
                         self.subjectsKeys.append(snap.key)

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AllFieldsListTableViewController: UITableViewController {
-
+    
     var ref: FIRDatabaseReference!
     var field = [String]()
     var keys = [String]()
@@ -32,19 +32,19 @@ class AllFieldsListTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return field.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "fields", for: indexPath)
         
@@ -57,13 +57,24 @@ class AllFieldsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
-
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let fieldToRemove = self.keys[indexPath.row]
+        
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
             self.performSegue(withIdentifier: "editField", sender: self)
         }
+        
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
-            self.performSegue(withIdentifier: "editField", sender: self)
+            let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
+                self.myFunc.removeField(field: fieldToRemove)
+                self.field.remove(at: indexPath.row)
+                self.tableView.reloadData()
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         edit.backgroundColor = UIColor.lightGray
         remove.backgroundColor = UIColor.red
@@ -76,8 +87,8 @@ class AllFieldsListTableViewController: UITableViewController {
         return true
     }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-
+        
     }
-
- 
+    
+    
 }

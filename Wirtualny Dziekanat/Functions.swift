@@ -27,7 +27,7 @@ class Functions
     func setAnimationView(_ view: UIView, hidden: Bool) {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: {() -> Void in
             view.isHidden = hidden
-            }, completion: { _ in })
+        }, completion: { _ in })
     }
     
     //wyswietlanie wydzialow
@@ -172,7 +172,6 @@ class Functions
                     if( account_type == "Prowadzący")
                     {
                         let title = snap.childSnapshot(forPath: "title").value as! String
-                        
                         arrayLecturer.append(title)
                         arrayLecturer.append(name)
                         arrayLecturer.append(surname)
@@ -184,6 +183,76 @@ class Functions
             }
         })
         dict.removeAll()
+    }
+    
+    /*
+     * USUWANIE KIERUNKÓW
+     */
+    func removeField(field: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var fieldKey = ""
+        var subject = ""
+        var subjectKey = ""
+        
+        ref.child("fields").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    fieldKey = snap.key
+                    if(field == fieldKey)
+                    {
+                        ref.child("fields").child(field).removeValue()
+                    }
+                }
+            }
+        })
+        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    fieldKey = snap.childSnapshot(forPath: "id_field").value as! String
+                    subjectKey = snap.key
+                    if(field == fieldKey)
+                    {
+                        ref.child("subjects").child(subjectKey).removeValue()
+                    }
+                }
+            }
+        })
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    subject = snap.childSnapshot(forPath: "id_subject").value as! String
+                    let key = snap.key
+                    if(subject == subjectKey)
+                    {
+                        ref.child("subject-classes").child(key).removeValue()
+                    }
+                }
+            }
+        })
+        ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    fieldKey = snap.childSnapshot(forPath: "id_field").value as! String
+                    let key = snap.key
+                    if(field == fieldKey)
+                    {
+                        ref.child("user-field").child(key).removeValue()
+                    }
+                }
+            }
+        })
+        
+
+        
     }
     
     
