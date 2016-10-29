@@ -46,6 +46,7 @@
 		C3F3130C1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3130B1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift */; };
 		C3F6CAA41DBEAE7D00FD4B07 /* AddClassesTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F6CAA31DBEAE7D00FD4B07 /* AddClassesTypeController.swift */; };
 		C3F6CAA61DBEB21200FD4B07 /* SelectLecturerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F6CAA51DBEB21200FD4B07 /* SelectLecturerTableViewController.swift */; };
+		C3F8FC891DC4F97D0055FBF3 /* EditFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F8FC881DC4F97D0055FBF3 /* EditFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		C3F3130B1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSubjectTypeTableViewController.swift; sourceTree = "<group>"; };
 		C3F6CAA31DBEAE7D00FD4B07 /* AddClassesTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassesTypeController.swift; sourceTree = "<group>"; };
 		C3F6CAA51DBEB21200FD4B07 /* SelectLecturerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectLecturerTableViewController.swift; sourceTree = "<group>"; };
+		C3F8FC881DC4F97D0055FBF3 /* EditFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,8 @@
 		C36A15361CF06163005EC3CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3F8FC871DC4F9630055FBF3 /* Edit */,
+				C3F8FC861DC4F8190055FBF3 /* Lists */,
 				C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */,
 				C36A15341CF06153005EC3CC /* LoginController.swift */,
 				C3F3130D1DBE7D5E00921C75 /* Add */,
@@ -156,8 +160,6 @@
 				C3F3130B1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift */,
 				C3F6CAA51DBEB21200FD4B07 /* SelectLecturerTableViewController.swift */,
 				C39A47731DBF6D690014A906 /* SelectSubjectsTableViewController.swift */,
-				C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */,
-				C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */,
 			);
 			name = Dziekanat;
 			sourceTree = "<group>";
@@ -251,6 +253,23 @@
 				C39A47701DBF68C50014A906 /* Dziekanat */,
 			);
 			name = Select;
+			sourceTree = "<group>";
+		};
+		C3F8FC861DC4F8190055FBF3 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */,
+				C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
+		C3F8FC871DC4F9630055FBF3 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				C3F8FC881DC4F97D0055FBF3 /* EditFieldViewController.swift */,
+			);
+			name = Edit;
 			sourceTree = "<group>";
 		};
 		E93E8CC39F3986FA564B20B5 /* Frameworks */ = {
@@ -408,6 +427,7 @@
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
 				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,
+				C3F8FC891DC4F97D0055FBF3 /* EditFieldViewController.swift in Sources */,
 				C3F3130C1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift in Sources */,
 				C395BFDE1DC0F8A40018D442 /* ListsTableViewController.swift in Sources */,
 				C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */,

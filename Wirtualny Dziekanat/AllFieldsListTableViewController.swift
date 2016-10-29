@@ -15,6 +15,8 @@ class AllFieldsListTableViewController: UITableViewController {
     var field = [String]()
     var keys = [String]()
     var myFunc = Functions()
+    var editField = ""
+    var fieldKey = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,18 @@ class AllFieldsListTableViewController: UITableViewController {
         self.tableView.allowsSelection = true
         
         ref = FIRDatabase.database().reference()
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        keys.removeAll()
+        field.removeAll()
         
         myFunc.displayFields{ (name) -> () in
             for item in name
@@ -32,12 +46,7 @@ class AllFieldsListTableViewController: UITableViewController {
             }
             self.tableView.reloadData()
         }
-        
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +69,8 @@ class AllFieldsListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        let fieldToRemove = self.keys[indexPath.row]
+        fieldKey = self.keys[indexPath.row]
+        editField = field[indexPath.row]
         
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
             self.performSegue(withIdentifier: "editField", sender: self)
@@ -70,7 +80,7 @@ class AllFieldsListTableViewController: UITableViewController {
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
             alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
-                self.myFunc.removeField(field: fieldToRemove)
+                self.myFunc.removeField(field: self.fieldKey)
                 self.field.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }))
@@ -89,6 +99,18 @@ class AllFieldsListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editField")
+        {
+            let destinationVC = segue.destination as! EditFieldViewController
+            
+            destinationVC.field = editField
+            destinationVC.fieldKey = fieldKey
+        }
+        
+    }
+
     
     
 }
