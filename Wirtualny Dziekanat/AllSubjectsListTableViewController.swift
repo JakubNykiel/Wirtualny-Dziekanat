@@ -1,30 +1,26 @@
 //
-//  AllFieldsListTableViewController.swift
+//  AllSubjectsListTableViewController.swift
 //  Wirtualny Dziekanat
 //
-//  Created by Jakub Nykiel on 26.10.2016.
+//  Created by Jakub Nykiel on 30.10.2016.
 //  Copyright © 2016 Jakub Nykiel. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class AllFieldsListTableViewController: UITableViewController, UISearchBarDelegate {
+class AllSubjectsListTableViewController: UITableViewController,UISearchBarDelegate {
     
     var ref: FIRDatabaseReference!
-    var field = [String]()
-    var keys = [String]()
+    var fieldKey = [""]
+    var fieldDisplay = [""]
     var myFunc = Functions()
-    var editField = ""
-    var fieldKey = ""
-    var data = ["":""]
-    var newData = ["":""]
-    
+    var subjects = [""]
+    var subjectDisplay = [""]
+    var searchActive : Bool = false
+    var filtered:[String] = []
     
     @IBOutlet weak var searchBar: UISearchBar!
-    var searchActive : Bool = false
-    var filteredKey = [String]()
-    var filteredValue = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +30,7 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
         searchBar.delegate = self
         
         ref = FIRDatabase.database().reference()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -44,21 +41,36 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        keys.removeAll()
-        field.removeAll()
+        subjects.removeAll()
+        fieldKey.removeAll()
         
         myFunc.displayFields{ (name) -> () in
             for item in name
             {
-                self.keys.append(item.key)
-                self.field.append(item.value)
-                self.data[item.key] = item.value
+                self.fieldKey.append(item.key)
             }
             self.tableView.reloadData()
         }
-        self.tableView.reloadData()
-        
+        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                    let name = snap.childSnapshot(forPath: "name").value as! String
+                    
+                    for item in self.fieldKey
+                    {
+                        if(item == fieldID)
+                        {
+                            self.subjects.append(name)
+                        }
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
     }
+    
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
@@ -78,81 +90,57 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filteredKey.removeAll()
-        filteredValue.removeAll()
-        let filtered = data.filter{
-            let string = $1
-            if(string.contains(searchText))
-            {
-                return true
-            }
-            else
-            {
-                return false
-            }
-        }
-        
-        for result in filtered {
-            filteredKey.append(result.key)
-            filteredValue.append(result.value)
-        }
-        if searchText.isEmpty {
-            searchActive = false
+        filtered = subjects.filter({ (text) -> Bool in
+            let tmp: NSString = text as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
+            return range.location != NSNotFound
+        })
+        if(filtered.count == 0){
+            searchActive = false;
         } else {
-            searchActive = true
+            searchActive = true;
         }
         self.tableView.reloadData()
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if(searchActive) {
-            return filteredValue.count
+            return filtered.count
         }
         else
         {
-            return field.count
+            return subjects.count
         }
     }
     
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "fields", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "subjects", for: indexPath)
         
         if(searchActive)
         {
-            cell.textLabel?.text = filteredValue[indexPath.row]
+            cell.textLabel?.text = filtered[indexPath.row]
         }
         else
         {
-            cell.textLabel?.text = self.field[indexPath.row]
+            cell.textLabel?.text = self.subjects[indexPath.row]
         }
-        
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        
-        
-        if(searchActive) {
-            fieldKey = self.filteredKey[indexPath.row]
-            editField = self.filteredValue[indexPath.row]
-        }
-        else
-        {
-            fieldKey = self.keys[indexPath.row]
-            editField = field[indexPath.row]
-        }
         
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
             self.performSegue(withIdentifier: "editField", sender: self)
@@ -162,8 +150,8 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
             alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
-                self.myFunc.removeField(field: self.fieldKey)
-                self.field.remove(at: indexPath.row)
+//                self.myFunc.removeField(field: self.fieldKey)
+                self.subjects.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }))
             self.present(alert, animated: true, completion: nil)
@@ -178,21 +166,9 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "editField")
-        {
-            let destinationVC = segue.destination as! EditFieldViewController
-            
-            destinationVC.field = editField
-            destinationVC.fieldKey = fieldKey
-        }
-        
-    }
-    
-    
     
 }

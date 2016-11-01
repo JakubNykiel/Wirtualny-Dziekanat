@@ -250,12 +250,16 @@ class Functions
                 }
             }
         })
-        
-
-        
     }
     
-    
+    /*
+    *   
+    *USUWANIE PRZEDMIOTU
+    */
+    func removeSubject(subject: String){
+        
+    }
+
     /*
      * animacja ladowania
      */

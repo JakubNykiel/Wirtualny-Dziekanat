@@ -51,6 +51,8 @@ class ListsTableViewController: UITableViewController {
         switch (indexPath.row) {
         case 0:
             performSegue(withIdentifier: "allFields", sender: self)
+        case 1:
+            performSegue(withIdentifier: "allSubjects", sender: self)
         default:
             print("Error")
         }
