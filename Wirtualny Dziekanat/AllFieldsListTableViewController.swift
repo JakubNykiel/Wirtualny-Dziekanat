@@ -18,8 +18,6 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     var editField = ""
     var fieldKey = ""
     var data = ["":""]
-    var newData = ["":""]
-    
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false

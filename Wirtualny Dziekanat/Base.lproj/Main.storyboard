@@ -2464,11 +2464,12 @@
                     </tableView>
                     <connections>
                         <outlet property="searchBar" destination="afM-CG-N3K" id="gyw-cS-kbj"/>
+                        <segue destination="WZ3-Fc-ZRl" kind="show" identifier="editSubject" id="Qyy-TO-itG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CG4-f6-9xf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4052" y="-5086"/>
+            <point key="canvasLocation" x="-3460" y="-5086"/>
         </scene>
         <!--Kierunki na wydziale-->
         <scene sceneID="RxE-B3-arm">
@@ -2559,7 +2560,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4eh-Ss-mWJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2071.1999999999998" y="-5864.6176911544235"/>
+            <point key="canvasLocation" x="-2071" y="-5866"/>
         </scene>
         <!--Listy-->
         <scene sceneID="3hc-MF-LgC">
@@ -3409,6 +3410,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u68-QI-mOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1122" y="181"/>
+        </scene>
+        <!--Edytuj Kierunek-->
+        <scene sceneID="Vl1-vw-S3J">
+            <objects>
+                <viewController title="Edytuj Kierunek" id="WZ3-Fc-ZRl" customClass="EditSubjectViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G18-xs-5uk"/>
+                        <viewControllerLayoutGuide type="bottom" id="VXh-O8-OZc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OKJ-mS-HCV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nazwa:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ys8-AH-imM">
+                                <rect key="frame" x="119" y="123" width="219" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Semestr:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="drQ-5a-agp">
+                                <rect key="frame" x="119" y="187" width="219" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ECTS:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsX-fj-5ZY">
+                                <rect key="frame" x="119" y="257" width="219" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nazwa:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0q-hu-Eml">
+                                <rect key="frame" x="37" y="128" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ECTS:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-cL-Y3R">
+                                <rect key="frame" x="37" y="262" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Semestr:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QtE-JZ-AZd">
+                                <rect key="frame" x="37" y="192" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0n2-4o-QPD">
+                                <rect key="frame" x="78" y="340" width="219" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Aktualizuj">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="updateButton:" destination="WZ3-Fc-ZRl" eventType="touchUpInside" id="raW-q6-v98"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="QtE-JZ-AZd" firstAttribute="leading" secondItem="rIf-cL-Y3R" secondAttribute="leading" id="07j-Nk-qpK"/>
+                            <constraint firstItem="rIf-cL-Y3R" firstAttribute="centerY" secondItem="QsX-fj-5ZY" secondAttribute="centerY" id="3oR-70-uUc"/>
+                            <constraint firstItem="Q0q-hu-Eml" firstAttribute="centerY" secondItem="ys8-AH-imM" secondAttribute="centerY" id="6Jk-kr-clk"/>
+                            <constraint firstItem="drQ-5a-agp" firstAttribute="trailing" secondItem="QsX-fj-5ZY" secondAttribute="trailing" id="Cnq-5P-aqc"/>
+                            <constraint firstItem="ys8-AH-imM" firstAttribute="trailing" secondItem="drQ-5a-agp" secondAttribute="trailing" id="Dbt-6P-2xZ"/>
+                            <constraint firstItem="Q0q-hu-Eml" firstAttribute="leading" secondItem="QtE-JZ-AZd" secondAttribute="leading" id="FAK-gR-pAd"/>
+                            <constraint firstItem="Q0q-hu-Eml" firstAttribute="leading" secondItem="OKJ-mS-HCV" secondAttribute="leadingMargin" constant="21" id="H9j-Ji-8dB"/>
+                            <constraint firstItem="0n2-4o-QPD" firstAttribute="leading" secondItem="OKJ-mS-HCV" secondAttribute="leadingMargin" constant="62" id="HTm-SG-IdU"/>
+                            <constraint firstItem="drQ-5a-agp" firstAttribute="leading" secondItem="QtE-JZ-AZd" secondAttribute="trailing" constant="8" symbolic="YES" id="LBG-XT-7je"/>
+                            <constraint firstItem="drQ-5a-agp" firstAttribute="leading" secondItem="QsX-fj-5ZY" secondAttribute="leading" id="MAj-tl-YaX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ys8-AH-imM" secondAttribute="trailing" constant="21" id="OYt-3f-mmP"/>
+                            <constraint firstItem="QtE-JZ-AZd" firstAttribute="centerY" secondItem="drQ-5a-agp" secondAttribute="centerY" id="PKx-Vh-wMg"/>
+                            <constraint firstItem="ys8-AH-imM" firstAttribute="leading" secondItem="Q0q-hu-Eml" secondAttribute="trailing" constant="8" symbolic="YES" id="RHa-nk-SmK"/>
+                            <constraint firstItem="QsX-fj-5ZY" firstAttribute="leading" secondItem="rIf-cL-Y3R" secondAttribute="trailing" constant="8" symbolic="YES" id="WQy-xn-zi5"/>
+                            <constraint firstItem="QsX-fj-5ZY" firstAttribute="trailing" secondItem="0n2-4o-QPD" secondAttribute="trailing" constant="41" id="aQx-mL-jvv"/>
+                            <constraint firstItem="QsX-fj-5ZY" firstAttribute="top" secondItem="drQ-5a-agp" secondAttribute="bottom" constant="40" id="acG-UI-waL"/>
+                            <constraint firstItem="ys8-AH-imM" firstAttribute="top" secondItem="G18-xs-5uk" secondAttribute="bottom" constant="59" id="fuV-QV-QWt"/>
+                            <constraint firstItem="ys8-AH-imM" firstAttribute="leading" secondItem="drQ-5a-agp" secondAttribute="leading" id="hFu-0w-ge8"/>
+                            <constraint firstItem="QsX-fj-5ZY" firstAttribute="leading" secondItem="0n2-4o-QPD" secondAttribute="leading" constant="41" id="sGL-WH-s1k"/>
+                            <constraint firstItem="0n2-4o-QPD" firstAttribute="top" secondItem="QsX-fj-5ZY" secondAttribute="bottom" constant="53" id="sXY-bh-c5f"/>
+                            <constraint firstItem="drQ-5a-agp" firstAttribute="top" secondItem="ys8-AH-imM" secondAttribute="bottom" constant="34" id="ufz-5o-LRP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ectsText" destination="QsX-fj-5ZY" id="IOp-Vm-wLe"/>
+                        <outlet property="nameText" destination="ys8-AH-imM" id="RN6-QX-vl3"/>
+                        <outlet property="semesterText" destination="drQ-5a-agp" id="hvf-6o-ILr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ow7-JO-4T5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4410.3999999999996" y="-5086.5067466266873"/>
         </scene>
     </scenes>
     <resources>

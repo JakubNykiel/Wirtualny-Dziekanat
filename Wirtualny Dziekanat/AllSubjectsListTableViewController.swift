@@ -12,15 +12,21 @@ import Firebase
 class AllSubjectsListTableViewController: UITableViewController,UISearchBarDelegate {
     
     var ref: FIRDatabaseReference!
-    var fieldKey = [""]
-    var fieldDisplay = [""]
+    var fieldKey = [String]()
+    var keys = [String]()
+    
+    var editSubject = ""
+    var subjectKey = ""
+    var fieldDisplay = [String]()
     var myFunc = Functions()
-    var subjects = [""]
-    var subjectDisplay = [""]
+    var subjects = [String]()
+    var subjectDisplay = [String]()
     var searchActive : Bool = false
-    var filtered:[String] = []
     
     @IBOutlet weak var searchBar: UISearchBar!
+    var filteredKey = [String]()
+    var filteredValue = [String]()
+    var data = ["":""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,12 +63,14 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
                 {
                     let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
                     let name = snap.childSnapshot(forPath: "name").value as! String
-                    
+                    let key = snap.key
                     for item in self.fieldKey
                     {
                         if(item == fieldID)
                         {
                             self.subjects.append(name)
+                            self.keys.append(key)
+                            self.data[snap.key] = name
                         }
                     }
                 }
@@ -90,15 +98,28 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        filtered = subjects.filter({ (text) -> Bool in
-            let tmp: NSString = text as NSString
-            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
-            return range.location != NSNotFound
-        })
-        if(filtered.count == 0){
-            searchActive = false;
+        filteredKey.removeAll()
+        filteredValue.removeAll()
+        let filtered = data.filter{
+            let string = $1
+            if(string.contains(searchText))
+            {
+                return true
+            }
+            else
+            {
+                return false
+            }
+        }
+        
+        for result in filtered {
+            filteredKey.append(result.key)
+            filteredValue.append(result.value)
+        }
+        if searchText.isEmpty {
+            searchActive = false
         } else {
-            searchActive = true;
+            searchActive = true
         }
         self.tableView.reloadData()
     }
@@ -110,7 +131,7 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if(searchActive) {
-            return filtered.count
+            return filteredValue.count
         }
         else
         {
@@ -124,7 +145,7 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         
         if(searchActive)
         {
-            cell.textLabel?.text = filtered[indexPath.row]
+            cell.textLabel?.text = filteredValue[indexPath.row]
         }
         else
         {
@@ -142,15 +163,26 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
+        if(searchActive)
+        {
+            subjectKey = self.filteredKey[indexPath.row]
+            editSubject = self.filteredValue[indexPath.row]
+        }
+        else
+        {
+            subjectKey = self.keys[indexPath.row]
+            editSubject = self.subjects[indexPath.row]
+        }
+        
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
-            self.performSegue(withIdentifier: "editField", sender: self)
+            self.performSegue(withIdentifier: "editSubject", sender: self)
         }
         
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
             alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
-//                self.myFunc.removeField(field: self.fieldKey)
+                self.myFunc.removeSubject(subject: self.subjectKey)
                 self.subjects.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }))
@@ -168,6 +200,17 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editSubject")
+        {
+            let destinationVC = segue.destination as! EditSubjectViewController
+            
+            destinationVC.subject = editSubject
+            destinationVC.subjectKey = subjectKey
+        }
         
     }
     

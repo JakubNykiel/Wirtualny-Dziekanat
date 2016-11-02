@@ -257,7 +257,39 @@ class Functions
     *USUWANIE PRZEDMIOTU
     */
     func removeSubject(subject: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var subjectKey = ""
+        var idSubject = ""
         
+        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    subjectKey = snap.key
+                    if(subject == subjectKey)
+                    {
+                        ref.child("subjects").child(subject).removeValue()
+                    }
+                }
+            }
+        })
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    idSubject = snap.childSnapshot(forPath: "id_subject").value as! String
+                    let key = snap.key
+                    if(subject == idSubject)
+                    {
+                        ref.child("subject-classes").child(key).removeValue()
+                    }
+
+                }
+            }
+        })
     }
 
     /*
