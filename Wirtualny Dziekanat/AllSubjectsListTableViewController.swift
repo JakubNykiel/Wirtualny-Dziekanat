@@ -36,7 +36,7 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         searchBar.delegate = self
         
         ref = FIRDatabase.database().reference()
-
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -123,7 +123,7 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         }
         self.tableView.reloadData()
     }
-
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
@@ -203,12 +203,32 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(searchActive)
+        {
+            subjectKey = self.filteredKey[indexPath.row]
+            editSubject = self.filteredValue[indexPath.row]
+        }
+        else
+        {
+            subjectKey = self.keys[indexPath.row]
+            editSubject = self.subjects[indexPath.row]
+        }
+        performSegue(withIdentifier: "goToType", sender: self)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "editSubject")
         {
             let destinationVC = segue.destination as! EditSubjectViewController
             
             destinationVC.subject = editSubject
+            destinationVC.subjectKey = subjectKey
+        }
+        if (segue.identifier == "goToType")
+        {
+            let destinationVC = segue.destination as! AllClassesTableViewController
+            
             destinationVC.subjectKey = subjectKey
         }
         

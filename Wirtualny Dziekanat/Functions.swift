@@ -291,6 +291,70 @@ class Functions
             }
         })
     }
+    /*
+     *
+     *USUWANIE ZAJEC
+     */
+    func removeClasses(classes: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var classesKey = ""
+        
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    classesKey = snap.key
+                    if(classes == classesKey)
+                    {
+                        ref.child("subject-classes").child(classes).removeValue()
+                    }
+                }
+            }
+       })
+    }
+    /*
+     *
+     *USUWANIE Dziekanatu
+     */
+    func removeDeanery(user: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var userKey = ""
+        var userFacultyKey = ""
+        
+        
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    userKey = snap.key
+                    if(user == userKey)
+                    {
+                        ref.child("users").child(user).removeValue()
+                    }
+                }
+            }
+        })
+        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    
+                    let userFaculty = snap.childSnapshot(forPath: "id_user").value as! String
+                    if(userFaculty == user)
+                    {
+                        userFacultyKey = snap.key
+                        ref.child("user-faculty").child(userFacultyKey).removeValue()
+                    }
+                }
+            }
+        })
+        
+    }
 
     /*
      * animacja ladowania

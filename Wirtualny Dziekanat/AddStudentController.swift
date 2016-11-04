@@ -23,6 +23,7 @@ class AddStudentController: UIViewController {
     @IBOutlet weak var facultyResult: UILabel!
     @IBOutlet weak var fieldResult: UILabel!
     @IBOutlet weak var semesterResult: UILabel!
+    @IBOutlet weak var numberText: UITextField!
     
     
     override func viewDidLoad() {
@@ -67,6 +68,7 @@ class AddStudentController: UIViewController {
         let name = nameText.text! as String
         let surname = surnameText.text! as String
         let email = emailText.text! as String
+        let number = numberText.text! as String
         
         
         if (email.isEmpty || surname.isEmpty || name.isEmpty)
@@ -103,7 +105,8 @@ class AddStudentController: UIViewController {
                         "surname" : surname,
                         "email" : email,
                         "account_type": self.type,
-                        "semester": self.keyResult[2]
+                        "semester": self.keyResult[2],
+                        "number": number
                     ]
                     
                     let tableData = [
