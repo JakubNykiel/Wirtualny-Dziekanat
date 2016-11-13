@@ -15,6 +15,7 @@ class DziekanatMenuController: UIViewController {
 
     @IBOutlet weak var aboutSubjectButton: UIButton!
     @IBOutlet weak var subjectButton: UIButton!
+    var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,7 @@ class DziekanatMenuController: UIViewController {
             aboutSubjectButton.layer.borderWidth = 3
             aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
+        
     }
 
     override func didReceiveMemoryWarning() {

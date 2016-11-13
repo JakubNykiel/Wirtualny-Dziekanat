@@ -29,6 +29,7 @@ class AddDeaneryController: UIViewController {
         // Do any additional setup after loading the view.
         facultyResult.text = tableResult
         ref = FIRDatabase.database().reference()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,11 +74,15 @@ class AddDeaneryController: UIViewController {
         {
             FIRAuth.auth()?.createUser(withEmail: emailText.text!, password: "Dziekanat123456") { (user, error) in
                 
-                let userID:String! = user!.uid
                 
                 if error != nil
                 {
-                    print("Mamy błąd")
+                    let errorController = UIAlertController(title: "Bład", message:
+                        "Ten email wystepuje w bazie", preferredStyle: UIAlertControllerStyle.alert)
+                    errorController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+                    }))
+                    self.myFunc.hide()
+                    self.present(errorController, animated: true, completion: nil)
                 }
                 else
                 {
@@ -89,24 +94,26 @@ class AddDeaneryController: UIViewController {
                     
                     let tableData = [
                         "id_faculty" : self.keyResult,
-                        "id_user" : userID
+                        "id_user" : (user?.uid)!
                         ] as [String:String]
                     
-                    self.ref.child("users").child(userID).setValue(userData)
+                    self.ref.child("users").child((user?.uid)!).setValue(userData)
                     self.ref.child("user-faculty").childByAutoId().setValue(tableData)
+                    
+                    let alertController = UIAlertController(title: "Dodano użytkownika", message:
+                        "Dodawanie uzytkownika zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+                        let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
+                        
+                        _ = self.navigationController?.popToViewController(targetController, animated: true)
+                    }))
+                    self.myFunc.hide()
+                    self.present(alertController, animated: true, completion: nil)
                     
                 }
             } //end FIR
             
-            let alertController = UIAlertController(title: "Dodano użytkownika", message:
-                "Dodawanie uzytkownika zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
-                let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
-                
-                _ = self.navigationController?.popToViewController(targetController, animated: true)
-            }))
-            myFunc.hide()
-            self.present(alertController, animated: true, completion: nil)
+            
             
         }
     }

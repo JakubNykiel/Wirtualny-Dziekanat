@@ -31,6 +31,7 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
         self.tableView.allowsSelection = true
         searchBar.delegate = self
         
+        
         ref = FIRDatabase.database().reference()
     }
     
@@ -60,6 +61,7 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
+        searchBar.showsCancelButton = true
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
@@ -68,11 +70,17 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
+        searchBar.text = ""
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        self.tableView.reloadData()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
+        searchBar.resignFirstResponder()
     }
+
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -159,10 +167,14 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
+            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+                self.myFunc.show()
                 self.myFunc.removeField(field: self.fieldKey)
                 self.field.remove(at: indexPath.row)
+                self.keys.remove(at: indexPath.row)
+                self.data.removeValue(forKey: self.fieldKey)
                 self.tableView.reloadData()
+                self.myFunc.hide()
             }))
             self.present(alert, animated: true, completion: nil)
         }

@@ -12,8 +12,6 @@ import Firebase
 
 class Functions
 {
-    
-    
     func validateEmail(_ value: String) -> Bool {
         let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
         return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: value)
@@ -116,7 +114,7 @@ class Functions
             }
         })
     }
-    
+
     /*
      * wyswietlanie prowadzacych z danego wydziału
      */
@@ -223,7 +221,7 @@ class Functions
             }
         })
         ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
-
+            
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots
                 {
@@ -253,9 +251,9 @@ class Functions
     }
     
     /*
-    *   
-    *USUWANIE PRZEDMIOTU
-    */
+     *
+     *USUWANIE PRZEDMIOTU
+     */
     func removeSubject(subject: String){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
@@ -286,7 +284,7 @@ class Functions
                     {
                         ref.child("subject-classes").child(key).removeValue()
                     }
-
+                    
                 }
             }
         })
@@ -312,7 +310,7 @@ class Functions
                     }
                 }
             }
-       })
+        })
     }
     /*
      *
@@ -321,19 +319,43 @@ class Functions
     func removeDeanery(user: String){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-        var userKey = ""
         var userFacultyKey = ""
         
+        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    
+                    let userFaculty = snap.childSnapshot(forPath: "id_user").value as! String
+                    if(userFaculty == user)
+                    {
+                        userFacultyKey = snap.key
+                        ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
+                    }
+                }
+            }
+        })
+        
+    }
+    /*
+     *
+     *USUWANIE Studenta
+     */
+    func removeStudent(user: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var userFacultyKey = ""
         
         ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
                 for snap in snapshots
                 {
-                    userKey = snap.key
-                    if(user == userKey)
+                    if(snap.key == user)
                     {
-                        ref.child("users").child(user).removeValue()
+                        userFacultyKey = snap.key
+                        ref.child("users").child(userFacultyKey).updateChildValues(["number": "","semester": ""])
                     }
                 }
             }
@@ -348,14 +370,71 @@ class Functions
                     if(userFaculty == user)
                     {
                         userFacultyKey = snap.key
-                        ref.child("user-faculty").child(userFacultyKey).removeValue()
+                        ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
+                    }
+                }
+            }
+        })
+        ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    
+                    let userID = snap.childSnapshot(forPath: "id_user").value as! String
+                    if(userID == user)
+                    {
+                        userFacultyKey = snap.key
+                        ref.child("user-field").child(userFacultyKey).updateChildValues(["id_field": ""])
                     }
                 }
             }
         })
         
     }
-
+    
+    /*
+     *
+     *USUWANIE Prowadzacego
+     */
+    func removeLecturer(user: String){
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        var userFacultyKey = ""
+        
+        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    
+                    let userFaculty = snap.childSnapshot(forPath: "id_user").value as! String
+                    if(userFaculty == user)
+                    {
+                        userFacultyKey = snap.key
+                        ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
+                    }
+                }
+            }
+        })
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                
+                for snap in snapshots
+                {
+                    
+                    let userID = snap.childSnapshot(forPath: "id_lecturer").value as! String
+                    if(userID == user)
+                    {
+                        userFacultyKey = snap.key
+                        ref.child("subject-classes").child(userFacultyKey).updateChildValues(["id_lecturer": ""])
+                    }
+                }
+            }
+        })
+        
+    }
+    
     /*
      * animacja ladowania
      */

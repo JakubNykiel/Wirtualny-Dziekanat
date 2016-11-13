@@ -12,7 +12,7 @@ class SelectAccountTypeTableViewController: UITableViewController {
    
     @IBOutlet var selectType: UITableView!
 
-    var account_types = ["Student","Dziekanat","Profesor"]
+    var account_types = ["Student","Dziekanat","Prowadzący"]
     var type : String!
     
     override func viewDidLoad() {
@@ -35,6 +35,9 @@ class SelectAccountTypeTableViewController: UITableViewController {
         return account_types.count
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "selectAccount", for: indexPath)
@@ -50,7 +53,7 @@ class SelectAccountTypeTableViewController: UITableViewController {
         {
             performSegue(withIdentifier: "sendTypeSegue", sender: self)
         }
-        else if(type == "Profesor")
+        else if(type == "Prowadzący")
         {
             performSegue(withIdentifier: "goToProf", sender: self)
         }

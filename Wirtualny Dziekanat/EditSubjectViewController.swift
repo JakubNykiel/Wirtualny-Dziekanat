@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class EditSubjectViewController: UIViewController {
+class EditSubjectViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var subject = ""
     var subjectKey = ""
@@ -18,9 +18,14 @@ class EditSubjectViewController: UIViewController {
     @IBOutlet weak var ectsText: UITextField!
     @IBOutlet weak var semesterText: UITextField!
     @IBOutlet weak var nameText: UITextField!
+    
+    var picker = UIPickerView()
+    var pickOption = ["1","2","3","4","5","6","7","8"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        picker.delegate = self
+        picker.dataSource = self
+        semesterText.inputView = picker
         ref = FIRDatabase.database().reference()
         
         ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -50,22 +55,24 @@ class EditSubjectViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return pickOption.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickOption[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+        semesterText.text = pickOption[row]
+    }
+    
     @IBAction func updateButton(_ sender: Any) {
-        let errorAlert = UIAlertController(title: "Błąd!", message: "Wybierz semestr z zakresu 1-8", preferredStyle: UIAlertControllerStyle.alert)
-        errorAlert.addAction(UIAlertAction(title: "Popraw", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
-            let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 1]
-            
-            _ = self.navigationController?.popToViewController(targetController, animated: true)}))
-        
-        let checker:Int? = Int(semesterText.text!)
-        
-        if(checker! < 1 || checker! > 8)
-        {
-            self.present(errorAlert, animated: true, completion: nil)
-            
-        }
-        else
-        {
             
             let nameValue = nameText.text! as String
             let ectsValue = ectsText.text! as String
@@ -82,7 +89,6 @@ class EditSubjectViewController: UIViewController {
             }))
         
             self.present(okAlert, animated: true, completion: nil)
-        }
     }
     
 }

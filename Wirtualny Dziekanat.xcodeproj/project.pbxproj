@@ -28,6 +28,9 @@
 		C36346601DC8B09B0049BF41 /* EditSubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363465F1DC8B09B0049BF41 /* EditSubjectViewController.swift */; };
 		C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */; };
 		C36A15351CF06153005EC3CC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A15341CF06153005EC3CC /* LoginController.swift */; };
+		C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */; };
+		C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */; };
+		C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */; };
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
 		C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */; };
 		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
@@ -80,6 +83,9 @@
 		C363465F1DC8B09B0049BF41 /* EditSubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSubjectViewController.swift; sourceTree = "<group>"; };
 		C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
 		C36A15341CF06153005EC3CC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditStudentViewController.swift; sourceTree = "<group>"; };
+		C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDeaneryViewController.swift; sourceTree = "<group>"; };
+		C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLecturerViewController.swift; sourceTree = "<group>"; };
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
 		C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddUserController.swift; sourceTree = "<group>"; };
 		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
@@ -283,6 +289,9 @@
 			children = (
 				C3F8FC881DC4F97D0055FBF3 /* EditFieldViewController.swift */,
 				C363465F1DC8B09B0049BF41 /* EditSubjectViewController.swift */,
+				C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */,
+				C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */,
+				C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */,
 			);
 			name = Edit;
 			sourceTree = "<group>";
@@ -438,10 +447,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3F6CAA61DBEB21200FD4B07 /* SelectLecturerTableViewController.swift in Sources */,
+				C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */,
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
 				C313559A1DC61D3D00B3A630 /* AllSubjectsListTableViewController.swift in Sources */,
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
+				C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */,
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
+				C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */,
 				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36346601DC8B09B0049BF41 /* EditSubjectViewController.swift in Sources */,
 				C36A15351CF06153005EC3CC /* LoginController.swift in Sources */,

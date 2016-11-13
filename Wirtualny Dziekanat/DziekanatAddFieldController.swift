@@ -50,7 +50,6 @@ class DziekanatAddFieldController: UIViewController {
    
     @IBAction func addFieldOfStudy(_ sender: AnyObject) {
         
-        myFunc.show()
         if (nameTextField.text?.isEmpty)! 
         {
             let alertController = UIAlertController(title: "Nie można dodać kierunku", message:
@@ -60,22 +59,23 @@ class DziekanatAddFieldController: UIViewController {
         }
         else
         {
+            myFunc.show()
             let name = nameTextField.text! as String
             let id_faculty = keyResult as String
             let data = ["name": name,
                         "id_faculty": id_faculty]
             self.ref.child("fields").childByAutoId().setValue(data)
-            
-            let alertController = UIAlertController(title: "Dodano kierunek", message:
-                "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+            myFunc.hide()
+            let alertController = UIAlertController(title: "Dodano kierunek " + name, message:nil, preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: { (action: UIAlertAction!) in
+                self.myFunc.show()
                 let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 3]
                 
                _ = self.navigationController?.popToViewController(targetController, animated: true)
-
+                self.myFunc.hide()
             }))
-            myFunc.hide()
             self.present(alertController, animated: true, completion: nil)
+            
         }
     }
 }
