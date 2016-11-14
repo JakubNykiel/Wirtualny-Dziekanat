@@ -139,10 +139,24 @@ class AllUsersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
     }
+    
+    /******************************************************************/
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "editStudent")
         {
             let destinationVC = segue.destination as! EditStudentViewController
+            
+            destinationVC.userKey = self.currentUserId
+        }
+        if (segue.identifier == "editDeanery")
+        {
+            let destinationVC = segue.destination as! EditDeaneryViewController
+            
+            destinationVC.userKey = self.currentUserId
+        }
+        if (segue.identifier == "editLecturer")
+        {
+            let destinationVC = segue.destination as! EditLecturerViewController
             
             destinationVC.userKey = self.currentUserId
         }
