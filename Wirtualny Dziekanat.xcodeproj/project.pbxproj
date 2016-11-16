@@ -31,9 +31,14 @@
 		C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */; };
 		C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */; };
 		C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */; };
+		C37B10B71DDA6AB00038A443 /* Remove User Male-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C37B10B61DDA6AB00038A443 /* Remove User Male-50.png */; };
+		C37B10B91DDA6AB90038A443 /* Email-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C37B10B81DDA6AB90038A443 /* Email-50.png */; };
+		C37B10BB1DDA6ABF0038A443 /* Password-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C37B10BA1DDA6ABF0038A443 /* Password-50.png */; };
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
 		C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */; };
 		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
+		C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */; };
+		C3924A3F1DDB2D3600B66906 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */; };
 		C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */; };
 		C395BFDE1DC0F8A40018D442 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */; };
 		C39A47741DBF6D690014A906 /* SelectSubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A47731DBF6D690014A906 /* SelectSubjectsTableViewController.swift */; };
@@ -86,9 +91,14 @@
 		C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditStudentViewController.swift; sourceTree = "<group>"; };
 		C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDeaneryViewController.swift; sourceTree = "<group>"; };
 		C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLecturerViewController.swift; sourceTree = "<group>"; };
+		C37B10B61DDA6AB00038A443 /* Remove User Male-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Remove User Male-50.png"; sourceTree = "<group>"; };
+		C37B10B81DDA6AB90038A443 /* Email-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email-50.png"; sourceTree = "<group>"; };
+		C37B10BA1DDA6ABF0038A443 /* Password-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Password-50.png"; sourceTree = "<group>"; };
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
 		C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddUserController.swift; sourceTree = "<group>"; };
 		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
+		C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
+		C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddSubjectController.swift; sourceTree = "<group>"; };
 		C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
 		C39A47731DBF6D690014A906 /* SelectSubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSubjectsTableViewController.swift; sourceTree = "<group>"; };
@@ -138,7 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				C3C255921D981DC000E88741 /* Graduation Cap-50.png */,
+				C37B10BA1DDA6ABF0038A443 /* Password-50.png */,
 				C3E7798F1D29657300CE5CFF /* University-50.png */,
+				C37B10B61DDA6AB00038A443 /* Remove User Male-50.png */,
+				C37B10B81DDA6AB90038A443 /* Email-50.png */,
 				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
 				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
 				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
@@ -257,6 +270,8 @@
 				C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */,
 				C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */,
 				C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */,
+				C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */,
+				C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -374,10 +389,13 @@
 			files = (
 				C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */,
 				C35BCCCF1D0B5CD00022DC1F /* Home-50.png in Resources */,
+				C37B10B71DDA6AB00038A443 /* Remove User Male-50.png in Resources */,
 				C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */,
 				C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */,
 				C3C255951D9826A900E88741 /* Plus-50.png in Resources */,
 				C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */,
+				C37B10B91DDA6AB90038A443 /* Email-50.png in Resources */,
+				C37B10BB1DDA6ABF0038A443 /* Password-50.png in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
 				C3E779901D29657300CE5CFF /* University-50.png in Resources */,
 				C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */,
@@ -446,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3924A3F1DDB2D3600B66906 /* ChangePasswordViewController.swift in Sources */,
 				C3F6CAA61DBEB21200FD4B07 /* SelectLecturerTableViewController.swift in Sources */,
 				C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */,
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
@@ -453,6 +472,7 @@
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
 				C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */,
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
+				C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */,
 				C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */,
 				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36346601DC8B09B0049BF41 /* EditSubjectViewController.swift in Sources */,
