@@ -42,6 +42,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         picker.dataSource = self
         lecturerText.inputView = picker
         
+        
         myFunc.show()
         ref = FIRDatabase.database().reference()
         loadData()
@@ -107,8 +108,9 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.nameLabel.text = self.currentClass
             self.hoursText.text = hours
             self.lecturerText.text = self.lecturer[lecturerIndex!]
+            self.pickerKey = idLecturer
+            self.picker.selectRow(lecturerIndex!, inComponent: 0, animated: true)
         })
-        
     }
 
 }

@@ -112,6 +112,7 @@ class EditStudentViewController: UIViewController,UIPickerViewDelegate, UIPicker
                     {
                         self.fieldID =  snap.childSnapshot(forPath: "id_field").value as! String
                         self.userFieldKey = snap.key
+                        self.updateFieldKey = self.fieldID
                     }
                 }
             }
