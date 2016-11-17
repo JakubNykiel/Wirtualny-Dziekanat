@@ -167,7 +167,7 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
+            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.destructive, handler: { (action: UIAlertAction!) in
                 self.myFunc.show()
                 self.myFunc.removeField(field: self.fieldKey)
                 self.field.remove(at: indexPath.row)

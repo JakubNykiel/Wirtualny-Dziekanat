@@ -18,6 +18,7 @@ class AllClassesTableViewController: UITableViewController {
     var classesKeys = [String]()
     var id = [String]()
     var myFunc = Functions()
+    var currentClass = String()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,6 +92,7 @@ class AllClassesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         classesKey = classesKeys[indexPath.row]
+        currentClass = classes[indexPath.row]
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
             let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
@@ -101,9 +103,15 @@ class AllClassesTableViewController: UITableViewController {
             }))
             self.present(alert, animated: true, completion: nil)
         }
+        
+        let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
+            self.performSegue(withIdentifier: "editClasses", sender: self)
+        }
+        
+        edit.backgroundColor = UIColor.gray
         remove.backgroundColor = UIColor.red
         
-        return [remove]
+        return [remove, edit]
         
     }
     
@@ -113,6 +121,17 @@ class AllClassesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "editClasses")
+        {
+            let destinationVC = segue.destination as! EditClassesViewController
+            
+            destinationVC.currentClass = currentClass
+            destinationVC.classesKey = classesKey
+            
+        }
     }
  
 }

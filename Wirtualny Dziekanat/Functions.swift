@@ -114,7 +114,7 @@ class Functions
             }
         })
     }
-
+    
     /*
      * wyswietlanie prowadzacych z danego wydziału
      */
@@ -162,25 +162,31 @@ class Functions
                 
                 for snap in snapshots
                 {
-                    let account_type = snap.childSnapshot(forPath: "account_type").value as! String
-                    let name = snap.childSnapshot(forPath: "name").value as! String
-                    let surname = snap.childSnapshot(forPath: "surname").value as! String
                     let key = snap.key
-                    
-                    if( account_type == "Prowadzący")
+                    if(userKeys.contains(key))
                     {
-                        let title = snap.childSnapshot(forPath: "title").value as! String
-                        arrayLecturer.append(title)
-                        arrayLecturer.append(name)
-                        arrayLecturer.append(surname)
+                        let account_type = snap.childSnapshot(forPath: "account_type").value as! String
+                        let name = snap.childSnapshot(forPath: "name").value as! String
+                        let surname = snap.childSnapshot(forPath: "surname").value as! String
                         
-                        dict[key] = arrayLecturer
-                        completion(dict)
+                        if( account_type == "Prowadzący")
+                        {
+                            let title = snap.childSnapshot(forPath: "title").value as! String
+                            arrayLecturer.append(title)
+                            arrayLecturer.append(name)
+                            arrayLecturer.append(surname)
+                            
+                            dict[key] = arrayLecturer
+                            print(dict[key])
+                            completion(dict)
+                            dict.removeAll()
+                            arrayLecturer.removeAll()
+                        }
                     }
                 }
             }
         })
-        dict.removeAll()
+        
     }
     
     /*

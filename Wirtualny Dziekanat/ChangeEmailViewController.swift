@@ -12,8 +12,8 @@ import Firebase
 class ChangeEmailViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
+    
     var ref: FIRDatabaseReference!
-    var userEmail:String!
     var myFunc = Functions()
     
     
@@ -28,6 +28,11 @@ class ChangeEmailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func changeEmail(_ sender: Any) {
         
         let email = emailText.text! as String
@@ -69,6 +74,7 @@ class ChangeEmailViewController: UIViewController {
                         
                         _ = self.navigationController?.popToViewController(targetController, animated: true)
                     }))
+                    self.present(alertController, animated: true, completion: nil)
                 }
             })
         }
