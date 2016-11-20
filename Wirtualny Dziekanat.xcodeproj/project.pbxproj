@@ -19,6 +19,7 @@
 		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
 		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */; };
+		C328E1001DDF33ED00000383 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C328E0FF1DDF33ED00000383 /* MessageViewController.swift */; };
 		C35981BD1D0A0DD50021172A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35981BC1D0A0DD50021172A /* Functions.swift */; };
 		C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */; };
 		C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC91D0B5CD00022DC1F /* Exit-50.png */; };
@@ -81,6 +82,7 @@
 		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
 		C324D3031DA263F7006C552F /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAccountTypeTableViewController.swift; sourceTree = "<group>"; };
+		C328E0FF1DDF33ED00000383 /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Rule-50.png"; sourceTree = "<group>"; };
 		C35BCCC91D0B5CD00022DC1F /* Exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-50.png"; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		C328E0FE1DDF33E100000383 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				C328E0FF1DDF33ED00000383 /* MessageViewController.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
 		C35BCCC61D0B5B880022DC1F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +182,7 @@
 		C36A15361CF06163005EC3CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C328E0FE1DDF33E100000383 /* Message */,
 				C3F8FC871DC4F9630055FBF3 /* Edit */,
 				C3F8FC861DC4F8190055FBF3 /* Lists */,
 				C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */,
@@ -480,6 +491,7 @@
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
 				C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */,
 				C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */,
+				C328E1001DDF33ED00000383 /* MessageViewController.swift in Sources */,
 				C302DEA41DA7002A00B98B7A /* AddLecturerController.swift in Sources */,
 				C36346601DC8B09B0049BF41 /* EditSubjectViewController.swift in Sources */,
 				C3E897BD1DDD1BD300095E12 /* EditClassesViewController.swift in Sources */,

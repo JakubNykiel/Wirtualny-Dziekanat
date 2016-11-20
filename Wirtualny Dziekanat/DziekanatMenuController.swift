@@ -8,18 +8,19 @@
 
 import UIKit
 import Firebase
+import MessageUI
 
-class DziekanatMenuController: UIViewController {
+class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDelegate {
     
     var field:Bool!
-
+    
     @IBOutlet weak var aboutSubjectButton: UIButton!
     @IBOutlet weak var subjectButton: UIButton!
     var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         if(subjectButton != nil)
         {
@@ -30,8 +31,9 @@ class DziekanatMenuController: UIViewController {
             aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
         
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -69,5 +71,34 @@ class DziekanatMenuController: UIViewController {
         }
     }
     
-
+    @IBAction func sendEmail(_ sender: Any) {
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients(["j.nykiel93@gmail.com"])
+//        mailComposerVC.setSubject("Sending you an in-app e-mail...")
+//        mailComposerVC.setMessageBody("Sending e-mail in-app is not so bad!", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
