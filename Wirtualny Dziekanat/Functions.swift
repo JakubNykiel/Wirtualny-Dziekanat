@@ -178,7 +178,6 @@ class Functions
                             arrayLecturer.append(surname)
                             
                             dict[key] = arrayLecturer
-                            print(dict[key])
                             completion(dict)
                             dict.removeAll()
                             arrayLecturer.removeAll()
@@ -339,6 +338,7 @@ class Functions
                     {
                         userFacultyKey = snap.key
                         ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
+                        ref.child("users").child(userFaculty).updateChildValues(["email": ""])
                     }
                 }
             }
@@ -362,7 +362,7 @@ class Functions
                     if(snap.key == user)
                     {
                         userFacultyKey = snap.key
-                        ref.child("users").child(userFacultyKey).updateChildValues(["number": "","semester": ""])
+                        ref.child("users").child(userFacultyKey).updateChildValues(["number": "","semester": "","email": ""])
                     }
                 }
             }
@@ -420,6 +420,7 @@ class Functions
                     {
                         userFacultyKey = snap.key
                         ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
+                        ref.child("users").child(userFaculty).updateChildValues(["email": ""])
                     }
                 }
             }

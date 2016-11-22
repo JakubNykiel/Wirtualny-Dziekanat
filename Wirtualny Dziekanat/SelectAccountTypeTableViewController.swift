@@ -71,5 +71,4 @@ class SelectAccountTypeTableViewController: UITableViewController {
             destinationVC.type = type
         }
     }
-
 }
