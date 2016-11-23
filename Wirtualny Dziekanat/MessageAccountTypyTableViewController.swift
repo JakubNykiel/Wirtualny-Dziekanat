@@ -38,7 +38,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         }
         
         let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MessageAccountTypyTableViewController.handleLongPress(_:)))
-        longPressGesture.minimumPressDuration = 0.7 // 1 second press
+        longPressGesture.minimumPressDuration = 0.7
         longPressGesture.delegate = self
         self.tableView.addGestureRecognizer(longPressGesture)
         
@@ -73,9 +73,9 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         
         type = account_types[indexPath.row]
         
-        if(type == "Student")
+        if(type == "Dziekanat")
         {
-            performSegue(withIdentifier: "StudentMessage", sender: self)
+            performSegue(withIdentifier: "DeaneryMessage", sender: self)
         }
         else
         {
@@ -84,7 +84,13 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if (segue.identifier == "OtherMessage")
+        {
+            let destinationVC = segue.destination as! MessageFieldTableViewController
+            
+            destinationVC.type = type
+        }
+
     }
     
     @IBAction func sendButton(_ sender: Any) {

@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 
 class AddClassesTypeController: UIViewController {
-
+    
     var classesData = [String]()
     var classesDataDisplay = [String]()
     var myFunc = Functions()
@@ -29,7 +29,7 @@ class AddClassesTypeController: UIViewController {
         classesTypeResult.text = classesDataDisplay[1]
         lecturerResult.text = classesDataDisplay[2]
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,11 +43,31 @@ class AddClassesTypeController: UIViewController {
         
         let hours = hoursText.text! as String
         myFunc.show()
-        let data = ["hours": hours,
-                    "id_subject": classesData[0],
-                    "id_type": classesData[1],
-                    "id_lecturer": classesData[2]]
-        self.ref.child("subject-classes").childByAutoId().setValue(data)
+        
+        let userField = [
+            "id_field": classesData[0],
+            "id_user": classesData[3]]
+        self.ref.child("user-field").childByAutoId().setValue(userField)
+        
+        
+        self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let user = snap.childSnapshot(forPath: "id_user").value as! String
+                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                    if(user == self.classesData[3] && fieldID == self.classesData[0])
+                    {
+                        let data = ["hours": hours,
+                                    "id_subject": self.classesData[1],
+                                    "id_type": self.classesData[2],
+                                    "id_lecturer": self.classesData[3],
+                                    "userField": snap.key]
+                        self.ref.child("subject-classes").childByAutoId().setValue(data)
+                    }
+                }
+            }
+        })
         
         let alertController = UIAlertController(title: "Dodano kierunek", message:
             "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
@@ -65,10 +85,10 @@ class AddClassesTypeController: UIViewController {
             _ = self.navigationController?.popToViewController(targetController, animated: true)
             self.myFunc.hide()
         }))
-
+        
         myFunc.hide()
         self.present(alertController, animated: true, completion: nil)
     }
-
-
+    
+    
 }

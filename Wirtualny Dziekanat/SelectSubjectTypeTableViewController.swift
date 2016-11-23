@@ -75,7 +75,7 @@ class SelectSubjectTypeTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedType = keys[indexPath.row]
         selectedTypeToDisplay = self.subjectType[indexPath.row].value as! String
-        classesData.insert(selectedType, at: 1)
+        classesData.insert(selectedType, at: 2)
         classesDataDisplay.insert(selectedTypeToDisplay, at: 1)
         performSegue(withIdentifier: "showListWithLecturer", sender: self)
     }

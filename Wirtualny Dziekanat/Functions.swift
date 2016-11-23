@@ -432,10 +432,12 @@ class Functions
                 {
                     
                     let userID = snap.childSnapshot(forPath: "id_lecturer").value as! String
+                    let userField = snapshot.childSnapshot(forPath: "userField").value as! String
                     if(userID == user)
                     {
                         userFacultyKey = snap.key
                         ref.child("subject-classes").child(userFacultyKey).updateChildValues(["id_lecturer": ""])
+                        ref.child("user-field").child(userField).removeValue()
                     }
                 }
             }

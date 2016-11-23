@@ -46,58 +46,18 @@ class ManageAccountViewController: UIViewController {
                 }
                 else
                 {
-                    self.ref.child("users").child(self.userKey!).removeValue()
-                    self.ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-                        
-                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            
-                            for snap in snapshots
-                            {
-                                let idUser = snap.childSnapshot(forPath: "id_user").value as! String
-                                
-                                if(idUser == self.userKey)
-                                {
-                                    self.ref.child("user-faculty").child(snap.key).removeValue()
-                                }
-                            }
-                        }
-                    })
+                    if(self.type == "Dziekanat")
+                    {
+                        self.myFunc.removeDeanery(user: self.userKey)
+                    }
                     
                     if(self.type == "Prowadzący")
                     {
-                        self.ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
-                            
-                            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                                
-                                for snap in snapshots
-                                {
-                                    let idLecturer = snap.childSnapshot(forPath: "id_lecturer").value as! String
-                                    
-                                    if(idLecturer == self.userKey)
-                                    {
-                                        self.ref.child("subject-classes").child(snap.key).updateChildValues(["id_lecturer" : ""])
-                                    }
-                                }
-                            }
-                        })
+                        self.myFunc.removeLecturer(user: self.userKey)
                     }
                     if(self.type == "Student")
                     {
-                        self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
-                            
-                            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                                
-                                for snap in snapshots
-                                {
-                                    let idUser = snap.childSnapshot(forPath: "id_user").value as! String
-                                    
-                                    if(idUser == self.userKey)
-                                    {
-                                        self.ref.child("user-field").child(snap.key).removeValue()
-                                    }
-                                }
-                            }
-                        })
+                       self.myFunc.removeStudent(user: self.userKey)
                     }
                     if let storyboard = self.storyboard {
                         let vc = storyboard.instantiateViewController(withIdentifier: "LoginScene")

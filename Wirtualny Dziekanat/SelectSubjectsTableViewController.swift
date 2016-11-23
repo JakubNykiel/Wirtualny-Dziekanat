@@ -88,7 +88,8 @@ class SelectSubjectsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedKey = subjectsKeys[indexPath.row]
         selectedDisplayName = subjects[indexPath.row]
-        classesData.insert(selectedKey, at: 0)
+        classesData.insert(key, at: 0)
+        classesData.insert(selectedKey, at: 1)
         classesDataDisplay.insert(selectedDisplayName, at: 0)
         performSegue(withIdentifier: "toClasses", sender: self)
         

@@ -19,6 +19,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var currentClass = String()
     var classesKey = String()
     var pickerKey = String()
+    var userField:String!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lecturerText: UITextField!
@@ -85,6 +86,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let hoursValue = hoursText.text! as String
         
         ref.child("subject-classes").child(classesKey).updateChildValues(["hours": hoursValue,"id_lecturer": pickerKey])
+        ref.child("user-field").child(userField).updateChildValues(["id_user": pickerKey])
         
         let okAlert = UIAlertController(title: "Edytowano przedmiot", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         okAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
@@ -104,6 +106,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         ref.child("subject-classes").child(classesKey).observeSingleEvent(of: .value, with: { (snapshot) in
             let idLecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
             let hours = snapshot.childSnapshot(forPath: "hours").value as! String
+            self.userField = snapshot.childSnapshot(forPath: "userField").value as! String
             let lecturerIndex = self.keys.index(of: idLecturer)
             self.nameLabel.text = self.currentClass
             self.hoursText.text = hours
