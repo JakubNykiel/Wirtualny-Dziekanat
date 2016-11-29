@@ -22,7 +22,9 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
     var subjectsKey = [String]()
     var editField = ""
     var fieldKey = ""
-    
+    var myType = ""
+    var userID = ""
+    var lecturerSubjects = [String]()
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
     var filteredKey = [String]()
@@ -54,17 +56,33 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
         keys.removeAll()
         field.removeAll()
         
-        myFunc.displayFields{ (name) -> () in
-            for item in name
-            {
-                self.keys.append(item.key)
-                self.field.append(item.value)
-                self.data[item.key] = item.value
+        if(self.myType == "Prowadzący")
+        {
+            myFunc.displayFieldForUid{ (name) -> () in
+                for item in name
+                {
+                    self.keys.append(item.key)
+                    self.field.append(item.value)
+                    self.data[item.key] = item.value
+                }
+                self.tableView.reloadData()
+            }
+            self.tableView.reloadData()
+    
+        }
+        else
+        {
+            myFunc.displayFields{ (name) -> () in
+                for item in name
+                {
+                    self.keys.append(item.key)
+                    self.field.append(item.value)
+                    self.data[item.key] = item.value
+                }
+                self.tableView.reloadData()
             }
             self.tableView.reloadData()
         }
-        self.tableView.reloadData()
-        
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -200,30 +218,28 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                     {
                         self.fieldKey = self.keys[(indexPath?.row)!]
                     }
-                        self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
-                            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                                for snap in snapshots
+                    self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            for snap in snapshots
+                            {
+                                let user = snap.childSnapshot(forPath: "id_user").value as! String
+                                let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                                
+                                if(fieldID == self.fieldKey)
                                 {
-                                    let user = snap.childSnapshot(forPath: "id_user").value as! String
-                                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
-                                    
-                                    if(fieldID == self.fieldKey)
-                                    {
-                                        self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                                            let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                            let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                            if(acc_type == self.type)
-                                            {
-                                                self.emails.append(email)
-                                            }
-                                            
-                                        })
-                                        
-                                    }
+                                    self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
+                                        let email = snapshot.childSnapshot(forPath: "email").value as! String
+                                        let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
+                                        if(acc_type == self.type)
+                                        {
+                                            self.emails.append(email)
+                                        }
+                                    })
                                 }
                             }
-                        })
-
+                        }
+                    })
+                    
                     cell.accessoryType = .checkmark
                 }
             }

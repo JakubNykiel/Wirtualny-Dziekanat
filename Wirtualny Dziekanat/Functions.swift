@@ -116,6 +116,36 @@ class Functions
         })
     }
     
+    func displayFieldForUid(completion: @escaping ([String:String])->())
+    {
+        var ref:FIRDatabaseReference
+        ref = FIRDatabase.database().reference()
+        let userID = FIRAuth.auth()!.currentUser!.uid
+        var keys = [String]()
+        var dict = [String:String]()
+        ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let user = snap.childSnapshot(forPath: "id_user").value as! String
+                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                    
+                    if(user == userID && (keys.contains(fieldID)) == false)
+                    {
+                        keys.append(fieldID)
+                        ref.child("fields").child(fieldID).observeSingleEvent(of: .value, with: { (snapshot) in
+                            let name = snapshot.childSnapshot(forPath: "name").value as! String
+                            dict[fieldID] = name
+                            completion(dict)
+                            dict.removeAll()
+                        })
+                    }
+                }
+            }
+        })
+        keys.removeAll()
+    }
+    
     /*
      * wyswietlanie prowadzacych z danego wydziału
      */

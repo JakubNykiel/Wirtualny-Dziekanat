@@ -30,8 +30,6 @@ class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDele
             aboutSubjectButton.layer.borderWidth = 3
             aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

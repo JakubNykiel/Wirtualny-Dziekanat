@@ -19,6 +19,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
     var uid: String!
     var faculty: String!
     var myFunc = Functions()
+    var myType: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,10 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         ref = FIRDatabase.database().reference()
         
         uid = FIRAuth.auth()?.currentUser?.uid
+        
+        ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.myType = snapshot.childSnapshot(forPath: "account_type").value as! String
+        })
         myFunc.displayFaculty{ (name) -> () in
             for item in name
             {
@@ -73,22 +78,16 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         
         type = account_types[indexPath.row]
         
-        if(type == "Dziekanat")
-        {
-            performSegue(withIdentifier: "DeaneryMessage", sender: self)
-        }
-        else
-        {
-            performSegue(withIdentifier: "OtherMessage", sender: self)
-        }
+        performSegue(withIdentifier: "FieldMessage", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "OtherMessage")
+        if (segue.identifier == "FieldMessage")
         {
             let destinationVC = segue.destination as! MessageFieldTableViewController
             
             destinationVC.type = type
+            destinationVC.myType = myType
         }
 
     }
@@ -161,5 +160,4 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         }
         
     }
-    
 }

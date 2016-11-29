@@ -2148,7 +2148,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="4zn-Ob-EMF" kind="show" identifier="OtherMessage" id="q9Y-i8-J4I"/>
+                        <segue destination="4zn-Ob-EMF" kind="show" identifier="FieldMessage" id="q9Y-i8-J4I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CEu-yH-lof" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2196,7 +2196,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egd-V3-WI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4129" y="-1848"/>
+            <point key="canvasLocation" x="4239" y="-1496"/>
         </scene>
         <!--Dodaj-->
         <scene sceneID="DYa-HN-AK2">
