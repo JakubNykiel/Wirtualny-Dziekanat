@@ -476,6 +476,10 @@ class Functions
     }
     
     /*
+    * Ładowanie userów
+    */
+    
+    /*
      * animacja ladowania
      */
     var currentOverlay : UIView?
@@ -539,16 +543,25 @@ class Functions
     
     func hide() {
         if currentOverlay != nil {
-            //            UIView.animate(withDuration: 0.5, animations: {
-            //                self.currentOverlay?.alpha = 0
-            //            }) { _ in
-            //                self.currentOverlay?.removeFromSuperview()
-            //            }
-            UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration(0.75)
-            self.currentOverlay?.alpha = 0
-            UIView.commitAnimations()
-            currentOverlay =  nil
+                        UIView.animate(withDuration: 0.5, animations: {
+                            self.currentOverlay?.alpha = 0
+                        }) { _ in
+                            self.currentOverlay?.removeFromSuperview()
+                        }
+            //UIView.beginAnimations(nil, context: nil)
+            //UIView.setAnimationDuration(3)
+            //self.currentOverlay?.alpha = 0
+            //UIView.commitAnimations()
+            //currentOverlay =  nil
         }
     }
+    func animate(cell:UITableViewCell) {
+        let view = cell.backgroundView
+        view?.layer.opacity = 0.1
+        view?.backgroundColor = UIColor.black
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.allowUserInteraction, .curveEaseInOut], animations: { () -> Void in
+            view?.layer.opacity = 1
+        }, completion: nil)
+    }
+    
 }

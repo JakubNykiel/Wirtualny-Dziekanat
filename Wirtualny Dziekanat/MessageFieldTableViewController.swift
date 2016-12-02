@@ -25,12 +25,14 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
     var myType = ""
     var userID = ""
     var lecturerSubjects = [String]()
+    
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
     var filteredKey = [String]()
     var filteredValue = [String]()
     
     override func viewDidLoad() {
+        myFunc.show()
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -67,8 +69,6 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                 }
                 self.tableView.reloadData()
             }
-            self.tableView.reloadData()
-    
         }
         else
         {
@@ -81,8 +81,9 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                 }
                 self.tableView.reloadData()
             }
-            self.tableView.reloadData()
         }
+        
+        myFunc.hide()
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -169,9 +170,31 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
         cell.accessoryType = .none
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if(searchActive) {
+            self.fieldKey = self.filteredKey[(indexPath.row)]
+        }
+        else
+        {
+            self.fieldKey = self.keys[(indexPath.row)]
+        }
+        
+        if(myType == "Prowadzący")
+        {
+            performSegue(withIdentifier: "MessageFieldToSubject", sender: self)
+        }
+        else
+        {
+            performSegue(withIdentifier: "MessageSemester", sender: self)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
+    
     @IBAction func sendMail(_ sender: Any) {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.setToRecipients(emails)
@@ -198,13 +221,20 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
         
         let p = longPressGesture.location(in: self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: p)
+        var number = 0
+        var counter:Int!
         
         if indexPath == nil {
             print("Long press on table view, not row.")
         }
         else if (longPressGesture.state == UIGestureRecognizerState.began) {
+            myFunc.show()
             if let cell = tableView.cellForRow(at: indexPath!)
             {
+                if cell.accessoryView == nil {
+                    let indicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+                    cell.accessoryView = indicator
+                }
                 if cell.accessoryType == .checkmark
                 {
                     cell.accessoryType = .none
@@ -218,32 +248,44 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                     {
                         self.fieldKey = self.keys[(indexPath?.row)!]
                     }
-                    self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
+                    let indicator = cell.accessoryView as! UIActivityIndicatorView
+                    indicator.startAnimating()
+                    self.ref.child("user-field").queryOrdered(byChild: "id_field").queryEqual(toValue: self.fieldKey).observeSingleEvent(of: .value, with: { (snapshot) in
                         if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            counter = snapshots.count
                             for snap in snapshots
                             {
                                 let user = snap.childSnapshot(forPath: "id_user").value as! String
-                                let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
-                                
-                                if(fieldID == self.fieldKey)
-                                {
-                                    self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                                        let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                        let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                        if(acc_type == self.type)
-                                        {
-                                            self.emails.append(email)
-                                        }
-                                    })
-                                }
+                                self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
+                                    let email = snapshot.childSnapshot(forPath: "email").value as! String
+                                    let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
+                                    if(acc_type == self.type)
+                                    {
+                                        self.emails.append(email)
+                                    }
+                                    number = number + 1
+                                    if(number == counter)
+                                    {
+                                        indicator.stopAnimating()
+                                        cell.accessoryView = nil
+                                        cell.accessoryType = .checkmark
+                                    }
+                                })
                             }
                         }
                     })
-                    
-                    cell.accessoryType = .checkmark
                 }
             }
         }
-        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "MessageSemester")
+        {
+            let destinationVC = segue.destination as! MessageSemesterTableViewController
+            
+            destinationVC.myField = fieldKey
+            destinationVC.myType = type
+        }
     }
 }

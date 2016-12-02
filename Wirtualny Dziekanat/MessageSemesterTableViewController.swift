@@ -1,8 +1,8 @@
 //
-//  MessageAccountTypyTableViewController.swift
+//  MessageSemesterTableViewController.swift
 //  Wirtualny Dziekanat
 //
-//  Created by Jakub Nykiel on 20.11.2016.
+//  Created by Jakub Nykiel on 30.11.2016.
 //  Copyright © 2016 Jakub Nykiel. All rights reserved.
 //
 
@@ -10,47 +10,44 @@ import UIKit
 import Firebase
 import MessageUI
 
-class MessageAccountTypyTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, UIGestureRecognizerDelegate{
+class MessageSemesterTableViewController: UITableViewController, MFMailComposeViewControllerDelegate, UIGestureRecognizerDelegate{
     
     var ref: FIRDatabaseReference!
-    var account_types = ["Student","Dziekanat","Prowadzący"]
+    var semester = [FIRDataSnapshot]()
+    var keys = [String]()
     var emails = [String]()
-    var type : String!
-    var uid: String!
-    var faculty: String!
+    var myField = ""
+    var myType = ""
     var myFunc = Functions()
-    var myType: String!
     
     override func viewDidLoad() {
         myFunc.show()
         super.viewDidLoad()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "selectAccountMessage")
         tableView.delegate = self
         tableView.dataSource = self
-        self.tableView.reloadData()
+        self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
         
-        uid = FIRAuth.auth()?.currentUser?.uid
-        
-        ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            self.myType = snapshot.childSnapshot(forPath: "account_type").value as! String
-        })
-        myFunc.displayFaculty{ (name) -> () in
-            for item in name
-            {
-                self.faculty = item.key
+        ref.child("semester").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let sn = snap.childSnapshot(forPath: "name")
+                    self.keys.append(snap.key)
+                    self.semester.append(sn)
+                }
             }
-        }
-        
-        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MessageAccountTypyTableViewController.handleLongPress(_:)))
-        longPressGesture.minimumPressDuration = 0.5
-        longPressGesture.delegate = self
-        self.tableView.addGestureRecognizer(longPressGesture)
-        
+            let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(MessageAccountTypyTableViewController.handleLongPress(_:)))
+            longPressGesture.minimumPressDuration = 0.5
+            longPressGesture.delegate = self
+            self.tableView.addGestureRecognizer(longPressGesture)
+            self.tableView.reloadData()
+        })
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         myFunc.hide()
         self.tableView.reloadData()
     }
@@ -61,58 +58,21 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return account_types.count
+        return semester.count
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60.0
-    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "selectAccountMessage", for: indexPath)
-        cell.textLabel?.text = account_types[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessageSemester", for: indexPath)
+        
+        cell.textLabel?.text = self.semester[indexPath.row].value as? String
         cell.accessoryType = .none
+        
         return cell
     }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        type = account_types[indexPath.row]
-        if(type == "Dziekanat")
-        {
-            performSegue(withIdentifier: "DeaneryMessage", sender: self)
-        }
-        else
-        {
-            performSegue(withIdentifier: "FieldMessage", sender: self)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "FieldMessage")
-        {
-            let destinationVC = segue.destination as! MessageFieldTableViewController
-            
-            destinationVC.type = type
-            destinationVC.myType = myType
-        }
-        if (segue.identifier == "DeaneryMessage")
-        {
-            let destinationVC = segue.destination as! MessageUsersTableViewController
-            print(type)
-            destinationVC.type = type
-        }
-        
-    }
-    
-    @IBAction func sendButton(_ sender: Any) {
-        let mailComposerVC = MFMailComposeViewController()
-        mailComposerVC.setToRecipients(emails)
-        mailComposerVC.mailComposeDelegate = self
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposerVC, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
-        }
     }
     
     func showSendMailErrorAlert() {
@@ -132,16 +92,10 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         let indexPath = self.tableView.indexPathForRow(at: p)
         var number = 0
         var counter:Int!
-        
         if indexPath == nil {
             print("Long press on table view, not row.")
         }
-        else if(longPressGesture.state == UIGestureRecognizerState.ended)
-        {
-            //myFunc.hide()
-        }
         else if (longPressGesture.state == UIGestureRecognizerState.began) {
-            //myFunc.show()
             if let cell = tableView.cellForRow(at: indexPath!)
             {
                 if cell.accessoryView == nil {
@@ -156,18 +110,24 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
                 {
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
-                    self.ref.child("user-faculty").queryOrdered(byChild: "id_faculty").queryEqual(toValue: self.faculty).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let current_semester = self.semester[(indexPath?.row)!].value as! String
+                    self.ref.child("user-field").queryOrdered(byChild: "id_field").queryEqual(toValue: self.myField).observeSingleEvent(of: .value, with: { (snapshot) in
                         if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                             counter = snapshots.count
                             for snap in snapshots
                             {
                                 let user = snap.childSnapshot(forPath: "id_user").value as! String
+                                
                                 self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
                                     let email = snapshot.childSnapshot(forPath: "email").value as! String
                                     let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                    if(acc_type == self.account_types[(indexPath?.row)!])
+                                    if(acc_type == self.myType)
                                     {
-                                        self.emails.append(email)
+                                        let userSemester = snapshot.childSnapshot(forPath: "semester").value as! String
+                                        if(current_semester == userSemester )
+                                        {
+                                            self.emails.append(email)
+                                        }
                                     }
                                     number = number + 1
                                     if(number == counter)
@@ -177,12 +137,28 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
                                         cell.accessoryType = .checkmark
                                     }
                                 })
+                                
                             }
                         }
+                        
                     })
                 }
             }
         }
-        
     }
+    
+    @IBAction func sendMail(_ sender: Any) {
+        
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.setToRecipients(emails)
+        mailComposerVC.mailComposeDelegate = self
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposerVC, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    
+    
 }
