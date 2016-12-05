@@ -94,14 +94,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
             
             destinationVC.type = type
             destinationVC.myType = myType
-        }
-        if (segue.identifier == "DeaneryMessage")
-        {
-            let destinationVC = segue.destination as! MessageUsersTableViewController
-            print(type)
-            destinationVC.type = type
-        }
-        
+        }        
     }
     
     @IBAction func sendButton(_ sender: Any) {

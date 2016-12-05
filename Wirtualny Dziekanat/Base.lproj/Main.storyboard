@@ -2263,6 +2263,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="n6C-SD-XNw" kind="show" identifier="displayUsersFromSemester" id="MaD-Iu-Qus"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zUy-md-ejR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2271,7 +2274,7 @@
         <!--Użytkownicy-->
         <scene sceneID="Wh5-63-yNj">
             <objects>
-                <tableViewController title="Użytkownicy" id="ilp-mW-y5W" customClass="MessageUsersTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Użytkownicy" id="ilp-mW-y5W" customClass="MessageDeaneryTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="y71-cL-Xmn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2282,7 +2285,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usersMessage" id="cHO-tr-KKB">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="deaneryMessage" id="cHO-tr-KKB">
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cHO-tr-KKB" id="8TP-TI-MDZ">
@@ -2296,7 +2299,7 @@
                             <outlet property="delegate" destination="ilp-mW-y5W" id="f7a-j2-Gxe"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Użytkownicy" id="5hz-5H-Wy7">
+                    <navigationItem key="navigationItem" title="Dziekanat" id="5hz-5H-Wy7">
                         <barButtonItem key="rightBarButtonItem" title="Mail" id="FyS-9i-K85">
                             <connections>
                                 <action selector="sendMail:" destination="ilp-mW-y5W" id="DmP-m6-4KJ"/>
@@ -2309,7 +2312,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MFP-kt-6aU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8843" y="-130"/>
+            <point key="canvasLocation" x="7650" y="-520"/>
         </scene>
         <!--Dodaj-->
         <scene sceneID="DYa-HN-AK2">
@@ -4294,6 +4297,92 @@
             </objects>
             <point key="canvasLocation" x="-4410" y="-5518"/>
         </scene>
+        <!--Użytkownicy-->
+        <scene sceneID="Ku2-6K-sLi">
+            <objects>
+                <tableViewController title="Użytkownicy" id="k50-gO-R4g" customClass="MessageUsersTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ssL-sr-m1w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="ZGw-gk-rqF">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usersMessage" id="na3-TM-Qcc">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="na3-TM-Qcc" id="FtV-Vc-fNB">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="k50-gO-R4g" id="LqA-jy-mH8"/>
+                            <outlet property="delegate" destination="k50-gO-R4g" id="QGt-tD-R4E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Użytkownicy" id="bzJ-14-84R">
+                        <barButtonItem key="rightBarButtonItem" title="Mail" id="9KM-7L-mIv">
+                            <connections>
+                                <action selector="sendMail:" destination="k50-gO-R4g" id="5X0-VN-x5R"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="ZGw-gk-rqF" id="tf2-PR-rST"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TNQ-Oj-QDP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7650" y="-1422"/>
+        </scene>
+        <!--Użytkownicy-->
+        <scene sceneID="4uS-S1-5wA">
+            <objects>
+                <tableViewController title="Użytkownicy" id="n6C-SD-XNw" customClass="MessageStudentTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vrC-29-gaX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="afS-2a-AMO">
+                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="studentMessage" id="SRJ-s4-H5i">
+                                <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SRJ-s4-H5i" id="lFr-PW-Jxt">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="n6C-SD-XNw" id="swk-a5-U39"/>
+                            <outlet property="delegate" destination="n6C-SD-XNw" id="Izv-ZF-cbH"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Studenci" id="GeE-mI-c7y">
+                        <barButtonItem key="rightBarButtonItem" title="Mail" id="1lw-3A-vLL">
+                            <connections>
+                                <action selector="sendMail:" destination="n6C-SD-XNw" id="wlS-pU-MbX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="afS-2a-AMO" id="N2s-rm-8ug"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jQm-xd-43N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7650" y="-2176"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Add Rule-50.png" width="50" height="50"/>
@@ -4311,8 +4400,8 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gPo-tD-mad"/>
         <segue reference="SNr-ek-zY5"/>
+        <segue reference="gPo-tD-mad"/>
         <segue reference="8O0-VN-08h"/>
     </inferredMetricsTieBreakers>
 </document>

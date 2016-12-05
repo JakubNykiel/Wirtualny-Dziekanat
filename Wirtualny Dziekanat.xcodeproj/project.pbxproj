@@ -30,6 +30,7 @@
 		C363DFD41D89BE04007815A1 /* DziekanatMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */; };
 		C367FE231DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C367FE221DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift */; };
 		C36A15351CF06153005EC3CC /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36A15341CF06153005EC3CC /* LoginController.swift */; };
+		C373A14A1DF56F0A00B9591F /* MessageStudentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C373A1491DF56F0A00B9591F /* MessageStudentTableViewController.swift */; };
 		C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */; };
 		C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */; };
 		C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */; };
@@ -58,7 +59,7 @@
 		C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */; };
 		C3E779901D29657300CE5CFF /* University-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3E7798F1D29657300CE5CFF /* University-50.png */; };
 		C3E897BD1DDD1BD300095E12 /* EditClassesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E897BC1DDD1BD300095E12 /* EditClassesViewController.swift */; };
-		C3F25EC81DEE28B800F8DCA3 /* MessageUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F25EC71DEE28B800F8DCA3 /* MessageUsersTableViewController.swift */; };
+		C3F25EC81DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F25EC71DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift */; };
 		C3F25ECA1DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F25EC91DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift */; };
 		C3F3130C1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F3130B1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift */; };
 		C3F6CAA41DBEAE7D00FD4B07 /* AddClassesTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F6CAA31DBEAE7D00FD4B07 /* AddClassesTypeController.swift */; };
@@ -96,6 +97,7 @@
 		C363DFD31D89BE04007815A1 /* DziekanatMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatMenuController.swift; sourceTree = "<group>"; };
 		C367FE221DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageAccountTypyTableViewController.swift; sourceTree = "<group>"; };
 		C36A15341CF06153005EC3CC /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		C373A1491DF56F0A00B9591F /* MessageStudentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageStudentTableViewController.swift; sourceTree = "<group>"; };
 		C37637CC1DCD538D00B56A03 /* EditStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditStudentViewController.swift; sourceTree = "<group>"; };
 		C37637CE1DCD539800B56A03 /* EditDeaneryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditDeaneryViewController.swift; sourceTree = "<group>"; };
 		C37637D01DCD53A900B56A03 /* EditLecturerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditLecturerViewController.swift; sourceTree = "<group>"; };
@@ -125,7 +127,7 @@
 		C3E7798D1D29637D00CE5CFF /* ProfesorMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfesorMenuController.swift; sourceTree = "<group>"; };
 		C3E7798F1D29657300CE5CFF /* University-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "University-50.png"; sourceTree = "<group>"; };
 		C3E897BC1DDD1BD300095E12 /* EditClassesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditClassesViewController.swift; sourceTree = "<group>"; };
-		C3F25EC71DEE28B800F8DCA3 /* MessageUsersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageUsersTableViewController.swift; sourceTree = "<group>"; };
+		C3F25EC71DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageDeaneryTableViewController.swift; sourceTree = "<group>"; };
 		C3F25EC91DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSemesterTableViewController.swift; sourceTree = "<group>"; };
 		C3F3130B1DBD02CD00921C75 /* SelectSubjectTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSubjectTypeTableViewController.swift; sourceTree = "<group>"; };
 		C3F6CAA31DBEAE7D00FD4B07 /* AddClassesTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddClassesTypeController.swift; sourceTree = "<group>"; };
@@ -161,8 +163,9 @@
 			children = (
 				C367FE221DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift */,
 				C3CC0AD11DE4C7B3006238EC /* MessageFieldTableViewController.swift */,
-				C3F25EC71DEE28B800F8DCA3 /* MessageUsersTableViewController.swift */,
+				C3F25EC71DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift */,
 				C3F25EC91DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift */,
+				C373A1491DF56F0A00B9591F /* MessageStudentTableViewController.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -498,7 +501,7 @@
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
 				C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */,
 				C367FE231DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift in Sources */,
-				C3F25EC81DEE28B800F8DCA3 /* MessageUsersTableViewController.swift in Sources */,
+				C3F25EC81DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift in Sources */,
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
 				C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */,
 				C3CC0AD21DE4C7B3006238EC /* MessageFieldTableViewController.swift in Sources */,
@@ -519,6 +522,7 @@
 				C3F6CAA41DBEAE7D00FD4B07 /* AddClassesTypeController.swift in Sources */,
 				C39A47741DBF6D690014A906 /* SelectSubjectsTableViewController.swift in Sources */,
 				C30F471C1DB6C54200E9C807 /* SelectFieldTableViewController.swift in Sources */,
+				C373A14A1DF56F0A00B9591F /* MessageStudentTableViewController.swift in Sources */,
 				C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */,
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */,

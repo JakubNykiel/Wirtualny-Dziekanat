@@ -19,6 +19,7 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
     var myField = ""
     var myType = ""
     var myFunc = Functions()
+    var mySem = ""
     
     override func viewDidLoad() {
         myFunc.show()
@@ -73,6 +74,8 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        mySem = (self.semester[indexPath.row].value as? String)!
+        performSegue(withIdentifier: "displayUsersFromSemester", sender: self)
     }
     
     func showSendMailErrorAlert() {
@@ -159,6 +162,14 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
         }
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if (segue.identifier == "displayUsersFromSemester")
+        {
+            let destinationVC = segue.destination as! MessageStudentTableViewController
+            destinationVC.studentSemester = mySem
+        }
+        
+    }
     
 }

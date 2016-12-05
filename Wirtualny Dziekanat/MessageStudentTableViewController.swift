@@ -1,8 +1,8 @@
 //
-//  MessageUsersTableViewController.swift
+//  MessageStudentTableViewController.swift
 //  Wirtualny Dziekanat
 //
-//  Created by Jakub Nykiel on 29.11.2016.
+//  Created by Jakub Nykiel on 05.12.2016.
 //  Copyright © 2016 Jakub Nykiel. All rights reserved.
 //
 
@@ -10,16 +10,14 @@ import UIKit
 import Firebase
 import MessageUI
 
-class MessageUsersTableViewController: UITableViewController, UISearchBarDelegate, MFMailComposeViewControllerDelegate, UIGestureRecognizerDelegate {
+class MessageStudentTableViewController: UITableViewController, UISearchBarDelegate, MFMailComposeViewControllerDelegate, UIGestureRecognizerDelegate {
     
-    var type = ""
+    var studentSemester = ""
     var ref: FIRDatabaseReference!
     var users = [String]()
     var name = [String]()
     var surname = [String]()
     var numbers = [String]()
-    var semester = [String]()
-    var titleLecturer = [String]()
     let myFunc = Functions()
     var userId = [String]()
     var currentUserId = ""
@@ -54,11 +52,10 @@ class MessageUsersTableViewController: UITableViewController, UISearchBarDelegat
         name.removeAll()
         surname.removeAll()
         numbers.removeAll()
-        semester.removeAll()
-        titleLecturer.removeAll()
         userId.removeAll()
         loadData()
     }
+    
     @IBAction func sendMail(_ sender: Any) {
         let mailComposerVC = MFMailComposeViewController()
         mailComposerVC.setToRecipients(emails)
@@ -142,7 +139,7 @@ class MessageUsersTableViewController: UITableViewController, UISearchBarDelegat
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "usersMessage", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentMessage", for: indexPath)
         
         let cellUserId = userId[indexPath.row]
         if(searchActive)
@@ -202,11 +199,7 @@ class MessageUsersTableViewController: UITableViewController, UISearchBarDelegat
                     
                     self.ref.child("users").child(userKey).observeSingleEvent(of: .value, with: { (snapshot) in
                         let email = snapshot.childSnapshot(forPath: "email").value as! String
-                        let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                        if(acc_type == self.type)
-                        {
-                            self.emails.append(email)
-                        }
+                        self.emails.append(email)
                     })
                     
                     cell.accessoryType = .checkmark
@@ -258,34 +251,19 @@ class MessageUsersTableViewController: UITableViewController, UISearchBarDelegat
                         let sur = snap.childSnapshot(forPath: "surname").value as! String
                         let acc = snap.childSnapshot(forPath: "account_type").value as! String
                         
-                        
-                        if(self.type == "Student" && acc == "Student")
+                        if(acc == "Student")
                         {
-                            let num = snap.childSnapshot(forPath: "number").value as! String
                             let sem = snap.childSnapshot(forPath: "semester").value as! String
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.numbers.append(num)
-                            self.semester.append(sem)
-                            self.userId.append(snap.key)
-                            self.data[snap.key] = nam + " " + sur + " / " + num
                             
-                        }
-                        else if(self.type == "Prowadzący" && acc == "Prowadzący")
-                        {
-                            let title = snap.childSnapshot(forPath: "title").value as! String
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.titleLecturer.append(title)
-                            self.userId.append(snap.key)
-                            self.data[snap.key] = title + " " + nam + " " + sur
-                        }
-                        else if(acc == "Dziekanat" && self.type == "Dziekanat")
-                        {
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.userId.append(snap.key)
-                            self.data.updateValue(nam + " " + sur, forKey: snap.key)
+                            if(self.studentSemester == sem)
+                            {
+                                let num = snap.childSnapshot(forPath: "number").value as! String
+                                self.name.append(nam)
+                                self.surname.append(sur)
+                                self.userId.append(snap.key)
+                                self.numbers.append(num)
+                                self.data.updateValue(nam + " " + sur + " / " + num, forKey: snap.key)
+                            }
                         }
                         
                     }
@@ -295,4 +273,6 @@ class MessageUsersTableViewController: UITableViewController, UISearchBarDelegat
         })
         
     }
+    
+    
 }
