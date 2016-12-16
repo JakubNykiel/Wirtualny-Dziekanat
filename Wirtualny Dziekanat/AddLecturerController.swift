@@ -100,15 +100,11 @@ class AddLecturerController: UIViewController {
                                     "name": name,
                                     "surname": surname,
                                     "email": email,
-                                    "account_type": self.type]
-                    
-                    let tableData = [
-                        "id_faculty" : self.keyResult,
-                        "id_user" : userID
-                        ] as [String:String]
+                                    "account_type": self.type,
+                                    "faculty": [self.keyResult:true]] as [String : Any]
                     
                     self.ref.child("users").child(user!.uid).setValue(userData)
-                    self.ref.child("user-faculty").childByAutoId().setValue(tableData)
+                    self.ref.child("faculty").child(self.keyResult).child("users").updateChildValues([userID:true])
                 }
             } //end FIR
             

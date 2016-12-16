@@ -44,30 +44,27 @@ class AddClassesTypeController: UIViewController {
         let hours = hoursText.text! as String
         myFunc.show()
         
-        let userField = [
-            "id_field": classesData[0],
-            "id_user": classesData[3]]
-        self.ref.child("user-field").childByAutoId().setValue(userField)
+        let data = ["hours": hours,
+                    "id_subject": self.classesData[1],
+                    "id_type": self.classesData[2],
+                    "id_lecturer": self.classesData[3]
+                    ]
+        var myRef = self.ref.child("subject-classes").childByAutoId()
+        myRef.setValue(data)
+        let userData = [myRef.key: true]
+        self.ref.child("users").child(self.classesData[3]).child("subject-classes").updateChildValues(userData)
+        self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]:true])
         
-        
-        self.ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
+        self.ref.child("subjects").child(self.classesData[1]).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for user in users
                 {
-                    let user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
-                    if(user == self.classesData[3] && fieldID == self.classesData[0])
-                    {
-                        let data = ["hours": hours,
-                                    "id_subject": self.classesData[1],
-                                    "id_type": self.classesData[2],
-                                    "id_lecturer": self.classesData[3],
-                                    "userField": snap.key]
-                        self.ref.child("subject-classes").childByAutoId().setValue(data)
-                    }
+                    self.ref.child("users").child(user.key).child("subject-classes").updateChildValues(userData)
+                    self.ref.child("subject-classes").child(myRef.key).child("users").updateChildValues([user.key:true])
                 }
             }
         })
+        
         
         let alertController = UIAlertController(title: "Dodano kierunek", message:
             "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)

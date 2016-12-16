@@ -52,7 +52,7 @@ class SelectSubjectsTableViewController: UITableViewController {
                     let name = snap.childSnapshot(forPath: "name").value as! String
                     let semester = snap.childSnapshot(forPath: "semester").value as! String
                     
-                    if( semester == self.tableResult[2] && self.key == field)
+                    if( semester == self.keyResult[2] && self.key == field)
                     {
                         self.subjects.append(name)
                         self.subjectsKeys.append(snap.key)

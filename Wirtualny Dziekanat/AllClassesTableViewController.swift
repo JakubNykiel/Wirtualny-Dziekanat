@@ -22,6 +22,7 @@ class AllClassesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        myFunc.show("Wczytywanie")
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.allowsSelection = true
@@ -62,6 +63,7 @@ class AllClassesTableViewController: UITableViewController {
                 }
             }
             self.tableView.reloadData()
+            self.myFunc.hide()
         })
     }
 

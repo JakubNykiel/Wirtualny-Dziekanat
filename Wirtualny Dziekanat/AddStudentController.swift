@@ -105,23 +105,45 @@ class AddStudentController: UIViewController {
                         "surname" : surname,
                         "email" : email,
                         "account_type": self.type,
-                        "semester": self.keyResult[2],
-                        "number": number
-                    ]
-                    
-                    let tableData = [
-                        "id_faculty" : self.keyResult[0],
-                        "id_user" : userID
-                        ] as [String:String]
-                    
-                    let userField = [
-                        "id_field" : self.keyResult[1],
-                        "id_user" : userID
-                    ] as [String:String]
+                        "semester": [self.keyResult[2]:true],
+                        "number": number,
+                        "faculty":[self.keyResult[0]:true],
+                        "fields":[self.keyResult[1]:self.keyResult[2]]
+                    ] as [String : Any]
                     
                     self.ref.child("users").child(user!.uid).setValue(userData)
-                    self.ref.child("user-faculty").childByAutoId().setValue(tableData)
-                    self.ref.child("user-field").childByAutoId().setValue(userField)
+                    self.ref.child("fields").child(self.keyResult[1]).child("users").updateChildValues([userID:true])
+                    self.ref.child("faculty").child(self.keyResult[0]).child("users").updateChildValues([userID:true])
+                    self.ref.child("semester").child(self.keyResult[2]).child("users").updateChildValues([userID:true])
+                    
+                    self.ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            
+                            for snap in snapshots
+                            {
+                                let semester = snap.childSnapshot(forPath: "semester").value as! String
+                                let field = snap.childSnapshot(forPath: "id_field").value as! String
+                                if(semester == self.keyResult[2] && field == self.keyResult[1])
+                                {
+                                    self.ref.child("users").child(userID).child("subjects").updateChildValues([snap.key:true])
+                                    self.ref.child("subjects").child(snap.key).child("users").updateChildValues([userID:true])
+                                    self.ref.child("subject-classes").observeSingleEvent(of: .value, with: { (subcla) in
+                                        if let classes = subcla.children.allObjects as? [FIRDataSnapshot] {
+                                            for classItem in classes
+                                            {
+                                                let subjectID = classItem.childSnapshot(forPath: "id_subject").value as! String
+                                                if(subjectID == snap.key)
+                                                {
+                                                    self.ref.child("users").child(userID).child("subject-classes").updateChildValues([classItem.key:true])
+                                                    self.ref.child("subject-classes").child(classItem.key).child("users").updateChildValues([userID:true])
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                            }
+                        }
+                    })
                 }
             } //end FIR
             

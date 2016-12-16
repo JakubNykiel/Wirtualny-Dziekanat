@@ -25,12 +25,6 @@ class EditDeaneryViewController: UIViewController {
         loadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        myFunc.hide()
-        
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -48,6 +42,7 @@ class EditDeaneryViewController: UIViewController {
             let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 2]
             
             _ = self.navigationController?.popToViewController(targetController, animated: true)
+            //self.performSegue(withIdentifier: "unwindToUsers", sender: self)
             
         }))
         
@@ -76,6 +71,7 @@ class EditDeaneryViewController: UIViewController {
                     }
                 }
             }
+            self.myFunc.hide()
         })
         
     }

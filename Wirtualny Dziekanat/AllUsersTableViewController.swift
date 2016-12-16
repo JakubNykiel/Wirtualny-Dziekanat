@@ -17,10 +17,14 @@ class AllUsersTableViewController: UITableViewController {
     var surname = [String]()
     var numbers = [String]()
     var semester = [String]()
+    var fields = [String]()
+    var fieldName = [String]()
     var titleLecturer = [String]()
     let myFunc = Functions()
     var userId = [String]()
     var currentUserId = ""
+    var currentUserFieldId = ""
+    var currentUserSemesterId = ""
     var faculty = ""
     var uid = ""
     override func viewDidLoad() {
@@ -29,21 +33,20 @@ class AllUsersTableViewController: UITableViewController {
         tableView.dataSource = self
         self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         users.removeAll()
         name.removeAll()
         surname.removeAll()
         numbers.removeAll()
         semester.removeAll()
+        fields.removeAll()
         titleLecturer.removeAll()
         userId.removeAll()
         loadData()
+        self.tableView.reloadData()
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -61,9 +64,11 @@ class AllUsersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "userCell", for: indexPath)
+        
+        
         if(type == "Student")
         {
-            cell.textLabel?.text = name[indexPath.row] + " " + surname[indexPath.row] + " / " + numbers[indexPath.row]
+            cell.textLabel?.text = numbers[indexPath.row] + " | " + name[indexPath.row] + " " + surname[indexPath.row] + " | " + fieldName[indexPath.row]
         }
         else if(type == "Prowadzący")
         {
@@ -72,19 +77,23 @@ class AllUsersTableViewController: UITableViewController {
         else
         {
             cell.textLabel?.text = name[indexPath.row] + " " + surname[indexPath.row]
-
+            
         }
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         return cell
     }
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         currentUserId = userId[indexPath.row]
+        currentUserFieldId = fields[indexPath.row]
+        currentUserSemesterId = semester[indexPath.row]
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
             if(self.type == "Student")
             {
                 self.performSegue(withIdentifier: "editStudent", sender: self)
-
+                
             }
             else if(self.type == "Prowadzący")
             {
@@ -95,7 +104,7 @@ class AllUsersTableViewController: UITableViewController {
                 self.performSegue(withIdentifier: "editDeanery", sender: self)
                 
             }
-
+            
         }
         
         let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
@@ -147,6 +156,8 @@ class AllUsersTableViewController: UITableViewController {
             let destinationVC = segue.destination as! EditStudentViewController
             
             destinationVC.userKey = self.currentUserId
+            destinationVC.userFieldKey = self.currentUserFieldId
+            destinationVC.userSemesterKey = self.currentUserSemesterId
         }
         if (segue.identifier == "editDeanery")
         {
@@ -165,77 +176,70 @@ class AllUsersTableViewController: UITableViewController {
     func loadData()
     {
         uid = (FIRAuth.auth()?.currentUser?.uid)!
+        myFunc.show("Wczytywanie")
         
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            
+        ref.child("users").child(uid).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
                 for snap in snapshots
                 {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    
-                    if(self.uid == id_user)
-                    {
-                        self.faculty = id_faculty
-                    }
-                }
-                
-                for snap in snapshots
-                {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    if(self.faculty == id_faculty)
-                    {
-                        self.users.append(id_user)
-                    }
+                    self.ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            for user in users
+                            {
+                                let myRef = self.ref.child("users").child(user.key)
+                                myRef.observeSingleEvent(of: .value, with: { (currentUser) in
+                                    let nam = currentUser.childSnapshot(forPath: "name").value as! String
+                                    let sur = currentUser.childSnapshot(forPath: "surname").value as! String
+                                    let acc = currentUser.childSnapshot(forPath: "account_type").value as! String
+                                    
+                                    
+                                    if(self.type == "Student" && acc == "Student")
+                                    {
+                                        let num = currentUser.childSnapshot(forPath: "number").value as! String
+                                        myRef.child("fields").observeSingleEvent(of: .value, with: { (snapshot) in
+                                            if let userFields = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                                for field in userFields
+                                                {
+                                                    self.ref.child("fields").child(field.key).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+                                                        self.name.append(nam)
+                                                        self.surname.append(sur)
+                                                        self.numbers.append(num)
+                                                        self.fields.append(field.key)
+                                                        self.semester.append(field.value as! String)
+                                                        self.userId.append(user.key)
+                                                        self.fieldName.append(snapshot.value as! String)
+                                                        self.tableView.reloadData()
+                                                    })
+                                                }
+                                            }
+                                        })
+                                    }
+                                    else if(self.type == "Prowadzący" && acc == "Prowadzący")
+                                    {
+                                        let title = currentUser.childSnapshot(forPath: "title").value as! String
+                                        self.name.append(nam)
+                                        self.surname.append(sur)
+                                        self.titleLecturer.append(title)
+                                        self.userId.append(user.key)
+                                    }
+                                    else if(acc == "Dziekanat" && self.type == "Dziekanat")
+                                    {
+                                        self.name.append(nam)
+                                        self.surname.append(sur)
+                                        self.userId.append(user.key)
+                                    }
+                                    self.tableView.reloadData()
+                                    
+                                })
+                            }
+                        }
+                        self.myFunc.hide()
+                    })
                 }
             }
-        })
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
-                {
-                    if(self.users.contains(snap.key))
-                    {
-                        let nam = snap.childSnapshot(forPath: "name").value as! String
-                        let sur = snap.childSnapshot(forPath: "surname").value as! String
-                        let acc = snap.childSnapshot(forPath: "account_type").value as! String
-                        
-                        
-                        if(self.type == "Student" && acc == "Student")
-                        {
-                            let num = snap.childSnapshot(forPath: "number").value as! String
-                            let sem = snap.childSnapshot(forPath: "semester").value as! String
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.numbers.append(num)
-                            self.semester.append(sem)
-                            self.userId.append(snap.key)
-                            
-                        }
-                        else if(self.type == "Prowadzący" && acc == "Prowadzący")
-                        {
-                            let title = snap.childSnapshot(forPath: "title").value as! String
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.titleLecturer.append(title)
-                            self.userId.append(snap.key)
-                        }
-                        else if(acc == "Dziekanat" && self.type == "Dziekanat")
-                        {
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.userId.append(snap.key)
-                        }
-                        
-                    }
-                }
-            }
-            self.tableView.reloadData()
         })
-
     }
+    
+    
 }

@@ -80,7 +80,7 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
         searchActive = false;
         searchBar.resignFirstResponder()
     }
-
+    
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -164,24 +164,10 @@ class AllFieldsListTableViewController: UITableViewController, UISearchBarDelega
             self.performSegue(withIdentifier: "editField", sender: self)
         }
         
-        let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
-            let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.destructive, handler: { (action: UIAlertAction!) in
-                self.myFunc.show()
-                self.myFunc.removeField(field: self.fieldKey)
-                self.field.remove(at: indexPath.row)
-                self.keys.remove(at: indexPath.row)
-                self.data.removeValue(forKey: self.fieldKey)
-                self.tableView.reloadData()
-                self.myFunc.hide()
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
         edit.backgroundColor = UIColor.lightGray
-        remove.backgroundColor = UIColor.red
         
-        return [remove, edit]
+        
+        return [edit]
         
     }
     

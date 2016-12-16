@@ -149,25 +149,31 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
                 {
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
-                    self.ref.child("user-faculty").queryOrdered(byChild: "id_faculty").queryEqual(toValue: self.faculty).observeSingleEvent(of: .value, with: { (snapshot) in
+                    ref.child("users").child(uid).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
                         if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            counter = snapshots.count
                             for snap in snapshots
                             {
-                                let user = snap.childSnapshot(forPath: "id_user").value as! String
-                                self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                                    let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                    let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                    if(acc_type == self.account_types[(indexPath?.row)!])
-                                    {
-                                        self.emails.append(email)
-                                    }
-                                    number = number + 1
-                                    if(number == counter)
-                                    {
-                                        indicator.stopAnimating()
-                                        cell.accessoryView = nil
-                                        cell.accessoryType = .checkmark
+                                self.ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                                    if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                        counter = users.count
+                                        for user in users
+                                        {
+                                            self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (snapshot) in
+                                                let email = snapshot.childSnapshot(forPath: "email").value as! String
+                                                let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
+                                                if(acc_type == self.account_types[(indexPath?.row)!])
+                                                {
+                                                    self.emails.append(email)
+                                                }
+                                                number = number + 1
+                                                if(number == counter)
+                                                {
+                                                    indicator.stopAnimating()
+                                                    cell.accessoryView = nil
+                                                    cell.accessoryType = .checkmark
+                                                }
+                                            })
+                                        }
                                     }
                                 })
                             }

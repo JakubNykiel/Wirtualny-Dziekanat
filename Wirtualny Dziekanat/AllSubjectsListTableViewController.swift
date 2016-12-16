@@ -29,6 +29,7 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
     var data = ["":""]
     
     override func viewDidLoad() {
+        myFunc.show("Wczytywanie")
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
@@ -36,6 +37,9 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         searchBar.delegate = self
         
         ref = FIRDatabase.database().reference()
+        subjects.removeAll()
+        fieldKey.removeAll()
+        loadData()
         
     }
     
@@ -43,42 +47,6 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        subjects.removeAll()
-        fieldKey.removeAll()
-        
-        myFunc.displayFields{ (name) -> () in
-            for item in name
-            {
-                self.fieldKey.append(item.key)
-            }
-            self.tableView.reloadData()
-        }
-        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
-                    let name = snap.childSnapshot(forPath: "name").value as! String
-                    let key = snap.key
-                    for item in self.fieldKey
-                    {
-                        if(item == fieldID)
-                        {
-                            self.subjects.append(name)
-                            self.keys.append(key)
-                            self.data[snap.key] = name
-                        }
-                    }
-                }
-            }
-            self.tableView.reloadData()
-        })
-    }
-    
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
@@ -232,6 +200,34 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
             destinationVC.subjectKey = subjectKey
         }
         
+    }
+    
+    func loadData()
+    {
+        myFunc.displayFields{ (name) -> () in
+            for item in name
+            {
+                self.ref.child("subjects").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
+                    if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshots
+                        {
+                            let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                            let name = snap.childSnapshot(forPath: "name").value as! String
+                            let key = snap.key
+                            if(fieldID == item.key)
+                            {
+                                self.subjects.append(name)
+                                self.keys.append(key)
+                                self.data[snapshot.key] = name
+                            }
+                        }
+                    }
+                    self.tableView.reloadData()
+                    self.myFunc.hide()
+                })
+            }
+        }
+
     }
     
 }

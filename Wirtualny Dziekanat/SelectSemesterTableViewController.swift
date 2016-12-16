@@ -28,7 +28,7 @@ class SelectSemesterTableViewController: UITableViewController {
         self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
         
-        ref.child("semester").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("semester").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots

@@ -20,6 +20,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var classesKey = String()
     var pickerKey = String()
     var userField:String!
+    var defaultPickerText:String!
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lecturerText: UITextField!
@@ -38,6 +39,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
                 self.lecturer.append(self.lecturerDisplay)
                 
             }
+            self.loadData()
         }
         picker.delegate = self
         picker.dataSource = self
@@ -46,7 +48,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         myFunc.show()
         ref = FIRDatabase.database().reference()
-        loadData()
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int{
@@ -86,7 +88,8 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let hoursValue = hoursText.text! as String
         
         ref.child("subject-classes").child(classesKey).updateChildValues(["hours": hoursValue,"id_lecturer": pickerKey])
-        ref.child("user-field").child(userField).updateChildValues(["id_user": pickerKey])
+        ref.child("users").child(defaultPickerText).child("subject-classes").child(classesKey).removeValue()
+        ref.child("users").child(pickerKey).child("subject-classes").updateChildValues([classesKey:true])
         
         let okAlert = UIAlertController(title: "Edytowano przedmiot", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         okAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action: UIAlertAction!) in
@@ -102,14 +105,13 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     func loadData()
     {
-        
-        ref.child("subject-classes").child(classesKey).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.ref.child("subject-classes").child(self.classesKey).observeSingleEvent(of: .value, with: { (snapshot) in
             let idLecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
             let hours = snapshot.childSnapshot(forPath: "hours").value as! String
-            self.userField = snapshot.childSnapshot(forPath: "userField").value as! String
             let lecturerIndex = self.keys.index(of: idLecturer)
             self.nameLabel.text = self.currentClass
             self.hoursText.text = hours
+            self.defaultPickerText = self.keys[lecturerIndex!]
             self.lecturerText.text = self.lecturer[lecturerIndex!]
             self.pickerKey = idLecturer
             self.picker.selectRow(lecturerIndex!, inComponent: 0, animated: true)
