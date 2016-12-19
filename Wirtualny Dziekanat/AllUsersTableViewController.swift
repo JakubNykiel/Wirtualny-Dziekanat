@@ -120,7 +120,7 @@ class AllUsersTableViewController: UITableViewController {
                 }
                 else if(self.type == "Prowadzący")
                 {
-                    self.myFunc.removeClasses(classes: self.currentUserId)
+                    self.myFunc.removeLecturer(user: self.currentUserId)
                     self.titleLecturer.remove(at: indexPath.row)
                 }
                 else

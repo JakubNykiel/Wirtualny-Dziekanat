@@ -322,42 +322,16 @@ class Functions
     func removeLecturer(user: String){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-        var userFacultyKey = ""
-        
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users").child(user).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
                 for snap in snapshots
                 {
-                    
-                    let userFaculty = snap.childSnapshot(forPath: "id_user").value as! String
-                    if(userFaculty == user)
-                    {
-                        userFacultyKey = snap.key
-                        ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
-                        ref.child("users").child(userFaculty).updateChildValues(["email": ""])
-                    }
+                    ref.child("faculty").child(snap.key).child("users").child(user).removeValue()
+                    ref.child("users").child(user).updateChildValues(["email": ""])
+                    ref.child("users").child(user).child("faculty").removeValue()
                 }
             }
         })
-        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
-                {
-                    
-                    let userID = snap.childSnapshot(forPath: "id_lecturer").value as! String
-                    let userField = snapshot.childSnapshot(forPath: "userField").value as! String
-                    if(userID == user)
-                    {
-                        userFacultyKey = snap.key
-                        ref.child("subject-classes").child(userFacultyKey).updateChildValues(["id_lecturer": ""])
-                        ref.child("user-field").child(userField).removeValue()
-                    }
-                }
-            }
-        })
-        
     }
     
     /*
