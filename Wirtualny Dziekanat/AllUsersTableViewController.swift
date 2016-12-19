@@ -114,7 +114,7 @@ class AllUsersTableViewController: UITableViewController {
                 
                 if(self.type == "Student")
                 {
-                    self.myFunc.removeStudent(user: self.currentUserId)
+                    self.myFunc.removeStudent(user: self.currentUserId, field: self.currentUserFieldId, semester: self.currentUserSemesterId )
                     self.semester.remove(at: indexPath.row)
                     self.numbers.remove(at: indexPath.row)
                 }

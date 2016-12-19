@@ -71,7 +71,7 @@ class ManageAccountViewController: UIViewController {
                         }
                         if(self.type == "Student" && self.number == "")
                         {
-                            self.myFunc.removeStudent(user: self.userKey)
+                            self.ref.child("users").child(self.userKey).removeValue()
                         }
                         if let storyboard = self.storyboard {
                             let vc = storyboard.instantiateViewController(withIdentifier: "LoginScene")

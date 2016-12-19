@@ -203,9 +203,9 @@ class Functions
         ref = FIRDatabase.database().reference()
         
         ref.child("subject-classes").child(classes).observeSingleEvent(of: .value, with: { (snapshot) in
-                    let lecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
-                    ref.child("users").child(lecturer).child("subject-classes").child(classes).removeValue()
-                    ref.child("subject-classes").child(classes).removeValue()
+            let lecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
+            ref.child("users").child(lecturer).child("subject-classes").child(classes).removeValue()
+            ref.child("subject-classes").child(classes).removeValue()
         })
         ref.child("subject-classes").child(classes).child("user").observeSingleEvent(of: .value, with: { (snapshot) in
             if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -248,52 +248,68 @@ class Functions
      *
      *USUWANIE Studenta
      */
-    func removeStudent(user: String){
+    
+    
+    //do poprawki. jakis if czy wiecej niz jeden kierunek cos takiego co rozrozni mi
+    func removeStudent(user: String, field: String, semester: String){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-        var userFacultyKey = ""
-        
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users").child(user).child("fields").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
+                if(snapshots.count > 1)
                 {
-                    if(snap.key == user)
-                    {
-                        userFacultyKey = snap.key
-                        ref.child("users").child(userFacultyKey).updateChildValues(["number": "","semester": "","email": ""])
-                    }
+                    ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let subjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            for subject in subjects
+                            {
+                                let idField = subject.childSnapshot(forPath: "id_field").value as! String
+                                if(idField == field)
+                                {
+                                    ref.child("subjects").child(subject.key).child("users").child(user).removeValue()
+                                    ref.child("users").child(user).child("subjects").child(subject.key).removeValue()
+                                    ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+                                        if let classes = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                            for item in classes
+                                            {
+                                                let idSub = item.childSnapshot(forPath: "id_subject").value as! String
+                                                if(subject.key == idSub)
+                                                {
+                                                    ref.child("subject-classes").child(item.key).child("users").child(user).removeValue()
+                                                    ref.child("users").child(user).child("subject-classes").child(item.key).removeValue()
+                                                }
+                                            }
+                                        }
+                                    })
+                                }
+                            }
+                        }
+                    })
+                        ref.child("fields").child(field).child("users").child(user).removeValue()
+                        ref.child("users").child(user).child("fields").child(field).removeValue()
                 }
-            }
-        })
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
+                else
                 {
-                    
-                    let userFaculty = snap.childSnapshot(forPath: "id_user").value as! String
-                    if(userFaculty == user)
-                    {
-                        userFacultyKey = snap.key
-                        ref.child("user-faculty").child(userFacultyKey).updateChildValues(["id_faculty": ""])
-                    }
+                    ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
+                        
+                        ref.child("users").child(user).updateChildValues(["number": "","email": ""])
+                    })
+                    ref.child("users").child(user).child("subjects").removeValue()
+                    ref.child("users").child(user).child("subject-classes").removeValue()
                 }
-            }
-        })
-        ref.child("user-field").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                //jesli wiecej wydzialow
+                ref.child("users").child(user).child("faculty").observeSingleEvent(of: .value, with: { (fac) in
+                    if let allFaculty = fac.children.allObjects as? [FIRDataSnapshot] {
+                        for snap in snapshots
+                        {
+                            if(allFaculty.count > 1)
+                            {
+                                ref.child("faculty").child(snap.key).child("users").child(user).removeValue()
+                                ref.child("users").child(user).child("faculty").child(snap.key).removeValue()
+                            }
+                        }
+                    }
+                })
                 
-                for snap in snapshots
-                {
-                    
-                    let userID = snap.childSnapshot(forPath: "id_user").value as! String
-                    if(userID == user)
-                    {
-                        userFacultyKey = snap.key
-                        ref.child("user-field").child(userFacultyKey).updateChildValues(["id_field": ""])
-                    }
-                }
             }
         })
         
