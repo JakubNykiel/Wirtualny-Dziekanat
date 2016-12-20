@@ -332,6 +332,19 @@ class Functions
                 }
             }
         })
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let lecturer = snap.childSnapshot(forPath: "id_lecturer").value as! String
+                    if(user == lecturer)
+                    {
+                        ref.child("subject-classes").child(snap.key).updateChildValues(["id_lecturer":""])
+                    }
+                }
+            }
+        })
+
     }
     
     /*

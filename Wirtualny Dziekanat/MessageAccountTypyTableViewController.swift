@@ -94,7 +94,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
             
             destinationVC.type = type
             destinationVC.myType = myType
-        }        
+        }
     }
     
     @IBAction func sendButton(_ sender: Any) {
@@ -158,30 +158,30 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
                                         counter = users.count
                                         for user in users
                                         {
-                                            self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (snapshot) in
-                                                let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                                let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                                if(acc_type == self.account_types[(indexPath?.row)!])
-                                                {
-                                                    self.emails.append(email)
-                                                }
-                                                number = number + 1
-                                                if(number == counter)
-                                                {
-                                                    indicator.stopAnimating()
-                                                    cell.accessoryView = nil
-                                                    cell.accessoryType = .checkmark
-                                                }
-                                            })
+                                            let email = user.childSnapshot(forPath: "email").value as! String
+                                            let acc_type = user.childSnapshot(forPath: "account_type").value as! String
+                                            if(acc_type == self.type)
+                                            {
+                                                self.emails.append(email)
+                                            }
+                                            number = number + 1
+                                            if(number == counter)
+                                            {
+                                                indicator.stopAnimating()
+                                                cell.accessoryView = nil
+                                                cell.accessoryType = .checkmark
+                                            }
+
                                         }
                                     }
                                 })
                             }
                         }
+                        
                     })
-                }
+                }//else
             }
         }
-        
-    }
+    }//end
+    
 }

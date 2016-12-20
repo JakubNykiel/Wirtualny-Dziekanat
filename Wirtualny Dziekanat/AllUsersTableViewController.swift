@@ -87,8 +87,7 @@ class AllUsersTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         currentUserId = userId[indexPath.row]
-        currentUserFieldId = fields[indexPath.row]
-        currentUserSemesterId = semester[indexPath.row]
+        
         let edit = UITableViewRowAction(style: .normal, title: "Edytuj") { action, index in
             if(self.type == "Student")
             {
@@ -114,6 +113,8 @@ class AllUsersTableViewController: UITableViewController {
                 
                 if(self.type == "Student")
                 {
+                    self.currentUserFieldId = self.fields[indexPath.row]
+                    self.currentUserSemesterId = self.semester[indexPath.row]
                     self.myFunc.removeStudent(user: self.currentUserId, field: self.currentUserFieldId, semester: self.currentUserSemesterId )
                     self.semester.remove(at: indexPath.row)
                     self.numbers.remove(at: indexPath.row)

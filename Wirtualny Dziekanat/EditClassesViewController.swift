@@ -21,7 +21,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     var pickerKey = String()
     var userField:String!
     var defaultPickerText:String!
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var lecturerText: UITextField!
     @IBOutlet weak var hoursText: UITextField!
@@ -30,7 +30,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         myFunc.displayLecturer{ (name) -> () in
             for item in name
             {
@@ -77,7 +77,7 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -88,7 +88,10 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let hoursValue = hoursText.text! as String
         
         ref.child("subject-classes").child(classesKey).updateChildValues(["hours": hoursValue,"id_lecturer": pickerKey])
-        ref.child("users").child(defaultPickerText).child("subject-classes").child(classesKey).removeValue()
+        if(defaultPickerText != nil)
+        {
+            ref.child("users").child(defaultPickerText).child("subject-classes").child(classesKey).removeValue()
+        }
         ref.child("users").child(pickerKey).child("subject-classes").updateChildValues([classesKey:true])
         
         let okAlert = UIAlertController(title: "Edytowano przedmiot", message: nil, preferredStyle: UIAlertControllerStyle.alert)
@@ -111,11 +114,19 @@ class EditClassesViewController: UIViewController, UIPickerViewDelegate, UIPicke
             let lecturerIndex = self.keys.index(of: idLecturer)
             self.nameLabel.text = self.currentClass
             self.hoursText.text = hours
-            self.defaultPickerText = self.keys[lecturerIndex!]
-            self.lecturerText.text = self.lecturer[lecturerIndex!]
+            if(lecturerIndex != nil)
+            {
+                self.defaultPickerText = self.keys[lecturerIndex!]
+                self.lecturerText.text = self.lecturer[lecturerIndex!]
+                self.picker.selectRow(lecturerIndex!, inComponent: 0, animated: true)
+            }
+            else
+            {
+                self.lecturerText.text = ""
+            }
             self.pickerKey = idLecturer
-            self.picker.selectRow(lecturerIndex!, inComponent: 0, animated: true)
+            
         })
     }
-
+    
 }
