@@ -250,15 +250,14 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                     }
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
-                    self.ref.child("user-field").queryOrdered(byChild: "id_field").queryEqual(toValue: self.fieldKey).observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            counter = snapshots.count
-                            for snap in snapshots
+                    ref.child("fields").child(self.fieldKey).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            counter = users.count
+                            for user in users
                             {
-                                let user = snap.childSnapshot(forPath: "id_user").value as! String
-                                self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                                    let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                    let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
+                                self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (userSnap) in
+                                    let email = userSnap.childSnapshot(forPath: "email").value as! String
+                                    let acc_type = userSnap.childSnapshot(forPath: "account_type").value as! String
                                     if(acc_type == self.type)
                                     {
                                         self.emails.append(email)
@@ -270,6 +269,7 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                                         cell.accessoryView = nil
                                         cell.accessoryType = .checkmark
                                     }
+
                                 })
                             }
                         }
