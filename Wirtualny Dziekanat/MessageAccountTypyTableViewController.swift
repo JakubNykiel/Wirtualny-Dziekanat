@@ -123,8 +123,9 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
     func handleLongPress(_ longPressGesture:UILongPressGestureRecognizer) {
         let p = longPressGesture.location(in: self.tableView)
         let indexPath = self.tableView.indexPathForRow(at: p)
+        type = account_types[(indexPath?.row)!]
         var number = 0
-        var counter:Int!
+        var counter = 0
         
         if indexPath == nil {
             print("Long press on table view, not row.")
@@ -153,25 +154,26 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
                         if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                             for snap in snapshots
                             {
-                                self.ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                                    if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                                        counter = users.count
-                                        for user in users
+                                self.ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (userSnap) in
+                                    if let facultyUsers = userSnap.children.allObjects as? [FIRDataSnapshot] {
+                                        counter = facultyUsers.count
+                                        for facultyUser in facultyUsers
                                         {
-                                            let email = user.childSnapshot(forPath: "email").value as! String
-                                            let acc_type = user.childSnapshot(forPath: "account_type").value as! String
-                                            if(acc_type == self.type)
-                                            {
-                                                self.emails.append(email)
-                                            }
-                                            number = number + 1
-                                            if(number == counter)
-                                            {
-                                                indicator.stopAnimating()
-                                                cell.accessoryView = nil
-                                                cell.accessoryType = .checkmark
-                                            }
-
+                                            self.ref.child("users").child(facultyUser.key).observeSingleEvent(of: .value, with: { (user) in
+                                                let email = user.childSnapshot(forPath: "email").value as! String
+                                                let acc_type = user.childSnapshot(forPath: "account_type").value as! String
+                                                if(acc_type == self.type)
+                                                {
+                                                    self.emails.append(email)
+                                                }
+                                                number = number + 1
+                                                if(number == counter)
+                                                {
+                                                    indicator.stopAnimating()
+                                                    cell.accessoryView = nil
+                                                    cell.accessoryType = .checkmark
+                                                }
+                                            })
                                         }
                                     }
                                 })
