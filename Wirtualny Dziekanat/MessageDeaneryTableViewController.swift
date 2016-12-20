@@ -209,57 +209,34 @@ class MessageDeaneryTableViewController: UITableViewController, UISearchBarDeleg
     {
         uid = (FIRAuth.auth()?.currentUser?.uid)!
         
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("users").child(uid).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
                 for snap in snapshots
                 {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    
-                    if(self.uid == id_user)
-                    {
-                        self.faculty = id_faculty
-                    }
-                }
-                
-                for snap in snapshots
-                {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    if(self.faculty == id_faculty)
-                    {
-                        self.users.append(id_user)
-                    }
-                }
-            }
-        })
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
-                {
-                    if(self.users.contains(snap.key))
-                    {
-                        let nam = snap.childSnapshot(forPath: "name").value as! String
-                        let sur = snap.childSnapshot(forPath: "surname").value as! String
-                        let acc = snap.childSnapshot(forPath: "account_type").value as! String
-                        
-                        if(acc == "Dziekanat")
-                        {
-                            self.name.append(nam)
-                            self.surname.append(sur)
-                            self.userId.append(snap.key)
-                            self.data.updateValue(nam + " " + sur, forKey: snap.key)
+                    self.ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (userSnap) in
+                        if let users = userSnap.children.allObjects as? [FIRDataSnapshot] {
+                            for user in users
+                            {
+                                self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (myUser) in
+                                    let nam = myUser.childSnapshot(forPath: "name").value as! String
+                                    let sur = myUser.childSnapshot(forPath: "surname").value as! String
+                                    let acc = myUser.childSnapshot(forPath: "account_type").value as! String
+                                    if(acc == "Dziekanat")
+                                    {
+                                        self.name.append(nam)
+                                        self.surname.append(sur)
+                                        self.userId.append(myUser.key)
+                                        self.data.updateValue(nam + " " + sur, forKey: myUser.key)
+                                    }
+                                    self.tableView.reloadData()
+                                })
+                            }
                         }
-                        
-                    }
+                    })
                 }
             }
-            self.tableView.reloadData()
         })
-        
     }
 }
