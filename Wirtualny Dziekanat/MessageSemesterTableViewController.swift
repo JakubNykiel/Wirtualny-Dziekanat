@@ -114,36 +114,15 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
                     let current_semester = self.semester[(indexPath?.row)!].value as! String
-                    self.ref.child("user-field").queryOrdered(byChild: "id_field").queryEqual(toValue: self.myField).observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            counter = snapshots.count
-                            for snap in snapshots
+                    
+                    ref.child("semester").child(current_semester).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            counter = users.count
+                            for user in users
                             {
-                                let user = snap.childSnapshot(forPath: "id_user").value as! String
-                                
-                                self.ref.child("users").child(user).observeSingleEvent(of: .value, with: { (snapshot) in
-                                    let email = snapshot.childSnapshot(forPath: "email").value as! String
-                                    let acc_type = snapshot.childSnapshot(forPath: "account_type").value as! String
-                                    if(acc_type == self.myType)
-                                    {
-                                        let userSemester = snapshot.childSnapshot(forPath: "semester").value as! String
-                                        if(current_semester == userSemester )
-                                        {
-                                            self.emails.append(email)
-                                        }
-                                    }
-                                    number = number + 1
-                                    if(number == counter)
-                                    {
-                                        indicator.stopAnimating()
-                                        cell.accessoryView = nil
-                                        cell.accessoryType = .checkmark
-                                    }
-                                })
                                 
                             }
                         }
-                        
                     })
                 }
             }
