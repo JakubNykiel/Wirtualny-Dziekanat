@@ -19,6 +19,7 @@
 		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
 		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */; };
+		C32D92B41E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32D92B31E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift */; };
 		C35981BD1D0A0DD50021172A /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35981BC1D0A0DD50021172A /* Functions.swift */; };
 		C35BCCC81D0B5B9C0022DC1F /* Add Rule-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */; };
 		C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C35BCCC91D0B5CD00022DC1F /* Exit-50.png */; };
@@ -86,6 +87,7 @@
 		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
 		C324D3031DA263F7006C552F /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectAccountTypeTableViewController.swift; sourceTree = "<group>"; };
+		C32D92B31E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageSubjectsTableViewController.swift; sourceTree = "<group>"; };
 		C35981BC1D0A0DD50021172A /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Rule-50.png"; sourceTree = "<group>"; };
 		C35BCCC91D0B5CD00022DC1F /* Exit-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Exit-50.png"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				C3F25EC71DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift */,
 				C3F25EC91DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift */,
 				C373A1491DF56F0A00B9591F /* MessageStudentTableViewController.swift */,
+				C32D92B31E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				C367FE231DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift in Sources */,
 				C3F25EC81DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift in Sources */,
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
+				C32D92B41E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift in Sources */,
 				C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */,
 				C3CC0AD21DE4C7B3006238EC /* MessageFieldTableViewController.swift in Sources */,
 				C37637CD1DCD538D00B56A03 /* EditStudentViewController.swift in Sources */,

@@ -2208,13 +2208,13 @@
         <!--Twoje przedmioty-->
         <scene sceneID="XJX-Rp-mfa">
             <objects>
-                <tableViewController id="ASZ-7i-dXQ" sceneMemberID="viewController">
+                <tableViewController id="ASZ-7i-dXQ" customClass="MessageSubjectsTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="OcF-in-b8m">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="NzH-RP-yD0">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageSubject" id="NzH-RP-yD0">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NzH-RP-yD0" id="YtS-dv-unP">
@@ -2229,7 +2229,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Twoje przedmioty" id="n14-vI-dMn">
-                        <barButtonItem key="rightBarButtonItem" title="Mail" id="wB7-4f-XXt"/>
+                        <barButtonItem key="rightBarButtonItem" title="Mail" id="wB7-4f-XXt">
+                            <connections>
+                                <action selector="sendButton:" destination="ASZ-7i-dXQ" id="EP9-Kl-op5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8m-og-vTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
