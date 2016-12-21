@@ -17,8 +17,9 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
     var emails = [String]()
     var myField = ""
     var myType = ""
-    var fields = [String]()
+    var subjects = [String]()
     var keys = [String]()
+    var currentSubject = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +39,7 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
                             if(idField == self.myField)
                             {
                                 let name = subject.childSnapshot(forPath: "name").value as! String
-                                self.fields.append(name)
+                                self.subjects.append(name)
                                 self.keys.append(subject.key)
                                 self.tableView.reloadData()
                             }
@@ -67,7 +68,7 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fields.count
+        return subjects.count
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -77,7 +78,7 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessageSubject", for: indexPath)
         
-        cell.textLabel?.text = self.fields[indexPath.row]
+        cell.textLabel?.text = self.subjects[indexPath.row]
         cell.accessoryType = .none
         
         return cell
@@ -128,7 +129,7 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
                 {
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
-                    let currentSubject = keys[(indexPath?.row)!]
+                    currentSubject = keys[(indexPath?.row)!]
                     ref.child("subjects").child(currentSubject).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
                         if let userSubjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
                             counter = userSubjects.count
@@ -151,6 +152,24 @@ class MessageSubjectsTableViewController: UITableViewController, MFMailComposeVi
                 }
             }
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        currentSubject = keys[indexPath.row]
+        performSegue(withIdentifier: "displayUsersFromSubjects", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "displayUsersFromSubjects")
+        {
+            let destinationVC = segue.destination as! MessageStudentTableViewController
+            destinationVC.myType = myType
+            destinationVC.myField = myField
+            destinationVC.mySubject = currentSubject
+        }
+        
     }
 
 

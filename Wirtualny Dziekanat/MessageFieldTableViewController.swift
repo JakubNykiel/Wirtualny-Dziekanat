@@ -292,7 +292,7 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
             let destinationVC = segue.destination as! MessageSubjectsTableViewController
             
             destinationVC.myField = fieldKey
-            destinationVC.myType = type
+            destinationVC.myType = myType
         }
     }
 }

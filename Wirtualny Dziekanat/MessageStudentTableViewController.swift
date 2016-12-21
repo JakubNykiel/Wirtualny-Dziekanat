@@ -27,6 +27,8 @@ class MessageStudentTableViewController: UITableViewController, UISearchBarDeleg
     var data = [String:String]()
     var userKey = ""
     var myField = ""
+    var myType = ""
+    var mySubject = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
@@ -212,35 +214,61 @@ class MessageStudentTableViewController: UITableViewController, UISearchBarDeleg
     
     func loadData()
     {
-        ref.child("fields").child(myField).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    
-                    self.ref.child("users").child(snap.key).child("fields").observeSingleEvent(of: .value, with: { (fieldSnap) in
-                        if let fields = fieldSnap.children.allObjects as? [FIRDataSnapshot] {
-                            for field in fields
-                            {
-                                if(field.key == self.myField && field.value as! String == self.studentSemester)
+        if(myType == "Prowadzący")
+        {
+            ref.child("subjects").child(self.mySubject).child("users").observeSingleEvent(of: .value, with: { (userSnap) in
+                if let users = userSnap.children.allObjects as? [FIRDataSnapshot] {
+                    for user in users
+                    {
+                        self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (userInfo) in
+                            let nam = userInfo.childSnapshot(forPath: "name").value as! String
+                            let sur = userInfo.childSnapshot(forPath: "surname").value as! String
+                            let num = userInfo.childSnapshot(forPath: "number").value as! String
+                            self.name.append(nam)
+                            self.surname.append(sur)
+                            self.userId.append(userInfo.key)
+                            self.numbers.append(num)
+                            self.data.updateValue(nam + " " + sur + " / " + num, forKey: userInfo.key)
+                            self.tableView.reloadData()
+                        })
+
+                    }
+                }
+            })
+
+        }
+        else
+        {
+            ref.child("fields").child(myField).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                    for snap in snapshots
+                    {
+                        
+                        self.ref.child("users").child(snap.key).child("fields").observeSingleEvent(of: .value, with: { (fieldSnap) in
+                            if let fields = fieldSnap.children.allObjects as? [FIRDataSnapshot] {
+                                for field in fields
                                 {
-                                    self.ref.child("users").child(snap.key).observeSingleEvent(of: .value, with: { (userInfo) in
-                                        let nam = userInfo.childSnapshot(forPath: "name").value as! String
-                                        let sur = userInfo.childSnapshot(forPath: "surname").value as! String
-                                        let num = userInfo.childSnapshot(forPath: "number").value as! String
-                                        self.name.append(nam)
-                                        self.surname.append(sur)
-                                        self.userId.append(userInfo.key)
-                                        self.numbers.append(num)
-                                        self.data.updateValue(nam + " " + sur + " / " + num, forKey: userInfo.key)
-                                        self.tableView.reloadData()
-                                    })
+                                    if(field.key == self.myField && field.value as! String == self.studentSemester)
+                                    {
+                                        self.ref.child("users").child(snap.key).observeSingleEvent(of: .value, with: { (userInfo) in
+                                            let nam = userInfo.childSnapshot(forPath: "name").value as! String
+                                            let sur = userInfo.childSnapshot(forPath: "surname").value as! String
+                                            let num = userInfo.childSnapshot(forPath: "number").value as! String
+                                            self.name.append(nam)
+                                            self.surname.append(sur)
+                                            self.userId.append(userInfo.key)
+                                            self.numbers.append(num)
+                                            self.data.updateValue(nam + " " + sur + " / " + num, forKey: userInfo.key)
+                                            self.tableView.reloadData()
+                                        })
+                                    }
                                 }
                             }
-                        }
-                    })
+                        })
+                    }
                 }
-            }
-        })
+            })
+        }
     }
     
     

@@ -2235,6 +2235,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="n6C-SD-XNw" kind="show" identifier="displayUsersFromSubjects" id="Ump-zK-ht1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D8m-og-vTd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4389,8 +4392,9 @@
         <image name="University-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8O0-VN-08h"/>
         <segue reference="SNr-ek-zY5"/>
         <segue reference="gPo-tD-mad"/>
+        <segue reference="8O0-VN-08h"/>
+        <segue reference="Ump-zK-ht1"/>
     </inferredMetricsTieBreakers>
 </document>
