@@ -16,6 +16,7 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
     var semester = [FIRDataSnapshot]()
     var keys = [String]()
     var emails = [String]()
+    var users = [String]()
     var myField = ""
     var myType = ""
     var myFunc = Functions()
@@ -29,7 +30,7 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
         self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
         
-        ref.child("semester").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("semester").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots
@@ -115,11 +116,34 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
                     indicator.startAnimating()
                     let current_semester = self.semester[(indexPath?.row)!].value as! String
                     
-                    ref.child("semester").child(current_semester).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            counter = users.count
-                            for user in users
+                    ref.child("fields").child(myField).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                        if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                            counter = snapshots.count
+                            for snap in snapshots
                             {
+                                
+                                self.ref.child("users").child(snap.key).child("fields").observeSingleEvent(of: .value, with: { (fieldSnap) in
+                                    if let fields = fieldSnap.children.allObjects as? [FIRDataSnapshot] {
+                                        for field in fields
+                                        {
+                                            if(field.key == self.myField && field.value as! String == current_semester)
+                                            {
+                                                self.ref.child("users").child(snap.key).observeSingleEvent(of: .value, with: { (userEmail) in
+                                                    let email = userEmail.childSnapshot(forPath: "email").value as! String
+                                                    self.emails.append(email)
+                                                })
+                                                
+                                            }
+                                        }
+                                    }
+                                })
+                                number = number + 1
+                                if(number == counter)
+                                {
+                                    indicator.stopAnimating()
+                                    cell.accessoryView = nil
+                                    cell.accessoryType = .checkmark
+                                }
                                 
                             }
                         }
@@ -142,7 +166,7 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         if (segue.identifier == "displayUsersFromSemester")
         {
             let destinationVC = segue.destination as! MessageStudentTableViewController
