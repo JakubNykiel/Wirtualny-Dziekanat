@@ -171,6 +171,7 @@ class MessageSemesterTableViewController: UITableViewController, MFMailComposeVi
         {
             let destinationVC = segue.destination as! MessageStudentTableViewController
             destinationVC.studentSemester = mySem
+            destinationVC.myField = myField
         }
         
     }

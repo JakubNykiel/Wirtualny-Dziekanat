@@ -26,6 +26,7 @@ class MessageStudentTableViewController: UITableViewController, UISearchBarDeleg
     var emails = [String]()
     var data = [String:String]()
     var userKey = ""
+    var myField = ""
     
     @IBOutlet weak var searchBar: UISearchBar!
     var searchActive : Bool = false
@@ -211,67 +212,35 @@ class MessageStudentTableViewController: UITableViewController, UISearchBarDeleg
     
     func loadData()
     {
-        uid = (FIRAuth.auth()?.currentUser?.uid)!
-        
-        ref.child("user-faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            
+        ref.child("fields").child(myField).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
                 for snap in snapshots
                 {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
                     
-                    if(self.uid == id_user)
-                    {
-                        self.faculty = id_faculty
-                    }
-                }
-                
-                for snap in snapshots
-                {
-                    let id_user = snap.childSnapshot(forPath: "id_user").value as! String
-                    let id_faculty = snap.childSnapshot(forPath: "id_faculty").value as! String
-                    if(self.faculty == id_faculty)
-                    {
-                        self.users.append(id_user)
-                    }
-                }
-            }
-        })
-        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
-                for snap in snapshots
-                {
-                    if(self.users.contains(snap.key))
-                    {
-                        let nam = snap.childSnapshot(forPath: "name").value as! String
-                        let sur = snap.childSnapshot(forPath: "surname").value as! String
-                        let acc = snap.childSnapshot(forPath: "account_type").value as! String
-                        
-                        if(acc == "Student")
-                        {
-                            let sem = snap.childSnapshot(forPath: "semester").value as! String
-                            
-                            if(self.studentSemester == sem)
+                    self.ref.child("users").child(snap.key).child("fields").observeSingleEvent(of: .value, with: { (fieldSnap) in
+                        if let fields = fieldSnap.children.allObjects as? [FIRDataSnapshot] {
+                            for field in fields
                             {
-                                let num = snap.childSnapshot(forPath: "number").value as! String
-                                self.name.append(nam)
-                                self.surname.append(sur)
-                                self.userId.append(snap.key)
-                                self.numbers.append(num)
-                                self.data.updateValue(nam + " " + sur + " / " + num, forKey: snap.key)
+                                if(field.key == self.myField && field.value as! String == self.studentSemester)
+                                {
+                                    self.ref.child("users").child(snap.key).observeSingleEvent(of: .value, with: { (userInfo) in
+                                        let nam = userInfo.childSnapshot(forPath: "name").value as! String
+                                        let sur = userInfo.childSnapshot(forPath: "surname").value as! String
+                                        let num = userInfo.childSnapshot(forPath: "number").value as! String
+                                        self.name.append(nam)
+                                        self.surname.append(sur)
+                                        self.userId.append(userInfo.key)
+                                        self.numbers.append(num)
+                                        self.data.updateValue(nam + " " + sur + " / " + num, forKey: userInfo.key)
+                                        self.tableView.reloadData()
+                                    })
+                                }
                             }
                         }
-                        
-                    }
+                    })
                 }
             }
-            self.tableView.reloadData()
         })
-        
     }
     
     
