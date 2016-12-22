@@ -250,30 +250,73 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
                     }
                     let indicator = cell.accessoryView as! UIActivityIndicatorView
                     indicator.startAnimating()
-                    ref.child("fields").child(self.fieldKey).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            counter = users.count
-                            for user in users
-                            {
-                                self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (userSnap) in
-                                    let email = userSnap.childSnapshot(forPath: "email").value as! String
-                                    let acc_type = userSnap.childSnapshot(forPath: "account_type").value as! String
-                                    if(acc_type == self.type)
+                    
+                    if(type == "Prowadzący")
+                    {
+                        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+                            if let subjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                counter = subjects.count
+                                for subject in subjects
+                                {
+                                    let subField = subject.childSnapshot(forPath: "id_field").value as! String
+                                    if(self.fieldKey == subField)
                                     {
-                                        self.emails.append(email)
+                                        self.ref.child("subject-classes").observeSingleEvent(of: .value, with: { (subClasses) in
+                                            if let classes = subClasses.children.allObjects as? [FIRDataSnapshot] {
+                                                for item in classes
+                                                {
+                                                    let sub = item.childSnapshot(forPath: "id_subject").value as! String
+                                                    if(subject.key == sub)
+                                                    {
+                                                        let lecturer = item.childSnapshot(forPath: "id_lecturer").value as! String
+                                                        self.ref.child("users").child(lecturer).observeSingleEvent(of: .value, with: { (userInfo) in
+                                                            let email = userInfo.childSnapshot(forPath: "email").value as! String
+                                                            self.emails.append(email)
+                                                        })
+                                                    }
+                                                    number = number + 1
+                                                    if(number == counter)
+                                                    {
+                                                        indicator.stopAnimating()
+                                                        cell.accessoryView = nil
+                                                        cell.accessoryType = .checkmark
+                                                    }
+                                                }
+                                            }
+                                        })
                                     }
-                                    number = number + 1
-                                    if(number == counter)
-                                    {
-                                        indicator.stopAnimating()
-                                        cell.accessoryView = nil
-                                        cell.accessoryType = .checkmark
-                                    }
-
-                                })
+                                }
                             }
-                        }
-                    })
+                        })
+                        
+                    }
+                    else
+                    {
+                        ref.child("fields").child(self.fieldKey).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+                            if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                counter = users.count
+                                for user in users
+                                {
+                                    self.ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (userSnap) in
+                                        let email = userSnap.childSnapshot(forPath: "email").value as! String
+                                        let acc_type = userSnap.childSnapshot(forPath: "account_type").value as! String
+                                        if(acc_type == self.type)
+                                        {
+                                            self.emails.append(email)
+                                        }
+                                        number = number + 1
+                                        if(number == counter)
+                                        {
+                                            indicator.stopAnimating()
+                                            cell.accessoryView = nil
+                                            cell.accessoryType = .checkmark
+                                        }
+                                        
+                                    })
+                                }
+                            }
+                        })
+                    }
                 }
             }
         }
