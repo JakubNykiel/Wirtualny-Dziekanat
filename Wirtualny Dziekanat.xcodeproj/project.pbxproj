@@ -50,6 +50,7 @@
 		C3C255951D9826A900E88741 /* Plus-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255941D9826A900E88741 /* Plus-50.png */; };
 		C3C3ED181DC12B5D001B791A /* AllFieldsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */; };
 		C3CC0AD21DE4C7B3006238EC /* MessageFieldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC0AD11DE4C7B3006238EC /* MessageFieldTableViewController.swift */; };
+		C3D2CC4B1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
@@ -118,6 +119,7 @@
 		C3C255941D9826A900E88741 /* Plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus-50.png"; sourceTree = "<group>"; };
 		C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFieldsListTableViewController.swift; sourceTree = "<group>"; };
 		C3CC0AD11DE4C7B3006238EC /* MessageFieldTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFieldTableViewController.swift; sourceTree = "<group>"; };
+		C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLecturersTableViewController.swift; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DD2BA11CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C3F25EC91DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift */,
 				C373A1491DF56F0A00B9591F /* MessageStudentTableViewController.swift */,
 				C32D92B31E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift */,
+				C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */,
 				C3F25ECA1DEF0C7500F8DCA3 /* MessageSemesterTableViewController.swift in Sources */,
 				C316203B1DDC7D9200582860 /* ManageAccountViewController.swift in Sources */,
+				C3D2CC4B1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift in Sources */,
 				C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */,
 				C3F91CD11DCBA96700A06953 /* AllUsersTableViewController.swift in Sources */,
 			);

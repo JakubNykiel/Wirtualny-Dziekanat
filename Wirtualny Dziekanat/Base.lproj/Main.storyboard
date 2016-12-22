@@ -2199,6 +2199,7 @@
                         <outlet property="searchBar" destination="gJo-Ku-HgE" id="EVO-S5-0ib"/>
                         <segue destination="Qwu-gj-XgO" kind="show" identifier="MessageSemester" id="owG-f9-9SZ"/>
                         <segue destination="ASZ-7i-dXQ" kind="show" identifier="MessageFieldToSubject" id="5Sa-VJ-Gjz"/>
+                        <segue destination="k50-gO-R4g" kind="show" identifier="MessageFieldsToUsers" id="Rve-GT-fPL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="egd-V3-WI2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4292,7 +4293,7 @@
         <!--Użytkownicy-->
         <scene sceneID="Ku2-6K-sLi">
             <objects>
-                <tableViewController title="Użytkownicy" id="k50-gO-R4g" customClass="MessageUsersTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Użytkownicy" id="k50-gO-R4g" customClass="MessageLecturersTableViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ssL-sr-m1w">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4303,7 +4304,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="usersMessage" id="na3-TM-Qcc">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="lecturersMessage" id="na3-TM-Qcc">
                                 <rect key="frame" x="0.0" y="72" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="na3-TM-Qcc" id="FtV-Vc-fNB">
@@ -4317,15 +4318,15 @@
                             <outlet property="delegate" destination="k50-gO-R4g" id="QGt-tD-R4E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Użytkownicy" id="bzJ-14-84R">
+                    <navigationItem key="navigationItem" title="Prowadzący" id="bzJ-14-84R">
                         <barButtonItem key="rightBarButtonItem" title="Mail" id="9KM-7L-mIv">
                             <connections>
-                                <action selector="sendMail:" destination="k50-gO-R4g" id="5X0-VN-x5R"/>
+                                <action selector="sendMail:" destination="k50-gO-R4g" id="x1T-UI-eT2"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="searchBar" destination="ZGw-gk-rqF" id="tf2-PR-rST"/>
+                        <outlet property="searchBar" destination="ZGw-gk-rqF" id="VK9-j2-NCV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TNQ-Oj-QDP" userLabel="First Responder" sceneMemberID="firstResponder"/>

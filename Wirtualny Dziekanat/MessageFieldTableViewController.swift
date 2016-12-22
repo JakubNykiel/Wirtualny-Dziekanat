@@ -180,14 +180,20 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
         {
             self.fieldKey = self.keys[(indexPath.row)]
         }
-        
-        if(myType == "Prowadzący")
+        if(type == "Prowadzący")
         {
-            performSegue(withIdentifier: "MessageFieldToSubject", sender: self)
+            performSegue(withIdentifier: "MessageFieldsToUsers", sender: self)
         }
         else
         {
-            performSegue(withIdentifier: "MessageSemester", sender: self)
+            if(myType == "Prowadzący")
+            {
+                performSegue(withIdentifier: "MessageFieldToSubject", sender: self)
+            }
+            else
+            {
+                performSegue(withIdentifier: "MessageSemester", sender: self)
+            }
         }
     }
     
@@ -336,6 +342,12 @@ class MessageFieldTableViewController: UITableViewController, UISearchBarDelegat
             
             destinationVC.myField = fieldKey
             destinationVC.myType = myType
+        }
+        if (segue.identifier == "MessageFieldsToUsers")
+        {
+            let destinationVC = segue.destination as! MessageLecturersTableViewController
+            
+            destinationVC.myField = fieldKey
         }
     }
 }
