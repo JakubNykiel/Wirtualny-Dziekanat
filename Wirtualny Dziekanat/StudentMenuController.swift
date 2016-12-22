@@ -11,10 +11,22 @@ import Firebase
 
 class StudentMenuController: UIViewController {
 
+    var ref: FIRDatabaseReference!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        ref = FIRDatabase.database().reference()
+        let uid = FIRAuth.auth()?.currentUser?.uid
+        ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let name = snapshot.childSnapshot(forPath: "name").value as! String
+            let surname = snapshot.childSnapshot(forPath: "surname").value as! String
+            let numbers = snapshot.childSnapshot(forPath: "numbers").value as! String
+            
+            self.navigationItem.title = numbers + " | " + name + " " + surname
+        })
+
     }
 
     override func didReceiveMemoryWarning() {

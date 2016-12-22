@@ -16,6 +16,13 @@
 		C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30F471D1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift */; };
 		C313559A1DC61D3D00B3A630 /* AllSubjectsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31355991DC61D3D00B3A630 /* AllSubjectsListTableViewController.swift */; };
 		C316203B1DDC7D9200582860 /* ManageAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316203A1DDC7D9200582860 /* ManageAccountViewController.swift */; };
+		C31B7FC61E0C5BEB00D3DAAA /* 30.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FBF1E0C5BEB00D3DAAA /* 30.png */; };
+		C31B7FC71E0C5BEB00D3DAAA /* 50.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC01E0C5BEB00D3DAAA /* 50.png */; };
+		C31B7FC81E0C5BEB00D3DAAA /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC11E0C5BEB00D3DAAA /* 40.png */; };
+		C31B7FC91E0C5BEB00D3DAAA /* 20.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC21E0C5BEB00D3DAAA /* 20.png */; };
+		C31B7FCA1E0C5BEB00D3DAAA /* 45.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC31E0C5BEB00D3DAAA /* 45.png */; };
+		C31B7FCB1E0C5BEB00D3DAAA /* Pusto.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */; };
+		C31B7FCC1E0C5BEB00D3DAAA /* 35.png in Resources */ = {isa = PBXBuildFile; fileRef = C31B7FC51E0C5BEB00D3DAAA /* 35.png */; };
 		C31EBD811D9C278600BCE8FD /* DziekanatAddFieldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */; };
 		C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */; };
 		C324D3051DA26904006C552F /* SelectAccountTypeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C324D3041DA26904006C552F /* SelectAccountTypeTableViewController.swift */; };
@@ -84,6 +91,13 @@
 		C30F471D1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSemesterTableViewController.swift; sourceTree = "<group>"; };
 		C31355991DC61D3D00B3A630 /* AllSubjectsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllSubjectsListTableViewController.swift; sourceTree = "<group>"; };
 		C316203A1DDC7D9200582860 /* ManageAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageAccountViewController.swift; sourceTree = "<group>"; };
+		C31B7FBF1E0C5BEB00D3DAAA /* 30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 30.png; sourceTree = "<group>"; };
+		C31B7FC01E0C5BEB00D3DAAA /* 50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 50.png; sourceTree = "<group>"; };
+		C31B7FC11E0C5BEB00D3DAAA /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		C31B7FC21E0C5BEB00D3DAAA /* 20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 20.png; sourceTree = "<group>"; };
+		C31B7FC31E0C5BEB00D3DAAA /* 45.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 45.png; sourceTree = "<group>"; };
+		C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pusto.png; sourceTree = "<group>"; };
+		C31B7FC51E0C5BEB00D3DAAA /* 35.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 35.png; sourceTree = "<group>"; };
 		C31EBD801D9C278600BCE8FD /* DziekanatAddFieldController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddFieldController.swift; sourceTree = "<group>"; };
 		C31EBD821D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectFacultyTableViewController.swift; sourceTree = "<group>"; };
 		C324D3031DA263F7006C552F /* Wirtualny Dziekanat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wirtualny Dziekanat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +193,13 @@
 		C35BCCC61D0B5B880022DC1F /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				C31B7FBF1E0C5BEB00D3DAAA /* 30.png */,
+				C31B7FC01E0C5BEB00D3DAAA /* 50.png */,
+				C31B7FC11E0C5BEB00D3DAAA /* 40.png */,
+				C31B7FC21E0C5BEB00D3DAAA /* 20.png */,
+				C31B7FC31E0C5BEB00D3DAAA /* 45.png */,
+				C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */,
+				C31B7FC51E0C5BEB00D3DAAA /* 35.png */,
 				C3C255921D981DC000E88741 /* Graduation Cap-50.png */,
 				C37B10BA1DDA6ABF0038A443 /* Password-50.png */,
 				C3E7798F1D29657300CE5CFF /* University-50.png */,
@@ -422,6 +443,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C31B7FC61E0C5BEB00D3DAAA /* 30.png in Resources */,
 				C3DD2BA71CEA594200AA8439 /* LaunchScreen.storyboard in Resources */,
 				C35BCCCF1D0B5CD00022DC1F /* Home-50.png in Resources */,
 				C37B10B71DDA6AB00038A443 /* Remove User Male-50.png in Resources */,
@@ -432,13 +454,19 @@
 				C37B10B91DDA6AB90038A443 /* Email-50.png in Resources */,
 				C37B10BB1DDA6ABF0038A443 /* Password-50.png in Resources */,
 				C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */,
+				C31B7FC81E0C5BEB00D3DAAA /* 40.png in Resources */,
 				C3E779901D29657300CE5CFF /* University-50.png in Resources */,
+				C31B7FCC1E0C5BEB00D3DAAA /* 35.png in Resources */,
+				C31B7FCB1E0C5BEB00D3DAAA /* Pusto.png in Resources */,
 				C35BCCCE1D0B5CD00022DC1F /* Exit-50.png in Resources */,
 				C3C255931D981DC000E88741 /* Graduation Cap-50.png in Resources */,
 				C35BCCD21D0B5CD00022DC1F /* Add User Male-50.png in Resources */,
 				C3E7798C1D29357F00CE5CFF /* Logout Rounded-50.png in Resources */,
 				C35BCCD11D0B5CD00022DC1F /* Speech Bubble-50.png in Resources */,
+				C31B7FCA1E0C5BEB00D3DAAA /* 45.png in Resources */,
+				C31B7FC91E0C5BEB00D3DAAA /* 20.png in Resources */,
 				C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */,
+				C31B7FC71E0C5BEB00D3DAAA /* 50.png in Resources */,
 				C3E7798A1D29343000CE5CFF /* Student Male-50.png in Resources */,
 				C35BCCD01D0B5CD00022DC1F /* Bulleted List-50.png in Resources */,
 			);
