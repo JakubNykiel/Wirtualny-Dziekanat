@@ -89,7 +89,7 @@ class GradesSubjectTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "gradesClasses")
         {
-            let destinationVC = segue.destination as! EditClassesViewController
+            let destinationVC = segue.destination as! GradesClassesTableViewController
             destinationVC.mySubject = mySubject
             
         }
