@@ -12,7 +12,10 @@ import Firebase
 class GradesClassesTableViewController: UITableViewController {
     
     var mySubject = ""
+    var mySubjectType = ""
     var classes = [String]()
+    var classesKey = [String]()
+    var keys = [String]()
     var ref: FIRDatabaseReference!
     let myFunc = Functions()
     
@@ -33,6 +36,8 @@ class GradesClassesTableViewController: UITableViewController {
                         self.ref.child("subject-type").child(type).observeSingleEvent(of: .value, with: { (subType) in
                             let name = subType.childSnapshot(forPath: "name").value as! String
                             self.classes.append(name)
+                            self.keys.append(subType.key)
+                            self.classesKey.append(item.key)
                             self.tableView.reloadData()
                         })
                     }
@@ -66,8 +71,19 @@ class GradesClassesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        //mySubject = self.keys[indexPath.row]
-        //performSegue(withIdentifier: "gradesClasses", sender: self)
+        mySubjectType = self.keys[indexPath.row]
+        mySubject = self.classesKey[indexPath.row]
+        performSegue(withIdentifier: "gradesDate", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "gradesDate")
+        {
+            let destinationVC = segue.destination as! GradesDateTableViewController
+            
+            destinationVC.mySubject = mySubject
+            destinationVC.mySubjectType = mySubjectType
+        }
     }
     
     
