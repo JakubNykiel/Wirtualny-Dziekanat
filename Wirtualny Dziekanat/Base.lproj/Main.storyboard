@@ -1322,7 +1322,7 @@
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iLX-Gu-JZK" id="ZAv-Vk-NG8">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1363,10 +1363,124 @@
                             <outlet property="delegate" destination="ZSb-bg-Yqr" id="qOy-vi-vii"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Studenci" id="fhk-rb-opB">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="tXq-rZ-zGM">
+                            <connections>
+                                <segue destination="pGA-kc-2zx" kind="show" identifier="gradeData" id="FLD-bi-xif"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addButton" destination="tXq-rZ-zGM" id="357-4c-Bz9"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cPZ-Tr-U5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5599" y="-34"/>
+        </scene>
+        <!--Add Grade View Controller-->
+        <scene sceneID="kJx-FD-Xfy">
+            <objects>
+                <viewController id="pGA-kc-2zx" customClass="AddGradeViewController" customModule="Wirtualny_Dziekanat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Nyl-VA-S0y"/>
+                        <viewControllerLayoutGuide type="bottom" id="WZr-di-d6V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4ZJ-lv-Fne">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Studenci:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3O-Co-Q1p">
+                                <rect key="frame" x="16" y="72" width="73" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="9Ed-yx-hBv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="w0I-gK-bxr">
+                                <rect key="frame" x="97" y="72" width="207" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ocena:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbY-sQ-vsI">
+                                <rect key="frame" x="16" y="235" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Termin:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ltz-EK-3Io">
+                                <rect key="frame" x="16" y="314" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Dp-5L-v0S">
+                                <rect key="frame" x="97" y="314" width="207" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbR-7P-4ga">
+                                <rect key="frame" x="61" y="429" width="200" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="Dodaj">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addGrade:" destination="pGA-kc-2zx" eventType="touchUpInside" id="CKz-mp-4nT"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Wybierz ocene" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l9B-gs-hRO">
+                                <rect key="frame" x="97" y="230" width="207" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y3O-Co-Q1p" firstAttribute="top" secondItem="w0I-gK-bxr" secondAttribute="top" id="4yV-zu-wSW"/>
+                            <constraint firstItem="w0I-gK-bxr" firstAttribute="trailing" secondItem="l9B-gs-hRO" secondAttribute="trailing" id="ASA-0g-E9w"/>
+                            <constraint firstItem="w0I-gK-bxr" firstAttribute="trailing" secondItem="4ZJ-lv-Fne" secondAttribute="trailingMargin" id="Asz-3e-zzX"/>
+                            <constraint firstItem="y3O-Co-Q1p" firstAttribute="leading" secondItem="4ZJ-lv-Fne" secondAttribute="leadingMargin" id="BXg-Mk-PK2"/>
+                            <constraint firstItem="y3O-Co-Q1p" firstAttribute="leading" secondItem="CbY-sQ-vsI" secondAttribute="leading" id="C3m-Tj-EbG"/>
+                            <constraint firstItem="w0I-gK-bxr" firstAttribute="leading" secondItem="l9B-gs-hRO" secondAttribute="leading" id="JSF-Z9-LSH"/>
+                            <constraint firstItem="3Dp-5L-v0S" firstAttribute="leading" secondItem="Ltz-EK-3Io" secondAttribute="trailing" constant="8" symbolic="YES" id="JjT-hf-Xkf"/>
+                            <constraint firstItem="MbR-7P-4ga" firstAttribute="top" secondItem="Ltz-EK-3Io" secondAttribute="bottom" constant="94" id="QRZ-tQ-nDF"/>
+                            <constraint firstItem="l9B-gs-hRO" firstAttribute="trailing" secondItem="3Dp-5L-v0S" secondAttribute="trailing" id="Rd1-3B-Mc8"/>
+                            <constraint firstItem="CbY-sQ-vsI" firstAttribute="leading" secondItem="Ltz-EK-3Io" secondAttribute="leading" id="ULI-Zc-IX5"/>
+                            <constraint firstItem="MbR-7P-4ga" firstAttribute="leading" secondItem="4ZJ-lv-Fne" secondAttribute="leadingMargin" constant="45" id="V06-XD-0QS"/>
+                            <constraint firstItem="y3O-Co-Q1p" firstAttribute="top" secondItem="Nyl-VA-S0y" secondAttribute="bottom" constant="8" symbolic="YES" id="Wdl-j1-2Sl"/>
+                            <constraint firstItem="l9B-gs-hRO" firstAttribute="leading" secondItem="3Dp-5L-v0S" secondAttribute="leading" id="aLp-2Z-Lr3"/>
+                            <constraint firstItem="Ltz-EK-3Io" firstAttribute="baseline" secondItem="3Dp-5L-v0S" secondAttribute="baseline" id="bdk-Z4-sNv"/>
+                            <constraint firstItem="w0I-gK-bxr" firstAttribute="leading" secondItem="y3O-Co-Q1p" secondAttribute="trailing" constant="8" symbolic="YES" id="cH9-02-AoA"/>
+                            <constraint firstItem="l9B-gs-hRO" firstAttribute="leading" secondItem="CbY-sQ-vsI" secondAttribute="trailing" constant="8" symbolic="YES" id="d6e-wF-Y5X"/>
+                            <constraint firstItem="CbY-sQ-vsI" firstAttribute="centerY" secondItem="l9B-gs-hRO" secondAttribute="centerY" id="ddH-Vi-RWa"/>
+                            <constraint firstItem="Ltz-EK-3Io" firstAttribute="baseline" secondItem="3Dp-5L-v0S" secondAttribute="firstBaseline" id="f6z-9C-R9B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MbR-7P-4ga" secondAttribute="trailing" constant="43" id="gtj-Vq-KyW"/>
+                            <constraint firstItem="WZr-di-d6V" firstAttribute="top" secondItem="MbR-7P-4ga" secondAttribute="bottom" constant="109" id="lH6-hf-IDO"/>
+                            <constraint firstItem="3Dp-5L-v0S" firstAttribute="top" secondItem="l9B-gs-hRO" secondAttribute="bottom" constant="54" id="yoG-2R-5JH"/>
+                            <constraint firstItem="l9B-gs-hRO" firstAttribute="top" secondItem="w0I-gK-bxr" secondAttribute="bottom" constant="30" id="zKr-5m-Ufz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="date" destination="3Dp-5L-v0S" id="pds-kQ-5bV"/>
+                        <outlet property="gradeText" destination="l9B-gs-hRO" id="mrJ-aw-AqP"/>
+                        <outlet property="usersTextView" destination="w0I-gK-bxr" id="Djc-gz-vJB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDd-tY-ktl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6376.875" y="-30.633802816901408"/>
         </scene>
         <!--DZIEKANAT-->
         <scene sceneID="Ucg-Mh-avn">

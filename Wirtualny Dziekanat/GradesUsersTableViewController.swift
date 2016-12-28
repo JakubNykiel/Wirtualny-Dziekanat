@@ -20,7 +20,11 @@ class GradesUsersTableViewController: UITableViewController {
     var name = [String]()
     var surname = [String]()
     var numbers = [String]()
-    var userResult:Double!
+    var data = [String:String]()
+    var keys = [String]()
+    var userResult = 2.0
+    
+    @IBOutlet weak var addButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,7 @@ class GradesUsersTableViewController: UITableViewController {
                         self.name.append(nam)
                         self.surname.append(sur)
                         self.numbers.append(num)
+                        self.keys.append(userInfo.key)
                         
                         if(userInfo.hasChild("grades"))
                         {
@@ -108,19 +113,49 @@ class GradesUsersTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "gradesUsers", for: indexPath)
-        
         cell.textLabel?.text = self.numbers[indexPath.row] + " | " + self.name[indexPath.row] + self.surname[indexPath.row]
-        cell.imageView?.image = UIImage(named: "Pusto.png")
+        if(userResult < 3.0)
+        {
+            cell.imageView?.image = UIImage(named: "Pusto.png")
+        }
+        else if(userResult == 3.5)
+        {
+            cell.imageView?.image = UIImage(named: "35.png")
+        }
+        else if(userResult == 4.0)
+        {
+            cell.imageView?.image = UIImage(named: "40.png")
+        }
+        else if(userResult == 4.5)
+        {
+            cell.imageView?.image = UIImage(named: "45.png")
+        }
+        else if(userResult == 5.0)
+        {
+            cell.imageView?.image = UIImage(named: "50.png")
+        }
         cell.accessoryType = .none
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
+        data[keys[indexPath.row]] = self.numbers[indexPath.row] + ": " + self.name[indexPath.row] + self.surname[indexPath.row]
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.accessoryType = .checkmark
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "gradeData")
+        {
+            let destinationVC = segue.destination as! AddGradeViewController
+        
+            destinationVC.mySubjectType = mySubjectType
+            destinationVC.myDate = date
+            destinationVC.userData = data
+        }
 
     }
     
