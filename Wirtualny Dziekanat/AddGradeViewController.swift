@@ -18,7 +18,7 @@ class AddGradeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var ref: FIRDatabaseReference!
     var myFunc = Functions()
     var grades = [2.0,3.0,3.5,4.0,4.5,5.0]
-    
+    var gradeData = [String:Any]()
     var picker = UIPickerView()
     
     @IBOutlet weak var gradeText: UITextField!
@@ -67,5 +67,25 @@ class AddGradeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
 
     @IBAction func addGrade(_ sender: Any) {
         
+        for item in userData
+        {
+            if(myDate == "Termin 1")
+            {
+                gradeData = ["id_classes": mySubject,
+                                 "user": item.key,
+                                 "dates": ["1": Double(self.gradeText.text!)]]
+            }
+            else if(myDate == "Termin 2")
+            {
+                gradeData = ["dates": ["2": Double(self.gradeText.text!)]]
+            }
+            else
+            {
+                gradeData = ["dates": ["3": Double(self.gradeText.text!)]]
+            }
+            let autoKey = ref.childByAutoId().key
+            ref.child("grades").child(autoKey).updateChildValues(gradeData)
+            ref.child("users").child(item.key).child("grades").updateChildValues([autoKey:true])
+        }
     }
 }

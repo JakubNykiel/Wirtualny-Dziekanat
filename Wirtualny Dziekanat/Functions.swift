@@ -432,5 +432,6 @@ class Functions
             view?.layer.opacity = 1
         }, completion: nil)
     }
+
     
 }
