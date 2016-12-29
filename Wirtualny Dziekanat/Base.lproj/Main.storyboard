@@ -725,6 +725,9 @@
                                         <include reference="ecD-gk-aQD"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <segue destination="8gm-5F-Yi4" kind="show" id="7R4-1r-OhF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -4541,9 +4544,10 @@
         <image name="Student Male-50.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="SNr-ek-zY5"/>
-        <segue reference="gPo-tD-mad"/>
-        <segue reference="8O0-VN-08h"/>
+        <segue reference="7R4-1r-OhF"/>
+        <segue reference="rDm-lu-v95"/>
+        <segue reference="c8m-Od-6wa"/>
         <segue reference="Ump-zK-ht1"/>
+        <segue reference="8O0-VN-08h"/>
     </inferredMetricsTieBreakers>
 </document>

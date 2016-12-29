@@ -22,9 +22,9 @@ class StudentMenuController: UIViewController {
         ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
             let name = snapshot.childSnapshot(forPath: "name").value as! String
             let surname = snapshot.childSnapshot(forPath: "surname").value as! String
-            let numbers = snapshot.childSnapshot(forPath: "numbers").value as! String
+            let numbers = snapshot.childSnapshot(forPath: "number").value as! String
             
-            self.navigationItem.title = numbers + " | " + name + " " + surname
+            self.navigationItem.title = numbers + ": " + surname + " " + name
         })
 
     }

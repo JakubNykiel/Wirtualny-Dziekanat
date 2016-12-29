@@ -85,7 +85,17 @@ class AddGradeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             }
             let autoKey = ref.childByAutoId().key
             ref.child("grades").child(autoKey).updateChildValues(gradeData)
+            ref.child("subject-classes").child(mySubject).child("grades").updateChildValues([autoKey:true])
             ref.child("users").child(item.key).child("grades").updateChildValues([autoKey:true])
         }
+        
+        let alertController = UIAlertController(title: "Dodano oceny", message:
+            "Dodawanie ocen zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { (action: UIAlertAction!) in
+            let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 2]
+            
+            _ = self.navigationController?.popToViewController(targetController, animated: true)
+        }))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
