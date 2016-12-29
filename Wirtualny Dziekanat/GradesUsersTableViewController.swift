@@ -31,77 +31,16 @@ class GradesUsersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
-        ref.child("subject-classes").child(mySubject).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let subjectUsers = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                self.counter = subjectUsers.count
-                for (index, subjectUser) in subjectUsers.enumerated()
-                {
-                    let myRef = self.ref.child("users").child(subjectUser.key)
-                    myRef.observeSingleEvent(of: .value, with: { (userInfo) in
-                        let nam = userInfo.childSnapshot(forPath: "name").value as! String
-                        let sur = userInfo.childSnapshot(forPath: "surname").value as! String
-                        let num = userInfo.childSnapshot(forPath: "number").value as! String
-                        self.name.append(nam)
-                        self.surname.append(sur)
-                        self.numbers.append(num)
-                        self.keys.append(userInfo.key)
-                        if(userInfo.hasChild("grades"))
-                        {
-                            myRef.child("grades").observeSingleEvent(of: .value, with: { (userGrades) in
-                                if let grades = userGrades.children.allObjects as? [FIRDataSnapshot] {
-                                    for grade in grades
-                                    {
-                                        let gradeRef = self.ref.child("grades").child(grade.key)
-                                        gradeRef.observeSingleEvent(of: .value, with: { (gradeInfo) in
-                                            if(gradeInfo.hasChild("dates"))
-                                            {
-                                                let idClasses = gradeInfo.childSnapshot(forPath: "id_classes").value as! String
-                                                if(idClasses == self.mySubject)
-                                                {
-                                                    gradeRef.child("dates").child("1").observeSingleEvent(of: .value, with: { (result) in
-                                                        
-                                                        self.userResult = result.value as! Double
-                                                        self.imageGrade(userResult: self.userResult, index: index)
-                                                    })
-                                                    if(self.userResult < 3)
-                                                    {
-                                                        if(self.date == "Termin 2")
-                                                        {
-                                                            gradeRef.child("dates").child("2").observeSingleEvent(of: .value, with: { (result) in
-                                                                
-                                                                self.userResult = result.value as! Double
-                                                                self.imageGrade(userResult: self.userResult, index: index)
-                                                            })
-                                                        }
-                                                        if(self.userResult < 3)
-                                                        {
-                                                            if(self.date == "Termin 3")
-                                                            {
-                                                                gradeRef.child("dates").child("3").observeSingleEvent(of: .value, with: { (result) in
-                                                                    
-                                                                    self.userResult = result.value as! Double
-                                                                    self.imageGrade(userResult: self.userResult, index: index)
-                                                                })
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        })
-                                    }
-                                }
-                            })
-                        }
-                        else
-                        {
-                            self.insertElementAtIndex(element: "Pusto.png", index: index)
-                        }
-                        
-                    })
-                }
-            }
-            
-        })
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        users.removeAll()
+        name.removeAll()
+        surname.removeAll()
+        numbers.removeAll()
+        data.removeAll()
+        keys.removeAll()
+        results.removeAll()
+        loadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -199,6 +138,82 @@ class GradesUsersTableViewController: UITableViewController {
         {
             self.insertElementAtIndex(element: "Pusto.png", index: index)
         }
+    }
+    
+    func loadData()
+    {
+        ref.child("subject-classes").child(mySubject).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let subjectUsers = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                self.counter = subjectUsers.count
+                for (index, subjectUser) in subjectUsers.enumerated()
+                {
+                    let myRef = self.ref.child("users").child(subjectUser.key)
+                    myRef.observeSingleEvent(of: .value, with: { (userInfo) in
+                        let nam = userInfo.childSnapshot(forPath: "name").value as! String
+                        let sur = userInfo.childSnapshot(forPath: "surname").value as! String
+                        let num = userInfo.childSnapshot(forPath: "number").value as! String
+                        self.name.append(nam)
+                        self.surname.append(sur)
+                        self.numbers.append(num)
+                        self.keys.append(userInfo.key)
+                        if(userInfo.hasChild("grades"))
+                        {
+                            myRef.child("grades").observeSingleEvent(of: .value, with: { (userGrades) in
+                                if let grades = userGrades.children.allObjects as? [FIRDataSnapshot] {
+                                    for grade in grades
+                                    {
+                                        let gradeRef = self.ref.child("grades").child(grade.key)
+                                        gradeRef.observeSingleEvent(of: .value, with: { (gradeInfo) in
+                                            if(gradeInfo.hasChild("dates"))
+                                            {
+                                                let idClasses = gradeInfo.childSnapshot(forPath: "id_classes").value as! String
+                                                if(idClasses == self.mySubject)
+                                                {
+                                                    gradeRef.child("dates").child("1").observeSingleEvent(of: .value, with: { (result) in
+                                                        
+                                                        self.userResult = result.value as! Double
+                                                        self.imageGrade(userResult: self.userResult, index: index)
+                                                    })
+                                                    if(self.userResult < 3)
+                                                    {
+                                                        if(self.date == "Termin 2")
+                                                        {
+                                                            gradeRef.child("dates").child("2").observeSingleEvent(of: .value, with: { (result) in
+                                                                
+                                                                self.userResult = result.value as! Double
+                                                                self.imageGrade(userResult: self.userResult, index: index)
+                                                            })
+                                                        }
+                                                        if(self.userResult < 3)
+                                                        {
+                                                            if(self.date == "Termin 3")
+                                                            {
+                                                                gradeRef.child("dates").child("3").observeSingleEvent(of: .value, with: { (result) in
+                                                                    
+                                                                    self.userResult = result.value as! Double
+                                                                    self.imageGrade(userResult: self.userResult, index: index)
+                                                                })
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        })
+                                    }
+                                }
+                            })
+                        }
+                        else
+                        {
+                            self.insertElementAtIndex(element: "Pusto.png", index: index)
+                        }
+                        
+                    })
+                }
+            }
+            
+        })
+
     }
     
 }
