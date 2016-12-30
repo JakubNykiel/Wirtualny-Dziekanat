@@ -63,6 +63,7 @@
 		C3D2CC4B1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
 		C3D5E8AA1E113279005E17C3 /* GradesDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D5E8A91E113279005E17C3 /* GradesDateTableViewController.swift */; };
+		C3D9CBA01E15B901003827F9 /* GradesStudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D9CB9F1E15B901003827F9 /* GradesStudentViewController.swift */; };
 		C3DD2B9D1CEA594200AA8439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */; };
 		C3DD2BA21CEA594200AA8439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA01CEA594200AA8439 /* Main.storyboard */; };
 		C3DD2BA41CEA594200AA8439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3DD2BA31CEA594200AA8439 /* Assets.xcassets */; };
@@ -144,6 +145,7 @@
 		C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLecturersTableViewController.swift; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C3D5E8A91E113279005E17C3 /* GradesDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesDateTableViewController.swift; sourceTree = "<group>"; };
+		C3D9CB9F1E15B901003827F9 /* GradesStudentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesStudentViewController.swift; sourceTree = "<group>"; };
 		C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DD2BA11CEA594200AA8439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3DD2BA31CEA594200AA8439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				C3286F631E0FF021008EEAE6 /* GradesUsersTableViewController.swift */,
 				C3D5E8A91E113279005E17C3 /* GradesDateTableViewController.swift */,
 				C3E9FBF61E13DF43005C0D49 /* AddGradeViewController.swift */,
+				C3D9CB9F1E15B901003827F9 /* GradesStudentViewController.swift */,
 			);
 			name = Grades;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
 				C37637D11DCD53A900B56A03 /* EditLecturerViewController.swift in Sources */,
 				C367FE231DE2068900CC59E7 /* MessageAccountTypyTableViewController.swift in Sources */,
+				C3D9CBA01E15B901003827F9 /* GradesStudentViewController.swift in Sources */,
 				C3F25EC81DEE28B800F8DCA3 /* MessageDeaneryTableViewController.swift in Sources */,
 				C3D5E8AA1E113279005E17C3 /* GradesDateTableViewController.swift in Sources */,
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,

@@ -13,6 +13,8 @@ class GradesClassesTableViewController: UITableViewController {
     
     var mySubject = ""
     var mySubjectType = ""
+    var mySubjectTypeName = ""
+    var mySubjectName = ""
     var classes = [String]()
     var classesKey = [String]()
     var keys = [String]()
@@ -24,6 +26,8 @@ class GradesClassesTableViewController: UITableViewController {
     var userResult = 0.0
     var counter = 0
     var i = 0
+    var gradesData = [Double]()
+    var data = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -83,9 +87,11 @@ class GradesClassesTableViewController: UITableViewController {
         
         mySubjectType = self.keys[indexPath.row]
         mySubject = self.classesKey[indexPath.row]
+        mySubjectTypeName = self.classes[indexPath.row]
+        
         if(acc == "Student")
         {
-            
+            performSegue(withIdentifier: "gradeStudent", sender: self)
         }
         else
         {
@@ -100,6 +106,15 @@ class GradesClassesTableViewController: UITableViewController {
             
             destinationVC.mySubject = mySubject
             destinationVC.mySubjectType = mySubjectType
+        }
+        else if (segue.identifier == "gradeStudent")
+        {
+            let destinationVC = segue.destination as! GradesStudentViewController
+            
+            destinationVC.subjectName = mySubjectName
+            destinationVC.typeName = mySubjectTypeName
+            destinationVC.grades = gradesData
+            destinationVC.lecturer = data
         }
     }
     
@@ -141,6 +156,14 @@ class GradesClassesTableViewController: UITableViewController {
                 {
                     self.ref.child("subject-classes").child(item.key).observeSingleEvent(of: .value, with: { (subCla) in
                         let idSub = subCla.childSnapshot(forPath: "id_subject").value as! String
+                        let lecturer = subCla.childSnapshot(forPath: "id_lecturer").value as! String
+                        self.ref.child("users").child(lecturer).observeSingleEvent(of: .value, with: { (lecturerInfo) in
+                            let tit = lecturerInfo.childSnapshot(forPath: "title").value as! String
+                            let nam = lecturerInfo.childSnapshot(forPath: "name").value as! String
+                            let sur = lecturerInfo.childSnapshot(forPath: "surname").value as! String
+                            self.data = tit + " " + nam + " " + sur
+                            
+                        })
                         if(idSub == self.mySubject)
                         {
                             let type = subCla.childSnapshot(forPath: "id_type").value as! String
@@ -152,6 +175,7 @@ class GradesClassesTableViewController: UITableViewController {
                                         {
                                             let idClasses = grade.childSnapshot(forPath: "id_classes").value as! String
                                             let userID = grade.childSnapshot(forPath: "user").value as! String
+                                            
                                             if(userID == self.uid && idClasses == item.key)
                                             {
                                                 self.ref.child("grades").child(grade.key).child("dates").observeSingleEvent(of: .value, with: { (dateInfo) in
@@ -161,6 +185,7 @@ class GradesClassesTableViewController: UITableViewController {
                                                         for date in dates
                                                         {
                                                             let myGrade = date.value as! Double
+                                                            self.gradesData.append(myGrade)
                                                             if(self.userResult < myGrade)
                                                             {
                                                                 self.userResult = myGrade

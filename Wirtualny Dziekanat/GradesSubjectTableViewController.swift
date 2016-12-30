@@ -17,6 +17,7 @@ class GradesSubjectTableViewController: UITableViewController {
     var subjects = [String]()
     var keys = [String]()
     var mySubject = ""
+    var mySubjectName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,7 @@ class GradesSubjectTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         mySubject = self.keys[indexPath.row]
+        mySubjectName = self.subjects[indexPath.row]
         performSegue(withIdentifier: "gradesClasses", sender: self)
     }
 
@@ -91,6 +93,7 @@ class GradesSubjectTableViewController: UITableViewController {
         {
             let destinationVC = segue.destination as! GradesClassesTableViewController
             destinationVC.mySubject = mySubject
+            destinationVC.mySubjectName = mySubjectName
             
         }
     }

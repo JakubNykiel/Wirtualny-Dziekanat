@@ -77,11 +77,11 @@ class AddGradeViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             }
             else if(myDate == "Termin 2")
             {
-                gradeData = ["dates": ["2": Double(self.gradeText.text!)]]
+                gradeData = ["dates": ["1": 2.0,"2": Double(self.gradeText.text!)]]
             }
             else
             {
-                gradeData = ["dates": ["3": Double(self.gradeText.text!)]]
+                gradeData = ["dates": ["1":2.0,"2":2.0,"3": Double(self.gradeText.text!)]]
             }
             let autoKey = ref.childByAutoId().key
             ref.child("grades").child(autoKey).updateChildValues(gradeData)
