@@ -10,7 +10,7 @@ import UIKit
 
 class ListsTableViewController: UITableViewController {
     
-    var lists = ["Lista wszystkich kierunków", "Lista wszystkich przedmiotów/typów", "Lista wszystkich użytkowników", "Lista szczegółowa"]
+    var lists = ["Lista wszystkich kierunków", "Lista wszystkich przedmiotów/typów", "Lista wszystkich użytkowników", "Lista ocen"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +55,8 @@ class ListsTableViewController: UITableViewController {
             performSegue(withIdentifier: "allSubjects", sender: self)
         case 2:
             performSegue(withIdentifier: "allUsers", sender: self)
+        case 3:
+            performSegue(withIdentifier: "allGrades", sender: self)
         default:
             print("Error")
         }

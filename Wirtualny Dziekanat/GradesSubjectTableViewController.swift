@@ -18,6 +18,7 @@ class GradesSubjectTableViewController: UITableViewController {
     var keys = [String]()
     var mySubject = ""
     var mySubjectName = ""
+    var fieldKey = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,19 @@ class GradesSubjectTableViewController: UITableViewController {
         self.tableView.allowsSelection = true
         ref = FIRDatabase.database().reference()
         let uid = FIRAuth.auth()?.currentUser?.uid
-        loadData(uid: uid!)
+        ref.child("users").child(uid!).observeSingleEvent(of: .value, with: { (snapshot) in
+            self.accountType = snapshot.childSnapshot(forPath: "account_type").value as! String
+            
+            if(self.accountType == "Dziekanat")
+            {
+                self.loadDataForDeanery()
+            }
+            else
+            {
+                self.loadData(uid: uid!)
+            }
+        })
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,34 +70,23 @@ class GradesSubjectTableViewController: UITableViewController {
         mySubjectName = self.subjects[indexPath.row]
         performSegue(withIdentifier: "gradesClasses", sender: self)
     }
-
+    
     
     func loadData(uid: String)
     {
-        ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
-            self.accountType = snapshot.childSnapshot(forPath: "account_type").value as! String
-        })
-        
-        if(accountType == "Student")
-        {
-            
-        }
-        else
-        {
-            ref.child("users").child(uid).child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
-                if let userSubjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                    for userSubject in userSubjects
-                    {
-                        self.ref.child("subjects").child(userSubject.key).observeSingleEvent(of: .value, with: { (subject) in
-                            let name = subject.childSnapshot(forPath: "name").value as! String
-                            self.keys.append(userSubject.key)
-                            self.subjects.append(name)
-                            self.tableView.reloadData()
-                        })
-                    }
+        ref.child("users").child(uid).child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let userSubjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for userSubject in userSubjects
+                {
+                    self.ref.child("subjects").child(userSubject.key).observeSingleEvent(of: .value, with: { (subject) in
+                        let name = subject.childSnapshot(forPath: "name").value as! String
+                        self.keys.append(userSubject.key)
+                        self.subjects.append(name)
+                        self.tableView.reloadData()
+                    })
                 }
-            })
-        }//koniec else
+            }
+        })
         
     }//koniec loadData
     
@@ -96,5 +98,26 @@ class GradesSubjectTableViewController: UITableViewController {
             destinationVC.mySubjectName = mySubjectName
             
         }
+    }
+    
+    func loadDataForDeanery()
+    {
+        
+        self.ref.child("subjects").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let fieldID = snap.childSnapshot(forPath: "id_field").value as! String
+                    let name = snap.childSnapshot(forPath: "name").value as! String
+                    let key = snap.key
+                    if(fieldID == self.fieldKey)
+                    {
+                        self.subjects.append(name)
+                        self.keys.append(key)
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
     }
 }

@@ -50,6 +50,10 @@ class GradesClassesTableViewController: UITableViewController {
         {
             loadDataForStudent()
         }
+        else if(acc == "Dziekanat")
+        {
+            loadDataForDeanery()
+        }
         else
         {
             loadData()
@@ -116,6 +120,29 @@ class GradesClassesTableViewController: UITableViewController {
             destinationVC.grades = gradesData
             destinationVC.lecturer = data
         }
+    }
+    
+    func loadDataForDeanery()
+    {
+        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (subCla) in
+            if let snapshots = subCla.children.allObjects as? [FIRDataSnapshot] {
+                for item in snapshots
+                {
+                    let idSub = item.childSnapshot(forPath: "id_subject").value as! String
+                    if(idSub == self.mySubject)
+                    {
+                        let type = item.childSnapshot(forPath: "id_type").value as! String
+                        self.ref.child("subject-type").child(type).observeSingleEvent(of: .value, with: { (subType) in
+                            let name = subType.childSnapshot(forPath: "name").value as! String
+                            self.classes.append(name)
+                            self.keys.append(subType.key)
+                            self.classesKey.append(item.key)
+                            self.tableView.reloadData()
+                        })
+                    }
+                }
+            }
+        })
     }
     
     func loadData()
