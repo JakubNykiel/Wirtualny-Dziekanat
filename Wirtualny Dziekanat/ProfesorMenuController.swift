@@ -13,6 +13,7 @@ class ProfesorMenuController: UIViewController {
     
     var ref: FIRDatabaseReference!
     
+    @IBOutlet weak var currentLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,6 +26,14 @@ class ProfesorMenuController: UIViewController {
             let title = snapshot.childSnapshot(forPath: "title").value as! String
             
             self.navigationItem.title = title + " " + name + " " + surname
+        })
+        ref.child("current").observeSingleEvent(of: .value, with: { (snapshot) in
+            let first = snapshot.childSnapshot(forPath: "first").value as! Int
+            let second = snapshot.childSnapshot(forPath: "second").value as! Int
+            let season = snapshot.childSnapshot(forPath: "season").value as! String
+            
+            self.currentLabel.text = String(first) + "/" + String(second) + " " + season
+            
         })
         
     }

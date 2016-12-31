@@ -95,7 +95,7 @@ class EditStudentViewController: UIViewController,UIPickerViewDelegate, UIPicker
         if(userSemesterKey != semesterValue)
         {
             userRef.child("fields").updateChildValues([userFieldKey:semesterValue])
-            userRef.child("semester").updateChildValues([userSemesterKey:semesterValue])
+            userRef.child("semester").updateChildValues([semesterValue:true])
             ref.child("semester").child(userSemesterKey).child("users").child(userFieldKey).removeValue()
             ref.child("semester").child(semesterValue).child("users").updateChildValues([userFieldKey:true])
         }
@@ -154,9 +154,9 @@ class EditStudentViewController: UIViewController,UIPickerViewDelegate, UIPicker
                                     for item in classes
                                     {
                                         let idSubject = item.childSnapshot(forPath: "id_subject").value as! String
-                                        if(idSubject == subject.key)
-                                        {
-                                            userRef.child("subject-classes").updateChildValues([item.key:true])
+                                        let semester = item.childSnapshot(forPath: "semester").value as! String
+                                        if(idSubject == subject.key && semester == semesterValue)
+                                        {   userRef.child("subject-classes").updateChildValues([item.key:true])
                                             self.ref.child("subject-classes").child(item.key).child("users").updateChildValues([self.userKey:true])
                                         }
                                     }
@@ -166,10 +166,6 @@ class EditStudentViewController: UIViewController,UIPickerViewDelegate, UIPicker
                     }
                 }
             })
-            
-            
-
-
         }
         
         let okAlert = UIAlertController(title: "Edytowano studenta", message: nil, preferredStyle: UIAlertControllerStyle.alert)

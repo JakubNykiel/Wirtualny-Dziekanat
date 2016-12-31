@@ -281,8 +281,8 @@ class Functions
                             }
                         }
                     })
-                        ref.child("fields").child(field).child("users").child(user).removeValue()
-                        ref.child("users").child(user).child("fields").child(field).removeValue()
+                    ref.child("fields").child(field).child("users").child(user).removeValue()
+                    ref.child("users").child(user).child("fields").child(field).removeValue()
                 }
                 else
                 {
@@ -341,7 +341,7 @@ class Functions
                 }
             }
         })
-
+        
     }
     
     /*
@@ -432,6 +432,103 @@ class Functions
             view?.layer.opacity = 1
         }, completion: nil)
     }
-
+    
+    func nextSemester()
+    {
+        var semesterValue = ""
+        var semesterValueInt:Int!
+        var ref: FIRDatabaseReference!
+        ref = FIRDatabase.database().reference()
+        ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshots
+                {
+                    let acc = snap.childSnapshot(forPath: "account_type").value as! String
+                    if(acc == "Student")
+                    {
+                        ref.child("users").child(snap.key).child("fields").observeSingleEvent(of: .value, with: { (fieldInfo) in
+                            if let fields = fieldInfo.children.allObjects as? [FIRDataSnapshot] {
+                                for field in fields
+                                {
+                                    let myNumber = field.value as! String
+                                    semesterValueInt = Int(myNumber)! + 1
+                                    semesterValue = String(semesterValueInt)
+                                    let userRef = ref.child("users").child(snap.key)
+                                    if(Int(myNumber) == 7 || Int(myNumber) == 10)
+                                    {
+                                        self.removeStudent(user: snap.key, field: field.key, semester: myNumber)
+                                    }
+                                    else
+                                    {
+                                        userRef.child("fields").updateChildValues([field.key:semesterValue])
+                                        userRef.child("semester").updateChildValues([semesterValue:true])
+                                        userRef.child("semester").child(myNumber).removeValue()
+                                        
+                                        ref.child("semester").child(myNumber).child("users").child(snap.key).removeValue()
+                                        ref.child("semester").child(semesterValue).child("users").updateChildValues([snap.key:true])
+                                        
+                                        userRef.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+                                            if let subjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                                for subject in subjects
+                                                {
+                                                    ref.child("subjects").child(subject.key).child("users").child(snap.key).removeValue()
+                                                    userRef.child("subjects").child(subject.key).removeValue()
+                                                    // usuwanie zajec z usera oraz userow z zajec
+                                                    ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+                                                        if let classes = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                                            for item in classes
+                                                            {
+                                                                let idSubject = item.childSnapshot(forPath: "id_subject").value as! String
+                                                                let semester = item.childSnapshot(forPath: "semester").value as! String
+                                                                if(idSubject == subject.key && semester == semesterValue)
+                                                                {
+                                                                    ref.child("subject-classes").child(item.key).child("users").child(snap.key).removeValue()
+                                                                    userRef.child("subject-classes").child(item.key).removeValue()
+                                                                }
+                                                            }
+                                                        }
+                                                    })
+                                                }
+                                            }
+                                        }) // koneic usuwania
+                                        
+                                        ref.child("subjects").observeSingleEvent(of: .value, with: { (snapshot) in
+                                            if let subjects = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                                for subject in subjects
+                                                {
+                                                    let currentSubject = subject.childSnapshot(forPath: "id_field").value as! String
+                                                    if(currentSubject == field.key )
+                                                    {
+                                                        userRef.child("subjects").updateChildValues([subject.key:true])
+                                                        ref.child("subjects").child(subject.key).child("users").updateChildValues([snap.key:true])
+                                                        // dodac dodawanie classes
+                                                        ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
+                                                            if let classes = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                                                                for item in classes
+                                                                {
+                                                                    let idSubject = item.childSnapshot(forPath: "id_subject").value as! String
+                                                                    let semester = item.childSnapshot(forPath: "semester").value as! String
+                                                                    if(idSubject == subject.key && semester == semesterValue)
+                                                                    {
+                                                                        userRef.child("subjectclasses").updateChildValues([item.key:true])
+                                                                        ref.child("subject-classes").child(item.key).child("users").updateChildValues([snap.key:true])
+                                                                    }
+                                                                }
+                                                            }
+                                                        })
+                                                    }
+                                                }
+                                            }
+                                        })
+                                        
+                                    }
+                                }
+                            }
+                        })
+                    }
+                }
+            }
+        })
+    }
     
 }

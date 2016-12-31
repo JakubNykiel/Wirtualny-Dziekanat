@@ -97,6 +97,10 @@ class LoginController: UIViewController {
                         {
                             self.performSegue(withIdentifier: "ProfesorMenu", sender: nil)
                         }
+                        if(type == "agh")
+                        {
+                            self.performSegue(withIdentifier: "agh", sender: nil)
+                        }
                     })
                     self.functions.hide()
                 }

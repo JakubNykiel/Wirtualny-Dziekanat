@@ -60,6 +60,7 @@
 		C3C255951D9826A900E88741 /* Plus-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255941D9826A900E88741 /* Plus-50.png */; };
 		C3C3ED181DC12B5D001B791A /* AllFieldsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */; };
 		C3C9568A1E1666D100D6820E /* GradesFieldsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C956891E1666D100D6820E /* GradesFieldsTableViewController.swift */; };
+		C3C9568C1E16B10C00D6820E /* AGHMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C9568B1E16B10C00D6820E /* AGHMenuViewController.swift */; };
 		C3CC0AD21DE4C7B3006238EC /* MessageFieldTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3CC0AD11DE4C7B3006238EC /* MessageFieldTableViewController.swift */; };
 		C3D2CC4B1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */; };
 		C3D3C4401CF1CE83002A87FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */; };
@@ -143,6 +144,7 @@
 		C3C255941D9826A900E88741 /* Plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus-50.png"; sourceTree = "<group>"; };
 		C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFieldsListTableViewController.swift; sourceTree = "<group>"; };
 		C3C956891E1666D100D6820E /* GradesFieldsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradesFieldsTableViewController.swift; sourceTree = "<group>"; };
+		C3C9568B1E16B10C00D6820E /* AGHMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AGHMenuViewController.swift; sourceTree = "<group>"; };
 		C3CC0AD11DE4C7B3006238EC /* MessageFieldTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageFieldTableViewController.swift; sourceTree = "<group>"; };
 		C3D2CC4A1E0BEC02004DEF4A /* MessageLecturersTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageLecturersTableViewController.swift; sourceTree = "<group>"; };
 		C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */,
 				C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */,
 				C316203A1DDC7D9200582860 /* ManageAccountViewController.swift */,
+				C3C9568B1E16B10C00D6820E /* AGHMenuViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				C35981BD1D0A0DD50021172A /* Functions.swift in Sources */,
 				C3286F641E0FF021008EEAE6 /* GradesUsersTableViewController.swift in Sources */,
 				C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */,
+				C3C9568C1E16B10C00D6820E /* AGHMenuViewController.swift in Sources */,
 				C30211E11DCAB2720020C4FB /* AllClassesTableViewController.swift in Sources */,
 				C302DEA21DA6FFDB00B98B7A /* AddDeaneryController.swift in Sources */,
 				C31EBD831D9C46BB00BCE8FD /* SelectFacultyTableViewController.swift in Sources */,

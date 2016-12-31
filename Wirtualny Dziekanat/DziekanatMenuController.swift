@@ -16,11 +16,12 @@ class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDele
     
     @IBOutlet weak var aboutSubjectButton: UIButton!
     @IBOutlet weak var subjectButton: UIButton!
+    @IBOutlet weak var currentLabel: UILabel!
     var ref: FIRDatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ref = FIRDatabase.database().reference()
         // Do any additional setup after loading the view.
         if(subjectButton != nil)
         {
@@ -30,6 +31,14 @@ class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDele
             aboutSubjectButton.layer.borderWidth = 3
             aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
+        ref.child("current").observeSingleEvent(of: .value, with: { (snapshot) in
+            let first = snapshot.childSnapshot(forPath: "first").value as! Int
+            let second = snapshot.childSnapshot(forPath: "second").value as! Int
+            let season = snapshot.childSnapshot(forPath: "season").value as! String
+            
+            self.currentLabel.text = String(first) + "/" + String(second) + " " + season
+            
+        })
     }
     
     override func didReceiveMemoryWarning() {
