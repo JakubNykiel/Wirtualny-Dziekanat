@@ -200,7 +200,7 @@ class Functions
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
         var i = 0
-
+        
         ref.child("subject-classes").child(classes).observeSingleEvent(of: .value, with: { (snapshot) in
             let lecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
             let idSub = snapshot.childSnapshot(forPath: "id_subject").value as! String
@@ -223,6 +223,19 @@ class Functions
                     let counter = users.count
                     for user in users
                     {
+                        ref.child("grades").observeSingleEvent(of: .value, with: { (gradeInfo) in
+                            if let grades = gradeInfo.children.allObjects as? [FIRDataSnapshot] {
+                                for grade in grades
+                                {
+                                    let gradeClasses = grade.childSnapshot(forPath: "id_classes").value as! String
+                                    if(gradeClasses == classes)
+                                    {
+                                        ref.child("grades").child(grade.key).removeValue()
+                                        ref.child("users").child(user.key).child("grades").child(grade.key).removeValue()
+                                    }
+                                }
+                            }
+                        })
                         ref.child("users").child(user.key).child("subject-classes").child(classes).removeValue()
                         ref.child("users").child(user.key).child("subjects").child(idSub).observeSingleEvent(of: .value, with: { (subInfo) in
                             if((subInfo.value as! Int ) < 2)
