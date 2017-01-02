@@ -33,7 +33,7 @@ class AGHMenuViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func nextSemesterButton(_ sender: Any) {
+    @IBAction func nextButton(_ sender: Any) {
         let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
         alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
@@ -55,18 +55,17 @@ class AGHMenuViewController: UIViewController {
                 }
                 
             })
-
+            
         }))
         self.present(alert, animated: true, completion: nil)
     }
     
-    @IBAction func signOutButton(_ sender: Any) {
+    @IBAction func signOut(_ sender: Any) {
         try! FIRAuth.auth()!.signOut()
         if let storyboard = self.storyboard {
             let vc = storyboard.instantiateViewController(withIdentifier: "LoginScene")
             self.present(vc, animated: true, completion: nil)
         }
-        
-    }
-    
+
+    }    
 }

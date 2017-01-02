@@ -77,7 +77,7 @@ class DziekanatAddSubjectController: UIViewController {
                         "semester": semester]
             let myRef = self.ref.child("subjects").childByAutoId()
             myRef.setValue(data)
-            let userData = [myRef.key:true]
+            let userData = [myRef.key:0]
             
             self.ref.child("fields").child(id_field).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
                 if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {

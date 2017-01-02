@@ -31,16 +31,19 @@ class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDele
             aboutSubjectButton.layer.borderWidth = 3
             aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         ref.child("current").observeSingleEvent(of: .value, with: { (snapshot) in
             let first = snapshot.childSnapshot(forPath: "first").value as! Int
             let second = snapshot.childSnapshot(forPath: "second").value as! Int
             let season = snapshot.childSnapshot(forPath: "season").value as! String
-            
+        
             self.currentLabel.text = String(first) + "/" + String(second) + " " + season
             
         })
     }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

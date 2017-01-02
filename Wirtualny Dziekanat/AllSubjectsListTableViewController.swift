@@ -37,10 +37,14 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
         searchBar.delegate = self
         
         ref = FIRDatabase.database().reference()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         subjects.removeAll()
         fieldKey.removeAll()
         loadData()
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -146,20 +150,20 @@ class AllSubjectsListTableViewController: UITableViewController,UISearchBarDeleg
             self.performSegue(withIdentifier: "editSubject", sender: self)
         }
         
-        let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
-            let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
-            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
-                self.myFunc.removeSubject(subject: self.subjectKey)
-                self.subjects.remove(at: indexPath.row)
-                self.tableView.reloadData()
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
+//        let remove = UITableViewRowAction(style: .normal, title: "Usuń") { action, index in
+//            let alert = UIAlertController(title: "Czy jesteś pewien?", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+//            alert.addAction(UIAlertAction(title: "Powrót", style: UIAlertActionStyle.default, handler: nil))
+//            alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
+//                self.myFunc.removeSubject(subject: self.subjectKey)
+//                self.subjects.remove(at: indexPath.row)
+//                self.tableView.reloadData()
+//            }))
+//            self.present(alert, animated: true, completion: nil)
+//        }
         edit.backgroundColor = UIColor.lightGray
-        remove.backgroundColor = UIColor.red
+        //remove.backgroundColor = UIColor.red
         
-        return [remove, edit]
+        return [edit]
         
     }
     

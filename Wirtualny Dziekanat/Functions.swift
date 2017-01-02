@@ -164,21 +164,11 @@ class Functions
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
         var idSubject = ""
-        
-        ref.child("subjects").child(subject).removeValue()
-        
-        ref.child("subjects").child(subject).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for user in snapshots
-                {
-                    ref.child("users").child(user.key).child("subjects").child(subject).removeValue()
-                }
-            }
-        })
+        var classesI = 0
         
         ref.child("subject-classes").observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                
+                let counterClasses = snapshots.count
                 for snap in snapshots
                 {
                     idSubject = snap.childSnapshot(forPath: "id_subject").value as! String
@@ -186,7 +176,18 @@ class Functions
                     if(subject == idSubject)
                     {
                         self.removeClasses(classes: key)
+                        classesI = classesI + 1
+                        
                     }
+                    else
+                    {
+                        classesI = classesI + 1
+                    }
+                }
+                if(counterClasses == classesI)
+                {
+                    ref.child("subjects").child(subject).removeValue()
+                    
                 }
             }
         })
@@ -198,19 +199,51 @@ class Functions
     func removeClasses(classes: String){
         var ref: FIRDatabaseReference!
         ref = FIRDatabase.database().reference()
-        
+        var i = 0
+
         ref.child("subject-classes").child(classes).observeSingleEvent(of: .value, with: { (snapshot) in
             let lecturer = snapshot.childSnapshot(forPath: "id_lecturer").value as! String
+            let idSub = snapshot.childSnapshot(forPath: "id_subject").value as! String
             ref.child("users").child(lecturer).child("subject-classes").child(classes).removeValue()
-            ref.child("subject-classes").child(classes).removeValue()
-        })
-        ref.child("subject-classes").child(classes).child("user").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for user in users
+            ref.child("users").child(lecturer).child("subjects").child(idSub).observeSingleEvent(of: .value, with: { (lecturerInfo) in
+                let myVal = lecturerInfo.value as! Int
+                
+                if( myVal < 2)
                 {
-                    ref.child("users").child(user.key).child("subject-classes").child(classes).removeValue()
+                    ref.child("users").child(lecturer).child("subjects").child(idSub).removeValue()
                 }
-            }
+                else
+                {
+                    ref.child("users").child(lecturer).child("subjects").updateChildValues([idSub: lecturerInfo.value as! Int - 1])
+                }
+            })
+            
+            ref.child("subject-classes").child(classes).child("users").observeSingleEvent(of: .value, with: { (subCla) in
+                if let users = subCla.children.allObjects as? [FIRDataSnapshot] {
+                    let counter = users.count
+                    for user in users
+                    {
+                        ref.child("users").child(user.key).child("subject-classes").child(classes).removeValue()
+                        ref.child("users").child(user.key).child("subjects").child(idSub).observeSingleEvent(of: .value, with: { (subInfo) in
+                            if((subInfo.value as! Int ) < 2)
+                            {
+                                ref.child("users").child(user.key).child("subjects").child(idSub).removeValue()
+                                ref.child("subjects").child(idSub).removeValue()
+                                i = i + 1
+                            }
+                            else
+                            {
+                                ref.child("users").child(user.key).child("subjects").updateChildValues([idSub: subInfo.value as! Int - 1])
+                                i = i + 1
+                            }
+                            if(i == counter)
+                            {
+                                ref.child("subject-classes").child(classes).removeValue()
+                            }
+                        })
+                    }
+                }
+            })
         })
     }
     /*

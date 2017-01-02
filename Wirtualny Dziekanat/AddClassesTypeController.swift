@@ -48,12 +48,41 @@ class AddClassesTypeController: UIViewController {
                     "id_subject": self.classesData[1],
                     "id_type": self.classesData[2],
                     "id_lecturer": self.classesData[3]
-                    ]
-        var myRef = self.ref.child("subject-classes").childByAutoId()
+        ]
+        let myRef = self.ref.child("subject-classes").childByAutoId()
         myRef.setValue(data)
         let userData = [myRef.key: true]
         self.ref.child("users").child(self.classesData[3]).child("subject-classes").updateChildValues(userData)
-        self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]:true])
+        //self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]:true])
+        let subjRef = self.ref.child("users").child(self.classesData[3])
+        subjRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            if(snapshot.hasChild("subjects"))
+            {
+                subjRef.child("subjects").observeSingleEvent(of: .value, with: { (subInfo) in
+                    if let userSubjects = subInfo.children.allObjects as? [FIRDataSnapshot] {
+                        for userSubject in userSubjects
+                        {
+                            if(subInfo.hasChild(self.classesData[1]))
+                            {
+                                if(userSubject.key == self.classesData[1])
+                                {
+                                    self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]: userSubject.value as! Int + 1])
+                                }
+                            }
+                            else
+                            {
+                                self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]: 1])
+                            }
+                        }
+                    }
+                })
+                
+            }
+            else
+            {
+                self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]: 1])
+            }
+        })
         
         self.ref.child("subjects").child(self.classesData[1]).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
@@ -61,6 +90,9 @@ class AddClassesTypeController: UIViewController {
                 {
                     self.ref.child("users").child(user.key).child("subject-classes").updateChildValues(userData)
                     self.ref.child("subject-classes").child(myRef.key).child("users").updateChildValues([user.key:true])
+                    self.ref.child("users").child(user.key).child("subjects").child(self.classesData[1]).observeSingleEvent(of: .value, with: { (userSubject) in
+                        self.ref.child("users").child(user.key).child("subjects").updateChildValues([userSubject.key:userSubject.value as! Int + 1])
+                    })
                 }
             }
         })

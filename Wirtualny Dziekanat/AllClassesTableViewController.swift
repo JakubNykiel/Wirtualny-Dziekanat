@@ -101,6 +101,7 @@ class AllClassesTableViewController: UITableViewController {
             alert.addAction(UIAlertAction(title: "Usuń", style: UIAlertActionStyle.cancel, handler: { (action: UIAlertAction!) in
                 self.myFunc.removeClasses(classes: self.classesKey)
                 self.classes.remove(at: indexPath.row)
+                self.classesKeys.remove(at: indexPath.row)
                 self.tableView.reloadData()
             }))
             self.present(alert, animated: true, completion: nil)
