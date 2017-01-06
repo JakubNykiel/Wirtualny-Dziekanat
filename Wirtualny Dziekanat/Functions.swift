@@ -62,7 +62,7 @@ class Functions
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots
                 {
-                    ref.child("fields").observeSingleEvent(of: .value, with: { (snapshot) in
+                    ref.child("fields").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
                         if let fields = snapshot.children.allObjects as? [FIRDataSnapshot] {
                             for field in fields
                             {
