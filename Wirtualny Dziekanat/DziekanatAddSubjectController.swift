@@ -99,8 +99,8 @@ class DziekanatAddSubjectController: UIViewController {
                 }
             })
             self.ref.child("users")
-            let alertController = UIAlertController(title: "Dodano kierunek", message:
-                "Dodawanie kierunku zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Dodano przedmiot", message:
+                "Dodawanie przedmioto zostało zakończone", preferredStyle: UIAlertControllerStyle.alert)
             alertController.addAction(UIAlertAction(title: "Menu", style: .cancel, handler: { (action: UIAlertAction!) in
                 let targetController: UIViewController = self.navigationController!.viewControllers[self.navigationController!.viewControllers.count - 4]
                 

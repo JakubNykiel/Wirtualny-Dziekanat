@@ -15,6 +15,12 @@ class GradesClassesTableViewController: UITableViewController {
     var mySubjectType = ""
     var mySubjectTypeName = ""
     var mySubjectName = ""
+    
+    var mySubjectTemp = ""
+    var mySubjectTypeTemp = ""
+    var mySubjectTypeNameTemp = ""
+    var mySubjectNameTemp = ""
+    
     var classes = [String]()
     var classesKey = [String]()
     var keys = [String]()
@@ -26,8 +32,11 @@ class GradesClassesTableViewController: UITableViewController {
     var userResult = 0.0
     var counter = 0
     var i = 0
-    var gradesData = [Double]()
+    var myDates = [Double]()
+    var gradesData = [String:[Double]]()
+    var sendGrades = [Double]()
     var data = ""
+    var dataArr = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -46,6 +55,12 @@ class GradesClassesTableViewController: UITableViewController {
         classes.removeAll()
         classesKey.removeAll()
         keys.removeAll()
+        dataArr.removeAll()
+        gradesData.removeAll()
+        myDates.removeAll()
+        sendGrades.removeAll()
+        
+        myDates = [0.0,0.0,0.0]
         if(acc == "Student")
         {
             loadDataForStudent()
@@ -58,7 +73,7 @@ class GradesClassesTableViewController: UITableViewController {
         {
             loadData()
         }
-        
+        self.tableView.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -89,13 +104,23 @@ class GradesClassesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        mySubjectType = self.keys[indexPath.row]
-        mySubject = self.classesKey[indexPath.row]
-        mySubjectTypeName = self.classes[indexPath.row]
-        
+        mySubjectTypeTemp = self.keys[indexPath.row]
+        mySubjectTemp = self.classesKey[indexPath.row]
+        mySubjectTypeNameTemp = self.classes[indexPath.row]
+        sendGrades = self.gradesData[mySubjectTemp]!
         if(acc == "Student")
         {
-            performSegue(withIdentifier: "gradeStudent", sender: self)
+            ref.child("subject-classes").child(mySubjectTemp).observeSingleEvent(of: .value, with: { (lecturerDisplay) in
+                let lecturer = lecturerDisplay.childSnapshot(forPath: "id_lecturer").value as! String
+                self.ref.child("users").child(lecturer).observeSingleEvent(of: .value, with: { (lecturerInfo) in
+                    let tit = lecturerInfo.childSnapshot(forPath: "title").value as! String
+                    let nam = lecturerInfo.childSnapshot(forPath: "name").value as! String
+                    let sur = lecturerInfo.childSnapshot(forPath: "surname").value as! String
+                    self.data = tit + " " + nam + " " + sur
+                    self.performSegue(withIdentifier: "gradeStudent", sender: self)
+                })
+                
+            })
         }
         else
         {
@@ -108,16 +133,16 @@ class GradesClassesTableViewController: UITableViewController {
         {
             let destinationVC = segue.destination as! GradesDateTableViewController
             
-            destinationVC.mySubject = mySubject
-            destinationVC.mySubjectType = mySubjectType
+            destinationVC.mySubject = mySubjectTemp
+            destinationVC.mySubjectType = mySubjectTypeTemp
         }
         else if (segue.identifier == "gradeStudent")
         {
             let destinationVC = segue.destination as! GradesStudentViewController
             
             destinationVC.subjectName = mySubjectName
-            destinationVC.typeName = mySubjectTypeName
-            destinationVC.grades = gradesData
+            destinationVC.typeName = mySubjectTypeNameTemp
+            destinationVC.grades = sendGrades
             destinationVC.lecturer = data
         }
     }
@@ -181,19 +206,14 @@ class GradesClassesTableViewController: UITableViewController {
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for item in snapshots
                 {
+                    //print("Item.key: " + item.key)
                     self.ref.child("subject-classes").child(item.key).observeSingleEvent(of: .value, with: { (subCla) in
                         let idSub = subCla.childSnapshot(forPath: "id_subject").value as! String
-                        let lecturer = subCla.childSnapshot(forPath: "id_lecturer").value as! String
-                        self.ref.child("users").child(lecturer).observeSingleEvent(of: .value, with: { (lecturerInfo) in
-                            let tit = lecturerInfo.childSnapshot(forPath: "title").value as! String
-                            let nam = lecturerInfo.childSnapshot(forPath: "name").value as! String
-                            let sur = lecturerInfo.childSnapshot(forPath: "surname").value as! String
-                            self.data = tit + " " + nam + " " + sur
-                            
-                        })
+                        //print("idSub: " + idSub + ", mySubject: " + self.mySubject)
                         if(idSub == self.mySubject)
                         {
                             let type = subCla.childSnapshot(forPath: "id_type").value as! String
+                            //print("type: " + type)
                             self.ref.child("subject-type").child(type).observeSingleEvent(of: .value, with: { (subType) in
                                 let name = subType.childSnapshot(forPath: "name").value as! String
                                 self.ref.child("grades").observeSingleEvent(of: .value, with: { (gradeInfo) in
@@ -205,6 +225,7 @@ class GradesClassesTableViewController: UITableViewController {
                                             
                                             if(userID == self.uid && idClasses == item.key)
                                             {
+                                                //print("userID: " + userID + ", idClasses: " + idClasses)
                                                 self.ref.child("grades").child(grade.key).child("dates").observeSingleEvent(of: .value, with: { (dateInfo) in
                                                     if let dates = dateInfo.children.allObjects as? [FIRDataSnapshot] {
                                                         self.counter = dates.count
@@ -212,7 +233,7 @@ class GradesClassesTableViewController: UITableViewController {
                                                         for date in dates
                                                         {
                                                             let myGrade = date.value as! Double
-                                                            self.gradesData.append(myGrade)
+                                                            self.myDates.insert(myGrade, at: self.i)
                                                             if(self.userResult < myGrade)
                                                             {
                                                                 self.userResult = myGrade
@@ -222,6 +243,7 @@ class GradesClassesTableViewController: UITableViewController {
                                                             {
                                                                 self.classes.append(name)
                                                                 self.imageGrade(userResult: self.userResult)
+                                                                self.gradesData[idClasses] = self.myDates
                                                                 self.keys.append(subType.key)
                                                                 self.classesKey.append(item.key)
                                                                 self.tableView.reloadData()
@@ -235,6 +257,7 @@ class GradesClassesTableViewController: UITableViewController {
                                                 self.classes.append(name)
                                                 self.keys.append(subType.key)
                                                 self.classesKey.append(item.key)
+                                                self.gradesData[item.key] = self.myDates
                                                 self.results.append("Pusto.png")
                                                 self.tableView.reloadData()
                                             }

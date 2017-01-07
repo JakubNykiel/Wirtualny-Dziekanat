@@ -45,7 +45,7 @@ class AllClassesTableViewController: UITableViewController {
                 }
             }
         })
-        ref.child("subject-type").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("subject-type").queryOrdered(byChild: "name").observeSingleEvent(of: .value, with: { (snapshot) in
             
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 
