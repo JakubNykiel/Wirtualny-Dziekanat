@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectLecturerTableViewController: UITableViewController {
-
+    
     var myFunc = Functions()
     var field = [String]()
     var keys = [String]()
@@ -27,6 +27,9 @@ class SelectLecturerTableViewController: UITableViewController {
         tableView.dataSource = self
         self.tableView.allowsSelection = true
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         myFunc.displayLecturer{ (name) -> () in
             for item in name
             {
@@ -35,33 +38,35 @@ class SelectLecturerTableViewController: UITableViewController {
                 self.lecturer.append(self.lecturerDisplay)
                 
             }
+            
             self.tableView.reloadData()
         }
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return keys.count
     }
-
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "lecturerCell", for: indexPath)
-
+        
         cell.textLabel?.text = lecturer[indexPath.row]
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-
+        
         return cell
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -72,8 +77,8 @@ class SelectLecturerTableViewController: UITableViewController {
         performSegue(withIdentifier: "addClasses", sender: self)
         
     }
-
- 
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addClasses")
         {
@@ -81,10 +86,10 @@ class SelectLecturerTableViewController: UITableViewController {
             
             destinationVC.classesData = classesData
             destinationVC.classesDataDisplay = classesDataDisplay
-
+            
         }
-
+        
     }
     
-
+    
 }

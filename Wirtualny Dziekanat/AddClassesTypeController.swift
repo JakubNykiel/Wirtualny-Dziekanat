@@ -15,6 +15,7 @@ class AddClassesTypeController: UIViewController {
     var classesDataDisplay = [String]()
     var myFunc = Functions()
     var ref: FIRDatabaseReference!
+    var myDict = [String: [String:String]]()
     
     @IBOutlet weak var subjectResult: UILabel!
     @IBOutlet weak var classesTypeResult: UILabel!
@@ -49,12 +50,14 @@ class AddClassesTypeController: UIViewController {
                     "id_type": self.classesData[2],
                     "id_lecturer": self.classesData[3]
         ]
+        
         let myRef = self.ref.child("subject-classes").childByAutoId()
         myRef.setValue(data)
-        let userData = [myRef.key: true]
-        self.ref.child("users").child(self.classesData[3]).child("subject-classes").updateChildValues(userData)
+        let userData = [myRef.key: data]
+        self.ref.child("users").child(self.classesData[3]).child("subject-classes").updateChildValues([myRef.key:true])
         //self.ref.child("users").child(self.classesData[3]).child("subjects").updateChildValues([self.classesData[1]:true])
         let subjRef = self.ref.child("users").child(self.classesData[3])
+        
         subjRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if(snapshot.hasChild("subjects"))
             {
@@ -88,14 +91,14 @@ class AddClassesTypeController: UIViewController {
             if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for user in users
                 {
-                    self.ref.child("users").child(user.key).child("subject-classes").updateChildValues(userData)
+                    self.ref.child("users").child(user.key).child("subject-classes").updateChildValues([myRef.key: true])
                     self.ref.child("subject-classes").child(myRef.key).child("users").updateChildValues([user.key:true])
                     self.ref.child("users").child(user.key).child("subjects").child(self.classesData[1]).observeSingleEvent(of: .value, with: { (userSubject) in
                         self.ref.child("users").child(user.key).child("subjects").updateChildValues([userSubject.key:userSubject.value as! Int + 1])
                     })
                 }
             }
-        })
+       })
         
         
         let alertController = UIAlertController(title: "Dodano kierunek", message:

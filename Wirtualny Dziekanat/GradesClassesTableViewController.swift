@@ -107,9 +107,10 @@ class GradesClassesTableViewController: UITableViewController {
         mySubjectTypeTemp = self.keys[indexPath.row]
         mySubjectTemp = self.classesKey[indexPath.row]
         mySubjectTypeNameTemp = self.classes[indexPath.row]
-        sendGrades = self.gradesData[mySubjectTemp]!
+        
         if(acc == "Student")
         {
+            sendGrades = self.gradesData[mySubjectTemp]!
             ref.child("subject-classes").child(mySubjectTemp).observeSingleEvent(of: .value, with: { (lecturerDisplay) in
                 let lecturer = lecturerDisplay.childSnapshot(forPath: "id_lecturer").value as! String
                 self.ref.child("users").child(lecturer).observeSingleEvent(of: .value, with: { (lecturerInfo) in

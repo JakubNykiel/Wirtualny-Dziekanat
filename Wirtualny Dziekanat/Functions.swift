@@ -124,28 +124,33 @@ class Functions
             if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
                 for snap in snapshots
                 {
-                    ref.child("faculty").child(snap.key).child("users").observeSingleEvent(of: .value, with: { (snapshot) in
-                        if let users = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                            for user in users
+                    ref.child("users").queryOrdered(byChild: "surname").observeSingleEvent(of: .value, with: { (user) in
+                        if let users = user.children.allObjects as? [FIRDataSnapshot] {
+                            for currentUser in users
                             {
-                                ref.child("users").child(user.key).observeSingleEvent(of: .value, with: { (lecturer) in
-                                    let acc_type = lecturer.childSnapshot(forPath: "account_type").value as! String
-                                    if(acc_type == "Prowadzący")
-                                    {
-                                        let name = lecturer.childSnapshot(forPath: "name").value as! String
-                                        let title = lecturer.childSnapshot(forPath: "title").value as! String
-                                        let surname = lecturer.childSnapshot(forPath: "surname").value as! String
-                                        
-                                        arrayLecturer.append(title)
-                                        arrayLecturer.append(name)
-                                        arrayLecturer.append(surname)
-                                        
-                                        dict[user.key] = arrayLecturer
-                                        completion(dict)
-                                        dict.removeAll()
-                                        arrayLecturer.removeAll()
-                                    }
-                                })
+                                let acc_type = currentUser.childSnapshot(forPath: "account_type").value as! String
+                                
+                                if(acc_type == "Prowadzący")
+                                {
+                                    ref.child("users").child(currentUser.key).child("faculty").observeSingleEvent(of: .value, with: { (faculty) in
+                                        if(faculty.hasChild(snap.key))
+                                        {
+                                            let name = currentUser.childSnapshot(forPath: "name").value as! String
+                                            let title = currentUser.childSnapshot(forPath: "title").value as! String
+                                            let surname = currentUser.childSnapshot(forPath: "surname").value as! String
+                                            
+                                            arrayLecturer.append(title)
+                                            arrayLecturer.append(name)
+                                            arrayLecturer.append(surname)
+                                            
+                                            dict[currentUser.key] = arrayLecturer
+                                            completion(dict)
+                                            dict.removeAll()
+                                            arrayLecturer.removeAll()
+                                            
+                                        }
+                                    })
+                                }
                             }
                         }
                     })

@@ -25,11 +25,11 @@ class DziekanatMenuController: UIViewController, MFMailComposeViewControllerDele
         // Do any additional setup after loading the view.
         if(subjectButton != nil)
         {
-            subjectButton.layer.borderWidth = 3
-            subjectButton.layer.borderColor = UIColor.black.cgColor
-            
-            aboutSubjectButton.layer.borderWidth = 3
-            aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
+//            subjectButton.layer.borderWidth = 3
+//            subjectButton.layer.borderColor = UIColor.black.cgColor
+//            
+//            aboutSubjectButton.layer.borderWidth = 3
+//            aboutSubjectButton.layer.borderColor = UIColor.black.cgColor
         }
     }
     

@@ -56,6 +56,7 @@
 		C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */; };
 		C395BFDE1DC0F8A40018D442 /* ListsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */; };
 		C39A47741DBF6D690014A906 /* SelectSubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39A47731DBF6D690014A906 /* SelectSubjectsTableViewController.swift */; };
+		C39CE1DB1E2E88F100A7769C /* Classroom-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C39CE1DA1E2E88F100A7769C /* Classroom-50.png */; };
 		C3C255931D981DC000E88741 /* Graduation Cap-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255921D981DC000E88741 /* Graduation Cap-50.png */; };
 		C3C255951D9826A900E88741 /* Plus-50.png in Resources */ = {isa = PBXBuildFile; fileRef = C3C255941D9826A900E88741 /* Plus-50.png */; };
 		C3C3ED181DC12B5D001B791A /* AllFieldsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */; };
@@ -140,6 +141,7 @@
 		C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddSubjectController.swift; sourceTree = "<group>"; };
 		C395BFDD1DC0F8A40018D442 /* ListsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListsTableViewController.swift; sourceTree = "<group>"; };
 		C39A47731DBF6D690014A906 /* SelectSubjectsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSubjectsTableViewController.swift; sourceTree = "<group>"; };
+		C39CE1DA1E2E88F100A7769C /* Classroom-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Classroom-50.png"; sourceTree = "<group>"; };
 		C3C255921D981DC000E88741 /* Graduation Cap-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Graduation Cap-50.png"; sourceTree = "<group>"; };
 		C3C255941D9826A900E88741 /* Plus-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Plus-50.png"; sourceTree = "<group>"; };
 		C3C3ED171DC12B5D001B791A /* AllFieldsListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllFieldsListTableViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				C31B7FBF1E0C5BEB00D3DAAA /* 30.png */,
 				C31B7FC01E0C5BEB00D3DAAA /* 50.png */,
 				C31B7FC11E0C5BEB00D3DAAA /* 40.png */,
+				C39CE1DA1E2E88F100A7769C /* Classroom-50.png */,
 				C31B7FC21E0C5BEB00D3DAAA /* 20.png */,
 				C31B7FC31E0C5BEB00D3DAAA /* 45.png */,
 				C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */,
@@ -498,6 +501,7 @@
 				C31B7FCA1E0C5BEB00D3DAAA /* 45.png in Resources */,
 				C31B7FC91E0C5BEB00D3DAAA /* 20.png in Resources */,
 				C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */,
+				C39CE1DB1E2E88F100A7769C /* Classroom-50.png in Resources */,
 				C31B7FC71E0C5BEB00D3DAAA /* 50.png in Resources */,
 				C3E7798A1D29343000CE5CFF /* Student Male-50.png in Resources */,
 				C35BCCD01D0B5CD00022DC1F /* Bulleted List-50.png in Resources */,
