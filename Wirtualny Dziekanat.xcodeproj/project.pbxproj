@@ -222,35 +222,6 @@
 			name = Message;
 			sourceTree = "<group>";
 		};
-		C35BCCC61D0B5B880022DC1F /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-				C31B7FBF1E0C5BEB00D3DAAA /* 30.png */,
-				C31B7FC01E0C5BEB00D3DAAA /* 50.png */,
-				C31B7FC11E0C5BEB00D3DAAA /* 40.png */,
-				C39CE1DA1E2E88F100A7769C /* Classroom-50.png */,
-				C31B7FC21E0C5BEB00D3DAAA /* 20.png */,
-				C31B7FC31E0C5BEB00D3DAAA /* 45.png */,
-				C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */,
-				C31B7FC51E0C5BEB00D3DAAA /* 35.png */,
-				C3C255921D981DC000E88741 /* Graduation Cap-50.png */,
-				C37B10BA1DDA6ABF0038A443 /* Password-50.png */,
-				C3E7798F1D29657300CE5CFF /* University-50.png */,
-				C37B10B61DDA6AB00038A443 /* Remove User Male-50.png */,
-				C37B10B81DDA6AB90038A443 /* Email-50.png */,
-				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
-				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
-				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
-				C3C255941D9826A900E88741 /* Plus-50.png */,
-				C3E779891D29343000CE5CFF /* Student Male-50.png */,
-				C3E7798B1D29357F00CE5CFF /* Logout Rounded-50.png */,
-				C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */,
-				C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */,
-				C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */,
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
 		C36A15361CF06163005EC3CC /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +236,43 @@
 				C3F313101DBE7DAF00921C75 /* Select */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C391E6331E9418C60093E0CA /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				C31B7FC41E0C5BEB00D3DAAA /* Pusto.png */,
+				C3C255921D981DC000E88741 /* Graduation Cap-50.png */,
+				C37B10BA1DDA6ABF0038A443 /* Password-50.png */,
+				C3E7798F1D29657300CE5CFF /* University-50.png */,
+				C37B10B61DDA6AB00038A443 /* Remove User Male-50.png */,
+				C37B10B81DDA6AB90038A443 /* Email-50.png */,
+				C35BCCC91D0B5CD00022DC1F /* Exit-50.png */,
+				C35BCCCB1D0B5CD00022DC1F /* Bulleted List-50.png */,
+				C3C255941D9826A900E88741 /* Plus-50.png */,
+				C3E779891D29343000CE5CFF /* Student Male-50.png */,
+				C3E7798B1D29357F00CE5CFF /* Logout Rounded-50.png */,
+				C35BCCCC1D0B5CD00022DC1F /* Speech Bubble-50.png */,
+				C35BCCCD1D0B5CD00022DC1F /* Add User Male-50.png */,
+				C35BCCC71D0B5B9C0022DC1F /* Add Rule-50.png */,
+				C31B7FC21E0C5BEB00D3DAAA /* 20.png */,
+				C31B7FC31E0C5BEB00D3DAAA /* 45.png */,
+				C31B7FBF1E0C5BEB00D3DAAA /* 30.png */,
+				C31B7FC51E0C5BEB00D3DAAA /* 35.png */,
+				C31B7FC01E0C5BEB00D3DAAA /* 50.png */,
+				C31B7FC11E0C5BEB00D3DAAA /* 40.png */,
+				C35BCCCA1D0B5CD00022DC1F /* Home-50.png */,
+				C39CE1DA1E2E88F100A7769C /* Classroom-50.png */,
+				C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */,
+			);
+			path = Icons;
+			sourceTree = "<group>";
+		};
+		C391E6341E942EF80093E0CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		C39A47701DBF68C50014A906 /* Dziekanat */ = {
@@ -307,9 +315,7 @@
 		C3B9787E1CEBC0290060BBCC /* Supported Files */ = {
 			isa = PBXGroup;
 			children = (
-				C35BCCC61D0B5B880022DC1F /* Icons */,
 				C3D3C43F1CF1CE83002A87FC /* GoogleService-Info.plist */,
-				C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */,
 				C3DD2BA81CEA594200AA8439 /* Info.plist */,
 				C3DD2BA31CEA594200AA8439 /* Assets.xcassets */,
 			);
@@ -329,6 +335,8 @@
 		C3DD2B9B1CEA594200AA8439 /* Wirtualny Dziekanat */ = {
 			isa = PBXGroup;
 			children = (
+				C391E6341E942EF80093E0CA /* Models */,
+				C391E6331E9418C60093E0CA /* Icons */,
 				C308B4141D91E306006E018D /* Wirtualny Dziekanat.entitlements */,
 				C3DD2B9C1CEA594200AA8439 /* AppDelegate.swift */,
 				C35981BC1D0A0DD50021172A /* Functions.swift */,
