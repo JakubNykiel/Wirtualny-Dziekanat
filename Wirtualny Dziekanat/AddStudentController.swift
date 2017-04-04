@@ -16,6 +16,7 @@ class AddStudentController: UIViewController {
     var type = "Student"
     var ref: FIRDatabaseReference!
     let myFunc = Functions()
+    let faculty = Faculty()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
@@ -32,7 +33,7 @@ class AddStudentController: UIViewController {
         myFunc.show()
         ref = FIRDatabase.database().reference()
         
-        myFunc.displayFaculty{ (name) -> () in
+        faculty.displayFaculty{ (name) -> () in
             for item in name
             {
                 self.keyResult[0] = item.key

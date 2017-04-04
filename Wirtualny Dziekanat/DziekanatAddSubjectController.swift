@@ -18,6 +18,7 @@ class DziekanatAddSubjectController: UIViewController {
     @IBOutlet weak var semesterResult: UILabel!
     
     var myFunc = Functions()
+    let faculty = Faculty()
     var ref: FIRDatabaseReference!
     var tableResult:[String]!
     var keyResult:[String]!
@@ -27,7 +28,7 @@ class DziekanatAddSubjectController: UIViewController {
         myFunc.show()
         ref = FIRDatabase.database().reference()
         
-        myFunc.displayFaculty{ (name) -> () in
+        faculty.displayFaculty{ (name) -> () in
             for item in name
             {
                 self.keyResult[0] = item.key

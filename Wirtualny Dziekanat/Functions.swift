@@ -30,26 +30,26 @@ class Functions
     }
     
     //wyswietlanie wydzialow
-    func displayFaculty(completion: @escaping ([String:String])->()){
-        var ref: FIRDatabaseReference!
-        ref = FIRDatabase.database().reference()
-        let userID = FIRAuth.auth()!.currentUser!.uid
-        var dict = [String:String]()
-        
-        ref.child("users").child(userID).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
-                for snap in snapshots
-                {
-                    ref.child("faculty").child(snap.key).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
-                        dict[snap.key] = snapshot.value as? String
-                        completion(dict)
-                        dict.removeAll()
-                    })
-                }
-            }
-        })
-        
-    }
+//    func displayFaculty(completion: @escaping ([String:String])->()){
+//        var ref: FIRDatabaseReference!
+//        ref = FIRDatabase.database().reference()
+//        let userID = FIRAuth.auth()!.currentUser!.uid
+//        var dict = [String:String]()
+//        
+//        ref.child("users").child(userID).child("faculty").observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//                for snap in snapshots
+//                {
+//                    ref.child("faculty").child(snap.key).child("name").observeSingleEvent(of: .value, with: { (snapshot) in
+//                        dict[snap.key] = snapshot.value as? String
+//                        completion(dict)
+//                        dict.removeAll()
+//                    })
+//                }
+//            }
+//        })
+//        
+//    }
     
     //wyswietlanie kierunkow
     func displayFields(completion: @escaping ([String:String])->()){

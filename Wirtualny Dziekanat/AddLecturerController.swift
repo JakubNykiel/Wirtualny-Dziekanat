@@ -17,6 +17,7 @@ class AddLecturerController: UIViewController {
     var type = "Prowadzący"
     var ref: FIRDatabaseReference!
     var myFunc = Functions()
+    let faculty = Faculty()
     
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var titleText: UITextField!
@@ -33,7 +34,7 @@ class AddLecturerController: UIViewController {
         myFunc.show()
         ref = FIRDatabase.database().reference()
         
-        myFunc.displayFaculty{ (name) -> () in
+        faculty.displayFaculty{ (name) -> () in
             for item in name
             {
                 self.keyResult = item.key

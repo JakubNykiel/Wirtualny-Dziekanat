@@ -16,6 +16,7 @@ class DziekanatAddFieldController: UIViewController {
     var tableResult:String!
     var keyResult:String!
     let myFunc = Functions()
+    let faculty = Faculty()
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var facultyResult: UILabel!
@@ -24,7 +25,7 @@ class DziekanatAddFieldController: UIViewController {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         myFunc.show("Ładowanie")
-        myFunc.displayFaculty{ (name) -> () in
+        faculty.displayFaculty{ (name) -> () in
             for item in name
             {
                 self.keyResult = item.key

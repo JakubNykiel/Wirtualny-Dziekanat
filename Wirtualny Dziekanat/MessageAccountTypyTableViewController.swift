@@ -19,6 +19,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
     var uid: String!
     var faculty: String!
     var myFunc = Functions()
+    let myFaculty = Faculty()
     var myType: String!
     
     override func viewDidLoad() {
@@ -35,7 +36,7 @@ class MessageAccountTypyTableViewController: UITableViewController, MFMailCompos
         ref.child("users").child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             self.myType = snapshot.childSnapshot(forPath: "account_type").value as! String
         })
-        myFunc.displayFaculty{ (name) -> () in
+        myFaculty.displayFaculty{ (name) -> () in
             for item in name
             {
                 self.faculty = item.key

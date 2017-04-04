@@ -51,6 +51,8 @@
 		C37D512C1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */; };
 		C37D512E1D0A0816001DBF03 /* DziekanatAddUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */; };
 		C37D51301D0A088D001DBF03 /* StudentMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */; };
+		C391E6381E9437A70093E0CA /* Faculty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391E6371E9437A70093E0CA /* Faculty.swift */; };
+		C391E63A1E9444D70093E0CA /* Nodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C391E6391E9444D70093E0CA /* Nodes.swift */; };
 		C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */; };
 		C3924A3F1DDB2D3600B66906 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */; };
 		C392EC881D91E64C003DC983 /* DziekanatAddSubjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */; };
@@ -136,6 +138,8 @@
 		C37D512B1D09F4B1001DBF03 /* agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = agh_nzw_s_pl_3w_wbr_rgb_150ppi.jpg; sourceTree = "<group>"; };
 		C37D512D1D0A0816001DBF03 /* DziekanatAddUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddUserController.swift; sourceTree = "<group>"; };
 		C37D512F1D0A088D001DBF03 /* StudentMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentMenuController.swift; sourceTree = "<group>"; };
+		C391E6371E9437A70093E0CA /* Faculty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Faculty.swift; sourceTree = "<group>"; };
+		C391E6391E9444D70093E0CA /* Nodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Nodes.swift; sourceTree = "<group>"; };
 		C3924A3C1DDB2D2300B66906 /* ChangeEmailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewController.swift; sourceTree = "<group>"; };
 		C3924A3E1DDB2D3600B66906 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		C392EC871D91E64C003DC983 /* DziekanatAddSubjectController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DziekanatAddSubjectController.swift; sourceTree = "<group>"; };
@@ -271,6 +275,8 @@
 		C391E6341E942EF80093E0CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C391E6371E9437A70093E0CA /* Faculty.swift */,
+				C391E6391E9444D70093E0CA /* Nodes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -574,6 +580,7 @@
 				C3924A3F1DDB2D3600B66906 /* ChangePasswordViewController.swift in Sources */,
 				C3F6CAA61DBEB21200FD4B07 /* SelectLecturerTableViewController.swift in Sources */,
 				C37637CF1DCD539800B56A03 /* EditDeaneryViewController.swift in Sources */,
+				C391E63A1E9444D70093E0CA /* Nodes.swift in Sources */,
 				C3E7798E1D29637D00CE5CFF /* ProfesorMenuController.swift in Sources */,
 				C313559A1DC61D3D00B3A630 /* AllSubjectsListTableViewController.swift in Sources */,
 				C30F471E1DB6C68D00E9C807 /* SelectSemesterTableViewController.swift in Sources */,
@@ -585,6 +592,7 @@
 				C3F91CD31DCBABAE00A06953 /* UsersTypeTableViewController.swift in Sources */,
 				C32D92B41E0AB32500FF76E5 /* MessageSubjectsTableViewController.swift in Sources */,
 				C3924A3D1DDB2D2300B66906 /* ChangeEmailViewController.swift in Sources */,
+				C391E6381E9437A70093E0CA /* Faculty.swift in Sources */,
 				C3342F1C1E0EBF77001A7C8D /* GradesClassesTableViewController.swift in Sources */,
 				C3CC0AD21DE4C7B3006238EC /* MessageFieldTableViewController.swift in Sources */,
 				C3C9568A1E1666D100D6820E /* GradesFieldsTableViewController.swift in Sources */,
